@@ -40,13 +40,14 @@
 
  <variablelist>
   <varlistentry>
-   <term><xref linkend="book-example"/></term>
+   <term><xref linkend="public-cloud"/></term>
    <listitem>
     <para>
      Abstract of Example Guide.
     </para>
    </listitem>
   </varlistentry>
+  <!--
   <varlistentry>
    <term><xref linkend="book-example"/></term>
    <listitem>
@@ -55,5 +56,6 @@
     </para>
    </listitem>
   </varlistentry>
+  -->
  </variablelist>
 </sect1>

@@ -1,8 +1,8 @@
 # This file originates from the project https://github.com/openSUSE/doc-kit
 # This file can be edited downstream.
 
-MAIN="MAIN.book-example.xml"
-ROOTID="book.example"
+MAIN="MAIN.public-cloud.xml"
+ROOTID="public-cloud"
 
 PROFCONDITION="suse-product"
 #PROFCONDITION="suse-product;beta"

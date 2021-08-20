@@ -11,15 +11,16 @@
     %entities;
 ]>
 
-<book xml:id="book-example" xml:lang="en"
+<book xml:id="public-cloud" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-   <title>Example guide</title>
+  <title>Public Cloud Guide</title>
    <productname>&productname;</productname>
-   <productnumber>&productnumber;</productnumber>
+   <!-- FIXME: How to version a guide but not a product? -->
+   <!-- <productnumber>&productnumber;</productnumber> -->
    <date><?dbtimestamp format="B d, Y"?></date>
    <xi:include href="common_copyright_gfdl.xml"/>
    <abstract>
@@ -40,13 +41,13 @@
  <xi:include href="preface_example.xml"/>
 
  <part xml:id="part-one">
-  <title>One</title>
-  <xi:include href="cha_example_one.xml"/>
+  <title>Getting Started</title>
+  <xi:include href="cha_images.xml"/>
  </part>
 
  <part xml:id="part-two">
-  <title>Two</title>
-  <xi:include href="cha_example_two.xml"/>
+  <title>Public Cloud Providers</title>
+  <xi:include href="cha_providers.xml"/>
  </part>
 
  <xi:include href="example_doc_updates.xml"/>

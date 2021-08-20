@@ -22,3 +22,48 @@
 <!-- COPYRIGHT HOLDER(S) -->
 <!ENTITY copyrightholder "SUSE LLC">
 
+
+<!-- General terms and acronyms -->
+<!ENTITY pc        "Public Cloud">
+<!ENTITY iaas      "Infrastrucure as a Service">
+<!ENTITY iaasa     "IaaS">
+<!ENTITY paas      "Platform as a Service">
+<!ENTITY paasa     "PaaS">
+<!ENTITY saas      "Software as a Service">
+<!ENTITY saasa     "SaaS">
+<!ENTITY daas      "Data as a Service">
+<!ENTITY daasa     "DaaS">
+
+<!-- SUSE specific terms and acronyms -->
+<!ENTITY pint      "Public Cloud Information Tracker">
+<!ENTITY pinta     "PINT">
+<!ENTITY pinturl   "https://pint.suse.com/">
+
+<!-- Public Cloud providers and products -->
+<!ENTITY amazon    "Amazon">
+<!ENTITY amazonreg "Amazon &reg;">
+<!ENTITY aws       "&amazon; Web Services">
+<!ENTITY awsa      "AWS">
+<!ENTITY ec2       "&amazon; Elastic Compute Cloud">
+<!ENTITY ec2a      "&amazon; EC2">
+<!ENTITY s3        "&amazon; Simple Storage Service">
+<!ENTITY s3a       "&amazon; S3">
+
+<!ENTITY google    "Google">
+<!ENTITY googlereg "&google; &reg;">
+<!ENTITY gcp       "&google; Cloud Platform">
+<!ENTITY gcpa      "GCP">
+<!ENTITY gce       "&google; Compute Engine">
+<!ENTITY gcea      "GCE">
+
+<!ENTITY microsoft "Microsoft">
+<!ENTITY azure     "&microsoft; Azure">
+<!ENTITY azurea    "Azure">
+
+<!ENTITY oracle    "Oracle">
+<!ENTITY oc        "&oracle; Cloud">
+<!ENTITY oci       "&oc; Infrastructure">
+<!ENTITY ocia      "OCI">
+
+<!ENTITY alibaba   "Alibaba">
+<!ENTITY ac        "&alibaba; Cloud">

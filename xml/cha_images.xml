@@ -15,11 +15,12 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Chapter one</title>
+ <title>Public cloud images</title>
  <info>
   <abstract>
    <para>
-    What is this chapter about?
+    &suse; offers a variety of images of different products, for different use
+    cases, and for all major cloud providers. Learn how to find the right image.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -30,55 +31,315 @@
  <sect1 xml:id="sec-available-images">
   <title>Available images</title>
   <para>
-   A paragraph of text.
+   &suse; offers a variety of images of different products, for different use
+   cases, and for all major cloud providers.
   </para>
-  <procedure>
-   <step>
+  <sect2>
+   <title>Products</title>
+   <para>The following &suse; products are available for public cloud.</para>
+   <itemizedlist>
+    <title>Available products</title>
+    <listitem>
+     <para>
+      &sle; (&slea;)
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &suma; (&sumaa;) Server
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &suma; (&sumaa;) Proxy
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &slehpc; (&slehpca;)
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &sles4sap; (&sles4sapa;)
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &opensuse; Leap
+     </para>
+    </listitem>
+   </itemizedlist>
+   <note role="compact">
     <para>
-     A step.
+     To constantly adjust and improve &suse;'s offerings, availablilty of
+     products and versions is subject to change and may differ between cloud
+     frameworks.
     </para>
-   </step>
-   <step>
-    <para>
-     A second step.
-    </para>
-   </step>
-   <step>
-    <para>
-     A third step.
-    </para>
-   </step>
-  </procedure>
-  <warning>
-   <title>A warning</title>
+   </note>
+  </sect2>
+  
+  <sect2>
+   <title>Plans</title>
    <para>
-    A paragraph of text.
+    &suse;&mdash;together with the cloud service providers&mdash;offers
+    different plans to cater all use cases.
    </para>
-  </warning>
+   
+  </sect2>
+  
  </sect1>
+ 
+ <sect1>
+  <title>&pint;</title>
+  <para>
+   The &pint; (&pinta;) provides information about the images and servers &suse;
+   publishes in supported public cloud frameworks. &pinta; is available at
+   <link xlink:href="&pinturl;"/>.
+  </para>
+  
+  <figure xml:id="fig-pint-images">
+   <title>Overview of &suse; &pint; (&pinta;)</title>
+   <mediaobject>
+    <imageobject role="html">
+     <imagedata fileref="pint-images.png"/>
+    </imageobject>
+    <imageobject role="fo">
+     <imagedata fileref="pint-images.png" width="75%"/>
+    </imageobject>
+    <textobject role="description">
+     <phrase>Screenshot of &suse; &pint; (&pinta;)</phrase>
+    </textobject>
+   </mediaobject>
+  </figure>
+  <para>
+   Use the drop-down boxes to view images, servers, or both and filter by cloud
+   framework, status, and region. You can also search for strings and adjust the
+   number of results shown per page.
+  </para>
+  
+  <sect2 xml:id="sec-pint-images">
+   <title>Images</title>
+   <para>
+    The following columns are shown in the <guimenu>Images</guimenu> view.
+    Please note columns depend on the the cloud frameworks.
+   </para>
+
+   <variablelist xml:id="var-pint">
+    <title>Columns in the <literal>Images</literal> view</title>
+    <varlistentry>
+     <term>Name</term>
+     <listitem>
+     <!-- FIXME: Explain the naming scheme with information from
+      https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme
+     -->
+      <para>
+       Name of the image
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>State</term>
+     <listitem>
+      <para>
+       Status of the image. Can be one of <literal>active</literal>,
+       <literal>inactive</literal>, <literal>deprecated</literal>, or
+       <literal>deleted</literal>. For more information, refer to <xref
+        linkend="sec-images-lifecycle"/>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Replacement</term>
+     <listitem>
+      <para>
+       Name of the image that replaces another.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Replacement ID</term>
+     <listitem>
+      <para>
+       ID of the image that replaces another. Only shown for &amazon;, &oracle;,
+       and &alibaba;; images on &google; and &microsoft; do not have IDs.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Published Date</term>
+     <listitem>
+      <para>
+       Image publication date
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Deprecated Date</term>
+     <listitem>
+      <para>
+       Date the image was deprecated by a newer one. Displayed in the format
+       <literal>YYYYMMDD</literal> (ISO 8601). Only shown for deprecated or
+       deleted images.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Region</term>
+     <listitem>
+      <para>
+       Region of the image.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Enviroment</term>
+     <listitem>
+      <para>
+       Enviroment of the image. Only shown for &microsoft;.</para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>ID</term>
+     <listitem>
+      <para>
+       Unique identifier of the image. While the <literal>Name</literal> of an
+       image is the same across different regions, the <guimenu>ID</guimenu> is
+       unique.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>URN</term>
+     <listitem>
+      <para>
+       Uniform Resource Name of an image. While the <guimenu>Name</guimenu> of
+       an image is different across the environments, the <literal>URN</literal>
+       is the same. Only shown for &microsoft;.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Deleted on</term>
+     <listitem>
+      <para>
+       Date the image was deleted in the format <literal>YYYYMMDD</literal>
+       (ISO 8601). Only shown for deleted images.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Changelog</term>
+     <listitem>
+      <para>
+       Link to a detailed changelog that lists image configuration changes, CVE
+       fixes, package version changes, and package changelogs.
+       Image changelogs are only available for images that replace others. For
+       initial images of new product versions, refer to the product's release
+       notes at <link xlink:href="https://www.suse.com/releasenotes/"></link>.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+  </sect2>
+  
+  <sect2 xml:id="sec-pint-servers">
+   <title>Servers</title>
+   <para>
+    The following columns are displayed in the <literal>Servers</literal> view:
+   </para>
+   <variablelist>
+    <title>Columns in the <literal>Servers</literal> view</title>
+    <varlistentry>
+     <term>Name</term>
+     <listitem>
+      <para>
+       Host name of the server. Region servers do not have host names.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>IP</term>
+     <listitem>
+      <para>
+       IP address of the server.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Region</term>
+     <listitem>
+      <para>
+       Region of the server. For optimal performance &suse; provides servers in
+       all regions of a cloud framework.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Type</term>
+     <listitem>
+      <para>
+       One of <literal>regionserver</literal> or <literal>smt</literal>. Every
+       Region has one <literal>regionserver</literal> and several
+       <literal>smt</literal> servers.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+  </sect2>
+ </sect1>
+ 
  <sect1 xml:id="sec-images-lifecycle">
   <title>Lifecycle of images</title>
   <para>
-   A paragraph of text.
+   In the event of severe security vulnerabilities disclosed through the Common
+   Vulnerabilities and Exposures process (CVE), the &suse; public cloud
+   development team will refresh on-demand base images to ensure that new
+   instances launch in a patched state. This is in addition to the updates
+   available through the &suse; maintained update infrastructure.
+  </para>
+  <para>
+   Information about the effects of CVEs can always be found in the <link
+    xlink:href="https://www.suse.com/security/cve/">&suse; CVE database</link>.
   </para>
   <variablelist>
    <varlistentry>
-    <term>A definition</term>
+    <term>Active</term>
     <listitem>
      <para>
-      A paragraph of text.
+      Active images are on a 3 months rolling refresh cycle.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Another definition</term>
+    <term>Inactive</term>
     <listitem>
      <para>
-      Another paragraph of text.
+      Inactive images will only get refreshed for critical security updates.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>deprecated</term>
+    <listitem>
+     <para>
+      Deprecated images do not get refreshed. Images in the deprecated state
+      have entered the last six months of their life-cycle and are subject to
+      removal at the end of the six months period.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Deleted</term>
+    <listitem>
+     <para>
+      Deleted images are no longer available for new instances.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
-<screen>&prompt.user;a-long-command --with-options</screen>
+ <para>
+  It is recommended to only use images to launch instances for new deployments.
+ </para>
  </sect1>
 </chapter>

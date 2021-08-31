@@ -87,9 +87,9 @@
    </para>
    
   </sect2>
-  
+
  </sect1>
- 
+
  <sect1>
   <title>&pint;</title>
   <para>
@@ -108,20 +108,20 @@
      <imagedata fileref="pint-images.png" width="75%"/>
     </imageobject>
     <textobject role="description">
-     <phrase>Screenshot of &suse; &pint; (&pinta;)</phrase>
+     <phrase>Screenshot of the &suse; &pint; (&pinta;)</phrase>
     </textobject>
    </mediaobject>
   </figure>
   <para>
    Use the drop-down boxes to view images, servers, or both and filter by cloud
-   framework, status, and region. You can also search for strings and adjust the
+   framework, state, and region. You can also search for strings and adjust the
    number of results shown per page.
   </para>
   
   <sect2 xml:id="sec-pint-images">
    <title>Images</title>
    <para>
-    The following columns are shown in the <guimenu>Images</guimenu> view.
+    The following columns are shown in the <literal>Images</literal> view.
     Please note columns depend on the the cloud frameworks.
    </para>
 
@@ -130,11 +130,9 @@
     <varlistentry>
      <term>Name</term>
      <listitem>
-     <!-- FIXME: Explain the naming scheme with information from
-      https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme
-     -->
       <para>
-       Name of the image
+       Name of the image. For more information about the image naming scheme,
+       refer to <!-- FIXME cwickert 20210831: TBD <xref linkend="sec-image-naming"/> -->. 
       </para>
      </listitem>
     </varlistentry>
@@ -142,7 +140,7 @@
      <term>State</term>
      <listitem>
       <para>
-       Status of the image. Can be one of <literal>active</literal>,
+       State of the image. Can be one of <literal>active</literal>,
        <literal>inactive</literal>, <literal>deprecated</literal>, or
        <literal>deleted</literal>. For more information, refer to <xref
         linkend="sec-images-lifecycle"/>.

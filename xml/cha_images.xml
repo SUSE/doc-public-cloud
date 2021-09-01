@@ -85,6 +85,186 @@
     &suse;&mdash;together with the cloud service providers&mdash;offers
     different plans to cater all use cases.
    </para>
+  </sect2>
+
+  <sect2 xml:id="sec-image-naming">
+   <title>Naming scheme</title>
+   <para> Names for &suse;'s public cloud images consist of multiple parts
+    that contain information about the product, it's version, intended cloud
+    framework, and more. The general naming scheme for &suse;'s public
+    cloud images is as follows: </para>
+   <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
+   <!-- <screen><replaceable>PRODUCT</replaceable>-<replaceable>FLAVOR</replaceable>-v<replaceable>VERSION</replaceable>-<replaceable>VIRTUALIZATION</replaceable>-<replaceable>STORAGE</replaceable>-<replaceable>ARCHITECTURE</replaceable>-<replaceable>GEN</replaceable></screen> -->
+   <para>
+    <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
+   </para>
+   <variablelist>
+    <title>SUSE public cloud images naming scheme</title>
+    <varlistentry>
+     <term><literal>PRODUCT</literal></term>
+     <listitem>
+      <para>
+       Abbreviated name of the product in lower case letters, e.g.
+       <literal>suse-sles-15-sp3</literal> or
+       <literal>suse-manager-4-1-proxy</literal>. This part may also be
+       "search" optimized per cloud framework. For example the prefix
+       <literal>suse-</literal> helps when searching for &suse; in the
+       general catalog in &aws;.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>FLAVOR</literal></term>
+     <listitem>
+      <para>
+       <!-- FIXME cwickert 20210830: is rightscale still a thing?! -->
+       e.g. <literal>sap</literal> or
+       <literal>rightscale</literal>. If it is the default image of a product,
+       this part will be omitted.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>VERSION</literal></term>
+     <listitem>
+      <para>
+       Upload date of the image in the format <literal>vYYYYMMDD</literal>
+       (ISO 8601).
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>VIRTUALIZATION</literal> (&awsa;-only)</term>
+     <listitem>
+      <para>
+       The virtualization type is either <literal>pv</literal>
+       (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
+       machine).
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>STORAGE</literal> (&awsa;-only)</term>
+     <listitem>
+      <para>
+       The storage type is either <literal>ssd</literal> for SSD-backed
+       or <literal>mag</literal> for magnetic-backed images.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>ARCHITECTURE</literal> (&awsa;-only)</term>
+     <listitem>
+      <para>
+       Either <literal>i386</literal>,
+       <literal>x86_64</literal>, or <literal>arm64</literal>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><literal>GENERATION</literal> (&azure;-only)</term>
+     <listitem>
+      <para>
+       appended as "gen2" for 2nd Generation VMs.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+
+<!-- 
+   <screen><replaceable>PRODUCT</replaceable><co xml:id="co-img-prod"/>-<replaceable>FLAVOR</replaceable><co xml:id="co-img-flav"/>-v<replaceable>VERSION</replaceable><co xml:id="co-img-ver"/>-<replaceable>VIRTUALIZATION</replaceable><co xml:id="co-img-virt"/>-<replaceable>STORAGE</replaceable><co xml:id="co-img-stor"/>-<replaceable>ARCHITECTURE</replaceable><co xml:id="co-img-arch"/>-<replaceable>GEN</replaceable><co xml:id="co-img-gen"/></screen>
+   <calloutlist>
+    <callout arearefs="co-img-prod">
+     <para>
+      <literal>PRODUCT</literal> is the abbreviated name of the product in
+      lower case letters, e.g. <literal>suse-sles-15-sp3</literal> or
+       <literal>suse-manager-4-1-proxy</literal>. This part may also be
+      "search" optimized per cloud framework. For example the prefix
+       <literal>suse-</literal> helps when searching for &suse; in the
+      general catalog in &aws;.
+     </para>
+    </callout>
+    <callout arearefs="co-img-flav"> -->
+     <!-- FIXME cwickert 20210830: is rightscale still a thing?! -->
+     <!-- <para>
+      <literal>FLAVOR</literal> is e.g. <literal>sap</literal> or
+      <literal>rightscale</literal>. If it is the default image of a product,
+      this part will be omitted.
+     </para>
+    </callout>
+    <callout arearefs="co-img-ver">
+     <para>
+      <literal>VERSION</literal> is the upload date of the image in the format
+      <literal>vYYYYMMDD</literal> (ISO 8601).
+     </para>
+    </callout>
+    <callout arearefs="co-img-virt">
+     <para>
+      <literal>VIRTUALIZATION</literal> is either <literal>pv</literal>
+      (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
+      machine) (&awsa;-only).
+     </para>
+    </callout>
+    <callout arearefs="co-img-stor">
+     <para>
+      <literal>STORAGE</literal> is either <literal>ssd</literal> for SSD-backed
+      or <literal>mag</literal> for magnetic-backed images (&awsa;-only).
+     </para>
+    </callout>
+    <callout arearefs="co-img-arch">
+     <para>
+      <literal>ARCHITECTURE</literal>. Either <literal>i386</literal>,
+      <literal>x86_64</literal>, or <literal>arm64</literal> (&awsa;-only).
+     </para>
+    </callout>
+    <callout arearefs="co-img-gen">
+     <para>
+      <literal>GENERATION</literal> is appended as "gen2" for 2nd Generation VMs
+      (&azure;-only).
+     </para>
+    </callout>
+    </calloutlist> -->
+
+<!-- 
+   <para>
+    As the parts are differnt across cloud frameworks, the actual names that
+    result from the naming scheme differ, too.
+   </para>
+   <example>
+    <title>Name of an &aws; image</title>
+    <screen></screen>
+   </example>
+   <para>
+    
+   </para>
+   <example>
+    <title>Name of an &azure; image</title>
+    <screen></screen>
+   </example>
+   <para>
+    
+   </para>
+   <example>
+    <title>Name of an &gcp; image</title>
+    <screen></screen>
+   </example>
+   <para>
+    
+   </para>
+   <example>
+    <title>Name of an &oracle; image</title>
+    <screen></screen>
+   </example>
+   <para>
+    
+   </para>
+   <example>
+    <title>Name of an &alibaba; image</title>
+    <screen></screen>
+   </example>
+   <para>
+    
+   </para> -->
    
   </sect2>
 

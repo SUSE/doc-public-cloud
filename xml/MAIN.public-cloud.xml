@@ -31,8 +31,8 @@
    <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
     <dm:bugtracker>
      <dm:url>https://bugzilla.suse.com/enter_bug.cgi</dm:url>
-     <dm:component>Documentation</dm:component>
-     <dm:product>Public Cloud</dm:product>
+     <dm:component>Public Cloud</dm:component>
+     <dm:product>Documentation</dm:product>
      <dm:assignee>cwickert@suse.com</dm:assignee>
     </dm:bugtracker>
    </dm:docmanager>

@@ -485,7 +485,7 @@
     <term>Active</term>
     <listitem>
      <para>
-      Active images are on a 3 months rolling refresh cycle.
+      Active images are on a three month rolling refresh cycle.
      </para>
     </listitem>
    </varlistentry>
@@ -498,7 +498,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>deprecated</term>
+    <term>Deprecated</term>
     <listitem>
      <para>
       Deprecated images do not get refreshed. Images in the deprecated state
@@ -517,7 +517,8 @@
    </varlistentry>
   </variablelist>
  <para>
-  It is recommended to only use images to launch instances for new deployments.
+  It is recommended to only use active images to launch instances for new
+  deployments.
  </para>
  </sect1>
 </chapter>

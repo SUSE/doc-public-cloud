@@ -312,7 +312,7 @@
      <listitem>
       <para>
        Name of the image. For more information about the image naming scheme,
-       refer to <!-- FIXME cwickert 20210831: TBD <xref linkend="sec-image-naming"/> -->. 
+       refer to <xref linkend="sec-image-naming"/>.
       </para>
      </listitem>
     </varlistentry>

@@ -479,14 +479,16 @@
     <para>
      Images are refreshed every three months. The new images replace the old
      images in the exact state they were in. Replaced images are immediately
-     moving to the <literal>deleted</literal> state.
+     moving to the <literal>deprecated</literal> state.
     </para>
    </listitem>
    <listitem>
     <para>
      If a security vulnerability occurs during the three months that needs to be
-     addressed, all affected images are updated immediately and the three month
-     timer restarts with this forced replacement.
+     addressed, affected images in <literal>active</literal> and
+     <literal>inactive</literal> states are updated as soon as possible once the
+     fix for the affected code is available. The three month timer restarts with
+     this forced replacement.
     </para>
     <para>
      &suse; is committed to address all security vulnerabilities disclosed
@@ -498,10 +500,12 @@
     </para>
     <!-- alternative version
     <para>
-     In the event of a severe security vulnerability disclosed through the 
+     In the event of a severe security vulnerability disclosed through the
      <literal>Common Vulnerabilities and Exposures</literal> (CVE) process, the
-     &suse; public cloud development team will refresh all affected images to
-     ensure that new instances launch in a patched state.
+     &suse; public cloud development team will refresh affected images in
+     <literal>active</literal> and <literal>inactive</literal> states to ensure
+     that new instances launch in a patched state. The three month timer
+     restarts with this forced replacement.
     </para>
     <para>
      In this context, severe security vulnerabilities are defined as CVEs with a
@@ -533,9 +537,9 @@
     <term>Inactive</term>
     <listitem>
      <para>
-      Inactive images are supported unter the rules of LTSS and will only get
-      refreshed for critical security updates. The duration term is defined by
-      the product. For more information, refer to <link
+      Inactive images are supported following the rules of LTSS or ESPOS and
+      will only get refreshed for critical security updates. The duration term
+      is defined by the product. For more information, refer to <link
        xlink:href="https://www.suse.com/de-de/support/policy-products/#cloud"/>
      </para>
     </listitem>
@@ -544,9 +548,13 @@
     <term>Deprecated</term>
     <listitem>
      <para>
-      Deprecated images are no longer supported as they have entered the last
-      six months of their life cycle. They do not get refreshed and are subject
-      to deletion at the end of the six month period.
+      Deprecated images may no longer be supported. The status of support
+      depends on the support status of the product in the image. Deprecated
+      images are not made available in regions added after an image has been set
+      to <literal>deprecated</literal> and images do no longer get refreshed. At
+      the end of the six month deprecation period, images are subject to
+      deletion. It is strongly discouraged to use deprecated images to create
+      new instances.
      </para>
     </listitem>
    </varlistentry>
@@ -554,16 +562,16 @@
     <term>Deleted</term>
     <listitem>
      <para>
-      Deleted images are no longer supported or available for new instances.
+      Deleted images are no longer supported or available for instance creation.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
   <important>
-   <title>Only use active images for new instances</title>
+   <title>Only use <literal>active</literal> images for new instances</title>
    <para>
-    It is recommended to only use <literal>active</literal> images to launch
-    instances for new deployments.
+    It is strongly recommended to only use <literal>active</literal> images to
+    launch instances for new deployments.
    </para>
   </important>
  </sect1>

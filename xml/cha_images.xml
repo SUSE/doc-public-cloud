@@ -478,8 +478,8 @@
    <listitem>
     <para>
      Images are refreshed every three months. The new images replace the old
-     images in the exact state they were in. Replaced images are immediately
-     moving to the <literal>deprecated</literal> state.
+     images in the exact state they were in. Replaced images are moved to the
+     <literal>deprecated</literal> state.
     </para>
    </listitem>
    <listitem>

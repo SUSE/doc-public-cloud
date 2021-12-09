@@ -91,7 +91,7 @@
   <sect2 xml:id="sec-image-naming">
    <title>Naming scheme</title>
    <para> Names for &suse;'s public cloud images consist of multiple parts
-   that contain information about the product, it's version, a time stamp
+   that contain information about the product, its version, a time stamp
    indicating the release date of the image, and more. The general naming
    scheme for &suse;'s public cloud images is as follows: </para>
    <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
@@ -126,7 +126,7 @@
        this part will be omitted. Multiple <literal>FLAVOR</literal> attributes
        may be combined in an image name. For example
        <literal>sles-15-sp3-chost-byos</literal>
-       Is an image build based on &sles; 15 SP3 build as a container host
+       is an image build based on &sles; 15 SP3 build as a container host
        using a <literal>BYOS</literal> (Bring Your Own Subscription) billing
        model. When <literal>byos</literal> is not part of an image name the
        image is set up for <literal>PAYG</literal> (Pay As You Go) billing.
@@ -171,7 +171,7 @@
      <listitem>
       <para>
         Either <literal>x86_64</literal> or <literal>arm64</literal>.
-        &suse; no longer supports or publishes 32 bit <literal>x86</literal>
+        &suse; no longer supports or publishes 32 bit <literal>&x86;</literal>
         images. Images with the <literal>i386</literal> identifier are visible
         in &pint; data.
       </para>
@@ -294,7 +294,7 @@
    infrastructure. &pinta; is available at
    <link xlink:href="&pinturl;"/> and provided as an API and commandline
    tool with the <package>python3-susepubliccloudinfo</package> package
-   from the <repository>Public Cloud Module</repository> repository.
+   from the <systemitem>Public Cloud Module</systemitem> repository.
   </para>
   
   <figure xml:id="fig-pint-images">
@@ -478,7 +478,7 @@
      <listitem>
       <para>
         One of <literal>regionserver</literal> or <literal>smt</literal>.
-        In every framework where &suse; operates an update infrastrutcure the
+        In every framework where &suse; operates an update infrastructure, the
         <literal>regionserver</literal> systems are randomly distributed across
         regions and the <literal>smt</literal> servers are available in most
         regions. Every region has assigned <literal>smt</literal> servers.
@@ -506,7 +506,7 @@
    </listitem>
    <listitem>
     <para>
-      If a critical security vulnerability occurs images in
+      If a critical security vulnerability occurs, images in
       <literal>active</literal> and <literal>inactive</literal> states are
       updated as soon as possible once the fix for the affected code is
       available. For images in <literal>active</literal> state the three month

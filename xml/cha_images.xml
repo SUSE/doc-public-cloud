@@ -91,7 +91,7 @@
   <sect2 xml:id="sec-image-naming">
    <title>Naming scheme</title>
    <para> Names for &suse;'s public cloud images consist of multiple parts
-   that contain information about the product, it's version, a time stamp
+   that contain information about the product, its version, a time stamp
    indicating the release date of the image, and more. The general naming
    scheme for &suse;'s public cloud images is as follows: </para>
    <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
@@ -478,7 +478,7 @@
      <listitem>
       <para>
         One of <literal>regionserver</literal> or <literal>smt</literal>.
-        In every framework where &suse; operates an update infrastrutcure the
+        In every framework where &suse; operates an update infrastructure, the
         <literal>regionserver</literal> systems are randomly distributed across
         regions and the <literal>smt</literal> servers are available in most
         regions. Every region has assigned <literal>smt</literal> servers.
@@ -506,7 +506,7 @@
    </listitem>
    <listitem>
     <para>
-      If a critical security vulnerability occurs images in
+      If a critical security vulnerability occurs, images in
       <literal>active</literal> and <literal>inactive</literal> states are
       updated as soon as possible once the fix for the affected code is
       available. For images in <literal>active</literal> state the three month

@@ -19,8 +19,9 @@
  <info>
   <abstract>
    <para>
-    &suse; offers a variety of images of different products, for different use
-    cases, and for all major cloud providers. Learn how to find the right image.
+    &suse; offers a variety of different product images for different use
+    cases in partner cloud provider frameworks. Learn how to find the image
+    that meets your use case.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -31,8 +32,8 @@
  <sect1 xml:id="sec-available-images">
   <title>Available images</title>
   <para>
-   &suse; offers a variety of images of different products, for different use
-   cases, and for all major cloud providers.
+   &suse; offers a variety of different product images for different use
+   cases in partner cloud provider frameworks.
   </para>
   <sect2>
    <title>Products</title>
@@ -83,23 +84,28 @@
    <title>Plans</title>
    <para>
     &suse;&mdash;together with the cloud service providers&mdash;offers
-    different plans to cater all use cases.
+    different plans to cater to a variety of use cases.
    </para>
   </sect2>
 
   <sect2 xml:id="sec-image-naming">
    <title>Naming scheme</title>
-   <para> Names for &suse;'s public cloud images consist of multiple parts
-    that contain information about the product, it's version, intended cloud
-    framework, and more. The general naming scheme for &suse;'s public
-    cloud images is as follows: </para>
+   <para>
+    Names for &suse;'s public cloud images consist of multiple parts
+    that contain information about the product, its version, a time stamp
+    indicating the release date of the image, and more. The general naming
+    scheme for &suse;'s public cloud images is as follows:
+   </para>
    <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
    <!-- <screen><replaceable>PRODUCT</replaceable>-<replaceable>FLAVOR</replaceable>-v<replaceable>VERSION</replaceable>-<replaceable>VIRTUALIZATION</replaceable>-<replaceable>STORAGE</replaceable>-<replaceable>ARCHITECTURE</replaceable>-<replaceable>GEN</replaceable></screen> -->
    <para>
     <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
    </para>
+   <para>
+    Not all components of this naming scheme are used in all frameworks.
+   </para>
    <variablelist>
-    <title>SUSE public cloud images naming scheme</title>
+    <title>SUSE public cloud image naming scheme</title>
     <varlistentry>
      <term><literal>PRODUCT</literal></term>
      <listitem>
@@ -117,10 +123,14 @@
      <term><literal>FLAVOR</literal></term>
      <listitem>
       <para>
-       <!-- FIXME cwickert 20210830: is rightscale still a thing?! -->
-       e.g. <literal>sap</literal> or
-       <literal>rightscale</literal>. If it is the default image of a product,
-       this part will be omitted.
+       e.g. <literal>chost</literal> or <literal>byos</literal>. If it is the
+       default image of a product, this part will be omitted. Multiple
+       <literal>FLAVOR</literal> attributes may be combined in an image name.
+       For example <literal>sles-15-sp3-chost-byos</literal> is an image build
+       based on &sles; 15 SP3 build as a container host using a
+       <literal>BYOS</literal> (Bring Your Own Subscription) billing model. When
+       <literal>byos</literal> is not part of an image name the image is set up
+       for <literal>PAYG</literal> (Pay As You Go) billing.
       </para>
      </listitem>
     </varlistentry>
@@ -137,9 +147,11 @@
      <term><literal>VIRTUALIZATION</literal> (&awsa;-only)</term>
      <listitem>
       <para>
-       The virtualization type is either <literal>pv</literal>
+       &suse; no longer supports or publishes para-virtualized images. The
+       virtualization type was encoded as <literal>pv</literal>
        (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
-       machine).
+       machine). The <literal>hvm</literal> part of the image name has been
+       retained in an effort to not break backward compatibility.
       </para>
      </listitem>
     </varlistentry>
@@ -147,17 +159,22 @@
      <term><literal>STORAGE</literal> (&awsa;-only)</term>
      <listitem>
       <para>
-       The storage type is either <literal>ssd</literal> for SSD-backed
-       or <literal>mag</literal> for magnetic-backed images.
+       &suse; no longer publishes images that are based on hard disk
+       (magnetic) backed storage. This used to be encoded as
+       <literal>mag</literal>. All published images are backed by SSD.
+       The <literal>ssd</literal>  part of the image name has been
+       retained in an effort to not break backward compatibility.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>ARCHITECTURE</literal> (&awsa;-only)</term>
+     <term><literal>ARCHITECTURE</literal></term>
      <listitem>
       <para>
-       Either <literal>i386</literal>,
-       <literal>x86_64</literal>, or <literal>arm64</literal>.
+       Either <literal>x86_64</literal> or <literal>arm64</literal>.
+       &suse; no longer supports or publishes 32 bit <literal>x86</literal>
+       images. Images with the <literal>i386</literal> identifier are visible
+       in &pint; data.
       </para>
      </listitem>
     </varlistentry>
@@ -273,9 +290,11 @@
  <sect1>
   <title>&pint;</title>
   <para>
-   The &pint; (&pinta;) provides information about the images and servers &suse;
-   publishes in supported public cloud frameworks. &pinta; is available at
-   <link xlink:href="&pinturl;"/>.
+   The &pint; (&pinta;) provides information about the images &suse; publishes
+   and servers that are part of the &suse; operated update infrastructure.
+   &pinta; is available at <link xlink:href="&pinturl;"/> and provided as an API
+   and commandline tool with the <package>python3-susepubliccloudinfo</package>
+   package from the <systemitem>Public Cloud Module</systemitem> repository.
   </para>
   
   <figure xml:id="fig-pint-images">
@@ -433,6 +452,7 @@
      <listitem>
       <para>
        Host name of the server. Region servers do not have host names.
+       Host names are not DNS resolvable.
       </para>
      </listitem>
     </varlistentry>
@@ -449,7 +469,7 @@
      <listitem>
       <para>
        Region of the server. For optimal performance &suse; provides servers in
-       all regions of a cloud framework.
+       most regions of a cloud framework.
       </para>
      </listitem>
     </varlistentry>
@@ -457,9 +477,11 @@
      <term>Type</term>
      <listitem>
       <para>
-       One of <literal>regionserver</literal> or <literal>smt</literal>. Every
-       Region has one <literal>regionserver</literal> and several
-       <literal>smt</literal> servers.
+       One of <literal>regionserver</literal> or <literal>smt</literal>.
+       In every framework where &suse; operates an update infrastructure, the
+       <literal>regionserver</literal> systems are randomly distributed across
+       regions and the <literal>smt</literal> servers are available in most
+       regions. Every region has assigned <literal>smt</literal> servers.
       </para>
      </listitem>
     </varlistentry>
@@ -477,18 +499,18 @@
   <itemizedlist>
    <listitem>
     <para>
-     Images are refreshed every three months. The new images replace the old
-     images in the exact state they were in. Replaced images are moved to the
-     <literal>deprecated</literal> state.
+     Images in an <literal>active</literal> state are refreshed every three
+     months. Replaced images are moved to the <literal>deprecated</literal>
+     state.
     </para>
    </listitem>
    <listitem>
     <para>
-     If a security vulnerability occurs during the three months that needs to be
-     addressed, affected images in <literal>active</literal> and
-     <literal>inactive</literal> states are updated as soon as possible once the
-     fix for the affected code is available. The three month timer restarts with
-     this forced replacement.
+     If a critical security vulnerability occurs, images in
+     <literal>active</literal> and <literal>inactive</literal> states are
+     updated as soon as possible once the fix for the affected code is
+     available. For images in <literal>active</literal> state the three month
+     timer restarts with this forced replacement.
     </para>
     <para>
      &suse; is committed to address all security vulnerabilities disclosed

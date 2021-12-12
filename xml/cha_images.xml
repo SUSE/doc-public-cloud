@@ -382,6 +382,14 @@
      </listitem>
     </varlistentry>
     <varlistentry>
+     <term>Project (&gcp;-only)</term>
+     <listitem>
+      <para>
+       Project of the image. Projects are used to organize &gcp; resources
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
      <term>Region</term>
      <listitem>
       <para>

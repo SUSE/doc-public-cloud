@@ -506,7 +506,8 @@
      <term>Published Date</term>
      <listitem>
       <para>
-       Image publication date
+       Publication date of the image. Displayed in the format
+       <literal>YYYYMMDD</literal> (ISO 8601).
       </para>
      </listitem>
     </varlistentry>
@@ -524,7 +525,8 @@
      <term>Project (&gcp;-only)</term>
      <listitem>
       <para>
-       Project of the image. Projects are used to organize &gcp; resources
+       Project of the image. Projects are used to organize &gcp; resources. Only
+       shown for &gcp;
       </para>
      </listitem>
     </varlistentry>
@@ -537,10 +539,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Enviroment</term>
+     <term>Enviroment (&azure;-only)</term>
      <listitem>
       <para>
-       Enviroment of the image. Only shown for &microsoft;.</para>
+       Enviroment of the image. Only shown for &azure;.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
@@ -554,12 +557,12 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>URN</term>
+     <term>URN (&azure;-only)</term>
      <listitem>
       <para>
        Uniform Resource Name of an image. While the <guimenu>Name</guimenu> of
        an image is different across the environments, the <literal>URN</literal>
-       is the same. Only shown for &microsoft;.
+       is the same. Only shown for &azure;.
       </para>
      </listitem>
     </varlistentry>
@@ -579,8 +582,8 @@
        Link to a detailed changelog that lists image configuration changes, CVE
        fixes, package version changes, and package changelogs.
        Image changelogs are only available for images that replace others. For
-       initial images of new product versions, refer to the product's release
-       notes at <link xlink:href="https://www.suse.com/releasenotes/"></link>.
+       initial images of new product versions, refer to the product's <link
+       xlink:href="https://www.suse.com/releasenotes/">release notes</link>.
       </para>
      </listitem>
     </varlistentry>
@@ -628,7 +631,7 @@
        In every framework where &suse; operates an update infrastructure, the
        <literal>regionserver</literal> systems are randomly distributed across
        regions and the <literal>smt</literal> servers are available in most
-       regions. Every region has assigned <literal>smt</literal> servers.
+       regions. Every region has <literal>smt</literal> servers assigned.
       </para>
      </listitem>
     </varlistentry>

@@ -84,8 +84,147 @@
    <title>Plans</title>
    <para>
     &suse;&mdash;together with the cloud service providers&mdash;offers
-    different plans to cater to a variety of use cases.
+    different plans to cater to a variety of use cases. While details differ
+    depending on the cloud framework, usually there are two types of
+    subscriptions.
    </para>
+   <variablelist>
+    <varlistentry>
+     <term>Pay as you go (PAYG)</term>
+     <listitem>
+      <para>
+       <literal>Pay as you go</literal> (PAYG) are used to create instances
+       on demand. When an instance is first booted, it automatically
+       registers with a local RMT server to receive updates. Once the system
+       finishes booting, it is ready to use.
+      </para>
+      <para>
+       This makes PAYG instances great for scaling production workloads as well
+       as testing. Create an instance when you need it and delete it when you
+       are done. You only pay for the resources you use. Upcharges over the
+       basic cloud prices may apply, depending on the framework.
+      </para>
+      <para>
+       PAYG images are offered with or without support. Support is provided
+       through your cloud provider, which is supported by &suse;.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Bring your own OS (BYOS)</term>
+     <listitem>
+      <para>
+       <literal>Bring your own OS</literal> (BYOS) images are useful if you
+       already have a support contract with &suse; and want to move your
+       workloads to the public cloud. An instance launched from a BYOS image is
+       equivalent to a physical machine that just received a &sles; installation
+       from the &slsa; installation image. After creation, register the instance
+       with the &scc; or connect it to your running &rmt; or &suma;
+       infrastructure using the entitlements you already have along with any
+       update infrastructure you may already manage.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+   <para>
+    In summary, if you already have a direct relationship with &suse; you
+    generally want to start out with BYOS. You can still use PAYG for on-demand
+    excess capacity.
+   </para>
+
+   <informaltable>
+    <tgroup cols="2">
+     <colspec colnum="1" colname="payg" align="center"/>
+     <colspec colnum="2" colname="byos" align="center"/>
+     <thead>
+      <row>
+       <entry>
+        <para>
+         Pay as you go (PAYG)
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Bring your own OS (BYOS)
+        </para>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>
+        <para>
+         Instances are ready to use
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Instances need to be registered first
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         No support or supported by cloud provider
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Fully supported directly by &suse;
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Customer of the cloud provider
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Customer of the cloud provider and &suse;
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Pay per use
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Pay per instance and license
+        </para>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+
+   <important>
+    <title>Switching plans is not possible</title>
+    <para>
+     Switching from PAYG to BYOS or vice-versa is only possible on &azure;
+     through the <literal>Hybrid Benefit</literal> program. For all other cloud
+     providers, you remain on the plan you initially selected for as long as the
+     instance is running. The only way to switch plans is to start with the
+     other image and rebuild your system.
+    </para>
+    <para>
+     For more information on the &azure; Hybrid Benefit program, refer to FIXME.
+     <!-- azure.microsoft.com/pricing/hybrid-benefit -->
+    </para>
+   </important>
+   <important>
+    <title>Do not register PAYG images with the &scc;</title>
+    <para>
+     Registering PAYG images with the &scc; or your own &rmt; server will create
+     conflicts that are not easily solved. Only register BYOS images. PAYG
+     instances are automatically registered against the correct &rmt; server.
+    </para>
+   </important>
   </sect2>
 
   <sect2 xml:id="sec-image-naming">

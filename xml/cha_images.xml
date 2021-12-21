@@ -80,7 +80,7 @@
    </note>
   </sect2>
   
-  <sect2>
+  <sect2 xml:id="sec-image-plans">
    <title>Plans</title>
    <para>
     &suse;&mdash;together with the cloud service providers&mdash;offers

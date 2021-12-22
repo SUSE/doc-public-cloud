@@ -40,15 +40,17 @@
 
  <xi:include href="preface_public_cloud.xml"/>
 
- <part xml:id="part-getting-started">
-  <title>Getting Started</title>
+ <!-- Comment out parts for now, we don't need them (yet) -->
+ <!-- <part xml:id="part-getting-started">
+  <title>Getting Started</title> -->
   <xi:include href="cha_images.xml"/>
- </part>
+ <!-- </part> -->
 
- <part xml:id="part-providers">
-  <title>Public Cloud Providers</title>
+ <!-- Comment out parts for now, we don't need them (yet) -->
+ <!-- <part xml:id="part-providers">
+  <title>Public Cloud Providers</title> -->
   <xi:include href="cha_providers.xml"/>
- </part>
+ <!-- </part> -->
 
  <xi:include href="example_doc_updates.xml"/>
  <xi:include href="common_legal.xml"/>

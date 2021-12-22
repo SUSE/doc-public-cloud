@@ -29,6 +29,8 @@
  <para>
   This guide contains the following:
  </para>
+ <!-- Comment out parts for now, we don't need them (yet) -->
+ <!--
  <variablelist>
   <varlistentry>
    <term><xref linkend="part-getting-started"/></term>
@@ -44,6 +46,26 @@
     <para>
      Read provider-specific instructions for cloud frameworks such as &aws;,
      &azure; &gcp;, &oc;, and &ac;.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ -->
+ <!-- same but with chapters -->
+ <variablelist>
+  <varlistentry>
+   <term><xref linkend="cha-images"/></term>
+   <listitem>
+    <para>
+     &abstract_cha_images;
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term><xref linkend="cha-providers"/></term>
+   <listitem>
+    <para>
+     &abstract_cha_provders;
     </para>
    </listitem>
   </varlistentry>

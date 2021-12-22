@@ -19,9 +19,7 @@
  <info>
   <abstract>
    <para>
-    &suse; offers a variety of different product images for different use
-    cases in partner cloud provider frameworks. Learn how to find the image
-    that meets your use case.
+    &abstract_cha_images;
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -30,11 +28,7 @@
   </dm:docmanager>
  </info>
  <sect1 xml:id="sec-image-products">
-  <title>Produducts</title>
-  <para>
-   &suse; offers a variety of different product images for different use
-   cases in partner cloud provider frameworks.
-  </para>
+  <title>Products</title>
   <para>
    The following &suse; products are available for public cloud.
   </para>

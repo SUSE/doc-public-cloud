@@ -19,7 +19,7 @@
  <info>
   <abstract>
    <para>
-    This chapter contains provider specific instructions.
+    &abstract_cha_provders;
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">

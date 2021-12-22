@@ -22,6 +22,15 @@
 <!-- COPYRIGHT HOLDER(S) -->
 <!ENTITY copyrightholder "SUSE LLC">
 
+<!-- Book-specifuc entities -->
+<!ENTITY abstract_pc_guide "This guide explains how to use &productname; in
+ public clouds.">
+<!ENTITY abstract_cha_images "&suse; offers a variety of different product
+ images for different use cases in partner cloud provider frameworks. Learn how
+ to find the image that meets your use case.">
+<!ENTITY abstract_cha_provders "&productname; can be run in various public
+ clouds. Find provider-specific instructions for cloud frameworks such as &aws;,
+ &azure; &gcp;, &oc;, and &ac;.">
 
 <!-- General terms and acronyms -->
 <!ENTITY pc        "Public Cloud">

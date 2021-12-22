@@ -16,8 +16,15 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>About this guide</title>
+ <info>
+  <abstract>
+   <para>
+    This chapter provides information about this guide itself and how to use it.
+   </para>
+  </abstract>
+ </info>
  <para>
-  What is this guide doing and how is that relevant for &productname;?
+  &abstract_pc_guide;
  </para>
  <para>
   This guide contains the following:
@@ -27,7 +34,7 @@
    <term><xref linkend="part-getting-started"/></term>
    <listitem>
     <para>
-     Description of <xref linkend="part-getting-started"/>.
+     Learn how to get started with &productname; in the public cloud.
     </para>
    </listitem>
   </varlistentry>
@@ -35,7 +42,8 @@
    <term><xref linkend="part-providers"/></term>
    <listitem>
     <para>
-     Description of <xref linkend="part-providers"/>.
+     Read provider-specific instructions for cloud frameworks such as &aws;,
+     &azure; &gcp;, &oc;, and &ac;.
     </para>
    </listitem>
   </varlistentry>

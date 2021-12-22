@@ -588,7 +588,7 @@
        State of the image. Can be one of <literal>active</literal>,
        <literal>inactive</literal>, <literal>deprecated</literal>, or
        <literal>deleted</literal>. For more information, refer to <xref
-        linkend="sec-images-lifecycle"/>.
+        linkend="sec-image-lifecycle"/>.
       </para>
      </listitem>
     </varlistentry>

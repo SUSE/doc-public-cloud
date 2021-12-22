@@ -38,14 +38,14 @@
    </dm:docmanager>
  </info>
 
- <xi:include href="preface_example.xml"/>
+ <xi:include href="preface_public_cloud.xml"/>
 
- <part xml:id="part-one">
+ <part xml:id="part-getting-started">
   <title>Getting Started</title>
   <xi:include href="cha_images.xml"/>
  </part>
 
- <part xml:id="part-two">
+ <part xml:id="part-providers">
   <title>Public Cloud Providers</title>
   <xi:include href="cha_providers.xml"/>
  </part>

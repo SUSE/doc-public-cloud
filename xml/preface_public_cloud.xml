@@ -24,18 +24,18 @@
  </para>
  <variablelist>
   <varlistentry>
-   <term><xref linkend="part-one"/></term>
+   <term><xref linkend="part-getting-started"/></term>
    <listitem>
     <para>
-     Description of <xref linkend="part-one"/>.
+     Description of <xref linkend="part-getting-started"/>.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><xref linkend="part-two"/></term>
+   <term><xref linkend="part-providers"/></term>
    <listitem>
     <para>
-     Description of <xref linkend="part-two"/>.
+     Description of <xref linkend="part-providers"/>.
     </para>
    </listitem>
   </varlistentry>

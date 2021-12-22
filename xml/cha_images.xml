@@ -29,404 +29,511 @@
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <sect1 xml:id="sec-available-images">
-  <title>Available images</title>
+ <sect1 xml:id="sec-image-products">
+  <title>Produducts</title>
   <para>
    &suse; offers a variety of different product images for different use
    cases in partner cloud provider frameworks.
   </para>
-  <sect2>
-   <title>Products</title>
-   <para>The following &suse; products are available for public cloud.</para>
-   <itemizedlist>
-    <title>Available products</title>
-    <listitem>
-     <para>
-      &sle; (&slea;)
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &suma; (&sumaa;) Server
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &suma; (&sumaa;) Proxy
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &slehpc; (&slehpca;)
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &sles4sap; (&sles4sapa;)
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &opensuse; Leap
-     </para>
-    </listitem>
-   </itemizedlist>
-   <note role="compact">
+  <para>
+   The following &suse; products are available for public cloud.
+  </para>
+  <itemizedlist>
+   <title>Available products</title>
+   <listitem>
     <para>
-     To constantly adjust and improve &suse;'s offerings, availablilty of
-     products and versions is subject to change and may differ between cloud
-     frameworks.
+     &sle; (&slea;)
     </para>
-   </note>
-  </sect2>
-  
-  <sect2 xml:id="sec-image-plans">
-   <title>Plans</title>
-   <para>
-    &suse;&mdash;together with the cloud service providers&mdash;offers
-    different plans to cater to a variety of use cases. While details differ
-    depending on the cloud framework, usually there are two types of
-    subscriptions.
-   </para>
-   <variablelist>
-    <varlistentry>
-     <term>Pay as you go (PAYG)</term>
-     <listitem>
-      <para>
-       <literal>Pay as you go</literal> (PAYG) are used to create instances
-       on demand. When an instance is first booted, it automatically
-       registers with a local RMT server to receive updates. Once the system
-       finishes booting, it is ready to use.
-      </para>
-      <para>
-       This makes PAYG instances great for scaling production workloads as well
-       as testing. Create an instance when you need it and delete it when you
-       are done. You only pay for the resources you use. Upcharges over the
-       basic cloud prices may apply, depending on the framework.
-      </para>
-      <para>
-       PAYG images are offered with or without support. Support is provided
-       through your cloud provider, which is supported by &suse;.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term>Bring your own OS (BYOS)</term>
-     <listitem>
-      <para>
-       <literal>Bring your own OS</literal> (BYOS) images are useful if you
-       already have a support contract with &suse; and want to move your
-       workloads to the public cloud. An instance launched from a BYOS image is
-       equivalent to a physical machine that just received a &sles; installation
-       from the &slsa; installation image. After creation, register the instance
-       with the &scc; or connect it to your running &rmt; or &suma;
-       infrastructure using the entitlements you already have along with any
-       update infrastructure you may already manage.
-      </para>
-     </listitem>
-    </varlistentry>
-   </variablelist>
-   <para>
-    In summary, if you already have a direct relationship with &suse; you
-    generally want to start out with BYOS. You can still use PAYG for on-demand
-    excess capacity.
-   </para>
-
-   <informaltable>
-    <tgroup cols="2">
-     <colspec colnum="1" colname="payg" align="center"/>
-     <colspec colnum="2" colname="byos" align="center"/>
-     <thead>
-      <row>
-       <entry>
-        <para>
-         Pay as you go (PAYG)
-        </para>
-       </entry>
-       <entry>
-        <para>
-         Bring your own OS (BYOS)
-        </para>
-       </entry>
-      </row>
-     </thead>
-     <tbody>
-      <row>
-       <entry>
-        <para>
-         Instances are ready to use
-        </para>
-       </entry>
-       <entry>
-        <para>
-         Instances need to be registered first
-        </para>
-       </entry>
-      </row>
-      <row>
-       <entry>
-        <para>
-         No support or supported by cloud provider
-        </para>
-       </entry>
-       <entry>
-        <para>
-         Fully supported directly by &suse;
-        </para>
-       </entry>
-      </row>
-      <row>
-       <entry>
-        <para>
-         Customer of the cloud provider
-        </para>
-       </entry>
-       <entry>
-        <para>
-         Customer of the cloud provider and &suse;
-        </para>
-       </entry>
-      </row>
-      <row>
-       <entry>
-        <para>
-         Pay per use
-        </para>
-       </entry>
-       <entry>
-        <para>
-         Pay per instance and license
-        </para>
-       </entry>
-      </row>
-     </tbody>
-    </tgroup>
-   </informaltable>
-
-   <important>
-    <title>Switching plans is not possible</title>
+   </listitem>
+   <listitem>
     <para>
-     Switching from PAYG to BYOS or vice-versa is only possible on &azure;
-     through the <literal>Hybrid Benefit</literal> program. For all other cloud
-     providers, you remain on the plan you initially selected for as long as the
-     instance is running. The only way to switch plans is to start with the
-     other image and rebuild your system.
+     &suma; (&sumaa;) Server
     </para>
+   </listitem>
+   <listitem>
     <para>
-     For more information on the &azure; Hybrid Benefit program, refer to FIXME.
-     <!-- azure.microsoft.com/pricing/hybrid-benefit -->
+     &suma; (&sumaa;) Proxy
     </para>
-   </important>
-   <important>
-    <title>Do not register PAYG images with the &scc;</title>
+   </listitem>
+   <listitem>
     <para>
-     Registering PAYG images with the &scc; or your own &rmt; server will create
-     conflicts that are not easily solved. Only register BYOS images. PAYG
-     instances are automatically registered against the correct &rmt; server.
+     &slehpc; (&slehpca;)
     </para>
-   </important>
-  </sect2>
-
-  <sect2 xml:id="sec-image-naming">
-   <title>Naming scheme</title>
+   </listitem>
+   <listitem>
+    <para>
+     &sles4sap; (&sles4sapa;)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &opensuse; Leap
+    </para>
+   </listitem>
+  </itemizedlist>
+  <note role="compact">
    <para>
-    Names for &suse;'s public cloud images consist of multiple parts
-    that contain information about the product, its version, a time stamp
-    indicating the release date of the image, and more. The general naming
-    scheme for &suse;'s public cloud images is as follows:
+    To constantly adjust and improve &suse;'s offerings, availablilty of
+    products and versions is subject to change and may differ between cloud
+    frameworks.
    </para>
-   <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
-   <!-- <screen><replaceable>PRODUCT</replaceable>-<replaceable>FLAVOR</replaceable>-v<replaceable>VERSION</replaceable>-<replaceable>VIRTUALIZATION</replaceable>-<replaceable>STORAGE</replaceable>-<replaceable>ARCHITECTURE</replaceable>-<replaceable>GEN</replaceable></screen> -->
-   <para>
-    <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
-   </para>
-   <para>
-    Not all components of this naming scheme are used in all frameworks.
-   </para>
-   <variablelist>
-    <title>SUSE public cloud image naming scheme</title>
-    <varlistentry>
-     <term><literal>PRODUCT</literal></term>
-     <listitem>
-      <para>
-       Abbreviated name of the product in lower case letters, e.g.
-       <literal>suse-sles-15-sp3</literal> or
-       <literal>suse-manager-4-1-proxy</literal>. This part may also be
-       "search" optimized per cloud framework. For example the prefix
-       <literal>suse-</literal> helps when searching for &suse; in the
-       general catalog in &aws;.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>FLAVOR</literal></term>
-     <listitem>
-      <para>
-       e.g. <literal>chost</literal> or <literal>byos</literal>. If it is the
-       default image of a product, this part will be omitted. Multiple
-       <literal>FLAVOR</literal> attributes may be combined in an image name.
-       For example <literal>sles-15-sp3-chost-byos</literal> is an image build
-       based on &sles; 15 SP3 build as a container host using a
-       <literal>BYOS</literal> (Bring Your Own Subscription) billing model. When
-       <literal>byos</literal> is not part of an image name the image is set up
-       for <literal>PAYG</literal> (Pay As You Go) billing.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>VERSION</literal></term>
-     <listitem>
-      <para>
-       Upload date of the image in the format <literal>vYYYYMMDD</literal>
-       (ISO 8601).
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>VIRTUALIZATION</literal> (&awsa;-only)</term>
-     <listitem>
-      <para>
-       &suse; no longer supports or publishes para-virtualized images. The
-       virtualization type was encoded as <literal>pv</literal>
-       (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
-       machine). The <literal>hvm</literal> part of the image name has been
-       retained in an effort to not break backward compatibility.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>STORAGE</literal> (&awsa;-only)</term>
-     <listitem>
-      <para>
-       &suse; no longer publishes images that are based on hard disk
-       (magnetic) backed storage. This used to be encoded as
-       <literal>mag</literal>. All published images are backed by SSD.
-       The <literal>ssd</literal>  part of the image name has been
-       retained in an effort to not break backward compatibility.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>ARCHITECTURE</literal></term>
-     <listitem>
-      <para>
-       Either <literal>x86_64</literal> or <literal>arm64</literal>.
-       &suse; no longer supports or publishes 32 bit <literal>x86</literal>
-       images. Images with the <literal>i386</literal> identifier are visible
-       in &pint; data.
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
-     <term><literal>GENERATION</literal> (&azure;-only)</term>
-     <listitem>
-      <para>
-       appended as "gen2" for 2nd Generation VMs.
-      </para>
-     </listitem>
-    </varlistentry>
-   </variablelist>
-
-<!-- 
-   <screen><replaceable>PRODUCT</replaceable><co xml:id="co-img-prod"/>-<replaceable>FLAVOR</replaceable><co xml:id="co-img-flav"/>-v<replaceable>VERSION</replaceable><co xml:id="co-img-ver"/>-<replaceable>VIRTUALIZATION</replaceable><co xml:id="co-img-virt"/>-<replaceable>STORAGE</replaceable><co xml:id="co-img-stor"/>-<replaceable>ARCHITECTURE</replaceable><co xml:id="co-img-arch"/>-<replaceable>GEN</replaceable><co xml:id="co-img-gen"/></screen>
-   <calloutlist>
-    <callout arearefs="co-img-prod">
-     <para>
-      <literal>PRODUCT</literal> is the abbreviated name of the product in
-      lower case letters, e.g. <literal>suse-sles-15-sp3</literal> or
-       <literal>suse-manager-4-1-proxy</literal>. This part may also be
-      "search" optimized per cloud framework. For example the prefix
-       <literal>suse-</literal> helps when searching for &suse; in the
-      general catalog in &aws;.
-     </para>
-    </callout>
-    <callout arearefs="co-img-flav"> -->
-     <!-- FIXME cwickert 20210830: is rightscale still a thing?! -->
-     <!-- <para>
-      <literal>FLAVOR</literal> is e.g. <literal>sap</literal> or
-      <literal>rightscale</literal>. If it is the default image of a product,
-      this part will be omitted.
-     </para>
-    </callout>
-    <callout arearefs="co-img-ver">
-     <para>
-      <literal>VERSION</literal> is the upload date of the image in the format
-      <literal>vYYYYMMDD</literal> (ISO 8601).
-     </para>
-    </callout>
-    <callout arearefs="co-img-virt">
-     <para>
-      <literal>VIRTUALIZATION</literal> is either <literal>pv</literal>
-      (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
-      machine) (&awsa;-only).
-     </para>
-    </callout>
-    <callout arearefs="co-img-stor">
-     <para>
-      <literal>STORAGE</literal> is either <literal>ssd</literal> for SSD-backed
-      or <literal>mag</literal> for magnetic-backed images (&awsa;-only).
-     </para>
-    </callout>
-    <callout arearefs="co-img-arch">
-     <para>
-      <literal>ARCHITECTURE</literal>. Either <literal>i386</literal>,
-      <literal>x86_64</literal>, or <literal>arm64</literal> (&awsa;-only).
-     </para>
-    </callout>
-    <callout arearefs="co-img-gen">
-     <para>
-      <literal>GENERATION</literal> is appended as "gen2" for 2nd Generation VMs
-      (&azure;-only).
-     </para>
-    </callout>
-    </calloutlist> -->
-
-<!-- 
-   <para>
-    As the parts are differnt across cloud frameworks, the actual names that
-    result from the naming scheme differ, too.
-   </para>
-   <example>
-    <title>Name of an &aws; image</title>
-    <screen></screen>
-   </example>
-   <para>
-    
-   </para>
-   <example>
-    <title>Name of an &azure; image</title>
-    <screen></screen>
-   </example>
-   <para>
-    
-   </para>
-   <example>
-    <title>Name of an &gcp; image</title>
-    <screen></screen>
-   </example>
-   <para>
-    
-   </para>
-   <example>
-    <title>Name of an &oracle; image</title>
-    <screen></screen>
-   </example>
-   <para>
-    
-   </para>
-   <example>
-    <title>Name of an &alibaba; image</title>
-    <screen></screen>
-   </example>
-   <para>
-    
-   </para> -->
-   
-  </sect2>
-
+  </note>
  </sect1>
 
- <sect1>
+ <sect1 xml:id="sec-image-plans">
+  <title>Plans</title>
+  <para>
+   &suse;&mdash;together with the cloud service providers&mdash;offers
+   different plans to cater to a variety of use cases. While details differ
+   depending on the cloud framework, usually there are two types of
+   subscriptions.
+  </para>
+  <variablelist>
+   <varlistentry>
+    <term>Pay as you go (PAYG)</term>
+    <listitem>
+     <para>
+      <literal>Pay as you go</literal> (PAYG) are used to create instances
+      on demand. When an instance is first booted, it automatically
+      registers with a local RMT server to receive updates. Once the system
+      finishes booting, it is ready to use.
+     </para>
+     <para>
+      This makes PAYG instances great for scaling production workloads as well
+      as testing. Create an instance when you need it and delete it when you
+      are done. You only pay for the resources you use. Upcharges over the
+      basic cloud prices may apply, depending on the framework.
+     </para>
+     <para>
+      PAYG images are offered with or without support. Support is provided
+      through your cloud provider, which is supported by &suse;.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Bring your own OS (BYOS)</term>
+    <listitem>
+     <para>
+      <literal>Bring your own OS</literal> (BYOS) images are useful if you
+      already have a support contract with &suse; and want to move your
+      workloads to the public cloud. An instance launched from a BYOS image is
+      equivalent to a physical machine that just received a &sles; installation
+      from the &slsa; installation image. After creation, register the instance
+      with the &scc; or connect it to your running &rmt; or &suma;
+      infrastructure using the entitlements you already have along with any
+      update infrastructure you may already manage.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+  <para>
+   In summary, if you already have a direct relationship with &suse; you
+   generally want to start out with BYOS. You can still use PAYG for on-demand
+   excess capacity.
+  </para>
+
+  <informaltable>
+   <tgroup cols="2">
+    <colspec colnum="1" colname="payg" align="center"/>
+    <colspec colnum="2" colname="byos" align="center"/>
+    <thead>
+     <row>
+      <entry>
+       <para>
+        Pay as you go (PAYG)
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Bring your own OS (BYOS)
+       </para>
+      </entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>
+       <para>
+        Instances are ready to use
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Instances need to be registered first
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        No support or supported by cloud provider
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Fully supported directly by &suse;
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Customer of the cloud provider
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Customer of the cloud provider and &suse;
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Pay per use
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Pay per instance and license
+       </para>
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </informaltable>
+
+  <important>
+   <title>Switching plans is not possible</title>
+   <para>
+    Switching from PAYG to BYOS or vice-versa is only possible on &azure;
+    through the <literal>Hybrid Benefit</literal> program. For all other cloud
+    providers, you remain on the plan you initially selected for as long as the
+    instance is running. The only way to switch plans is to start with the
+    other image and rebuild your system.
+   </para>
+   <para>
+    For more information on the &azure; Hybrid Benefit program, refer to FIXME.
+    <!-- azure.microsoft.com/pricing/hybrid-benefit -->
+   </para>
+  </important>
+  <important>
+   <title>Do not register PAYG images with the &scc;</title>
+   <para>
+    Registering PAYG images with the &scc; or your own &rmt; server will create
+    conflicts that are not easily solved. Only register BYOS images. PAYG
+    instances are automatically registered against the correct &rmt; server.
+   </para>
+  </important>
+ </sect1>
+
+ <sect1 xml:id="sec-image-lifecycle">
+  <title>Image lifecycle</title>
+  <para>
+   All &suse; public cloud images follow a refresh cycle up to the point of
+   deletion. The refresh cycle follows a 'rolling' three month time frame. What
+   this means:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Images in an <literal>active</literal> state are refreshed every three
+     months. Replaced images are moved to the <literal>deprecated</literal>
+     state.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     If a critical security vulnerability occurs, images in
+     <literal>active</literal> and <literal>inactive</literal> states are
+     updated as soon as possible once the fix for the affected code is
+     available. For images in <literal>active</literal> state the three month
+     timer restarts with this forced replacement.
+    </para>
+    <para>
+     &suse; is committed to address all security vulnerabilities disclosed
+     through the <literal>Common Vulnerabilities and Exposures process</literal>
+     (CVE) and a score of 9.0 or greater in the <literal>Common Vulnerability
+      Scoring System</literal> (CVSS). For more information about the effects and
+     rating of CVEs, refer to the <link
+      xlink:href="https://www.suse.com/security/cve/">&suse; CVE database</link>.
+    </para>
+    <!-- alternative version
+     <para>
+     In the event of a severe security vulnerability disclosed through the
+     <literal>Common Vulnerabilities and Exposures</literal> (CVE) process, the
+     &suse; public cloud development team will refresh affected images in
+     <literal>active</literal> and <literal>inactive</literal> states to ensure
+     that new instances launch in a patched state. The three month timer
+     restarts with this forced replacement.
+     </para>
+     <para>
+     In this context, severe security vulnerabilities are defined as CVEs with a
+     score of 9.0 or greater in the <literal>Common Vulnerability Scoring
+     System</literal> (CVSS). For more information about the effects and rating
+     of CVEs, refer to the <link
+     xlink:href="https://www.suse.com/security/cve/">&suse; CVE database</link>.
+     </para>
+    -->
+   </listitem>
+  </itemizedlist>
+  
+  <para>
+   The life cycle of an image consists of four different states:
+  </para>
+  <variablelist>
+   <title>&suse; public cloud image states</title>
+   <varlistentry>
+    <term>Active</term>
+    <listitem>
+     <para>
+      Active images are fully supported and refreshed at least every three
+      months. The duration lasts until the image is replaced by a newer image
+      version.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Inactive</term>
+    <listitem>
+     <para>
+      Inactive images are supported following the rules of LTSS or ESPOS and
+      will only get refreshed for critical security updates. The duration term
+      is defined by the product. For more information, refer to <link
+       xlink:href="https://www.suse.com/de-de/support/policy-products/#cloud"/>
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Deprecated</term>
+    <listitem>
+     <para>
+      Deprecated images may no longer be supported. The status of support
+      depends on the support status of the product in the image. Deprecated
+      images are not made available in regions added after an image has been set
+      to <literal>deprecated</literal> and images do no longer get refreshed. At
+      the end of the six month deprecation period, images are subject to
+      deletion. It is strongly discouraged to use deprecated images to create
+      new instances.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Deleted</term>
+    <listitem>
+     <para>
+      Deleted images are no longer supported or available for instance creation.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+  <important>
+   <title>Only use <literal>active</literal> images for new instances</title>
+   <para>
+    It is strongly recommended to only use <literal>active</literal> images to
+    launch instances for new deployments.
+   </para>
+  </important>
+ </sect1>
+
+ <sect1 xml:id="sec-image-naming">
+  <title>Naming scheme</title>
+  <para>
+   Names for &suse;'s public cloud images consist of multiple parts
+   that contain information about the product, its version, a time stamp
+   indicating the release date of the image, and more. The general naming
+   scheme for &suse;'s public cloud images is as follows:
+  </para>
+  <!-- https://confluence.suse.com/display/publiccloud/Consistent+Cloud+Image+Naming+Scheme -->
+  <!-- <screen><replaceable>PRODUCT</replaceable>-<replaceable>FLAVOR</replaceable>-v<replaceable>VERSION</replaceable>-<replaceable>VIRTUALIZATION</replaceable>-<replaceable>STORAGE</replaceable>-<replaceable>ARCHITECTURE</replaceable>-<replaceable>GEN</replaceable></screen> -->
+  <para>
+   <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
+  </para>
+  <para>
+   Not all components of this naming scheme are used in all frameworks.
+  </para>
+  <variablelist>
+   <title>SUSE public cloud image naming scheme</title>
+   <varlistentry>
+    <term><literal>PRODUCT</literal></term>
+    <listitem>
+     <para>
+      Abbreviated name of the product in lower case letters, e.g.
+      <literal>suse-sles-15-sp3</literal> or
+      <literal>suse-manager-4-1-proxy</literal>. This part may also be
+      "search" optimized per cloud framework. For example the prefix
+      <literal>suse-</literal> helps when searching for &suse; in the
+      general catalog in &aws;.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>FLAVOR</literal></term>
+    <listitem>
+     <para>
+      e.g. <literal>chost</literal> or <literal>byos</literal>. If it is the
+      default image of a product, this part will be omitted. Multiple
+      <literal>FLAVOR</literal> attributes may be combined in an image name.
+      For example <literal>sles-15-sp3-chost-byos</literal> is an image build
+      based on &sles; 15 SP3 build as a container host using a
+      <literal>BYOS</literal> (Bring Your Own Subscription) billing model. When
+      <literal>byos</literal> is not part of an image name the image is set up
+      for <literal>PAYG</literal> (Pay As You Go) billing.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>VERSION</literal></term>
+    <listitem>
+     <para>
+      Upload date of the image in the format <literal>vYYYYMMDD</literal>
+      (ISO 8601).
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>VIRTUALIZATION</literal> (&awsa;-only)</term>
+    <listitem>
+     <para>
+      &suse; no longer supports or publishes para-virtualized images. The
+      virtualization type was encoded as <literal>pv</literal>
+      (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
+      machine). The <literal>hvm</literal> part of the image name has been
+      retained in an effort to not break backward compatibility.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>STORAGE</literal> (&awsa;-only)</term>
+    <listitem>
+     <para>
+      &suse; no longer publishes images that are based on hard disk
+      (magnetic) backed storage. This used to be encoded as
+      <literal>mag</literal>. All published images are backed by SSD.
+      The <literal>ssd</literal>  part of the image name has been
+      retained in an effort to not break backward compatibility.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>ARCHITECTURE</literal></term>
+    <listitem>
+     <para>
+      Either <literal>x86_64</literal> or <literal>arm64</literal>.
+      &suse; no longer supports or publishes 32 bit <literal>x86</literal>
+      images. Images with the <literal>i386</literal> identifier are visible
+      in &pint; data.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>GENERATION</literal> (&azure;-only)</term>
+    <listitem>
+     <para>
+      appended as "gen2" for 2nd Generation VMs.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+
+<!--
+  <screen><replaceable>PRODUCT</replaceable><co xml:id="co-img-prod"/>-<replaceable>FLAVOR</replaceable><co xml:id="co-img-flav"/>-v<replaceable>VERSION</replaceable><co xml:id="co-img-ver"/>-<replaceable>VIRTUALIZATION</replaceable><co xml:id="co-img-virt"/>-<replaceable>STORAGE</replaceable><co xml:id="co-img-stor"/>-<replaceable>ARCHITECTURE</replaceable><co xml:id="co-img-arch"/>-<replaceable>GEN</replaceable><co xml:id="co-img-gen"/></screen>
+  <calloutlist>
+   <callout arearefs="co-img-prod">
+    <para>
+     <literal>PRODUCT</literal> is the abbreviated name of the product in
+     lower case letters, e.g. <literal>suse-sles-15-sp3</literal> or
+      <literal>suse-manager-4-1-proxy</literal>. This part may also be
+     "search" optimized per cloud framework. For example the prefix
+      <literal>suse-</literal> helps when searching for &suse; in the
+     general catalog in &aws;.
+    </para>
+   </callout>
+   <callout arearefs="co-img-flav"> -->
+    <!-- FIXME cwickert 20210830: is rightscale still a thing?! -->
+    <!-- <para>
+     <literal>FLAVOR</literal> is e.g. <literal>sap</literal> or
+     <literal>rightscale</literal>. If it is the default image of a product,
+     this part will be omitted.
+    </para>
+   </callout>
+   <callout arearefs="co-img-ver">
+    <para>
+     <literal>VERSION</literal> is the upload date of the image in the format
+     <literal>vYYYYMMDD</literal> (ISO 8601).
+    </para>
+   </callout>
+   <callout arearefs="co-img-virt">
+    <para>
+     <literal>VIRTUALIZATION</literal> is either <literal>pv</literal>
+     (para-virtualized) or <literal>hvm</literal> (hardware-assisted virtual
+     machine) (&awsa;-only).
+    </para>
+   </callout>
+   <callout arearefs="co-img-stor">
+    <para>
+     <literal>STORAGE</literal> is either <literal>ssd</literal> for SSD-backed
+     or <literal>mag</literal> for magnetic-backed images (&awsa;-only).
+    </para>
+   </callout>
+   <callout arearefs="co-img-arch">
+    <para>
+     <literal>ARCHITECTURE</literal>. Either <literal>i386</literal>,
+     <literal>x86_64</literal>, or <literal>arm64</literal> (&awsa;-only).
+    </para>
+   </callout>
+   <callout arearefs="co-img-gen">
+    <para>
+     <literal>GENERATION</literal> is appended as "gen2" for 2nd Generation VMs
+     (&azure;-only).
+    </para>
+   </callout>
+   </calloutlist> -->
+
+<!-- 
+  <para>
+   As the parts are differnt across cloud frameworks, the actual names that
+   result from the naming scheme differ, too.
+  </para>
+  <example>
+   <title>Name of an &aws; image</title>
+   <screen></screen>
+  </example>
+  <para>
+   
+  </para>
+  <example>
+   <title>Name of an &azure; image</title>
+   <screen></screen>
+  </example>
+  <para>
+   
+  </para>
+  <example>
+   <title>Name of an &gcp; image</title>
+   <screen></screen>
+  </example>
+  <para>
+   
+  </para>
+  <example>
+   <title>Name of an &oracle; image</title>
+   <screen></screen>
+  </example>
+  <para>
+   
+  </para>
+  <example>
+   <title>Name of an &alibaba; image</title>
+   <screen></screen>
+  </example>
+  <para>
+   
+  </para>
+-->
+ </sect1>
+
+ <sect1 xml:id="sec-image-pint">
   <title>&pint;</title>
   <para>
    The &pint; (&pinta;) provides information about the images &suse; publishes
@@ -457,7 +564,7 @@
   </para>
   
   <sect2 xml:id="sec-pint-images">
-   <title>Images</title>
+   <title><literal>Images</literal> view</title>
    <para>
     The following columns are shown in the <literal>Images</literal> view.
     Please note columns depend on the the cloud frameworks.
@@ -591,7 +698,7 @@
   </sect2>
   
   <sect2 xml:id="sec-pint-servers">
-   <title>Servers</title>
+   <title><literal>Servers</literal> view</title>
    <para>
     The following columns are displayed in the <literal>Servers</literal> view:
    </para>
@@ -638,113 +745,5 @@
    </variablelist>
   </sect2>
  </sect1>
- 
- <sect1 xml:id="sec-images-lifecycle">
-  <title>Lifecycle of images</title>
-  <para>
-   All &suse; public cloud images follow a refresh cycle up to the point of
-   deletion. The refresh cycle follows a 'rolling' three month time frame. What
-   this means:
-  </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     Images in an <literal>active</literal> state are refreshed every three
-     months. Replaced images are moved to the <literal>deprecated</literal>
-     state.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     If a critical security vulnerability occurs, images in
-     <literal>active</literal> and <literal>inactive</literal> states are
-     updated as soon as possible once the fix for the affected code is
-     available. For images in <literal>active</literal> state the three month
-     timer restarts with this forced replacement.
-    </para>
-    <para>
-     &suse; is committed to address all security vulnerabilities disclosed
-     through the <literal>Common Vulnerabilities and Exposures process</literal>
-     (CVE) and a score of 9.0 or greater in the <literal>Common Vulnerability
-      Scoring System</literal> (CVSS). For more information about the effects and
-     rating of CVEs, refer to the <link
-      xlink:href="https://www.suse.com/security/cve/">&suse; CVE database</link>.
-    </para>
-    <!-- alternative version
-    <para>
-     In the event of a severe security vulnerability disclosed through the
-     <literal>Common Vulnerabilities and Exposures</literal> (CVE) process, the
-     &suse; public cloud development team will refresh affected images in
-     <literal>active</literal> and <literal>inactive</literal> states to ensure
-     that new instances launch in a patched state. The three month timer
-     restarts with this forced replacement.
-    </para>
-    <para>
-     In this context, severe security vulnerabilities are defined as CVEs with a
-     score of 9.0 or greater in the <literal>Common Vulnerability Scoring
-     System</literal> (CVSS). For more information about the effects and rating
-     of CVEs, refer to the <link
-     xlink:href="https://www.suse.com/security/cve/">&suse; CVE database</link>.
-    </para>
-    -->
-   </listitem>
-  </itemizedlist>
 
-  <para>
-   The life cycle of an image consists of four different states:
-  </para>
-  <variablelist>
-   <title>&suse; public cloud image states</title>
-   <varlistentry>
-    <term>Active</term>
-    <listitem>
-     <para>
-      Active images are fully supported and refreshed at least every three
-      months. The duration lasts until the image is replaced by a newer image
-      version.
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Inactive</term>
-    <listitem>
-     <para>
-      Inactive images are supported following the rules of LTSS or ESPOS and
-      will only get refreshed for critical security updates. The duration term
-      is defined by the product. For more information, refer to <link
-       xlink:href="https://www.suse.com/de-de/support/policy-products/#cloud"/>
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Deprecated</term>
-    <listitem>
-     <para>
-      Deprecated images may no longer be supported. The status of support
-      depends on the support status of the product in the image. Deprecated
-      images are not made available in regions added after an image has been set
-      to <literal>deprecated</literal> and images do no longer get refreshed. At
-      the end of the six month deprecation period, images are subject to
-      deletion. It is strongly discouraged to use deprecated images to create
-      new instances.
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Deleted</term>
-    <listitem>
-     <para>
-      Deleted images are no longer supported or available for instance creation.
-     </para>
-    </listitem>
-   </varlistentry>
-  </variablelist>
-  <important>
-   <title>Only use <literal>active</literal> images for new instances</title>
-   <para>
-    It is strongly recommended to only use <literal>active</literal> images to
-    launch instances for new deployments.
-   </para>
-  </important>
- </sect1>
 </chapter>

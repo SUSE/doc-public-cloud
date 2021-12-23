@@ -134,12 +134,19 @@
    excess capacity.
   </para>
 
-  <informaltable>
-   <tgroup cols="2">
-    <colspec colnum="1" colname="payg" align="center"/>
-    <colspec colnum="2" colname="byos" align="center"/>
+  <table>
+   <title>Feature comparision</title>
+   <tgroup cols="3">
+    <colspec colwidth="20*" colnum="1" colname="feature"/>
+    <colspec colwidth="45*" colnum="2" colname="payg"/>
+    <colspec colwidth="45*" colnum="3" colname="byos"/>
     <thead>
      <row>
+      <entry>
+       <para>
+        Plan
+       </para>
+      </entry>
       <entry>
        <para>
         Pay as you go (PAYG)
@@ -156,54 +163,87 @@
      <row>
       <entry>
        <para>
-        Instances are ready to use
+        Customer
        </para>
       </entry>
       <entry>
        <para>
-        Instances need to be registered first
-       </para>
-      </entry>
-     </row>
-     <row>
-      <entry>
-       <para>
-        No support or supported by cloud provider
+        of the cloud provider
        </para>
       </entry>
       <entry>
        <para>
-        Fully supported directly by &suse;
+        of the cloud provider and &suse;
        </para>
       </entry>
      </row>
      <row>
       <entry>
        <para>
-        Customer of the cloud provider
+        Pricing
        </para>
       </entry>
       <entry>
        <para>
-        Customer of the cloud provider and &suse;
+        per use
+       </para>
+      </entry>
+      <entry>
+       <para>
+        per instance and license
        </para>
       </entry>
      </row>
      <row>
       <entry>
        <para>
-        Pay per use
+        Registration
        </para>
       </entry>
       <entry>
        <para>
-        Pay per instance and license
+        with a local update server upon instance creation
+       </para>
+      </entry>
+      <entry>
+       <para>
+        with your &rmt; or &suma; infrastructure or directly with the &scc;
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+      <para>Support</para>
+      </entry>
+      <entry>
+       <para>
+        L1 and L2 support by cloud provider, L3 by &suse;
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Full support by &suse;, LTSS possible
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Extensions</para>
+      </entry>
+      <entry>
+       <para>
+        only with &suma;
+       </para>
+      </entry>
+      <entry>
+       <para>
+        no limitations
        </para>
       </entry>
      </row>
     </tbody>
    </tgroup>
-  </informaltable>
+  </table>
 
   <important>
    <title>Switching plans is not possible</title>

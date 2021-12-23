@@ -87,35 +87,43 @@
     <term>Pay as you go (PAYG)</term>
     <listitem>
      <para>
-      <literal>Pay as you go</literal> (PAYG) are used to create instances
-      on demand. When an instance is first booted, it automatically
-      registers with a local RMT server to receive updates. Once the system
-      finishes booting, it is ready to use.
+      <literal>Pay as you go</literal> (PAYG) are used to create on-demand
+      instances. When an instance is first booted, it automatically registers
+      with a local update server. Once the system finishes booting, it is ready
+      to use.
      </para>
      <para>
-      This makes PAYG instances great for scaling production workloads as well
-      as testing. Create an instance when you need it and delete it when you
-      are done. You only pay for the resources you use. Upcharges over the
-      basic cloud prices may apply, depending on the framework.
+      This makes PAYG instances great for bursting production workloads and for
+      testing. Create an instance when you need it and delete it when you are
+      done. You only pay for the resources you use. Upcharges over the basic
+      cloud prices may apply, depending on the framework.
      </para>
      <para>
-      PAYG images are offered with or without support. Support is provided
-      through your cloud provider, which is supported by &suse;.
-     </para>
+      PAYG instances include support through the cloud provider which in turn is
+      supported by &suse;. &azure; also offers a basic PAYG image that only
+      includes updates. Instances created from this image are no eligible for
+      support.
+    </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Bring your own OS (BYOS)</term>
+    <term>Bring your own subscription (BYOS)</term>
     <listitem>
      <para>
-      <literal>Bring your own OS</literal> (BYOS) images are useful if you
-      already have a support contract with &suse; and want to move your
+      <literal>Bring your own subscription</literal> (BYOS) images are useful if
+      you already have a support contract with &suse; and want to move your
       workloads to the public cloud. An instance launched from a BYOS image is
       equivalent to a physical machine that just received a &sles; installation
-      from the &slsa; installation image. After creation, register the instance
-      with the &scc; or connect it to your running &rmt; or &suma;
-      infrastructure using the entitlements you already have along with any
-      update infrastructure you may already manage.
+      from the &slsa; installation image. After creation, use 
+      <command>registercloudguest</command> to register the instance with the
+      &scc;, or connect it to your running &rmt; or &suma; infrastructure using
+      the entitlements you already have along with any update infrastructure you
+      may already manage.
+     </para>
+     <para>
+      BYOS instances make it easier to manage addons such as LTSS or kernel
+      live-patching. Addons for PAYG instances can only be used in conjunction
+      with &suma;.
      </para>
     </listitem>
    </varlistentry>
@@ -139,7 +147,7 @@
       </entry>
       <entry>
        <para>
-        Bring your own OS (BYOS)
+        Bring your own subscription (BYOS)
        </para>
       </entry>
      </row>
@@ -215,8 +223,8 @@
    <title>Do not register PAYG images with the &scc;</title>
    <para>
     Registering PAYG images with the &scc; or your own &rmt; server will create
-    conflicts that are not easily solved. Only register BYOS images. PAYG
-    instances are automatically registered against the correct &rmt; server.
+    conflicts that are not easily solved. Only register BYOS instances. PAYG
+    instances are automatically registered against the correct update server.
    </para>
   </important>
  </sect1>

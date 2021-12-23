@@ -220,11 +220,12 @@
    </para>
   </important>
   <important>
-   <title>Do not register PAYG images with the &scc;</title>
+   <title>Do not register PAYG instances with the &scc;</title>
    <para>
-    Registering PAYG images with the &scc; or your own &rmt; server will create
-    conflicts that are not easily solved. Only register BYOS instances. PAYG
-    instances are automatically registered against the correct update server.
+    Registering PAYG instances with the &scc; or your own &rmt; server will
+    create conflicts that are not easily solved. Only register BYOS instances.
+    PAYG instances are automatically registered against the correct update
+    server.
    </para>
   </important>
  </sect1>

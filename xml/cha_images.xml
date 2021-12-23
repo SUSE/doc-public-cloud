@@ -121,9 +121,9 @@
       may already manage.
      </para>
      <para>
-      BYOS instances make it easier to manage addons such as LTSS or kernel
-      live-patching. Addons for PAYG instances can only be used in conjunction
-      with &suma;.
+      BYOS instances make it easier to manage extensions such as LTSS or kernel
+      live-patching. Extensions for PAYG instances can only be used in
+      conjunction with &suma;.
      </para>
     </listitem>
    </varlistentry>

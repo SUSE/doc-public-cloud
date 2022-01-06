@@ -137,9 +137,9 @@
   <table>
    <title>Feature comparision</title>
    <tgroup cols="3">
-    <colspec colwidth="20*" colnum="1" colname="feature"/>
-    <colspec colwidth="45*" colnum="2" colname="payg"/>
-    <colspec colwidth="45*" colnum="3" colname="byos"/>
+    <colspec colwidth="30*" colnum="1" colname="feature"/>
+    <colspec colwidth="40*" colnum="2" colname="payg"/>
+    <colspec colwidth="40*" colnum="3" colname="byos"/>
     <thead>
      <row>
       <entry>
@@ -222,7 +222,25 @@
       </entry>
       <entry>
        <para>
-        Full support by &suse;, LTSS possible
+        Full support by &suse; directly
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Extented ESPOS<superscript>1</superscript> or
+        LTSS<superscript>2</superscript> or support
+       </para>
+      </entry>
+      <entry>
+       <para>
+        only if included in image base product
+       </para>
+      </entry>
+      <entry>
+       <para>
+        available
        </para>
       </entry>
      </row>
@@ -244,6 +262,14 @@
     </tbody>
    </tgroup>
   </table>
+  <simplelist>
+   <member>
+    <superscript>1</superscript> ESPOS: <link xlink:href="https://www.suse.com/support/policy-products/#hpc">Extended Service Pack Overlay Support</link>
+   </member>
+   <member>
+    <superscript>2</superscript> LTSS: <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/">Long-Term Service Pack Support</link>
+   </member>
+  </simplelist>
 
   <important>
    <title>Switching plans is not possible</title>

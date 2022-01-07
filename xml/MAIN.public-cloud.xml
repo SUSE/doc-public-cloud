@@ -52,6 +52,7 @@
   <xi:include href="cha_providers.xml"/>
  <!-- </part> -->
 
+ <xi:include href="common_support.xml" condition="suse-product"/>
  <xi:include href="example_doc_updates.xml"/>
  <xi:include href="common_legal.xml"/>
 </book>

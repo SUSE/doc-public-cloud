@@ -25,6 +25,9 @@
 <!-- Book-specifuc entities -->
 <!ENTITY abstract_pc_guide "This guide explains how to use &productname; in
  public clouds.">
+<!ENTITY abstract_cha_intro "&suse;&mdash;together with the cloud service
+ providers&mdash;offers different products and plans to cater to a variety of
+ use cases. Find out which works best for you.">
 <!ENTITY abstract_cha_images "&suse; offers a variety of different product
  images for different use cases in partner cloud provider frameworks. Learn how
  to find the image that meets your use case.">

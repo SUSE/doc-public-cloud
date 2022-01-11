@@ -43,6 +43,7 @@
  <!-- Comment out parts for now, we don't need them (yet) -->
  <!-- <part xml:id="part-getting-started">
   <title>Getting Started</title> -->
+  <xi:include href="cha_introduction.xml"/>
   <xi:include href="cha_images.xml"/>
  <!-- </part> -->
 

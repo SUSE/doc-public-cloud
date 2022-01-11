@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file originates from the project https://github.com/openSUSE/doc-kit -->
+<!-- This file can be edited downstream. -->
+
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<chapter xml:id="cha-intro" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Getting started</title>
+ <info>
+  <abstract>
+   <para>
+    &abstract_cha_intro;
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+ <sect1 xml:id="sec-intro-products">
+  <title>Products</title>
+  <para>
+   The following &suse; products are available for public cloud.
+  </para>
+  <itemizedlist>
+   <title>Available products</title>
+   <listitem>
+    <para>
+     &sle; (&slea;)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &suma; (&sumaa;) Server
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &suma; (&sumaa;) Proxy
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &slehpc; (&slehpca;)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &sles4sap; (&sles4sapa;)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &opensuse; Leap
+    </para>
+   </listitem>
+  </itemizedlist>
+  <note role="compact">
+   <para>
+    To constantly adjust and improve &suse;'s offerings, availablilty of
+    products and versions is subject to change and may differ between cloud
+    frameworks.
+   </para>
+  </note>
+ </sect1>
+
+ <sect1 xml:id="sec-intro-plans">
+  <title>Plans</title>
+  <para>
+   &suse;&mdash;together with the cloud service providers&mdash;offers
+   different plans to cater to a variety of use cases. While details differ
+   depending on the cloud framework, usually there are two types of
+   subscriptions.
+  </para>
+  <variablelist>
+   <varlistentry>
+    <term>Pay as you go (PAYG)</term>
+    <listitem>
+     <para>
+      <literal>Pay as you go</literal> (PAYG) are used to create on-demand
+      instances. When an instance is first booted, it automatically registers
+      with a local update server. Once the system finishes booting, it is ready
+      to use.
+     </para>
+     <para>
+      This makes PAYG instances great for bursting production workloads and for
+      testing. Create an instance when you need it and delete it when you are
+      done. You only pay for the resources you use. Upcharges over the basic
+      cloud prices may apply, depending on the framework.
+     </para>
+     <para>
+      PAYG instances include support through the cloud provider which in turn is
+      supported by &suse;. &azure; also offers a basic PAYG image that only
+      includes updates. Instances created from this image are not eligible for
+      support.
+    </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Bring your own subscription (BYOS)</term>
+    <listitem>
+     <para>
+      <literal>Bring your own subscription</literal> (BYOS) images are useful if
+      you already have a support contract with &suse; and want to move your
+      workloads to the public cloud. An instance launched from a BYOS image is
+      equivalent to a physical machine that just received a &sles; installation
+      from the &slsa; installation image. After creation, use 
+      <command>registercloudguest</command> to register the instance with the
+      &scc;, or connect it to your running &rmt; or &suma; infrastructure using
+      the entitlements you already have along with any update infrastructure you
+      may already manage.
+     </para>
+     <para>
+      BYOS instances make it easier to manage extensions such as LTSS or kernel
+      live-patching. Extensions for PAYG instances can only be used in
+      conjunction with &suma;.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+  <para>
+   In summary, if you already have a direct relationship with &suse; you
+   generally want to start out with BYOS. You can still use PAYG for on-demand
+   excess capacity.
+  </para>
+
+  <table>
+   <title>Feature comparision</title>
+   <tgroup cols="3">
+    <colspec colwidth="30*" colnum="1" colname="feature"/>
+    <colspec colwidth="40*" colnum="2" colname="payg"/>
+    <colspec colwidth="40*" colnum="3" colname="byos"/>
+    <thead>
+     <row>
+      <entry>
+       <para>
+        Plan
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Pay as you go (PAYG)
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Bring your own subscription (BYOS)
+       </para>
+      </entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>
+       <para>
+        Customer relationship
+       </para>
+      </entry>
+      <entry>
+       <para>
+        with cloud provider
+       </para>
+      </entry>
+      <entry>
+       <para>
+        with cloud provider and &suse;
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Pricing
+       </para>
+      </entry>
+      <entry>
+       <para>
+        per use
+       </para>
+      </entry>
+      <entry>
+       <para>
+        per instance and license
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Registration
+       </para>
+      </entry>
+      <entry>
+       <para>
+        with a local update server upon instance creation
+       </para>
+      </entry>
+      <entry>
+       <para>
+        with your &rmt; or &suma; infrastructure or directly with the &scc;
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+      <para>Support</para>
+      </entry>
+      <entry>
+       <para>
+        L1 and L2 support by cloud provider, L3 by &suse;
+       </para>
+      </entry>
+      <entry>
+       <para>
+        Full support by &suse; directly
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Extented ESPOS<superscript>1</superscript> or
+        LTSS<superscript>2</superscript> or support
+       </para>
+      </entry>
+      <entry>
+       <para>
+        only if included in image base product
+       </para>
+      </entry>
+      <entry>
+       <para>
+        available
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Extensions</para>
+      </entry>
+      <entry>
+       <para>
+        only with &suma;
+       </para>
+      </entry>
+      <entry>
+       <para>
+        no limitations
+       </para>
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </table>
+  <simplelist>
+   <member>
+    <superscript>1</superscript> ESPOS: <link xlink:href="https://www.suse.com/support/policy-products/#hpc">Extended Service Pack Overlay Support</link>
+   </member>
+   <member>
+    <superscript>2</superscript> LTSS: <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/">Long-Term Service Pack Support</link>
+   </member>
+  </simplelist>
+
+  <important>
+   <title>Switching plans is not possible</title>
+   <para>
+    Switching from PAYG to BYOS or vice-versa is only possible on &azure;
+    through the <literal>Hybrid Benefit</literal> program. For all other cloud
+    providers, you remain on the plan you initially selected for as long as the
+    instance is running. The only way to switch plans is to start with the
+    other image and rebuild your system.
+   </para>
+   <para>
+    For more information on the &azure; Hybrid Benefit program, refer to FIXME.
+    <!-- azure.microsoft.com/pricing/hybrid-benefit -->
+   </para>
+  </important>
+  <important>
+   <title>Do not register PAYG instances with the &scc;</title>
+   <para>
+    Registering PAYG instances with the &scc; or your own &rmt; server will
+    create conflicts that are not easily solved. Only register BYOS instances.
+    PAYG instances are automatically registered against the correct update
+    server.
+   </para>
+  </important>
+ </sect1>
+
+</chapter>

@@ -54,6 +54,14 @@
  <!-- same but with chapters -->
  <variablelist>
   <varlistentry>
+   <term><xref linkend="cha-intro"/></term>
+   <listitem>
+    <para>
+     &abstract_cha_intro;
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
    <term><xref linkend="cha-images"/></term>
    <listitem>
     <para>

@@ -30,10 +30,9 @@
  <sect1 xml:id="sec-intro-products">
   <title>Products</title>
   <para>
-   The following &suse; products are available for public cloud.
+   The following &suse; products are available for public cloud:
   </para>
   <itemizedlist>
-   <title>Available products</title>
    <listitem>
     <para>
      &sle; (&slea;)

@@ -327,8 +327,9 @@
    <listitem>
     <para>
      BYOS instances are supported by &suse; directly. Find details on how to
-     collect information for a support ticket, refer to the <link
-      xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/cha-adm-support.html">&sle; &admin;</link>.
+     collect information for a support ticket in the <link
+      xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/cha-adm-support.html">&sle; &admin;,
+      Chapter &quot;Gathering system information for support&quot;</link>.
     </para>
    </listitem>
   </itemizedlist>

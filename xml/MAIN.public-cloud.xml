@@ -51,7 +51,11 @@
   <xi:include href="cha_images.xml"/>
  <!-- </part> -->
 
- <!-- Comment out parts for now, we don't need them (yet) -->
+ <!-- <part xml:id="part-getting-started">
+  <title>Administration</title> -->
+  <xi:include href="cha_administration.xml"/>
+ <!-- </part> -->
+
  <!-- <part xml:id="part-providers">
   <title>Public Cloud Providers</title> -->
  <!-- <xi:include href="cha_providers.xml"/> -->

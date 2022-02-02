@@ -336,7 +336,7 @@
   <para>
    The support levels are defined as follows:
   </para>
-  <xi:include href="common_support-levels_i.xml"/>
+  FIXME
   <para>
    For more information, refer the &suse; support statement in
    <xref linkend="app-public-cloud-support"/>.

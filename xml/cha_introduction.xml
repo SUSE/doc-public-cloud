@@ -279,10 +279,14 @@
     instance is running. The only way to switch plans is to start with the
     other image and rebuild your system.
    </para>
+   <!-- FIXME cwickert 2022-02-03: Add link to chapter that describes how to
+   change a SUSE instance (once written). -->
+   <!-- Leave this commented out, that page is not technical but marketing only.   
    <para>
-    For more information on the &azure; Hybrid Benefit program, refer to FIXME.
-    <!-- azure.microsoft.com/pricing/hybrid-benefit -->
+    For more information on the &azure; Hybrid Benefit program, refer to
+    <link xlink:href="https://azure.microsoft.com/pricing/hybrid-benefit/"/>.
    </para>
+   -->
   </important>
   <important>
    <title>Do not register PAYG instances with the &scc;</title>

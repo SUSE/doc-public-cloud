@@ -300,46 +300,43 @@
   <title>Support</title>
   <para>
    Regardless of the public cloud you use and the plan you choose, &suse; has
-   you covered with support. Details however differ:
+   you covered with support:
   </para>
   <itemizedlist>
    <listitem>
     <para>
      PAYG instances include support through the cloud provider which in turn is
-     supported by &suse;. The CSP provides 1st and 2nd level, &suse; will
-     provide level 3 if necessary.
-    </para>
-    <para>
-     This means that you <emphasis>always contact your cloud service provider
-     first</emphasis>. They will assist you with your problem. If no resolution
-     can be foud, they will open a support ticket for you with &suse;.
+     supported by &suse;. If you have a problem, always contact your cloud
+     service provider for assistance. They provide 1st and 2nd level support,
+     &suse; will provide level 3 if necessary.
     </para>
     <important>
      <title>&azure; basic images</title>
      <para>
       &azure; also offers a basic PAYG image that only includes updates.
-      Instances created from this image are not eligible for support. The only
-      way to get support is by reproducing the problem on an identical instance
-      created from a supported PAYG image.
+      Instances created from this image are not eligible for support.
      </para>
     </important>
    </listitem>
    <listitem>
     <para>
-     BYOS instances are supported by &suse; directly. Find details on how to
-     collect information for a support ticket in the <link
-      xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/cha-adm-support.html">&sle; &admin;,
-      Chapter &quot;Gathering system information for support&quot;</link>.
+     BYOS instances are supported by &suse; under the terms of your &suse;
+     subscription. For an overview of &suse;'s support subscriptions, refer to
+     <link xlink:href="https://www.suse.com/support/"/>.
     </para>
    </listitem>
   </itemizedlist>
   <para>
-   The support levels are defined as follows:
+   For more information, refer to the <link
+    xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
+    Policy</link> and the support statement for &sle; in <xref
+     linkend="app-public-cloud-support"/>.
   </para>
-  FIXME
   <para>
-   For more information, refer the &suse; support statement in
-   <xref linkend="app-public-cloud-support"/>.
+   For information on how to contact the &suse; support team and report
+   problems, refer to the <link
+    xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
+    Guide</link>.
   </para>
 
  </sect1>

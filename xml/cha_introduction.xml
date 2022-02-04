@@ -298,5 +298,15 @@
    </para>
   </important>
  </sect1>
+ <sect1>
+  <title>Supported instance types</title>
+  <para>
+   To find out what types of instances are supported by each provider, refer to
+   the <link
+    xlink:href="https://www.suse.com/support/public-cloud-support/">&suse;
+    Public Cloud Instance Support Matrix</link>. Select your &sle; product and
+   your cloud provider to see a list of supported instance types.
+  </para>
+ </sect1>
 
 </chapter>

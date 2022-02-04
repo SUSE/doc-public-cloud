@@ -28,4 +28,167 @@
   </dm:docmanager>
  </info>
 
+ <sect1 xml:id="sec-admin-register">
+  <title>Registering instances</title>
+  <para>
+   Like other &suse; products, &sle; in public clouds has to be registered to
+   receive updates. There are different ways to register, depending on what
+   instance you register where.
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     <literal>PAYG</literal> instances are registered with a local update
+     server, that means an update server in the cloud framework and region. This
+     is done automatically by the <systemitem
+      class="service">guestregister.service</systemitem> service upon first
+     boot.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <literal>BYOS</literal> instances need to be regustered manually with your
+     &suse; registration key. You can register with a local update
+     server, the &scc;, or your own &susemgr; or &rmt; infrastructure.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   For BYOS instances, there are two different ways to register, depending on
+   on the datestamp of the image the instance was created from:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     <literal>BYOS</literal> images with a datestamp <emphasis>later</emphasis>
+     than <literal>20220103</literal> contain the
+     <package>cloud-regionsrv-client</package> package to make registration more
+     straight forward. Unlike for on-demand instances the registration is not
+     automatic on instance startup.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <literal>BYOS</literal> images with a datestamp
+     <emphasis>prior</emphasis> to <literal>20220103</literal> are
+     registered with <command>&susemgr;</command>.
+    </para>
+    <para>
+     However, if you generally register your instances directly to the &scc;, this
+     change can make a significant difference in how fast you get updates onto
+     your systems. Package updates are transferred to your system using the cloud
+     framework backbone which provides better throughput than accessing the CDN
+     over the Internet when an instance is registered to &scc;.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <note>
+   <title>Container host images</title>
+   <para>
+    Container host (<literal>chost</literal>) images are optimized for container
+    workloads and contain only a small set of extra packages outside of the bare
+    minimum to make containers run. They do not contain
+    <package>cloud-regionsrv-client</package>.
+   </para>
+  </note>
+  <para>
+   <package>cloud-regionsrv-client</package> package with version 9.3.0
+  </para>
+  <sect2 xml:id="sec-admin-registercloudguest">
+   <title>Registering with <command>registercloudguest</command></title>
+   <para>
+    
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Check if the <package>cloud-regionsrv-client</package> package is
+      installed:
+     </para>
+<screen>&prompt.root;<command>rpm</command> <option>-q cloud-regionsrv-client</option></screen>
+     <para>
+      If the package is not installed or older than version is 9.3.0, install it.
+     </para>
+     <para>
+      Install the necessary packages. In addition to the
+      <package>cloud-regionsrv-client</package> package you will need some
+      framework specific packages.
+     </para>
+     <substeps>
+      <step>
+       <para>
+        For &ec2a; run:
+       </para>
+<screen>&prompt.root;<command>zypper</command> <option>in cloud-regionsrv-client cloud-regionsrv-client-plugin-ec2 \
+ regionServiceClientConfigEC2 regionServiceCertsEC2</option></screen>
+      </step>
+      <step>
+       <para>
+        For &azure; run:
+       </para>
+<screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-azure \
+ regionServiceClientConfigAzure regionServiceCertsAzure</screen>
+      </step>
+      <step>
+       <para>For &gce; run:</para>
+<screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-gce \
+ regionServiceClientConfigGCE regionServiceCertsGCE</screen>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Disconnect your instance from the &scc;:
+     </para>
+<screen><command>registercloudguest</command> <option>--clean</option></screen>
+     <para>
+      Do <emphasis>not</emphasis> use <command>SUSEConnect -d</command>; it will
+      no longer work.
+     </para>
+    </step>
+    <step>
+     <para>
+      Connect the instance to the &suse; update infrastructure in the
+      public cloud. Replace <replaceable>REGISTRATION_CODE</replaceable> with a
+      valid code.
+     </para>
+<screen>&prompt.root;<command>registercloudguest</command> <option>–regcode <replaceable>REGISTRATION_CODE</replaceable></option></screen>
+     <para>
+      This will register the instance in the &scc; and set up
+      <command>SUSEConnect</command> to work against the
+      cloud framework's update infrastructure rather than the &scc;.
+     </para>
+     <para>
+      This will only register the base product and any recommended products.
+      For instances created from images with a datestamp later than 20220103
+      this will also automatically set up the repositories for the
+      <literal>Public Cloud Module</literal>.
+     </para>
+    </step>
+    <step>
+     <para>
+      For instances created from images with a date stamp prior to
+      <literal>20220103</literal> it is highly recommended to also add the
+      <literal>Public Cloud Module</literal> repositories:
+     </para>
+<screen>&prompt.root;<command>SUSEConnect</command> -p sle-module-public-cloud/15.3/x86_64</screen>
+     <para>
+      In &sle; 12 modules are service pack independent and as such the number is
+      always <literal>12</literal>. For those familiar with registration against
+      the &scc; this command line will look familiar. The triplet expected by
+      SUSEConnect is the product followed by the distribution version followed by the architecture. Use
+      
+      <command>SUSEConnect –help</command>
+      
+      for information about how to obtain the triplet data.
+     </para>
+     <para>
+      For more modules, run
+      <command>sudo SUSEConnect --list-extensions</command>
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+ </sect1>
+
 </chapter>

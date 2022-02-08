@@ -298,7 +298,7 @@
    </para>
   </important>
  </sect1>
- <sect1>
+ <sect1 xml:id="sec-intro-instance-types">
   <title>Supported instance types</title>
   <para>
    To find out what types of instances are supported by each provider, refer to

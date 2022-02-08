@@ -63,6 +63,7 @@
 
 <!ENTITY google    "Google">
 <!ENTITY googlereg "&google; &reg;">
+<!ENTITY gc        "&google; Cloud">
 <!ENTITY gcp       "&google; Cloud Platform">
 <!ENTITY gcpa      "GCP">
 <!ENTITY gce       "&google; Compute Engine">

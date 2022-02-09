@@ -189,6 +189,25 @@
     </step>
    </procedure>
   </sect2>
+  <sect2 xml:id="sec-admin-suseconnect">
+   <title>Registering with <command>SUSEConnect</command></title>
+   <para>
+    To register from the command line, use the command
+   </para>
+   <screen>&prompt.root;<command>SUSEConnect -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></command></screen>
+   <para>
+    Replace <replaceable>REGISTRATION_CODE</replaceable> with the registration
+    code you received with your copy of &productname;.
+    Replace <replaceable>EMAIL_ADDRESS</replaceable> with
+    the e-mail address associated with the &suse; account you or your
+    organization uses to manage subscriptions.
+   </para>
+   <para>
+    To register with a local registration server, also provide the URL to
+    the server:
+   </para>
+   <screen>&prompt.root;<command>SUSEConnect -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable> --url &quot;<replaceable>URL</replaceable>&quot;</command></screen>
+  </sect2>
  </sect1>
 
 </chapter>

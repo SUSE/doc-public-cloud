@@ -192,7 +192,7 @@
       </listitem>
       <listitem>
        <para>
-        <literal>chost</literal>: Container host image
+        <literal>chost</literal>: Minimal container host image
        </para>
       </listitem>
       <listitem>

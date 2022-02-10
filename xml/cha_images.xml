@@ -491,7 +491,7 @@
        fixes, package version changes, and package changelogs.
        Image changelogs are only available for images that replace others. For
        initial images of new product versions, refer to the product's <link
-       xlink:href="https://www.suse.com/releasenotes/">release notes</link>.
+        xlink:href="&sc-rn;">release notes</link>.
       </para>
      </listitem>
     </varlistentry>

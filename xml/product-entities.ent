@@ -31,7 +31,7 @@
 <!ENTITY abstract_cha_images "&suse; offers a variety of different product
  images for different use cases in partner cloud provider frameworks. Learn how
  to find the image that meets your use case.">
-<!ENTITY abstract_cha_provders "&productname; can be run in various public
+<!ENTITY abstract_cha_providers "&productname; can be run in various public
  clouds. Find provider-specific instructions for cloud frameworks such as &aws;,
  &azure; &gcp;, &oc;, and &ac;.">
 

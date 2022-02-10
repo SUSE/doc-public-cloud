@@ -66,7 +66,7 @@
   </itemizedlist>
   <note role="compact">
    <para>
-    To constantly adjust and improve &suse;'s offerings, availablilty of
+    To constantly adjust and improve &suse;'s offerings, availability of
     products and versions is subject to change and may differ between cloud
     frameworks.
    </para>
@@ -134,7 +134,7 @@
   </para>
 
   <table>
-   <title>Feature comparision</title>
+   <title>Feature comparison</title>
    <tgroup cols="3">
     <colspec colwidth="30*" colnum="1" colname="feature"/>
     <colspec colwidth="40*" colnum="2" colname="payg"/>
@@ -228,7 +228,7 @@
      <row>
       <entry>
        <para>
-        Extented ESPOS<superscript>1</superscript> or
+        Extended ESPOS<superscript>1</superscript> or
         LTSS<superscript>2</superscript> or support
        </para>
       </entry>

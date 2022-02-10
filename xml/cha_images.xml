@@ -340,7 +340,7 @@
    The &pint; (&pinta;) provides information about the images &suse; publishes
    and servers that are part of the &suse; operated update infrastructure.
    &pinta; is available at <link xlink:href="&pinturl;"/> and provided as an API
-   and commandline tool with the <package>python3-susepubliccloudinfo</package>
+   and command-line tool with the <package>python3-susepubliccloudinfo</package>
    package from the <systemitem>Public Cloud Module</systemitem> repository.
   </para>
   
@@ -447,10 +447,10 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Enviroment (&azure;-only)</term>
+     <term>Environment (&azure;-only)</term>
      <listitem>
       <para>
-       Enviroment of the image. Only shown for &azure;.
+       Environment of the image. Only shown for &azure;.
       </para>
      </listitem>
     </varlistentry>

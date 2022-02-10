@@ -486,7 +486,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Project (&gcp;-only)</term>
+     <term>Project</term>
      <listitem>
       <para>
        Project of the image. Projects are used to organize &gcp; resources. Only
@@ -503,7 +503,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Environment (&azure;-only)</term>
+     <term>Environment</term>
      <listitem>
       <para>
        Environment of the image. Only shown for &azure;.
@@ -521,7 +521,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>URN (&azure;-only)</term>
+     <term>URN</term>
      <listitem>
       <para>
        Uniform Resource Name of an image. While the <guimenu>Name</guimenu> of

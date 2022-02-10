@@ -172,15 +172,71 @@
     <term><literal>FLAVOR</literal></term>
     <listitem>
      <para>
-      e.g. <literal>chost</literal> or <literal>byos</literal>. If it is the
-      default image of a product, this part will be omitted. Multiple
-      <literal>FLAVOR</literal> attributes may be combined in an image name.
-      For example <literal>sles-15-sp3-chost-byos</literal> is an image build
-      based on &sles; 15 SP3 build as a container host using a
-      <literal>BYOS</literal> (Bring Your Own Subscription) billing model. When
-      <literal>byos</literal> is not part of an image name the image is set up
-      for <literal>PAYG</literal> (Pay As You Go) billing.
+      Images can have different flavors such as <literal>chost</literal> or
+      <literal>byos</literal>. If it is the default image of a product, this
+      part will be omitted. Multiple <literal>FLAVOR</literal> attributes may be
+      combined in an image name. For example
+      <literal>sles-15-sp3-chost-byos</literal> is an image build based on
+      &sles; 15 SP3 build as a container host using a BYOS (Bring Your Own
+      Subscription) billing model. Images without <literal>byos</literal> in the
+      name are set up the image is set up for PAYG (Pay As You Go) billing. For
+      more information about the different billing models, refer to <xref
+       linkend="sec-intro-plans"/>.
      </para>
+     <itemizedlist>
+      <title>&sle; flavors</title>
+      <listitem>
+       <para>
+        <literal>byos</literal>: Bring your own subscription (BYOS) image
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>chost</literal>: Container host image
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>hpc</literal>: &slehpc; image
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>sap</literal>: &sles4sap; image
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>sapcal</literal>: &sap; Cloud Application Library image
+       </para>
+      </listitem>
+     </itemizedlist>
+     <para>
+      Not all flavors are available for all could frameworks; some are
+      provider-specific.
+     </para>
+     <itemizedlist>
+      <title>&aws; flavors</title>
+      <listitem>
+       <para>
+        <literal>ecs</literal>: &amazon; Elastic Container Service image
+       </para>
+      </listitem>
+     </itemizedlist>
+     <itemizedlist>
+      <title>&azure; flavors</title>
+      <listitem>
+       <para>
+        <literal>basic</literal>: PAYG image that only includes updates but no
+        support
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>standard</literal>: Fully supported PAYG image
+       </para>
+      </listitem>
+     </itemizedlist>
     </listitem>
    </varlistentry>
    <varlistentry>

@@ -36,6 +36,10 @@
      <dm:assignee>cwickert@suse.com</dm:assignee>
     </dm:bugtracker>
    </dm:docmanager>
+  <authorgroup>
+   <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>
+   <author><personname><firstname>Robert</firstname><surname>Schweikert</surname></personname> <contrib>Reviewer</contrib></author>
+  </authorgroup>
  </info>
 
  <xi:include href="preface_public_cloud.xml"/>

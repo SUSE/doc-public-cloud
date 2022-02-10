@@ -488,7 +488,10 @@
      <listitem>
       <para>
        Link to a detailed changelog that lists image configuration changes, CVE
-       fixes, package version changes, and package changelogs.
+       fixes, package version changes, and package changelogs. For more
+       information, refer to <xref linkend="sec-image-changeinfo"/>
+      </para>
+      <para>
        Image changelogs are only available for images that replace others. For
        initial images of new product versions, refer to the product's <link
         xlink:href="&sc-rn;">release notes</link>.
@@ -545,6 +548,112 @@
     </varlistentry>
    </variablelist>
   </sect2>
+ </sect1>
+
+ <sect1 xml:id="sec-image-changeinfo">
+  <!-- See https://www.suse.com/c/public-cloud-image-change-information/ -->
+  <title>Change information</title>
+  <para>
+   Whenever a new image gets released, you can review changes compared to the
+   previously released image. Search for an image in <link
+    xlink:href="&pinturl;">&pinta;</link> and click on its entry in the
+   <guimenu>Changelog</guimenu> column.
+  </para>
+  <para>
+   Image change information is divided into different categories:
+  </para>
+  <variablelist>
+   <!-- <title>Image change information categories</title> -->
+   <varlistentry>
+    <term>Image configuration changes</term>
+    <listitem>
+     <para>
+      This category describes changes in the image setup; for example, if a new
+      service was enabled, kernel parameters were changed, or if packages were
+      added or removed.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>CVE fixes</term>
+    <listitem>
+     <para>
+      This category lists security fixes in the image. Entries are cross linked
+      to the <link xlink:href="https://www.suse.com/security/cve/">&suse; CVE
+      database</link>. For more information, refer to <xref
+       linkend="sec-image-lifecycle"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Package version changes</term>
+    <listitem>
+     <para>
+      This category lists all packages that had version changes compared to the
+      previous image and the version in that image.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Changelog information</term>
+    <listitem>
+     <para>
+      This category shows a concatenated changelog of all packages that had
+      changes.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+  <note>
+   <title>Change information for new product versions</title>
+   <para>
+    Please note that that image change information is only available for
+    <emphasis>updated</emphasis> images, means for images that replace previous
+    images of the same product version.
+   </para>
+   <para>
+    For initial images of new product versions, refer to the product's release
+    notes at <link xlink:href="&sc-rn;"/>.
+   </para>
+  </note>
+  <para>
+   To allow for automatic retrieval of image change information, all URLs follow
+   the schema:
+  </para>
+  <para>
+   <uri>https://publiccloudimagechangeinfo.suse.com/<replaceable>FRAMEWORK</replaceable>/<replaceable>IMAGE</replaceable>/<replaceable>CHANGES</replaceable>.html</uri>
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     <replaceable>FRAMEWORK</replaceable> is the cloud framework as used in
+     the <command>pint</command> command-line tool; i.e. one of
+     <literal>alibaba</literal>,
+     <literal>amazon</literal>,
+     <literal>google</literal>,
+     <literal>microsoft</literal>, or
+     <literal>oracle</literal>.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <replaceable>IMAGE</replaceable> is the name of the image as shown by
+     &pinta;, e.g. <literal>suse-sles-15-sp3-byos-v20220127-hvm-ssd-x86_64</literal>.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <replaceable>CHANGES</replaceable> is the category of the changes, i. e.
+     one of
+     <literal>cve_fixes</literal>,
+     <literal>image_changes</literal>,
+     <literal>package_changelogs</literal>, or
+     <literal>package_version_changes</literal>.
+     Do not forget the <filename class="extension">.html</filename> extension to
+     complete the URL.
+    </para>
+   </listitem>
+  </itemizedlist>
  </sect1>
 
 </chapter>

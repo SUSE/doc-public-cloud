@@ -350,7 +350,10 @@
   <title>Support</title>
   <para>
    Regardless of the public cloud you use and the plan you choose, &suse; has
-   you covered with support:
+   you covered with support. Support is dependent on whether you &quot;bring
+   your own service&quot; (BYOS) or you use &sle; &quot;on demand&quot; (PAYG).
+   For more information about BYOS and PAYG, refer to
+   <xref linkend="sec-intro-plans"/>.
   </para>
   <itemizedlist>
    <listitem>

@@ -69,6 +69,7 @@
     </para>
    </listitem>
   </varlistentry>
+  <!-- 
   <varlistentry>
    <term><xref linkend="cha-providers"/></term>
    <listitem>
@@ -77,6 +78,7 @@
     </para>
    </listitem>
   </varlistentry>
+  -->
  </variablelist>
 
  <xi:include href="common_intro_available_doc.xml"/>

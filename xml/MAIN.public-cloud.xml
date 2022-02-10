@@ -50,7 +50,7 @@
  <!-- Comment out parts for now, we don't need them (yet) -->
  <!-- <part xml:id="part-providers">
   <title>Public Cloud Providers</title> -->
-  <xi:include href="cha_providers.xml"/>
+ <!-- <xi:include href="cha_providers.xml"/> -->
  <!-- </part> -->
 
  <xi:include href="common_support.xml" condition="suse-product"/>

@@ -73,6 +73,43 @@
   </note>
  </sect1>
 
+ <sect1 xml:id="sec-intro-providers">
+  <title>Cloud service providers</title>
+  <para>
+   &suse; products are available at following cloud service providers:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     &aws;
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &azure;
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &gc;
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &oc;
+    </para>
+   </listitem>
+  </itemizedlist>
+  <tip role="compact">
+   <para>
+    Please note that this list may chance as &suse; is expanding its partner
+    network. If you are interested in becoming a &suse; partner, visit
+    <link xlink:href="https://www.suse.com/partners/cloud-service-providers/"/>
+    for more information.
+   </para>
+  </tip>
+ </sect1>
+
  <sect1 xml:id="sec-intro-plans">
   <title>Plans</title>
   <para>

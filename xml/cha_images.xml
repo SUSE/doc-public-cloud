@@ -292,28 +292,39 @@
    </varlistentry>
   </variablelist>
 
-<!-- 
+<!-- cwickert 2022-02-11 WIP, not sure if really needed. -->
+  <!--
   <para>
    As the parts are differnt across cloud frameworks, the actual names that
    result from the naming scheme differ, too.
   </para>
   <example>
    <title>Name of an &aws; image</title>
-   <screen></screen>
+    <screen>suse-sles-15-sp3-byos-v20220127-hvm-ssd-x86_64</screen>
+   <para>
+    &sles; 15 SP3, &quot;Bring your own subscription&quot; billing, released on
+    January 27th, 2022, hardware-assisted virtual machine with SSD-backed storage
+    and &x86-64; architecture.
+   </para>
   </example>
-  <para>
-   
-  </para>
   <example>
-   <title>Name of an &azure; image</title>
-   <screen></screen>
+   <title>Name of a 2nd generation &azure; image</title>
+   <screen>021d1b90c82943ec959408cff8e26c37__suse-sles-15-sp3-byos-v20210623</screen>
+   <para>
+    1st generation image names start with a 32 characters alpha-numeric string
+    and lack the trailing <literal>-gen2</literal>, e. g.
+   </para>
   </example>
-  <para>
-   
-  </para>
+  <example>
+   <title>Name of a 2nd generation &azure; image</title>
+   <screen>suse-sles-15-sp3-byos-v20220127-gen2</screen>
+   <para>
+    
+   </para>
+  </example>
   <example>
    <title>Name of an &gcp; image</title>
-   <screen></screen>
+   <screen>sles-15-sp3-byos-v20220126</screen>
   </example>
   <para>
    
@@ -327,12 +338,12 @@
   </para>
   <example>
    <title>Name of an &alibaba; image</title>
-   <screen></screen>
+   <screen>sles-15-sp3-chost-byos-v20220126</screen>
   </example>
   <para>
    
   </para>
--->
+  -->
  </sect1>
 
  <sect1 xml:id="sec-image-pint">

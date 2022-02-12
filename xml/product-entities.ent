@@ -11,7 +11,7 @@
 <!ENTITY repo-readme "&repo-url;/blob/master/README.adoc">
 
 <!-- DOCUMENTATION.SUSE.COM PRODUCT URL -->
-<!ENTITY doc-url "&dsc;/public-cloud">
+<!ENTITY doc-url "&dsc;/sle-public-cloud">
 
 <!-- RELEASE NOTES URL -->
 <!ENTITY rn-url "&sc-rn;/x86_64/public-cloud">

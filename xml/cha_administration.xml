@@ -95,7 +95,7 @@
    </para>
   </note>
   <sect2 xml:id="sec-admin-registercloudguest">
-   <title>Registering with <command>registercloudguest</command></title>
+   <title>Register with <command>registercloudguest</command></title>
    <para>
     To register a BYOS instance against the &scc; with
     <command>registercloudguest</command>, perform the following steps:
@@ -174,7 +174,7 @@
    </procedure>
   </sect2>
   <sect2 xml:id="sec-admin-suseconnect">
-   <title>Registering with <command>SUSEConnect</command></title>
+   <title>Register with <command>SUSEConnect</command></title>
    <para>
     To register from the command line, use the command
    </para>
@@ -195,7 +195,7 @@
  </sect1>
 
  <sect1 xml:id="sec-admin-deregister">
-  <title>Deregistering instances</title>
+  <title>Deregister instances</title>
   <para>
    If you are to decommission an instance, remember to deregister it before
    termination with:

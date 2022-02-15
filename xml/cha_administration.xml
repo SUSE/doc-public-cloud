@@ -38,66 +38,67 @@
   <itemizedlist>
    <listitem>
     <para>
-     <literal>PAYG</literal> instances are registered with a local update
+     <literal>PAYG</literal> instances are registered against a local update
      server, that means an update server in the cloud framework and region. This
      is done automatically by the <systemitem
-      class="service">guestregister.service</systemitem> service upon first
-     boot.
+      class="service">guestregister.service</systemitem> upon first boot.
     </para>
-   </listitem>
+  </listitem>
    <listitem>
     <para>
-     <literal>BYOS</literal> instances need to be regustered manually with your
-     &suse; registration key. You can register with a local update
-     server, the &scc;, or your own &susemgr; or &rmt; infrastructure.
+     <literal>BYOS</literal> instances have to be registered manually with your
+     &suse; registration key. You can register against a local update server,
+     the &scc;, or your own &susemgr; or &rmt; infrastructure.
     </para>
    </listitem>
   </itemizedlist>
   <para>
-   For BYOS instances, there are two different ways to register, depending on
-   on the datestamp of the image the instance was created from:
+   There are two different ways to register BYOS instances with the &scc;,
+   depending on the datestamp of the image the instance was created from:
   </para>
   <itemizedlist>
    <listitem>
     <para>
-     <literal>BYOS</literal> images with a datestamp <emphasis>later</emphasis>
-     than <literal>20220103</literal> contain the
-     <package>cloud-regionsrv-client</package> package to make registration more
-     straight forward. Unlike for on-demand instances the registration is not
-     automatic on instance startup.
+     Images with a datestamp <emphasis>later</emphasis> than
+     <literal>20220103</literal> can be registered with
+     <command>registercloudguest</command>. This sets up
+     <command>SUSEConnect</command> to work against the cloud framework's update
+     infrastructure rather than the &scc;, resulting in significantly faster
+     package downloads. Refer to
+     <xref linkend="sec-admin-registercloudguest"/> for instructions.
     </para>
    </listitem>
    <listitem>
     <para>
-     <literal>BYOS</literal> images with a datestamp
-     <emphasis>prior</emphasis> to <literal>20220103</literal> are
-     registered with <command>&susemgr;</command>.
-    </para>
-    <para>
-     However, if you generally register your instances directly to the &scc;, this
-     change can make a significant difference in how fast you get updates onto
-     your systems. Package updates are transferred to your system using the cloud
-     framework backbone which provides better throughput than accessing the CDN
-     over the Internet when an instance is registered to &scc;.
+     Images with a datestamp <emphasis>prior</emphasis> to
+     <literal>20220103</literal> are registered with
+     <package>&suseconnect;</package>. Refer to <xref
+      linkend="sec-admin-suseconnect"/>. Alternatively, you can install
+     <command>registercloudguest</command> to benefit from faster downloads
+     from the local cloud update infrastructure.
     </para>
    </listitem>
   </itemizedlist>
+  <para>
+   In summary, use <command>registercloudguest</command> to register with the
+   &scc;; it provides significant benefits even for older instances.
+   Use <command>&suseconnect;</command> to register with or your own &susemgr;
+   or &rmt; infrastructure.
+  </para>
   <note>
    <title>Container host images</title>
    <para>
     Container host (<literal>chost</literal>) images are optimized for container
     workloads and contain only a small set of extra packages outside of the bare
     minimum to make containers run. They do not contain
-    <package>cloud-regionsrv-client</package>.
+    <command>registercloudguest</command>.
    </para>
   </note>
-  <para>
-   <package>cloud-regionsrv-client</package> package with version 9.3.0
-  </para>
   <sect2 xml:id="sec-admin-registercloudguest">
    <title>Registering with <command>registercloudguest</command></title>
    <para>
-    
+    To register a BYOS instance against the &scc; with
+    <command>registercloudguest</command>, perform the following steps:
    </para>
    <procedure>
     <step>
@@ -107,12 +108,9 @@
      </para>
 <screen>&prompt.root;<command>rpm</command> <option>-q cloud-regionsrv-client</option></screen>
      <para>
-      If the package is not installed or older than version is 9.3.0, install it.
-     </para>
-     <para>
-      Install the necessary packages. In addition to the
-      <package>cloud-regionsrv-client</package> package you will need some
-      framework specific packages.
+      If the package is not installed or older than version is 9.3.0, install
+      or update it. You will need some additional packages, depending on your
+      cloud framework.
      </para>
      <substeps>
       <step>
@@ -140,7 +138,7 @@
      <para>
       Disconnect your instance from the &scc;:
      </para>
-<screen><command>registercloudguest</command> <option>--clean</option></screen>
+<screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
      <para>
       Do <emphasis>not</emphasis> use <command>SUSEConnect -d</command>; it will
       no longer work.
@@ -154,37 +152,23 @@
      </para>
 <screen>&prompt.root;<command>registercloudguest</command> <option>–regcode <replaceable>REGISTRATION_CODE</replaceable></option></screen>
      <para>
-      This will register the instance in the &scc; and set up
-      <command>SUSEConnect</command> to work against the
-      cloud framework's update infrastructure rather than the &scc;.
-     </para>
-     <para>
       This will only register the base product and any recommended products.
-      For instances created from images with a datestamp later than 20220103
-      this will also automatically set up the repositories for the
-      <literal>Public Cloud Module</literal>.
+      For instances created from images with a datestamp later than
+      <literal>20220103</literal> this will also automatically set up the
+      repositories for the <literal>Public Cloud Module</literal>.
      </para>
     </step>
     <step>
      <para>
       For instances created from images with a date stamp prior to
-      <literal>20220103</literal> it is highly recommended to also add the
-      <literal>Public Cloud Module</literal> repositories:
+      <literal>20220103</literal> it is strongly recommended to also add the
+      <literal>Public Cloud Module</literal> repositories. For &sle; 15 SP3,
+      run:
      </para>
 <screen>&prompt.root;<command>SUSEConnect</command> -p sle-module-public-cloud/15.3/x86_64</screen>
      <para>
-      In &sle; 12 modules are service pack independent and as such the number is
-      always <literal>12</literal>. For those familiar with registration against
-      the &scc; this command line will look familiar. The triplet expected by
-      SUSEConnect is the product followed by the distribution version followed by the architecture. Use
-      
-      <command>SUSEConnect –help</command>
-      
-      for information about how to obtain the triplet data.
-     </para>
-     <para>
-      For more modules, run
-      <command>sudo SUSEConnect --list-extensions</command>
+      For more complete list of modules and their product indentifiers, run
+      <command>sudo SUSEConnect --list-extensions</command>.
      </para>
     </step>
    </procedure>

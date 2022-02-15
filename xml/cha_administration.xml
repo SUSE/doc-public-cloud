@@ -148,9 +148,11 @@
      <para>
       Connect the instance to the &suse; update infrastructure in the
       public cloud. Replace <replaceable>REGISTRATION_CODE</replaceable> with a
-      valid code.
+      valid registration code. Replace <replaceable>EMAIL_ADDRESS</replaceable>
+      with the e-mail address associated with the &suse; account you or your
+      organization uses to manage subscriptions.
      </para>
-<screen>&prompt.root;<command>registercloudguest</command> <option>–regcode <replaceable>REGISTRATION_CODE</replaceable></option></screen>
+     <screen>&prompt.root;<command>registercloudguest</command> -r <replaceable>REGISTRATION_CODE </replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></screen>
      <para>
       This will only register the base product and any recommended products.
       For instances created from images with a datestamp later than

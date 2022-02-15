@@ -176,15 +176,14 @@
   <sect2 xml:id="sec-admin-suseconnect">
    <title>Register with <command>SUSEConnect</command></title>
    <para>
-    To register from the command line, use the command
+    To register a BYOS instance against the &scc;, use the command:
    </para>
-   <screen>&prompt.root;<command>SUSEConnect -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></command></screen>
+   <screen>&prompt.root;<command>SUSEConnect</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></screen>
    <para>
-    Replace <replaceable>REGISTRATION_CODE</replaceable> with the registration
-    code you received with your copy of &productname;.
-    Replace <replaceable>EMAIL_ADDRESS</replaceable> with
-    the e-mail address associated with the &suse; account you or your
-    organization uses to manage subscriptions.
+    Replace <replaceable>REGISTRATION_CODE</replaceable> with a valid
+    registration code. Replace <replaceable>EMAIL_ADDRESS</replaceable> with the
+    e-mail address associated with the &suse; account you or your organization
+    uses to manage subscriptions.
    </para>
    <para>
     To register with a local registration server, also provide the URL to

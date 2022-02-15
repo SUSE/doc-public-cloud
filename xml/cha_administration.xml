@@ -156,8 +156,8 @@
      <para>
       This will only register the base product and any recommended products.
       For instances created from images with a datestamp later than
-      <literal>20220103</literal> this will also automatically set up the
-      repositories for the <literal>Public Cloud Module</literal>.
+      <literal>20220103</literal>, it will also set up the repositories for the
+      <literal>Public Cloud Module</literal>.
      </para>
     </step>
     <step>
@@ -169,8 +169,8 @@
      </para>
 <screen>&prompt.root;<command>SUSEConnect</command> -p sle-module-public-cloud/15.3/x86_64</screen>
      <para>
-      For more complete list of modules and their product identifiers, run
-      <command>sudo SUSEConnect --list-extensions</command>.
+      For other versions or a complete list of modules and their product
+      identifiers, run <command>sudo SUSEConnect --list-extensions</command>.
      </para>
     </step>
    </procedure>

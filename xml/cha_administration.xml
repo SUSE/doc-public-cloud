@@ -170,7 +170,7 @@
 <screen>&prompt.root;<command>SUSEConnect</command> -p sle-module-public-cloud/15.3/x86_64</screen>
      <para>
       For other versions or a complete list of modules and their product
-      identifiers, run <command>sudo SUSEConnect --list-extensions</command>.
+      identifiers, run <command>SUSEConnect --list-extensions</command>.
      </para>
     </step>
    </procedure>

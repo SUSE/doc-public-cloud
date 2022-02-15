@@ -210,4 +210,17 @@
   </sect2>
  </sect1>
 
+ <sect1 xml:id="sec-admin-deregister">
+  <title>Deregistering instances</title>
+  <para>
+   If you are to decommission an instance, remember to deregister it before
+   termination with:
+  </para>
+  <screen><command>registercloudguest</command> <option>--clean</option></screen>
+  <para>
+   This will ensure that the system gets removed from the &scc; and is no longer
+   counted against your subscription.
+  </para>
+ </sect1>
+
 </chapter>

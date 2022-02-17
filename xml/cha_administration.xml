@@ -199,13 +199,17 @@
   <title>Deregister instances</title>
   <para>
    If you are to decommission an instance, remember to deregister it before
-   termination with:
+   termination. This will ensure that the system gets removed from the &scc; and
+   is no longer counted against your subscription.
   </para>
-  <screen><command>registercloudguest</command> <option>--clean</option></screen>
   <para>
-   This will ensure that the system gets removed from the &scc; and is no longer
-   counted against your subscription.
+   If a system was registered with <command>registercloudguest</command>, run:
   </para>
+  <screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
+  <para>
+   If a system was registered with <command>SUSEConnect</command>, run:
+  </para>
+  <screen>&prompt.root;<command>SUSEConnect</command> <option>-d</option></screen>
  </sect1>
 
 </chapter>

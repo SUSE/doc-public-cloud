@@ -188,10 +188,9 @@
     uses to manage subscriptions.
    </para>
    <para>
-    To register with a local registration server, also provide the URL to
-    the server:
+    To register with your own registration server, also provide its URL:
    </para>
-   <screen>&prompt.root;<command>&suseconnect; -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable> --url &quot;<replaceable>URL</replaceable>&quot;</command></screen>
+   <screen>&prompt.root;<command>&suseconnect;</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable> --url <replaceable>URL</replaceable></screen>
   </sect2>
  </sect1>
 

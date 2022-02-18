@@ -76,7 +76,8 @@
  <sect1 xml:id="sec-intro-providers">
   <title>Cloud service providers</title>
   <para>
-   &suse; publishes product images in the following cloud service provider frameworks:
+   &suse; publishes product images in the following cloud service provider
+   frameworks:
   </para>
   <itemizedlist>
    <listitem>
@@ -127,7 +128,7 @@
      </para>
      <para>
       Create an instance when you need it and delete it when you are
-      done. While in use you have access to updates from &suse; through the
+      done. While in use, you have access to updates from &suse; through the
       automatically configured repositories. You only pay for the resources
       you use. Upcharges over the basic cloud prices may apply, depending on
       the image and framework.
@@ -150,8 +151,8 @@
       equivalent to a physical machine that just received a &sles; installation
       from the &slsa; installation image. After creation, use 
       <command>registercloudguest</command> to register the instance with the
-      &suse; operated update infrastructure in the cloud framework or use the
-      <command>SUSEConnect</command> to register the system with &scc; using
+      &suse;-operated update infrastructure in the cloud framework or use the
+      <command>&suseconnect;</command> to register the system with &scc; using
       the entitlements you already have. Connect your system to your own
       running &rmt; or &suma; infrastructure in the same way you connect
       systems in your data center.

@@ -76,7 +76,8 @@
  <sect1 xml:id="sec-intro-providers">
   <title>Cloud service providers</title>
   <para>
-   &suse; products are available at the following cloud service providers:
+   &suse; publishes product images in the following cloud service provider
+   frameworks:
   </para>
   <itemizedlist>
    <listitem>
@@ -94,16 +95,15 @@
      &gc;
     </para>
    </listitem>
-   <listitem>
-    <para>
-     &oc;
-    </para>
-   </listitem>
   </itemizedlist>
   <tip role="compact">
    <para>
-    Please note that this list may chance as &suse; is expanding its partner
-    network. If you are interested in becoming a &suse; partner, visit
+    &suse; images are also available in other provider frameworks. Images in
+    other providers are generally created and published by the provider.
+   </para>
+   <para>
+    Please note that this list may change. If you are interested in becoming a
+    &suse; partner, visit
     <link xlink:href="https://www.suse.com/partners/cloud-service-providers/"/>
     for more information.
    </para>
@@ -123,16 +123,17 @@
     <term>Pay as you go (PAYG)</term>
     <listitem>
      <para>
-      <literal>Pay as you go</literal> (PAYG) are used to create on-demand
-      instances. When an instance is first booted, it automatically registers
-      with a local update server. Once the system finishes booting, it is ready
-      to use.
+      <literal>Pay as you go</literal> (PAYG) images are used to create
+      on-demand instances. When an instance is first booted, it automatically
+      registers with a local update server. Once the system finishes booting,
+      it is ready to use.
      </para>
      <para>
-      This makes PAYG instances great for bursting production workloads and for
-      testing. Create an instance when you need it and delete it when you are
-      done. You only pay for the resources you use. Upcharges over the basic
-      cloud prices may apply, depending on the framework.
+      Create an instance when you need it and delete it when you are
+      done. While in use, you have access to updates from &suse; through the
+      automatically configured repositories. You only pay for the resources
+      you use. Upcharges over the basic cloud prices may apply, depending on
+      the image and framework.
      </para>
      <para>
       PAYG instances include support through the cloud provider which in turn is
@@ -152,9 +153,11 @@
       equivalent to a physical machine that just received a &sles; installation
       from the &slsa; installation image. After creation, use 
       <command>registercloudguest</command> to register the instance with the
-      &scc;, or connect it to your running &rmt; or &suma; infrastructure using
-      the entitlements you already have along with any update infrastructure you
-      may already manage.
+      &suse;-operated update infrastructure in the cloud framework or use the
+      <command>&suseconnect;</command> to register the system with &scc; using
+      the entitlements you already have. Connect your system to your own
+      running &rmt; or &suma; infrastructure in the same way you connect
+      systems in your data center.
      </para>
      <para>
       BYOS instances make it easier to manage extensions such as LTSS or kernel
@@ -308,7 +311,7 @@
   </simplelist>
 
   <important>
-   <title>Switching plans is not possible</title>
+   <title>Switching plans</title>
    <para>
     Switching from PAYG to BYOS or vice-versa is only possible on &azure;
     through the <literal>Hybrid Benefit</literal> program. For all other cloud
@@ -351,8 +354,8 @@
   <para>
    Regardless of the public cloud you use and the plan you choose, &suse; has
    you covered with support. Support is dependent on whether you &quot;bring
-   your own service&quot; (BYOS) or you use &sle; &quot;on demand&quot; (PAYG).
-   For more information about BYOS and PAYG, refer to
+   your own subscription&quot; (BYOS) or you use &sle; &quot;on-demand&quot;
+   (PAYG). For more information about BYOS and PAYG, refer to
    <xref linkend="sec-intro-plans"/>.
   </para>
   <itemizedlist>

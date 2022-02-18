@@ -98,10 +98,12 @@
   </itemizedlist>
   <tip role="compact">
    <para>
-    Please note that this list may change. &suse; images are also available in
-    other provider frameworks. Images in other providers are generally created
-    and published by the provider. If you are interested in becoming a &suse;
-    partner, visit
+    &suse; images are also available in other provider frameworks. Images in
+    other providers are generally created and published by the provider.
+   </para>
+   <para>
+    Please note that this list may change. If you are interested in becoming a
+    &suse; partner, visit
     <link xlink:href="https://www.suse.com/partners/cloud-service-providers/"/>
     for more information.
    </para>

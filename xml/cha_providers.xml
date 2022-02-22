@@ -29,37 +29,37 @@
  </info>
 
  <sect1 xml:id="sec-providers-amazon">
-  <title>&amazon;</title>
+  <title>&ec2a;</title>
   <para>
-   A paragraph of text.
+   This section contains tips for &ec2a;
   </para>
  </sect1>
 
  <sect1 xml:id="sec-providers-microsoft">
-  <title>&microsoft;</title>
+  <title>&azure;</title>
   <para>
-   A paragraph of text.
+   This section contains tips for &azure;.
   </para>
  </sect1>
  
  <sect1 xml:id="sec-providers-google">
-  <title>&google;</title>
+  <title>&gc;</title>
   <para>
-   A paragraph of text.
+   This section contains tips for &gce;.
   </para>
  </sect1>
 
  <sect1 xml:id="sec-providers-oracle">
-  <title>&oracle;</title>
+  <title>&oc;</title>
   <para>
-   A paragraph of text.
+   This section contains tips for &oc;.
   </para>
  </sect1>
  
  <sect1 xml:id="sec-providers-alibaba">
-  <title>&alibaba;</title>
+  <title>&ac;</title>
   <para>
-   A paragraph of text.
+   This section contains tips for &ac;.
   </para>
  </sect1>
 

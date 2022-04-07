@@ -32,23 +32,24 @@
   <title>Registering instances</title>
   <para>
    Like other &suse; products, &sle; in public clouds has to be registered to
-   receive updates. There are different ways to register, depending on what
-   instance you register where.
+   receive updates. There are different ways to register, depending on the kind
+   of instance and the its base product.
   </para>
   <itemizedlist>
    <listitem>
     <para>
-     <literal>PAYG</literal> instances are registered against a local update
-     server, that means an update server in the cloud framework and region. This
-     is done automatically by the <systemitem
-      class="service">guestregister.service</systemitem> upon first boot.
+     <literal>PAYG</literal> instances are registered against a &suse;-operated
+     update server in the cloud framework and region. This is done automatically
+     by the <systemitem class="service">guestregister.service</systemitem> upon
+     first boot.
     </para>
   </listitem>
    <listitem>
     <para>
      <literal>BYOS</literal> instances have to be registered manually with your
-     &suse; registration key. You can register against a local update server,
-     the &scc;, or your own &susemgr; or &rmt; infrastructure.
+     &suse; registration key. You can register against the cloud framework's
+     &suse; update servers, the &scc;, or your own &susemgr; or &rmt;
+     infrastructure.
     </para>
    </listitem>
   </itemizedlist>

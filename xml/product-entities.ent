@@ -72,7 +72,7 @@
 <!ENTITY gce       "&google; Compute Engine">
 <!ENTITY gcea      "GCE">
 
-<!ENTITY microsoft "Microsoft">
+<!ENTITY microsoft "&ms;">
 <!ENTITY azure     "&microsoft; Azure">
 <!ENTITY azurea    "Azure">
 

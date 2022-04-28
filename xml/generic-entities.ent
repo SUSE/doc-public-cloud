@@ -75,6 +75,7 @@
 <!ENTITY sls           "&sles;">
 <!ENTITY sles4sap      "&sls; for &sap; Applications">
 <!ENTITY s4s           "&sles4sap;">
+<!ENTITY slem          "&sle; Micro">
 
 <!-- Cloud & Storage & Emerging Stuff -->
 <!ENTITY cloud         "&suse; &ostack; Cloud">

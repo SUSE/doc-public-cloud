@@ -35,27 +35,32 @@
   <itemizedlist>
    <listitem>
     <para>
-     &sls; (&slsa;)
+     &sls;
     </para>
    </listitem>
    <listitem>
     <para>
-     &suma; (&sumaa;) Server
+     &slehpc;
     </para>
    </listitem>
    <listitem>
     <para>
-     &suma; (&sumaa;) Proxy
+     &slem;
     </para>
    </listitem>
    <listitem>
     <para>
-     &slehpc; (&slehpca;)
+     &sles4sap;
     </para>
    </listitem>
    <listitem>
     <para>
-     &sles4sap; (&sles4sapa;)
+     &suma; Server
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &suma; Proxy
     </para>
    </listitem>
    <listitem>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<sect1 xml:id="sec-images-hardened" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+ <title>Hardened Images</title>
+ <para>
+  To improve overall security, &suse; provides hardened images of some products.
+  The images are hardened using <phrase role="product">&openscap;</phrase>, a
+  collection of open source tools that implement the <systemitem
+  class="protocol">Security Content Automation Protocol (SCAP)</systemitem>
+  maintained by the <orgname>National Institute of Standards and Technology
+  (NIST)</orgname>. <phrase role="product">&openscap;</phrase> supports
+  automated configuration, vulnerability and patch checking, technical control
+  compliance activities, and security measurement.
+ </para>
+ <para>
+  All images are pre-hardened to the extent they can safely be hardened without
+  causing problems in public cloud frameworks. After instance creation, users
+  can use the installed <package>openscap</package> packages to complete the
+  image hardening process using the following profiles:
+ </para>
+ <variablelist>
+  <title>&openscap; Profiles</title>
+  <varlistentry>
+   <term>Standard (<filename>standard.profile</filename>)</term>
+   <listitem>
+    <para>
+     Basic <phrase role="product">&openscap;</phrase> system security standard.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>CIS Sever Level 2 (<filename>cis.profile</filename>)</term>
+   <listitem>
+    <para>
+     The <systemitem>Center for Internet Security Sever Level 2</systemitem>
+     profile is considered to be <quote>defense in depth</quote> and is intended
+     for environments where security is paramount. The recommendations
+     associated with this profile can have an adverse effect on your
+     organization if not implemented appropriately or without due care.
+    </para>
+    <para>
+     For more information, refer to <link
+     xlink:href="https://www.cisecurity.org"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Department of Defense STIG (<filename>stig.profile</filename>)</term>
+   <listitem>
+    <para>
+     The <orgname>Defense Information Systems Agency</orgname> publishes
+     <systemitem>Security Technical Implementation Guides (STIGs)</systemitem>
+     for the <orgname>Department of Defense</orgname>. The STIG profile replaces
+     the previous CIS Level 3 profile and provides all recommendations that are
+     STIG specific. Overlap of recommendations from other profiles, i.e. CIS
+     Level 1 and Level 2, are present in the STIG profile as applicable.
+    </para>
+    <para>
+     For more information, refer to <link
+      xlink:href="https://public.cyber.mil/stigs/"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>HIPAA Security Rule (<filename>hipaa.profile</filename>)</term>
+   <listitem>
+    <para>
+     In response to the <citetitle>Health Insurance Portability and
+     Accountability Act (HIPAA)</citetitle> of 1996, the <orgname>U.S.
+     Department of Health and Human Services (HHS)</orgname> developed
+     <systemitem>Security Standards for the Protection of Electronic Protected
+     Health Information</systemitem>, commonly known as the <systemitem>HIPAA
+     Security Rule</systemitem>. It establishes national standards to protect
+     individuals` electronic personal health information (e-PHI) that is
+     created, received, used, or maintained by a covered entity.
+    </para>
+    <para>
+     For more information, refer to <link
+      xlink:href="https://www.hhs.gov/hipaa/for-professionals/security/index.html"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Payment Card Industry Data Security Standard (<filename>pci-dss.profile</filename>)</term>
+   <listitem>
+    <para>
+     The <systemitem>Payment Card Industry Data Security Standard (PCI
+     DSS)</systemitem> is a set of requirements to guide merchants to protect
+     cardholder data. It is  maintained by the <orgname>PCI Security Standards
+     Council (SSC)</orgname> that was founded by all five major credit card
+     brands Visa, MasterCard, American Express, Discover, and JCB. 
+    </para>
+    <para>
+     For more information, refer to <link
+      xlink:href="https://www.pcisecuritystandards.org/document_library"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ <important>
+  <title>Supported profiles</title>
+  <para>
+   Currently only the <literal>CIS</literal> and <literal>STIG</literal>
+   profiles are tested and supported by &suse;. You can use other profiles at
+   your own risk. 
+  </para>
+ </important>
+ <para>
+  For information on how to harden your system with
+  <package>&openscap;</package>, refer to the <link
+  xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP
+  Security Guide</citetitle></link>.
+ </para>
+ 
+</sect1>

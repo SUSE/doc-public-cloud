@@ -196,6 +196,13 @@
       </listitem>
       <listitem>
        <para>
+        <literal>hardened</literal>: Pre-Hardened images
+        <!-- (<xref
+         linkend="sec-images-hardened"/>. -->
+       </para>
+      </listitem>
+      <listitem>
+       <para>
         <literal>hpc</literal>: &slehpc; image
        </para>
       </listitem>
@@ -614,5 +621,8 @@
    </listitem>
   </itemizedlist>
  </sect1>
+
+ <xi:include href="sec_images_hardened.xml"/>
+
 
 </chapter>

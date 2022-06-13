@@ -196,9 +196,8 @@
       </listitem>
       <listitem>
        <para>
-        <literal>hardened</literal>: Pre-Hardened images
-        <!-- (<xref
-         linkend="sec-images-hardened"/>. -->
+        <literal>hardened</literal>: Pre-hardened images, see <xref
+         linkend="sec-images-hardened"/>
        </para>
       </listitem>
       <listitem>

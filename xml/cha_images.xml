@@ -161,8 +161,8 @@
       Abbreviated name of the product in lower case letters, e.g.
       <literal>suse-sles-15-sp3</literal> or
       <literal>suse-manager-4-1-proxy</literal>. This part may also be
-      "search" optimized per cloud framework. For example the prefix
-      <literal>suse-</literal> helps when searching for &suse; in the
+      <quote>search-optimized</quote> per cloud framework. For example the
+      prefix <literal>suse-</literal> helps when searching for &suse; in the
       general catalog in &aws;.
      </para>
     </listitem>
@@ -286,7 +286,7 @@
     <term><literal>GENERATION</literal> (&azure;-only)</term>
     <listitem>
      <para>
-      appended as "gen2" for 2nd Generation VMs.
+      appended as <literal>gen2</literal> for 2nd Generation VMs.
      </para>
     </listitem>
    </varlistentry>

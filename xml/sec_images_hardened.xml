@@ -41,10 +41,10 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>CIS Sever Level 2 (<filename>cis.profile</filename>)</term>
+   <term>CIS Server Level 2 (<filename>cis.profile</filename>)</term>
    <listitem>
     <para>
-     The <systemitem>Center for Internet Security Sever Level 2</systemitem>
+     The <systemitem>Center for Internet Security Server Level 2</systemitem>
      profile is considered to be <quote>defense in depth</quote> and is intended
      for environments where security is paramount. The recommendations
      associated with this profile can have an adverse effect on your
@@ -79,7 +79,7 @@
     <para>
      In response to the <citetitle>Health Insurance Portability and
      Accountability Act (HIPAA)</citetitle> of 1996, the <orgname>U.S.
-     Department of Health and Human Services (HHS)</orgname> developed
+     Department of Health and Human Services</orgname> developed
      <systemitem>Security Standards for the Protection of Electronic Protected
      Health Information</systemitem>, commonly known as the <systemitem>HIPAA
      Security Rule</systemitem>. It establishes national standards to protect

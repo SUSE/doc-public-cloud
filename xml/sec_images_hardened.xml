@@ -28,7 +28,7 @@
   All images are pre-hardened to the extent they can safely be hardened without
   causing problems in public cloud frameworks. After instance creation, users
   can use the installed <package>openscap</package> packages to complete the
-  image hardening process using the following profiles:
+  image hardening process using any of the following profiles:
  </para>
  <variablelist>
   <title>&openscap; Profiles</title>

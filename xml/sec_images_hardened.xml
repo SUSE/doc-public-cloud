@@ -48,11 +48,8 @@
      profile is considered to be <quote>defense in depth</quote> and is intended
      for environments where security is paramount. The recommendations
      associated with this profile can have an adverse effect on your
-     organization if not implemented appropriately or without due care.
-    </para>
-    <para>
-     For more information, refer to <link
-     xlink:href="https://www.cisecurity.org"/>.
+     organization if not implemented appropriately or without due care. For more
+     information, refer to <link xlink:href="https://www.cisecurity.org"/>.
     </para>
    </listitem>
   </varlistentry>
@@ -65,10 +62,8 @@
      for the <orgname>Department of Defense</orgname>. The STIG profile replaces
      the previous CIS Level 3 profile and provides all recommendations that are
      STIG specific. Overlap of recommendations from other profiles, i.e. CIS
-     Level 1 and Level 2, are present in the STIG profile as applicable.
-    </para>
-    <para>
-     For more information, refer to <link
+     Level 1 and Level 2, are present in the STIG profile as applicable. For
+     more information, refer to <link
       xlink:href="https://public.cyber.mil/stigs/"/>.
     </para>
    </listitem>
@@ -84,10 +79,8 @@
      Health Information</systemitem>, commonly known as the <systemitem>HIPAA
      Security Rule</systemitem>. It establishes national standards to protect
      individuals` electronic personal health information (e-PHI) that is
-     created, received, used, or maintained by a covered entity.
-    </para>
-    <para>
-     For more information, refer to <link
+     created, received, used, or maintained by a covered entity. For more
+     information, refer to <link
       xlink:href="https://www.hhs.gov/hipaa/for-professionals/security/index.html"/>.
     </para>
    </listitem>
@@ -100,10 +93,8 @@
      DSS)</systemitem> is a set of requirements to guide merchants to protect
      cardholder data. It is  maintained by the <orgname>PCI Security Standards
      Council (SSC)</orgname> that was founded by all five major credit card
-     brands Visa, MasterCard, American Express, Discover, and JCB. 
-    </para>
-    <para>
-     For more information, refer to <link
+     brands Visa, MasterCard, American Express, Discover, and JCB. For more
+     information, refer to <link
       xlink:href="https://www.pcisecuritystandards.org/document_library"/>.
     </para>
    </listitem>

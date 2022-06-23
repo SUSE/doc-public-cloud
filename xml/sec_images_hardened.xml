@@ -26,12 +26,44 @@
  </para>
  <para>
   All images are pre-hardened to the extent they can safely be hardened without
-  causing problems in public cloud frameworks. After instance creation, users
+  causing problems in public cloud frameworks. Certain rules can only be
+  applied after instance creation, for example:
+ </para>
+ <itemizedlist>
+  <listitem>
+   <para>
+    Rules that require having passwords set up. Passwords are not yet configured
+    when images are built.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules that affect the network configuration. Networking is set up during
+    instance creation, therefor it is not yet possible to limit access.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules for custom partitioning. &suse;'s public cloud images use a standard
+    partitioning with a single root file system. You can create additional
+    partitions after instance creation.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules to remove packages. &suse;'s public cloud images cater a wide range of
+    use cases. Even if the number of packages is limited, it is impossible to
+    determine what packages an instance requires.
+   </para>
+  </listitem>
+ </itemizedlist>
+ <para>
+  After instance creation, users
   can use the installed <package>openscap</package> packages to complete the
   image hardening process using any of the following profiles:
  </para>
  <variablelist>
-  <title>&openscap; Profiles</title>
+  <!-- <title>&openscap; Profiles</title> -->
   <varlistentry>
    <term>Standard (<filename>standard.profile</filename>)</term>
    <listitem>
@@ -109,6 +141,8 @@
   </para>
  </important>
  <para>
+  More policies are available at <link
+   xlink:href="https://www.open-scap.org/security-policies/choosing-policy/"/>.
   For information on how to harden your system with
   <package>&openscap;</package>, refer to the <link
   xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP

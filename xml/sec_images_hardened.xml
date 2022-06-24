@@ -32,21 +32,26 @@
  <itemizedlist>
   <listitem>
    <para>
-    Rules that require having passwords set up. Passwords are not yet configured
-    when images are built.
+    Rules that require having passwords set up. Passwords would have to be
+    public if configured during image build. This would defeat the purpose of
+    a secret password.
    </para>
   </listitem>
   <listitem>
    <para>
     Rules that affect the network configuration. Networking is set up during
-    instance creation, therefor it is not yet possible to limit access.
+    instance creation, therefore it is not possible to limit access during
+    image build.
    </para>
   </listitem>
   <listitem>
    <para>
-    Rules for custom partitioning. &suse;'s public cloud images use a standard
-    partitioning with a single root file system. You can create additional
-    partitions after instance creation.
+    Rules for custom partitioning. &suse;'s public cloud images are partitioned
+    to meet the requirements of the framework in which they are released.
+    If your system needs to adhere to standards that require separate file
+    systems for given directories, we recommend that you build your own images
+    and use LVM or move those directories onto attached disks to get the
+    strictest data separation possible.
    </para>
   </listitem>
   <listitem>
@@ -137,7 +142,7 @@
   <para>
    Currently only the <literal>CIS</literal> and <literal>STIG</literal>
    profiles are tested and supported by &suse;. You can use other profiles at
-   your own risk. 
+   your own discretion.
   </para>
  </important>
  <para>

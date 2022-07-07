@@ -149,11 +149,11 @@
   profiles minus rules that need to be applied after instance creation.
  </para>
  <important>
-  <title>Supported profiles</title>
+  <title>Recommended profiles</title>
   <para>
-   Currently only the <literal>CIS</literal> and <literal>STIG</literal>
-   profiles are tested and supported by &suse;. You can use other profiles at
-   your own discretion.
+   &suse; recommends using the either <literal>CIS</literal> or
+   <literal>STIG</literal> profile. You can use other profiles at your own
+   discretion.
   </para>
  </important>
  <para>

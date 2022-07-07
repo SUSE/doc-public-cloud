@@ -137,6 +137,17 @@
    </listitem>
   </varlistentry>
  </variablelist>
+ <para>
+  All profile files are available at <link
+  xlink:href="https://github.com/ComplianceAsCode/content/tree/master/products/sle15/profiles"/>.
+ </para>
+ <para>
+  For a complete list of rules that have been applied during pre-hardening, refer
+  to <link
+   xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pcs-hardening.profile"><filename>pcs-hardening.profile</filename></link>.
+  It is a combination of the <literal>STIG</literal> anc <literal>CIS</literal>
+  profiles minus rules that need to be applied after instance creation.
+ </para>
  <important>
   <title>Supported profiles</title>
   <para>

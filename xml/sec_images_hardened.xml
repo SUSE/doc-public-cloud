@@ -70,7 +70,7 @@
  <variablelist>
   <!-- <title>&openscap; Profiles</title> -->
   <varlistentry>
-   <term>Standard (<filename>standard.profile</filename>)</term>
+   <term>Standard (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/standard.profile"><filename>standard.profile</filename></link>)</term>
    <listitem>
     <para>
      Basic <phrase role="product">&openscap;</phrase> system security standard.
@@ -78,7 +78,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>CIS Server Level 2 (<filename>cis.profile</filename>)</term>
+   <term>CIS Server Level 2 (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/cis.profile"><filename>cis.profile</filename></link>)</term>
    <listitem>
     <para>
      The <systemitem>Center for Internet Security Server Level 2</systemitem>
@@ -91,7 +91,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Department of Defense STIG (<filename>stig.profile</filename>)</term>
+   <term>Department of Defense STIG (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/stig.profile"><filename>stig.profile</filename></link>)</term>
    <listitem>
     <para>
      The <orgname>Defense Information Systems Agency</orgname> publishes
@@ -106,7 +106,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>HIPAA Security Rule (<filename>hipaa.profile</filename>)</term>
+   <term>HIPAA Security Rule (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/hipaa.profile"><filename>hipaa.profile</filename></link>)</term>
    <listitem>
     <para>
      In response to the <citetitle>Health Insurance Portability and
@@ -123,7 +123,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Payment Card Industry Data Security Standard (<filename>pci-dss.profile</filename>)</term>
+   <term>Payment Card Industry Data Security Standard (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pci-dss.profile"><filename>pci-dss.profile</filename></link>)</term>
    <listitem>
     <para>
      The <systemitem>Payment Card Industry Data Security Standard (PCI

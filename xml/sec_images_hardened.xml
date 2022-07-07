@@ -138,14 +138,15 @@
   </varlistentry>
  </variablelist>
  <para>
-  All profile files are available at <link
-  xlink:href="https://github.com/ComplianceAsCode/content/tree/master/products/sle15/profiles"/>.
+  All profile files are available in the <link
+   xlink:href="https://github.com/ComplianceAsCode/content/tree/master/products/sle15/profiles">ComplianceAsCode</link>
+  repository.
  </para>
  <para>
   For a complete list of rules that have been applied during pre-hardening, refer
   to <link
    xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pcs-hardening.profile"><filename>pcs-hardening.profile</filename></link>.
-  It is a combination of the <literal>STIG</literal> anc <literal>CIS</literal>
+  This profileIt is a combination of the <literal>STIG</literal> anc <literal>CIS</literal>
   profiles minus rules that need to be applied after instance creation.
  </para>
  <important>
@@ -156,13 +157,80 @@
    discretion.
   </para>
  </important>
+ <!--
  <para>
-  More policies are available on the &openscap; website at <link
+  Other policies are available on the &openscap; website at <link
    xlink:href="https://www.open-scap.org/security-policies/choosing-policy/"/>.
+ </para>
+ -->
+ <para>
+  To evaluate an instance, you can run:
+ </para>
+<screen>&prompt.sudo;<command>oscap</command> xccdf eval \
+ --profile <replaceable>stig</replaceable><co xml:id="co-eval-profile"/> \
+ --results <replaceable>/tmp/results.xml</replaceable><co xml:id="co-eval-results"/> \
+ --report <replaceable>/tmp/report.html</replaceable><co xml:id="co-eval-report"/> \
+ --stig-viewer <replaceable>/tmp/stigviewer.xml</replaceable><co xml:id="co-eval-viewer"/> \
+ /usr/share/xml/scap/ssg/content/ssg-sle15-ds-1.2.xml<co xml:id="co-eval-ssg"/></screen>
+ <calloutlist>
+  <callout arearefs="co-eval-profile">
+   <para>
+    Specifies the profile to use, e.g. <literal>stig</literal> or
+    <literal>cis</literal>.
+   </para>
+  </callout>
+  <callout arearefs="co-eval-report">
+   <para>
+    Saves the results of the evaluation to <filename>/tmp/results.xml</filename>
+   </para>
+  </callout>
+  <callout arearefs="co-eval-results">
+   <para>
+    Generates a HTML report called <filename>/tmp/report.html</filename> in
+    addition to the results in XML.
+   </para>
+  </callout>
+  <callout arearefs="co-eval-viewer">
+   <para>
+    <filename>/tmp/stigviewer.xml</filename>
+   </para>
+  </callout>
+  <callout arearefs="co-eval-ssg">
+   <para>
+    <literal>Scap Security Guide</literal> (SSG) policy file in the
+    <literal>datastream</literal> (ds) format. Make sure to select the correct
+    version for your instance.
+   </para>
+   <para>
+    To list all available profiles, run:
+   </para>
+<screen>&prompt.user;<command>ls -1 /usr/share/xml/scap/ssg/content/ssg-*-ds.xml</command>.
+/usr/share/xml/scap/ssg/content/ssg-opensuse-ds.xml
+/usr/share/xml/scap/ssg/content/ssg-sle12-ds.xml
+/usr/share/xml/scap/ssg/content/ssg-sle15-ds.xml</screen>
+   <para>For more information about a particular policy, run
+    <command>oscap info</command> on the file.
+   </para>
+  </callout>
+ </calloutlist>
+ <para>
+  The evaluation process usually takes a few minutes, depending on the number of
+  selected rules.
+ </para>
+ <para>
+  To remediate an instance with the <literal>STIG</literal> profile, add the
+  <parameter>--remediate</parameter> parameter:
+ </para>
+<screen>&prompt.sudo;<command>oscap</command> xccdf eval --remediate\
+ --profile <replaceable>stig</replaceable> \
+ --results <replaceable>/tmp/results.xml</replaceable> \
+ --report <replaceable>/tmp/report.html</replaceable> \
+ --stig-viewer <replaceable>/tmp/stigviewer.xml</replaceable> \
+ /usr/share/xml/scap/ssg/content/ssg-sle15-ds-1.2.xml</screen>
+ <para>
   For information on how to harden your system with <phrase
    role="product">&openscap;</phrase>, refer to the <link
-  xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP
-  Security Guide</citetitle></link>.
+    xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP
+     Security Guide</citetitle></link>.
  </para>
- 
 </sect1>

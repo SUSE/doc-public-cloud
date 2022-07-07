@@ -48,10 +48,10 @@
    <para>
     Rules for custom partitioning. &suse;'s public cloud images are partitioned
     to meet the requirements of the framework in which they are released.
-    If your system needs to adhere to standards that require separate file
-    systems for given directories, we recommend that you build your own images
-    and use LVM or move those directories onto attached disks to get the
-    strictest data separation possible.
+    If your system needs to meet standards that require separate file systems
+    for given directories, we recommend that you build your own images and use
+    LVM or move those directories onto attached disks to get the strictest data
+    separation possible.
    </para>
   </listitem>
   <listitem>
@@ -146,10 +146,10 @@
   </para>
  </important>
  <para>
-  More policies are available at <link
+  More policies are available on the &openscap; website at <link
    xlink:href="https://www.open-scap.org/security-policies/choosing-policy/"/>.
-  For information on how to harden your system with
-  <package>&openscap;</package>, refer to the <link
+  For information on how to harden your system with <phrase
+   role="product">&openscap;</phrase>, refer to the <link
   xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP
   Security Guide</citetitle></link>.
  </para>

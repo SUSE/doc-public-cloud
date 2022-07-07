@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE sect1
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<sect1 xml:id="sec-images-hardened" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+ <title>Hardened Images</title>
+ <para>
+  To improve overall security, &suse; provides hardened images of some products.
+  The images are hardened using <phrase role="product">&openscap;</phrase>, a
+  collection of open source tools that implement the <systemitem
+  class="protocol">Security Content Automation Protocol (SCAP)</systemitem>
+  maintained by the <orgname>National Institute of Standards and Technology
+  (NIST)</orgname>. <phrase role="product">&openscap;</phrase> supports
+  automated configuration, vulnerability and patch checking, technical control
+  compliance activities, and security measurement.
+ </para>
+ <para>
+  All images are pre-hardened to the extent they can safely be hardened without
+  causing problems in public cloud frameworks. Certain rules can only be
+  applied after instance creation, for example:
+ </para>
+ <itemizedlist>
+  <listitem>
+   <para>
+    Rules that require having passwords set up. Passwords would have to be
+    public if configured during image build. This would defeat the purpose of
+    a secret password.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules that affect the network configuration. Networking is set up during
+    instance creation, therefore it is not possible to limit access during
+    image build.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules for custom partitioning. &suse;'s public cloud images are partitioned
+    to meet the requirements of the framework in which they are released.
+    If your system needs to meet standards that require separate file systems
+    for given directories, we recommend that you build your own images and use
+    LVM or move those directories onto attached disks to get the strictest data
+    separation possible.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Rules to remove packages. &suse;'s public cloud images cater a wide range of
+    use cases. Even if the number of packages is limited, it is impossible to
+    determine what packages an instance requires.
+   </para>
+  </listitem>
+ </itemizedlist>
+ <para>
+  After instance creation, users
+  can use the installed <package>openscap</package> packages to complete the
+  image hardening process using any of the following profiles:
+ </para>
+ <variablelist>
+  <!-- <title>&openscap; Profiles</title> -->
+  <varlistentry>
+   <term>Standard (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/standard.profile"><filename>standard.profile</filename></link>)</term>
+   <listitem>
+    <para>
+     Basic <phrase role="product">&openscap;</phrase> system security standard.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>CIS Server Level 2 (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/cis.profile"><filename>cis.profile</filename></link>)</term>
+   <listitem>
+    <para>
+     The <systemitem>Center for Internet Security Server Level 2</systemitem>
+     profile is considered to be <quote>defense in depth</quote> and is intended
+     for environments where security is paramount. The recommendations
+     associated with this profile can have an adverse effect on your
+     organization if not implemented appropriately or without due care. For more
+     information, refer to <link xlink:href="https://www.cisecurity.org"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Department of Defense STIG (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/stig.profile"><filename>stig.profile</filename></link>)</term>
+   <listitem>
+    <para>
+     The <orgname>Defense Information Systems Agency</orgname> publishes
+     <systemitem>Security Technical Implementation Guides (STIGs)</systemitem>
+     for the <orgname>Department of Defense</orgname>. The STIG profile replaces
+     the previous CIS Level 3 profile and provides all recommendations that are
+     STIG specific. Overlap of recommendations from other profiles, i.e. CIS
+     Level 1 and Level 2, are present in the STIG profile as applicable. For
+     more information, refer to <link
+      xlink:href="https://public.cyber.mil/stigs/"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>HIPAA Security Rule (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/hipaa.profile"><filename>hipaa.profile</filename></link>)</term>
+   <listitem>
+    <para>
+     In response to the <citetitle>Health Insurance Portability and
+     Accountability Act (HIPAA)</citetitle> of 1996, the <orgname>U.S.
+     Department of Health and Human Services</orgname> developed
+     <systemitem>Security Standards for the Protection of Electronic Protected
+     Health Information</systemitem>, commonly known as the <systemitem>HIPAA
+     Security Rule</systemitem>. It establishes national standards to protect
+     individuals` electronic personal health information (e-PHI) that is
+     created, received, used, or maintained by a covered entity. For more
+     information, refer to <link
+      xlink:href="https://www.hhs.gov/hipaa/for-professionals/security/index.html"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Payment Card Industry Data Security Standard (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pci-dss.profile"><filename>pci-dss.profile</filename></link>)</term>
+   <listitem>
+    <para>
+     The <systemitem>Payment Card Industry Data Security Standard (PCI
+     DSS)</systemitem> is a set of requirements to guide merchants to protect
+     cardholder data. It is  maintained by the <orgname>PCI Security Standards
+     Council (SSC)</orgname> that was founded by all five major credit card
+     brands Visa, MasterCard, American Express, Discover, and JCB. For more
+     information, refer to <link
+      xlink:href="https://www.pcisecuritystandards.org/document_library"/>.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ <para>
+  All profile files are available in the <link
+   xlink:href="https://github.com/ComplianceAsCode/content/tree/master/products/sle15/profiles">ComplianceAsCode</link>
+  repository.
+ </para>
+ <para>
+  For a complete list of rules that have been applied during pre-hardening, refer
+  to <link
+   xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pcs-hardening.profile"><filename>pcs-hardening.profile</filename></link>.
+  This profile is a combination of the <literal>STIG</literal> and
+  <literal>CIS</literal> profiles minus rules that can only be applied after
+  instance creation.
+ </para>
+ <important>
+  <title>Recommended profiles</title>
+  <para>
+   &suse; recommends using the either <literal>CIS</literal> or
+   <literal>STIG</literal> profile. You can use other profiles at your own
+   discretion.
+  </para>
+ </important>
+ <!--
+ <para>
+  Other policies are available on the &openscap; website at <link
+   xlink:href="https://www.open-scap.org/security-policies/choosing-policy/"/>.
+ </para>
+ -->
+ <para>
+  To evaluate an instance, you can run:
+ </para>
+<screen>&prompt.sudo;<command>oscap</command> xccdf eval \
+ --profile <replaceable>stig</replaceable><co xml:id="co-eval-profile"/> \
+ --results <replaceable>/tmp/results.xml</replaceable><co xml:id="co-eval-results"/> \
+ --report <replaceable>/tmp/report.html</replaceable><co xml:id="co-eval-report"/> \
+ --stig-viewer <replaceable>/tmp/stigviewer.xml</replaceable><co xml:id="co-eval-viewer"/> \
+ /usr/share/xml/scap/ssg/content/ssg-sle15-ds-1.2.xml<co xml:id="co-eval-ssg"/></screen>
+ <calloutlist>
+  <callout arearefs="co-eval-profile">
+   <para>
+    Specifies the profile to use, e.g. <literal>stig</literal> or
+    <literal>cis</literal>.
+   </para>
+  </callout>
+  <callout arearefs="co-eval-results">
+   <para>
+    Saves the results of the evaluation to <filename>/tmp/results.xml</filename>
+   </para>
+  </callout>
+  <callout arearefs="co-eval-report">
+   <para>
+    Generates a HTML report called <filename>/tmp/report.html</filename> in
+    addition to the results in XML.
+   </para>
+  </callout>
+  <callout arearefs="co-eval-viewer">
+   <para>
+    Saves the results to <filename>/tmp/stigviewer.xml</filename>, which can
+    be imported into the <literal>DISA STIG Viewer</literal>. Refer to <link
+    xlink:href="https://pub-lic.cyber.mil/stigs/srg-stig-tools/"/> for
+    information about DISA STIG Viewer.
+   </para>
+  </callout>
+  <callout arearefs="co-eval-ssg">
+   <para>
+    <literal>Scap Security Guide</literal> (SSG) policy file in the
+    <literal>datastream</literal> (ds) format. Make sure to select the correct
+    version for your instance. To list all available policies, run:
+   </para>
+<screen>&prompt.user;<command>ls -1 /usr/share/xml/scap/ssg/content/ssg-*-ds.xml</command>.
+/usr/share/xml/scap/ssg/content/ssg-opensuse-ds.xml
+/usr/share/xml/scap/ssg/content/ssg-sle12-ds.xml
+/usr/share/xml/scap/ssg/content/ssg-sle15-ds.xml</screen>
+   <para>For more information about a particular policy, run
+    <command>oscap info</command> on the file.
+   </para>
+  </callout>
+ </calloutlist>
+ <para>
+  The evaluation process usually takes a few minutes, depending on the number of
+  selected rules.
+ </para>
+ <para>
+  To remediate an instance, add the <parameter>--remediate</parameter>
+  parameter:
+ </para>
+<screen>&prompt.sudo;<command>oscap</command> xccdf eval --remediate\
+ --profile <replaceable>stig</replaceable> \
+ --results <replaceable>/tmp/results.xml</replaceable> \
+ --report <replaceable>/tmp/report.html</replaceable> \
+ --stig-viewer <replaceable>/tmp/stigviewer.xml</replaceable> \
+ /usr/share/xml/scap/ssg/content/ssg-sle15-ds-1.2.xml</screen>
+ <para>
+  For information on how to harden your system with <phrase
+   role="product">&openscap;</phrase>, refer to the <link
+    xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP
+     Security Guide</citetitle></link>.
+ </para>
+</sect1>

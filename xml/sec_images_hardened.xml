@@ -203,10 +203,7 @@
    <para>
     <literal>Scap Security Guide</literal> (SSG) policy file in the
     <literal>datastream</literal> (ds) format. Make sure to select the correct
-    version for your instance.
-   </para>
-   <para>
-    To list all available profiles, run:
+    version for your instance. To list all available policies, run:
    </para>
 <screen>&prompt.user;<command>ls -1 /usr/share/xml/scap/ssg/content/ssg-*-ds.xml</command>.
 /usr/share/xml/scap/ssg/content/ssg-opensuse-ds.xml

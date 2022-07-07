@@ -222,8 +222,8 @@
   selected rules.
  </para>
  <para>
-  To remediate an instance with the <literal>STIG</literal> profile, add the
-  <parameter>--remediate</parameter> parameter:
+  To remediate an instance, add the <parameter>--remediate</parameter>
+  parameter:
  </para>
 <screen>&prompt.sudo;<command>oscap</command> xccdf eval --remediate\
  --profile <replaceable>stig</replaceable> \

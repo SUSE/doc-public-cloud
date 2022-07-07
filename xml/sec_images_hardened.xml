@@ -180,12 +180,12 @@
     <literal>cis</literal>.
    </para>
   </callout>
-  <callout arearefs="co-eval-report">
+  <callout arearefs="co-eval-results">
    <para>
     Saves the results of the evaluation to <filename>/tmp/results.xml</filename>
    </para>
   </callout>
-  <callout arearefs="co-eval-results">
+  <callout arearefs="co-eval-report">
    <para>
     Generates a HTML report called <filename>/tmp/report.html</filename> in
     addition to the results in XML.

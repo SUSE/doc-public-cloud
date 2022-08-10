@@ -38,7 +38,7 @@
   <itemizedlist>
    <listitem>
     <para>
-     <literal>PAYG</literal> instances are registered against a &suse;-operated
+     PAYG instances are registered against a &suse;-operated
      update server in the cloud framework and region. This is done automatically
      by the <systemitem class="service">guestregister.service</systemitem> upon
      first boot.
@@ -46,44 +46,45 @@
   </listitem>
    <listitem>
     <para>
-     <literal>BYOS</literal> instances have to be registered manually with your
-     &suse; registration key. You can register against the cloud framework's
-     &suse; update servers, the &scc;, or your own &susemgr; or &rmt;
-     infrastructure.
+     BYOS instances have to be registered manually with your &suse; registration
+     key. You can register against the cloud framework's &suse; update servers,
+     the &scc;, or your own &susemgr; or &rmt; infrastructure.
     </para>
    </listitem>
   </itemizedlist>
   <para>
-   There are two different ways to register BYOS instances with the &scc;,
-   depending on the datestamp of the image the instance was created from:
+   There are two different ways to register BYOS instances, depending on the
+   datestamp of the image the instance was created from:
   </para>
   <itemizedlist>
    <listitem>
     <para>
-     Images with a datestamp <emphasis>later</emphasis> than
-     <literal>20220103</literal> can be registered with
+     BYOS images with a datestamp <emphasis>later</emphasis> than
+     <literal>20220103</literal> are registered with
      <command>registercloudguest</command>. This sets up
-     <command>&suseconnect;</command> to work against the cloud framework's update
-     infrastructure rather than the &scc;, resulting in significantly faster
-     package downloads. Refer to
-     <xref linkend="sec-admin-registercloudguest"/> for instructions.
+     <command>&suseconnect;</command> to work against the local cloud
+     framework's &suse; update infrastructure, resulting in significantly faster
+     package downloads. Registration information is forwarded from the update
+     server to the &scc;, so your cloud instances show up in your &suse;
+     account and count against the system count of your subscription.
+     Refer to <xref linkend="sec-admin-registercloudguest"/> for instructions.
     </para>
    </listitem>
    <listitem>
     <para>
-     Images with a datestamp <emphasis>prior</emphasis> to
+     BYOS images with a datestamp <emphasis>prior</emphasis> to
      <literal>20220103</literal> are registered with
      <package>&suseconnect;</package>. Refer to <xref
       linkend="sec-admin-suseconnect"/>. Alternatively, you can install
      <command>registercloudguest</command> to benefit from faster downloads
-     from the local cloud update infrastructure.
+     from the cloud &suse; update infrastructure.
     </para>
    </listitem>
   </itemizedlist>
   <para>
-   In summary, use <command>registercloudguest</command> to register with the
-   &scc;; it provides significant benefits even for older instances.
-   Use <command>&suseconnect;</command> to register with or your own &susemgr;
+   In summary, use <command>registercloudguest</command> to register if
+   possible; it provides significant benefits even for older instances. Use
+   <command>&suseconnect;</command> to register with or your own &susemgr;
    or &rmt; infrastructure.
   </para>
   <note>
@@ -98,8 +99,8 @@
   <sect2 xml:id="sec-admin-registercloudguest">
    <title>Register with <command>registercloudguest</command></title>
    <para>
-    To register a BYOS instance against the &scc; with
-    <command>registercloudguest</command>, perform the following steps:
+    To register a BYOS instance with <command>registercloudguest</command>,
+    perform the following steps:
    </para>
    <procedure>
     <step>

@@ -82,10 +82,10 @@
    </listitem>
   </itemizedlist>
   <para>
-   In summary, use <command>registercloudguest</command> to register if
-   possible; it provides significant benefits even for older instances. Use
-   <command>&suseconnect;</command> to register against or your own &susemgr;
-   or &rmt; infrastructure.
+   In summary, use <command>registercloudguest</command> to register against
+   local cloud update infrastructure to benefit from faster downloads. Use
+   <command>&suseconnect;</command> to register against &scc;, or your own
+   &susemgr; or &rmt; infrastructure.
   </para>
   <important>
    <title><command>registercloudguest</command> limiatations</title>

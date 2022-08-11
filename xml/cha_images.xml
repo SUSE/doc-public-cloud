@@ -371,7 +371,7 @@
      <listitem>
       <para>
        ID of the image that replaces another. Only shown for &amazon;, &oracle;,
-       and &alibaba;; images on &google; and &microsoft; do not have IDs.
+       and &alibaba;; images on &google; and &ms; do not have IDs.
       </para>
      </listitem>
     </varlistentry>

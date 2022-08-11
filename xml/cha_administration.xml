@@ -84,18 +84,42 @@
   <para>
    In summary, use <command>registercloudguest</command> to register if
    possible; it provides significant benefits even for older instances. Use
-   <command>&suseconnect;</command> to register with or your own &susemgr;
+   <command>&suseconnect;</command> to register against or your own &susemgr;
    or &rmt; infrastructure.
   </para>
-  <note>
-   <title>Container host images</title>
+  <important>
+   <title><command>registercloudguest</command> limiatations</title>
    <para>
-    Container host (<literal>chost</literal>) images are optimized for container
-    workloads and contain only a small set of extra packages outside of the bare
-    minimum to make containers run. They do not contain
+    Not all products and flavors can be registered with
     <command>registercloudguest</command>.
    </para>
-  </note>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Container host (<literal>chost</literal>) images are optimized for container
+      workloads and contain only a small set of extra packages outside of the bare
+      minimum to make containers run. They do not contain
+      <command>registercloudguest</command>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &slem; (<literal>sle-micro</literal>) uses a read-only root file system
+      with <emphasis>transactional</emphasis> updates. To register an instance,
+      use the command <command>transactional-update register</command>. Refer to
+      the <link
+       xlink:href="https://documentation.suse.com/sle-micro/html/SLE-Micro-all/article-administration-slemicro.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
+      for more information.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &susemgr; (<literal>suse-manager</literal>) can only be registered against
+      the &scc; or a &rmt;.
+     </para>
+    </listitem>
+   </itemizedlist>
+  </important>
   <sect2 xml:id="sec-admin-registercloudguest">
    <title>Register with <command>registercloudguest</command></title>
    <para>

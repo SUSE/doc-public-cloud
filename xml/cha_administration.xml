@@ -227,14 +227,46 @@
    termination. This will ensure that the system gets removed from the &scc; and
    is no longer counted against your subscription.
   </para>
-  <para>
-   If a system was registered with <command>registercloudguest</command>, run:
-  </para>
-  <screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
-  <para>
-   If a system was registered with <command>&suseconnect;</command>, run:
-  </para>
-  <screen>&prompt.root;<command>&suseconnect;</command> <option>-d</option></screen>
+  <procedure>
+   <step>
+    <para>
+     Run <command>SUSEConnect --status-text</command> to check the registration
+     status.
+    </para>
+   </step>
+   <step>
+    <para>
+     If the system is registered, check if the file
+     <filename>/var/log/guestregister</filename> exists. This usually indicates
+     the system was was registered with <command>registercloudguest</command>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Deregister the system:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       If a system was registered with <command>registercloudguest</command>,
+       run:
+      </para>
+      <screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
+     </step>
+     <step>
+      <para>
+       If a system was registered with <command>&suseconnect;</command>, run:
+      </para>
+      <screen>&prompt.root;<command>&suseconnect;</command> <option>-d</option></screen>
+      <para>
+       If this does not work, make sure the package
+       <package>registercloudguest</package> is not be installed. It may have been
+       installed after the system was registered.
+      </para>
+     </step>
+    </substeps>
+   </step>
+  </procedure>
  </sect1>
 
 </chapter>

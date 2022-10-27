@@ -191,10 +191,10 @@
      <para>
       For instances created from images with a date stamp prior to
       <literal>20220103</literal> it is strongly recommended to also add the
-      <literal>Public Cloud Module</literal> repositories. For &sle; 15 SP3,
+      <literal>Public Cloud Module</literal> repositories. For &sle; 15 SP4,
       run:
      </para>
-<screen>&prompt.root;<command>&suseconnect;</command> -p sle-module-public-cloud/15.3/x86_64</screen>
+<screen>&prompt.root;<command>&suseconnect;</command> -p sle-module-public-cloud/15.4/x86_64</screen>
      <para>
       For other versions or a complete list of modules and their product
       identifiers, run <command>&suseconnect; --list-extensions</command>.

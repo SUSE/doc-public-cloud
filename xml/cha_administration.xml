@@ -135,9 +135,9 @@
      </para>
 <screen>&prompt.root;<command>rpm</command> <option>-q cloud-regionsrv-client</option></screen>
      <para>
-      If the package is not installed or older than version is 9.3.0, install
-      or update it. You will need some additional packages, depending on your
-      cloud framework.
+      If the package is not installed or older than version 9.3.0, install or
+      update it. You will need some additional packages, depending on your cloud
+      framework.
      </para>
      <substeps>
       <step>

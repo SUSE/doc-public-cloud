@@ -28,4 +28,246 @@
   </dm:docmanager>
  </info>
 
+ <sect1 xml:id="sec-admin-register">
+  <title>Registering instances</title>
+  <para>
+   Like other &suse; products, &sle; in public clouds has to be registered to
+   receive updates. There are different ways to register, depending on the kind
+   of instance and the its base product.
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     PAYG instances are registered against a &suse;-operated
+     update server in the cloud framework and region. This is done automatically
+     by the <systemitem class="service">guestregister.service</systemitem> upon
+     first boot.
+    </para>
+  </listitem>
+   <listitem>
+    <para>
+     BYOS instances have to be registered manually with your &suse; registration
+     key. You can register against the cloud framework's &suse; update servers,
+     the &scc;, or your own &susemgr; or &rmt; infrastructure.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   There are two different ways to register BYOS instances, depending on the
+   datestamp of the image the instance was created from:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     BYOS images with a datestamp <emphasis>later</emphasis> than
+     <literal>20220103</literal> are registered with
+     <command>registercloudguest</command>. This sets up
+     <command>&suseconnect;</command> to work against the local cloud
+     framework's &suse; update infrastructure, resulting in significantly faster
+     package downloads. Registration information is forwarded from the update
+     server to the &scc;, so your cloud instances show up in your &suse;
+     account and count against the system count of your subscription.
+     Refer to <xref linkend="sec-admin-registercloudguest"/> for instructions.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     BYOS images with a datestamp <emphasis>prior</emphasis> to
+     <literal>20220103</literal> are registered with
+     <package>&suseconnect;</package>. Refer to <xref
+      linkend="sec-admin-suseconnect"/>. Alternatively, you can install
+     <command>registercloudguest</command> to benefit from faster downloads
+     from the cloud &suse; update infrastructure.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   In summary, use <command>registercloudguest</command> to register against
+   local cloud update infrastructure to benefit from faster downloads. Use
+   <command>&suseconnect;</command> to register against &scc;, or your own
+   &susemgr; or &rmt; infrastructure.
+  </para>
+  <important>
+   <title><command>registercloudguest</command> limiatations</title>
+   <para>
+    Not all products and flavors can be registered with
+    <command>registercloudguest</command>.
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Container host (<literal>chost</literal>) images are optimized for container
+      workloads and contain only a small set of extra packages outside of the bare
+      minimum to make containers run. They do not contain
+      <command>registercloudguest</command>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &slem; (<literal>sle-micro</literal>) uses a read-only root file system
+      with <emphasis>transactional</emphasis> updates. &slema; images do not
+      contain <command>registercloudguest</command>. To register an instance,
+      use the command <command>transactional-update register</command>. Refer to
+      the <link
+       xlink:href="https://documentation.suse.com/sle-micro/html/SLE-Micro-all/article-administration-slemicro.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
+      for more information.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      &susemgr; (<literal>suse-manager</literal>) can only be registered against
+      the &scc; or a &rmt;.
+     </para>
+    </listitem>
+   </itemizedlist>
+  </important>
+  <sect2 xml:id="sec-admin-registercloudguest">
+   <title>Register with <command>registercloudguest</command></title>
+   <para>
+    To register a BYOS instance with <command>registercloudguest</command>,
+    perform the following steps:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Check if the <package>cloud-regionsrv-client</package> package is
+      installed:
+     </para>
+<screen>&prompt.root;<command>rpm</command> <option>-q cloud-regionsrv-client</option></screen>
+     <para>
+      If the package is not installed or older than version 9.3.0, install or
+      update it. You will need some additional packages, depending on your cloud
+      framework.
+     </para>
+     <substeps>
+      <step>
+       <para>
+        For &ec2a; run:
+       </para>
+<screen>&prompt.root;<command>zypper</command> <option>in cloud-regionsrv-client cloud-regionsrv-client-plugin-ec2 \
+ regionServiceClientConfigEC2 regionServiceCertsEC2</option></screen>
+      </step>
+      <step>
+       <para>
+        For &azure; run:
+       </para>
+<screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-azure \
+ regionServiceClientConfigAzure regionServiceCertsAzure</screen>
+      </step>
+      <step>
+       <para>For &gce; run:</para>
+<screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-gce \
+ regionServiceClientConfigGCE regionServiceCertsGCE</screen>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Disconnect your instance from the &scc;:
+     </para>
+<screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
+     <para>
+      Do <emphasis>not</emphasis> use <command>&suseconnect; -d</command>; it will
+      no longer work.
+     </para>
+    </step>
+    <step>
+     <para>
+      Connect the instance to the &suse; update infrastructure in the
+      public cloud. Replace <replaceable>REGISTRATION_CODE</replaceable> with a
+      valid registration code. Replace <replaceable>EMAIL_ADDRESS</replaceable>
+      with the e-mail address associated with the &suse; account you or your
+      organization uses to manage subscriptions.
+     </para>
+     <screen>&prompt.root;<command>registercloudguest</command> -r <replaceable>REGISTRATION_CODE </replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></screen>
+     <para>
+      This will only register the base product and any recommended products.
+      For instances created from images with a datestamp later than
+      <literal>20220103</literal>, it will also set up the repositories for the
+      <literal>Public Cloud Module</literal>.
+     </para>
+    </step>
+    <step>
+     <para>
+      For instances created from images with a date stamp prior to
+      <literal>20220103</literal> it is strongly recommended to also add the
+      <literal>Public Cloud Module</literal> repositories. For &sle; 15 SP4,
+      run:
+     </para>
+<screen>&prompt.root;<command>&suseconnect;</command> -p sle-module-public-cloud/15.4/x86_64</screen>
+     <para>
+      For other versions or a complete list of modules and their product
+      identifiers, run <command>&suseconnect; --list-extensions</command>.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+  <sect2 xml:id="sec-admin-suseconnect">
+   <title>Register with <command>&suseconnect;</command></title>
+   <para>
+    To register a BYOS instance against the &scc;, use the command:
+   </para>
+   <screen>&prompt.root;<command>&suseconnect;</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></screen>
+   <para>
+    Replace <replaceable>REGISTRATION_CODE</replaceable> with a valid
+    registration code. Replace <replaceable>EMAIL_ADDRESS</replaceable> with the
+    e-mail address associated with the &suse; account you or your organization
+    uses to manage subscriptions.
+   </para>
+   <para>
+    To register with your own registration server, also provide its URL:
+   </para>
+   <screen>&prompt.root;<command>&suseconnect;</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable> --url <replaceable>URL</replaceable></screen>
+  </sect2>
+ </sect1>
+
+ <sect1 xml:id="sec-admin-deregister">
+  <title>Deregister instances</title>
+  <para>
+   If you are to decommission an instance, remember to deregister it before
+   termination. This will ensure that the system gets removed from the &scc; and
+   is no longer counted against your subscription.
+  </para>
+  <procedure>
+   <step>
+    <para>
+     Run <command>SUSEConnect --status-text</command> to check the registration
+     status.
+    </para>
+   </step>
+   <step>
+    <para>
+     If the system is registered, check if the file
+     <filename>/var/log/guestregister</filename> exists. This usually indicates
+     the system was was registered with <command>registercloudguest</command>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Deregister the system:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       If a system was registered with <command>registercloudguest</command>,
+       run:
+      </para>
+      <screen>&prompt.root;<command>registercloudguest</command> <option>--clean</option></screen>
+     </step>
+     <step>
+      <para>
+       If a system was registered with <command>&suseconnect;</command>, run:
+      </para>
+      <screen>&prompt.root;<command>&suseconnect;</command> <option>-d</option></screen>
+      <para>
+       If this does not work, make sure the package
+       <package>cloud-regionsrv-client</package> is not installed. It may have
+       been installed after the system was registered.
+      </para>
+     </step>
+    </substeps>
+   </step>
+  </procedure>
+ </sect1>
+
 </chapter>

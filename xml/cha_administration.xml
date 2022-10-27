@@ -261,8 +261,8 @@
       <screen>&prompt.root;<command>&suseconnect;</command> <option>-d</option></screen>
       <para>
        If this does not work, make sure the package
-       <package>cloud-regionsrv-client</package> is not be installed. It may have been
-       installed after the system was registered.
+       <package>cloud-regionsrv-client</package> is not installed. It may have
+       been installed after the system was registered.
       </para>
      </step>
     </substeps>

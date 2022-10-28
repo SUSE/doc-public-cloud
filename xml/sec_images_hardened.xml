@@ -153,7 +153,7 @@
  <important>
   <title>Recommended profiles</title>
   <para>
-   &suse; recommends using either the <literal>CIS</literal> or the
+   &suse; recommends using the either <literal>CIS</literal> or
    <literal>STIG</literal> profile. You can use other profiles at your own
    discretion.
   </para>

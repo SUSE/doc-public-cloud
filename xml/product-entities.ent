@@ -37,9 +37,6 @@
 <!ENTITY abstract_cha_providers "&productname; can be run in various public
  clouds. Find provider-specific instructions for cloud frameworks such as &aws;,
  &azure; &gcp;, &oc;, and &ac;.">
-<!ENTITY abstract_hardened_images "&suse; provides pre-hardened images to
- improve security. Choose the right security profile to further harden an
- instance after creation.">
 
 <!-- General terms and acronyms -->
 <!ENTITY pc        "Public Cloud">

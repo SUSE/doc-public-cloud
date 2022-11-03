@@ -32,16 +32,17 @@
   <title>Registering instances</title>
   <para>
    Like other &suse; products, &sle; in public clouds has to be registered to
-   receive updates. There are different ways to register, depending on the kind
-   of instance and its base product.
+   receive updates. There are different ways to register, depending on the
+   image flavor chosen for the instance.
   </para>
   <itemizedlist>
    <listitem>
     <para>
-     PAYG instances are registered against a &suse;-operated
-     update server in the cloud framework and region. This is done automatically
-     by the <systemitem class="service">guestregister.service</systemitem> upon
-     first boot.
+     PAYG instances are registered automatically against the &suse;-operated
+     update infrastructure in the cloud framework region, or
+     geographically close region. The
+     <systemitem class="service">guestregister.service</systemitem> manages
+     the registration on first boot.
     </para>
   </listitem>
    <listitem>
@@ -53,34 +54,31 @@
    </listitem>
   </itemizedlist>
   <para>
-   There are two different ways to register BYOS instances, depending on the
-   datestamp of the image the instance was created from:
+    BYOS instances with
+    <systemitem class="package">cloud-regionsrv-client</systemitem> version
+    9.3.0 or higher can be registered to the cloud framework's &suse; update
+    servers using <command>registercloudguest --regcode</command> with your
+    &scc; registration code.
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     BYOS images with a datestamp <emphasis>later</emphasis> than
-     <literal>20220103</literal> are registered with
-     <command>registercloudguest</command>. This sets up
-     <command>&suseconnect;</command> to work against the local cloud
-     framework's &suse; update infrastructure, resulting in significantly faster
-     package downloads. Registration information is forwarded from the update
-     server to the &scc;, so your cloud instances show up in your &suse;
-     account and count against the system count of your subscription.
-     Refer to <xref linkend="sec-admin-registercloudguest"/> for instructions.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     BYOS images with a datestamp <emphasis>prior</emphasis> to
-     <literal>20220103</literal> are registered with
-     <package>&suseconnect;</package>. Refer to <xref
-      linkend="sec-admin-suseconnect"/>. Alternatively, you can install
-     <command>registercloudguest</command> to benefit from faster downloads
-     from the cloud &suse; update infrastructure.
-    </para>
-   </listitem>
-  </itemizedlist>
+  <para>
+    BYOS instances created from images with a datestamp of
+    <literal>20220103</literal> or <emphasis>later</emphasis> contain all
+    required packages. For BYOS instances started from images with
+    a date stamp <emphasis>prior</emphasis> to <literal>20220103</literal>
+    <systemitem class="package">cloud-regionsrv-client</systemitem> and other
+    packages have to be installed first before connecting to the
+    cloud framework's &suse; update servers. Refer to
+    <xref linkend="sec-admin-registercloudguest"/> for instructions.
+  </para>
+  <para>
+    Registrations for BYOS instances to the update infrastructure are
+    forwarded from the update server to the &scc;, so your cloud instances
+    show up in your &suse; account and count against the system count of
+    your subscription.
+  </para>
+  <para>
+    Any BYOS instance can be registered directly against the &scc;
+  </para>
   <para>
    In summary, use <command>registercloudguest</command> to register against
    local cloud update infrastructure to benefit from faster downloads. Use
@@ -96,10 +94,17 @@
    <itemizedlist>
     <listitem>
      <para>
-      Container host (<literal>chost</literal>) images are optimized for container
-      workloads and contain only a small set of extra packages outside of the bare
-      minimum to make containers run. They do not contain
+       Container host (<literal>chost</literal>) images are optimized for
+       container workloads and contain only a small set of extra packages
+       outside of the bare minimum to make containers run. They do not contain
       <command>registercloudguest</command>.
+     </para>
+     <para>
+       Container host (<literal>chost</literal>) images are a flavor build
+       of &sles; and you can register instances against the &scc; install
+       the necessary packages, see
+       <xref linkend="sec-admin-registercloudguest"/> and then register againts
+       the &suse; update infrastructure.
      </para>
     </listitem>
     <listitem>
@@ -116,7 +121,7 @@
     <listitem>
      <para>
       &susemgr; (<literal>suse-manager</literal>) can only be registered against
-      the &scc; or a &rmt;.
+      the &scc;.
      </para>
     </listitem>
    </itemizedlist>

@@ -35,6 +35,7 @@
      <dm:product>Documentation</dm:product>
      <dm:assignee>cwickert@suse.com</dm:assignee>
     </dm:bugtracker>
+    <dm:editurl>https://github.com/SUSE/doc-public-cloud/edit/main/xml/</dm:editurl>
    </dm:docmanager>
   <authorgroup>
    <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>

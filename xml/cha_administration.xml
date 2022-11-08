@@ -275,4 +275,23 @@
    </procedure>
   </sect2>
  </sect1>
+
+ <sect1 xml:id="sec-admin-update-upgrade">
+  <title>Updating and upgrading</title>
+  <para>
+   
+  </para>
+  <sect2 xml:id="sec-admin-update">
+   <title>Updating instances</title>
+   <para>
+    
+   </para>
+  </sect2>
+  <sect2 xml:id="sec-admin-upgrade">
+   <title>Upgrading instances</title>
+   <para>
+    
+   </para>
+  </sect2>
+ </sect1>
 </chapter>

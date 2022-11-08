@@ -33,7 +33,7 @@
   <para>
    Like other &suse; products, &sle; in public clouds has to be registered to
    receive updates. There are different ways to register, depending on the kind
-   of instance and the its base product.
+   of instance and its base product.
   </para>
   <itemizedlist>
    <listitem>

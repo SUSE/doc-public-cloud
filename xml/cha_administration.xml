@@ -54,30 +54,28 @@
    </listitem>
   </itemizedlist>
   <para>
-    BYOS instances with
-    <package>cloud-regionsrv-client</package> version
-    9.3.0 or higher can be registered to the cloud framework's &suse; update
-    servers using <command>registercloudguest --regcode</command> with your
-    &scc; registration code.
+   BYOS instances with <package>cloud-regionsrv-client</package> version 9.3.0
+   or higher can be registered to the cloud framework's &suse; update servers
+   using <command>registercloudguest --regcode</command> with your &scc;
+   registration code.
   </para>
   <para>
-    BYOS instances created from images with a datestamp of
-    <literal>20220103</literal> or <emphasis>later</emphasis> contain all
-    required packages. For BYOS instances started from images with
-    a date stamp <emphasis>prior</emphasis> to <literal>20220103</literal>
-    <package>cloud-regionsrv-client</package> and other
-    packages have to be installed first before connecting to the
-    cloud framework's &suse; update servers. Refer to
-    <xref linkend="sec-admin-registercloudguest"/> for instructions.
+   BYOS instances created from images with a datestamp of
+   <literal>20220103</literal> or <emphasis>later</emphasis> contain all
+   required packages. For BYOS instances started from images with a date stamp
+   <emphasis>prior</emphasis> to <literal>20220103</literal>,
+   <package>cloud-regionsrv-client</package> and other packages have to be
+   installed first before connecting to the cloud framework's &suse; update
+   servers. Refer to <xref linkend="sec-admin-registercloudguest"/> for
+   instructions.
   </para>
   <para>
-    Registrations for BYOS instances to the update infrastructure are
-    forwarded from the update server to the &scc;, so your cloud instances
-    show up in your &suse; account and count against the system count of
-    your subscription.
+   Registrations for BYOS instances to the update infrastructure are forwarded
+   from the update server to the &scc;, so your cloud instances show up in your
+   &suse; account and count against the system count of your subscription.
   </para>
   <para>
-    Any BYOS instance can be registered directly against the &scc;
+   Any BYOS instance can be registered directly against the &scc;.
   </para>
   <para>
    In summary, use <command>registercloudguest</command> to register against
@@ -86,7 +84,7 @@
    &susemgr; or &rmt; infrastructure.
   </para>
   <important>
-   <title><command>registercloudguest</command> limiatations</title>
+   <title><command>registercloudguest</command> limitations</title>
    <para>
     Not all products and flavors can be registered with
     <command>registercloudguest</command>.
@@ -94,17 +92,16 @@
    <itemizedlist>
     <listitem>
      <para>
-       Container host (<literal>chost</literal>) images are optimized for
-       container workloads and contain only a small set of extra packages
-       outside of the bare minimum to make containers run. They do not contain
+      Container host (<literal>chost</literal>) images are optimized for
+      container workloads and contain only a small set of extra packages outside
+      of the bare minimum to make containers run. They do not contain
       <command>registercloudguest</command>.
      </para>
      <para>
-       Container host (<literal>chost</literal>) images are a flavor build
-       of &sles; and you can register instances against the &scc; install
-       the necessary packages, see
-       <xref linkend="sec-admin-registercloudguest"/> and then register againts
-       the &suse; update infrastructure.
+      Container host (<literal>chost</literal>) images are a flavor build of
+      &sles; and you can register instances against the &scc; install the
+      necessary packages, see <xref linkend="sec-admin-registercloudguest"/> and
+      then register againts the &suse; update infrastructure.
      </para>
     </listitem>
     <listitem>
@@ -244,7 +241,7 @@
     <para>
      If the system is registered, check if the file
      <filename>/var/log/guestregister</filename> exists. This usually indicates
-     the system was was registered with <command>registercloudguest</command>.
+     the system was registered with <command>registercloudguest</command>.
     </para>
    </step>
    <step>

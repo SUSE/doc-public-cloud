@@ -150,6 +150,12 @@
   <literal>CIS</literal> profiles minus rules that can only be applied after
   instance creation.
  </para>
+ <para>
+  Images of &sles4sap; are hardened using a modified version of the profile
+  called <link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pcs-hardening-sap.profile"><filename>pcs-hardening-sap.profile</filename></link>.
+  Users may need to make additional modifications to the system configuration
+  depending on individual application needs.
+ </para>
  <important>
   <title>Recommended profiles</title>
   <para>

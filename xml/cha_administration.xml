@@ -93,15 +93,12 @@
     <listitem>
      <para>
       Container host (<literal>chost</literal>) images are optimized for
-      container workloads and contain only a small set of extra packages outside
-      of the bare minimum to make containers run. They do not contain
-      <command>registercloudguest</command>.
-     </para>
-     <para>
-      Container host (<literal>chost</literal>) images are a flavor build of
-      &sles; and you can register instances with the &scc; install the necessary
-      packages, see <xref linkend="sec-admin-registercloudguest"/> and then
-      register with the &suse; update infrastructure.
+      container workloads and contain only a few packages outside of the bare
+      minimum to make containers run. These images do not contain
+      <command>registercloudguest</command>, but you can register instances with
+      the &scc; first, install the necessary packages and then register with the
+      &suse; update infrastructure. Refer to <xref
+       linkend="sec-admin-registercloudguest"/> for instructions.
      </para>
     </listitem>
     <listitem>

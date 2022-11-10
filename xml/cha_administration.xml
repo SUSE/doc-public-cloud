@@ -48,14 +48,14 @@
    <listitem>
     <para>
      BYOS instances have to be registered manually with your &suse; registration
-     key. You can register against the cloud framework's &suse; update servers,
-     the &scc;, or your own &susemgr; or &rmt; infrastructure.
+     key. You can register with the cloud framework's &suse; update servers, the
+     &scc;, or your own &susemgr; or &rmt; infrastructure.
     </para>
    </listitem>
   </itemizedlist>
   <para>
    BYOS instances with <package>cloud-regionsrv-client</package> version 9.3.0
-   or higher can be registered to the cloud framework's &suse; update servers
+   or higher can be registered with the cloud framework's &suse; update servers
    using <command>registercloudguest --regcode</command> with your &scc;
    registration code.
   </para>
@@ -75,12 +75,12 @@
    &suse; account and count against the system count of your subscription.
   </para>
   <para>
-   Any BYOS instance can be registered directly against the &scc;.
+   Any BYOS instance can be registered directly with the &scc;.
   </para>
   <para>
-   In summary, use <command>registercloudguest</command> to register against
+   In summary, use <command>registercloudguest</command> to register with the
    local cloud update infrastructure to benefit from faster downloads. Use
-   <command>&suseconnect;</command> to register against &scc;, or your own
+   <command>&suseconnect;</command> to register with &scc;, or your own
    &susemgr; or &rmt; infrastructure.
   </para>
   <important>
@@ -99,9 +99,9 @@
      </para>
      <para>
       Container host (<literal>chost</literal>) images are a flavor build of
-      &sles; and you can register instances against the &scc; install the
-      necessary packages, see <xref linkend="sec-admin-registercloudguest"/> and
-      then register againts the &suse; update infrastructure.
+      &sles; and you can register instances with the &scc; install the necessary
+      packages, see <xref linkend="sec-admin-registercloudguest"/> and then
+      register with the &suse; update infrastructure.
      </para>
     </listitem>
     <listitem>
@@ -117,7 +117,7 @@
     </listitem>
     <listitem>
      <para>
-      &susemgr; (<literal>suse-manager</literal>) can only be registered against
+      &susemgr; (<literal>suse-manager</literal>) can only be registered with
       the &scc;.
      </para>
     </listitem>
@@ -207,7 +207,7 @@
   <sect2 xml:id="sec-admin-suseconnect">
    <title>Register with <command>&suseconnect;</command></title>
    <para>
-    To register a BYOS instance against the &scc;, use the command:
+    To register a BYOS instance with the &scc;, use the command:
    </para>
    <screen>&prompt.root;<command>&suseconnect;</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></screen>
    <para>

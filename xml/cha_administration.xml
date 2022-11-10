@@ -55,7 +55,7 @@
   </itemizedlist>
   <para>
     BYOS instances with
-    <systemitem class="package">cloud-regionsrv-client</systemitem> version
+    <package>cloud-regionsrv-client</package> version
     9.3.0 or higher can be registered to the cloud framework's &suse; update
     servers using <command>registercloudguest --regcode</command> with your
     &scc; registration code.
@@ -65,7 +65,7 @@
     <literal>20220103</literal> or <emphasis>later</emphasis> contain all
     required packages. For BYOS instances started from images with
     a date stamp <emphasis>prior</emphasis> to <literal>20220103</literal>
-    <systemitem class="package">cloud-regionsrv-client</systemitem> and other
+    <package>cloud-regionsrv-client</package> and other
     packages have to be installed first before connecting to the
     cloud framework's &suse; update servers. Refer to
     <xref linkend="sec-admin-registercloudguest"/> for instructions.

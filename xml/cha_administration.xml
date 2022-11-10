@@ -62,7 +62,7 @@
   <para>
    BYOS instances created from images with a datestamp of
    <literal>20220103</literal> or <emphasis>later</emphasis> contain all
-   required packages. For BYOS instances started from images with a date stamp
+   required packages. For BYOS instances created from images with a date stamp
    <emphasis>prior</emphasis> to <literal>20220103</literal>,
    <package>cloud-regionsrv-client</package> and other packages have to be
    installed first before connecting to the cloud framework's &suse; update
@@ -97,8 +97,8 @@
       minimum to make containers run. These images do not contain
       <command>registercloudguest</command>, but you can register instances with
       the &scc; first, install the necessary packages and then register with the
-      &suse; update infrastructure. Refer to <xref
-       linkend="sec-admin-registercloudguest"/> for instructions.
+      SUSE-operated update infrastructure in the cloud framework region. Refer
+      to <xref linkend="sec-admin-registercloudguest"/> for instructions.
      </para>
     </listitem>
     <listitem>

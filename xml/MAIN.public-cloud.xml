@@ -19,6 +19,7 @@
  <info>
   <title>Public Cloud Guide</title>
    <productname>&productname;</productname>
+   <productname role="abbrev">&productnameshort;</productname>
    <!-- FIXME: How to version a guide but not a product? -->
    <!-- <productnumber>&productnumber;</productnumber> -->
    <date><?dbtimestamp format="B d, Y"?></date>

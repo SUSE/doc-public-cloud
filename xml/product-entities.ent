@@ -3,7 +3,7 @@
 
 <!-- PRODUCT NAME AND VERSIONS -->
 <!ENTITY productname   "&sle;">
-<!ENTITY productnameshort "SLE PC">
+<!ENTITY productnameshort "SLES CSP">
 <!ENTITY productnumber "0.1">
 
 

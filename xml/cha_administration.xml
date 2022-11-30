@@ -108,7 +108,7 @@
       contain <command>registercloudguest</command>. To register an instance,
       use the command <command>transactional-update register</command>. Refer to
       the <link
-       xlink:href="https://documentation.suse.com/sle-micro/5.3/html/SLE-Micro-all/sec-transactional-udate.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
+       xlink:href="https://documentation.suse.com/sle-micro/html/SLE-Micro-all/sec-transactional-udate.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
       for more information.
      </para>
     </listitem>

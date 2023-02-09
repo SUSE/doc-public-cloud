@@ -695,61 +695,57 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>CIS Server Level 2 (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/cis.profile"><filename>cis.profile</filename></link>)</term>
+     <term>&cisa; Server Level 2 (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/cis.profile"><filename>cis.profile</filename></link>)</term>
      <listitem>
       <para>
-       The <systemitem>Center for Internet Security Server Level 2</systemitem>
-       profile is considered to be <quote>defense in depth</quote> and is
-       intended for environments where security is paramount. The
-       recommendations associated with this profile can have an adverse effect
-       on your organization if not implemented appropriately or without due
-       care. For more information, refer to <link
-        xlink:href="https://www.cisecurity.org"/>.
+       The <systemitem>&cis; Server Level 2</systemitem> profile is considered
+       to be <quote>defense in depth</quote> and is intended for environments
+       where security is paramount. The recommendations associated with this
+       profile can have an adverse effect on your organization if not
+       implemented appropriately or without due care. For more information,
+       refer to <link xlink:href="https://www.cisecurity.org"/>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Department of Defense STIG (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/stig.profile"><filename>stig.profile</filename></link>)</term>
+     <term>Department of Defense &stiga; (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/stig.profile"><filename>stig.profile</filename></link>)</term>
      <listitem>
       <para>
-       The <orgname>Defense Information Systems Agency</orgname> publishes
-       <systemitem>Security Technical Implementation Guides (STIGs)</systemitem>
-       for the <orgname>Department of Defense</orgname>. The STIG profile
-       replaces the previous CIS Level 3 profile and provides all
-       recommendations that are STIG specific. Overlap of recommendations from
-       other profiles, i.e. CIS Level 1 and Level 2, are present in the STIG
-       profile as applicable. For more information, refer to <link
-        xlink:href="https://public.cyber.mil/stigs/"/>.
+       The <orgname>&disa;</orgname> publishes <citetitle>&stig;s
+        (&stiga;s)</citetitle> for the <orgname>Department of Defense</orgname>.
+       The &stiga; profile replaces the previous &cisa; Level 3 profile and
+       provides all recommendations that are &stiga;-specific. Overlap of
+       recommendations from other profiles, i.e. &cisa; Level 1 and Level 2,
+       are present in the &stiga; profile as applicable. For more information,
+       refer to <link xlink:href="https://public.cyber.mil/stigs/"/>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>HIPAA Security Rule (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/hipaa.profile"><filename>hipaa.profile</filename></link>)</term>
+     <term>&hipaaa; Security Rule (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/hipaa.profile"><filename>hipaa.profile</filename></link>)</term>
      <listitem>
       <para>
-       In response to the <citetitle>Health Insurance Portability and
-        Accountability Act (HIPAA)</citetitle> of 1996, the <orgname>U.S.
-        Department of Health and Human Services</orgname> developed
-       <systemitem>Security Standards for the Protection of Electronic Protected
-        Health Information</systemitem>, commonly known as the <systemitem>HIPAA
-        Security Rule</systemitem>. It establishes national standards to
-       protect individuals' electronic personal health information (e-PHI) that
-       is created, received, used, or maintained by a covered entity. For more
+       In response to the <citetitle>&hipaa; (&hipaaa;)</citetitle> of 1996, the
+       <orgname>U.S. Department of Health and Human Services</orgname> developed
+       <citetitle>Security Standards for the Protection of Electronic Protected
+        Health Information</citetitle>, commonly known as the <systemitem>HIPAA
+        Security Rule</systemitem>. It establishes national standards to protect
+       individuals' electronic personal health information (e-PHI) that is
+       created, received, used, or maintained by a covered entity. For more
        information, refer to <link
         xlink:href="https://www.hhs.gov/hipaa/for-professionals/security/index.html"/>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Payment Card Industry Data Security Standard (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pci-dss.profile"><filename>pci-dss.profile</filename></link>)</term>
+     <term>&pcidss; (<link xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pci-dss.profile"><filename>pci-dss.profile</filename></link>)</term>
      <listitem>
       <para>
-       The <systemitem>Payment Card Industry Data Security Standard (PCI
-        DSS)</systemitem> is a set of requirements to guide merchants to protect
-       cardholder data. It is  maintained by the <orgname>PCI Security Standards
-        Council (SSC)</orgname> that was founded by all five major credit card
-       brands Visa, MasterCard, American Express, Discover, and JCB. For more
-       information, refer to <link
+       The <citetitle>&pcidss; (&pcidssa;)</citetitle> is a set of requirements
+       to guide merchants to protect cardholder data. It is  maintained by the
+       <orgname>PCI Security Standards Council (SSC)</orgname> that was founded
+       by all five major credit card brands Visa, MasterCard, American Express,
+       Discover, and JCB. For more information, refer to <link
         xlink:href="https://www.pcisecuritystandards.org/document_library"/>.
       </para>
      </listitem>
@@ -764,9 +760,9 @@
     For a complete list of rules that have been applied during pre-hardening,
     refer to <link
      xlink:href="https://github.com/ComplianceAsCode/content/blob/master/products/sle15/profiles/pcs-hardening.profile"><filename>pcs-hardening.profile</filename></link>.
-    This profile is a combination of the <literal>STIG</literal> and
-    <literal>CIS</literal> profiles minus rules that can only be applied after
-    instance creation.
+    This profile is a combination of the <literal>&stiga;</literal> and
+    <literal>&cisa;</literal> profiles minus rules that can only be applied
+    after instance creation.
    </para>
    <para>
     Images of &sles4sap; are hardened using a modified version of the profile
@@ -777,8 +773,8 @@
    <important>
     <title>Recommended profiles</title>
     <para>
-     &suse; recommends using either the <literal>CIS</literal> or the
-     <literal>STIG</literal> profile. You can use other profiles at your own
+     &suse; recommends using either the <literal>&cisa;</literal> or the
+     <literal>&stiga;</literal> profile. You can use other profiles at your own
      discretion.
     </para>
    </important>

@@ -103,8 +103,7 @@
     </listitem>
     <listitem>
      <para>
-      &slem; (<literal>sle-micro</literal>) uses a read-only root file system
-      with <emphasis>transactional</emphasis> updates. &slema; images do not
+      Some older &slema; images do not
       contain <command>registercloudguest</command>. To register an instance,
       use the command <command>transactional-update register</command>. Refer to
       the <link

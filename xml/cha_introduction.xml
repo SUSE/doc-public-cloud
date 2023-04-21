@@ -385,15 +385,15 @@
    <listitem>
     <para>
      PAYG instances include support through the cloud provider which in turn is
-     supported by &suse;. If you have a problem, always contact your cloud
-     service provider for assistance. They provide 1st and 2nd level support,
+     supported by &suse;. If you have a problem, <emphasis>always contact your cloud
+     service provider for assistance</emphasis>. They provide 1st and 2nd level support,
      &suse; will provide level 3 if necessary.
     </para>
     <important>
      <title>&azure; basic images</title>
      <para>
       &azure; also offers a basic PAYG image that only includes updates.
-      Instances created from this image are not eligible for support.
+      Instances created from this image are <emphasis>not eligible for support</emphasis>.
      </para>
     </important>
    </listitem>

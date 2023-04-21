@@ -86,3 +86,14 @@
 
 <!ENTITY alibaba   "Alibaba">
 <!ENTITY ac        "&alibaba; Cloud">
+
+<!-- Old network entities -->
+<!ENTITY exampledomainip        "192.168.0">
+<!ENTITY exampledomain1ip       "192.168.1">
+<!ENTITY exampledomain2ip       "192.168.2">
+<!-- ipv6 equivalent to 192.168.2.10 -->
+<!ENTITY exampledomain2ipv6     "2002:c0a8:20a::">
+<!ENTITY exampleserver          "sun">
+<!ENTITY exampleserverip        "&exampledomainip;.20">
+<!ENTITY exampleclient          "earth">
+<!ENTITY exampleclientip        "&exampledomainip;.1">

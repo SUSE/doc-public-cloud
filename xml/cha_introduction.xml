@@ -381,42 +381,42 @@
    (PAYG). For more information about BYOS and PAYG, refer to
    <xref linkend="sec-intro-plans"/>.
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     PAYG instances include support through the cloud provider which in turn is
-     supported by &suse;. If you have a problem, <emphasis>always contact your cloud
+  <sect2>
+   <title>Support for PAYG instances</title>
+   <para>
+    PAYG instances include support through the cloud provider which in turn is
+    supported by &suse;. If you have a problem, <emphasis>always contact your cloud
      service provider for assistance</emphasis>. They provide 1st and 2nd level support,
-     &suse; will provide level 3 if necessary.
-    </para>
-    <important>
-     <title>&azure; basic images</title>
-     <para>
-      &azure; also offers a basic PAYG image that only includes updates.
-      Instances created from this image are <emphasis>not eligible for support</emphasis>.
-     </para>
-    </important>
-   </listitem>
-   <listitem>
+    &suse; will provide level 3 if necessary.
+   </para>
+   <important>
+    <title>&azure; basic images</title>
     <para>
-     BYOS instances are supported by &suse; under the terms of your &suse;
-     subscription. For an overview of &suse;'s support subscriptions, refer to
-     <link xlink:href="https://www.suse.com/support/"/>.
+     &azure; also offers a basic PAYG image that only includes updates.
+     Instances created from this image are <emphasis>not eligible for support</emphasis>.
     </para>
-   </listitem>
-  </itemizedlist>
-  <para>
-   For more information, refer to the <link
-    xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
-    Policy</link> and the support statement for &sle; in <xref
-     linkend="app-public-cloud-support"/>.
-  </para>
-  <para>
-   For information on how to contact the &suse; support team and report
-   problems, refer to the <link
-    xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
-    Guide</link>.
-  </para>
+   </important>
+  </sect2>
+  <sect2>
+   <title>Support for BYOS instances</title>
+   <para>
+    BYOS instances are supported by &suse; under the terms of your &suse;
+    subscription. For an overview of &suse;'s support subscriptions, refer to
+    <link xlink:href="https://www.suse.com/support/"/>.
+   </para>
+   <para>
+    For more information, refer to the <link
+     xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
+     Policy</link> and the support statement for &sle; in <xref
+      linkend="app-public-cloud-support"/>.
+   </para>
+   <para>
+    For information on how to contact the &suse; support team and report
+    problems, refer to the <link
+     xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
+     Guide</link>.
+   </para>
+  </sect2>
 
   <sect2 xml:id="sec-collecting-information">
    <title>Collecting system information with <command>supportconfig</command></title>

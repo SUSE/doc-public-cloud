@@ -324,16 +324,16 @@
    </mediaobject>
   </figure>
   <para>
-   Use the drop-down boxes to view images, servers, or both and filter by cloud
-   framework, state, and region. You can also search for strings and adjust the
-   number of results shown per page.
+   Use the drop-down lists to view images, servers, or both, and filter by cloud framework,
+   region, or image state. You can also search for strings and adjust the columns and the number of
+   results per page.
   </para>
   
   <sect2 xml:id="sec-pint-images">
    <title><literal>Images</literal> view</title>
    <para>
-    The following columns are shown in the <literal>Images</literal> view.
-    Please note columns depend on the the cloud frameworks.
+    The following columns are shown in the <literal>Images</literal> view. Some columns depend on
+    the the cloud frameworks.
    </para>
 
    <variablelist xml:id="var-pint">
@@ -399,7 +399,7 @@
      <listitem>
       <para>
        Project of the image. Projects are used to organize &gcp; resources. Only
-       shown for &gcp;
+       shown for &gcp;.
       </para>
      </listitem>
     </varlistentry>
@@ -469,7 +469,7 @@
   <sect2 xml:id="sec-pint-servers">
    <title><literal>Servers</literal> view</title>
    <para>
-    The following columns are displayed in the <literal>Servers</literal> view:
+    The following columns are shown in the <literal>Servers</literal> view:
    </para>
    <variablelist>
     <title>Columns in the <literal>Servers</literal> view</title>
@@ -503,11 +503,11 @@
      <term>Type</term>
      <listitem>
       <para>
-       One of <literal>regionserver</literal> or <literal>smt</literal>.
-       In every framework where &suse; operates an update infrastructure, the
-       <literal>regionserver</literal> systems are randomly distributed across
+       One of <literal>regionserver-sles</literal>, <literal>regionserver-sap</literal>, or
+       <literal>smt</literal>. In every framework where &suse; operates an update
+       infrastructure, the <literal>regionserver</literal> systems are randomly distributed across
        regions and the <literal>smt</literal> servers are available in most
-       regions. Every region has <literal>smt</literal> servers assigned.
+       regions. Every region has <literal>update</literal> servers assigned.
       </para>
      </listitem>
     </varlistentry>

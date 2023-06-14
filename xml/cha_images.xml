@@ -646,7 +646,7 @@
     <listitem>
      <para>
       Rules that require having passwords set up. Passwords would have to be
-      public if configured during image build. This would defeat the purpose of
+      public if configured during the image build. This would defeat the purpose of
       a secret password.
      </para>
     </listitem>
@@ -669,7 +669,7 @@
     </listitem>
     <listitem>
      <para>
-      Rules to remove packages. &suse;'s public cloud images cater a wide range
+      Rules to remove packages. &suse;'s public cloud images cater to a wide range
       of use cases. Even if the number of packages is limited, it is impossible
       to determine what packages an instance requires.
      </para>

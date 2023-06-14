@@ -89,7 +89,7 @@
                <command>registercloudguest</command>, but you can register instances with
                the &scc; first, install the necessary packages and then register with the
                SUSE-operated update infrastructure in the cloud framework region. Refer
-               to <xref linkend="sec-admin-registercloudguest"/> for instructions.
+               to <xref linkend="pro-admin-registercloudguest"/> for instructions.
              </para>
            </listitem>
            <listitem>
@@ -138,7 +138,8 @@
       required packages. For BYOS instances created from images with a date stamp
       <emphasis>prior</emphasis> to <literal>20220103</literal>, perform the following steps:
      </para>
-     <procedure>
+     <procedure xml:id="pro-admin-registercloudguest">
+       <title>Switching from <command>&suseconnect;</command> to <command>registercloudguest</command></title>
        <step>
          <para>
            Check if the <package>cloud-regionsrv-client</package> package is
@@ -235,6 +236,7 @@
       following steps:
     </para>
     <procedure xml:id="pro-admin-suseconnect">
+      <title>Switching from <command>registercloudguest</command> to <command>&suseconnect;</command></title>
        <step>
          <para>
            Disconnect your instance from the SUSE-operated update infrastructure in the cloud

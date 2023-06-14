@@ -94,13 +94,13 @@
            </listitem>
            <listitem>
              <para>
-               &slem; (<literal>sle-micro</literal>) uses a read-only root file system
-               with <emphasis>transactional</emphasis> updates. &slema; images do not
-               contain <command>registercloudguest</command>. To register an instance,
-               use the command <command>transactional-update register</command>. Refer to
-               the <link
+               &slem; (<literal>sle-micro</literal>) 5.1 and 5.2 images do not contain
+               <command>registercloudguest</command>. To register an instance, use the command
+               <command>transactional-update register</command>. Refer to the <link
                  xlink:href="https://documentation.suse.com/sle-micro/html/SLE-Micro-all/sec-transactional-udate.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
-               for more information.
+               for more information. Images of &slema; 5.3 and later versions include
+               <command>registercloudguest</command> and can be registered as described in
+               <xref linkend="sec-admin-registercloudguest"/>.
              </para>
            </listitem>
            <listitem>

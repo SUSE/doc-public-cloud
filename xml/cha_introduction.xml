@@ -384,10 +384,10 @@
   <itemizedlist>
    <listitem>
     <para>
-     PAYG instances include support through the cloud provider which in turn is
-     supported by &suse;. If you have a problem, always contact your cloud
-     service provider for assistance. They provide 1st and 2nd level support,
-     &suse; will provide level 3 if necessary.
+     PAYG instances include support through the cloud service provider which
+     in turn is supported by &suse;. If you have a problem, always contact
+     your CSP for assistance. They provide 1st and 2nd level support, and will
+     work with &suse; for L3 support as required.
     </para>
     <important>
      <title>&azure; basic images</title>

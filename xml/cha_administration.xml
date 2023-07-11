@@ -44,6 +44,16 @@
      <systemitem class="service">guestregister.service</systemitem> manages
      the registration on first boot.
     </para>
+     <!-- same warning as in sec-intro-plans -->
+     <important>
+       <title>Do not register PAYG instances with the &scc;</title>
+       <para>
+         Registering PAYG instances with the &scc; or your own &rmt; server will
+         create conflicts that are not easily solved. Only register BYOS instances.
+         PAYG instances are automatically registered against the correct update
+         server.
+       </para>
+     </important>
   </listitem>
    <listitem>
     <para>

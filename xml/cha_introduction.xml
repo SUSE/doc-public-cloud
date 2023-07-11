@@ -351,6 +351,7 @@
    </para>
    -->
   </important>
+  <!-- same as in sec-admin-register -->
   <important>
    <title>Do not register PAYG instances with the &scc;</title>
    <para>

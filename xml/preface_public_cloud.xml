@@ -69,7 +69,15 @@
     </para>
    </listitem>
   </varlistentry>
-  <!-- 
+   <varlistentry>
+     <term><xref linkend="cha-admin"/></term>
+     <listitem>
+       <para>
+         &abstract_cha_admin;
+       </para>
+     </listitem>
+   </varlistentry>
+   <!--
   <varlistentry>
    <term><xref linkend="cha-providers"/></term>
    <listitem>

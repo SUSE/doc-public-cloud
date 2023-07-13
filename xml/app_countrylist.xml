@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<appendix xml:id="countrylist" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Country list</title>
+
+ <para>
+  Find the support statement for &productname; and general information about
+  technology previews below.
+  For details about the product lifecycle, see
+  <link xlink:href="https://www.suse.com/lifecycle"/>.
+ </para>
+ <para>
+  If you are entitled to support, find details on how to collect information
+  for a support ticket at
+  <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/cha-adm-support.html"/>.
+ </para>
+
+ <sect1>
+   <title>Countries that can transact &suse; Rancher Priority Support through &awsa; Marketplace</title>
+  <para>
+   To receive support, you need an appropriate subscription with &suse;.
+   To view the specific support offerings available to you, go to
+   <link xlink:href="https://www.suse.com/support/"/> and select your product.
+  </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Australia, AU
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Austria, AT
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Bangladesh, BD
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Belgium, BE
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Bulgaria, BG
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Canada, CA
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Chile, CL
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Croatia, HR
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Cyprus, CY
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Czech Republic, CZ
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Denmark, DK
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Estonia, EE
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Finland, FI
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        France, FR
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Germany, DE
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Greece, GR
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Hungary, HU
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        India, IN
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Indonesia, ID
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Ireland, IE
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Isle of Man, IM
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Italy, IT
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Kingdom of Saudi Arabia, SA
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Korea, Republic of, KR
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Latvia, LV
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Lithuania, LT
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Luxembourg, LU
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Malaysia, MY
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Malta, MT
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Netherlands, NL
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        New Zealand, NZ
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Norway, NO
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Poland, PL
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Portugal, PT
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Romania, RO
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Russian Federation, RU
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Singapore, SG
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Slovakia, SK
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Slovenia, SI
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        South Africa, ZA
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Spain, ES
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Sweden, SE
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Taiwan, Province of China, TW
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Thailand, TH
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Turkey, TR
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        United Kingdom, GB
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        United States, US
+      </para>
+    </listitem>
+  </itemizedlist>
+ </sect1>
+</appendix>

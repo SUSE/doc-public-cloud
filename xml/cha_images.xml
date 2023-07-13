@@ -147,7 +147,7 @@
    scheme for &suse;'s public cloud images is as follows:
   </para>
   <para>
-   <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
+    <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>LISTING</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
   </para>
   <para>
    Not all components of this naming scheme are used in all frameworks.
@@ -288,6 +288,19 @@
      </para>
     </listitem>
    </varlistentry>
+    <varlistentry>
+      <!-- FIXME cwickert 2023-07-13: TAXID instead of LISTING (as in the internal naming scheme)? -->
+      <term><literal>LISTING</literal></term>
+      <listitem>
+        <para>
+          Either <literal>llc</literal> or <literal>ltd</literal>.
+          The <literal>ltd</literal> images are for customers in the European Union and the
+          United Kingdom, the <literal>llc</literal> images are for customers in North America and
+          other countries listed in <xref linkend="countrylist"/>. For more information,
+          see <xref linkend="3rd-party-images"/>
+        </para>
+      </listitem>
+    </varlistentry>
    <varlistentry>
     <term><literal>GENERATION</literal> (&azure;-only)</term>
     <listitem>

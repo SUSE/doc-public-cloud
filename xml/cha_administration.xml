@@ -158,8 +158,21 @@
          <screen>&prompt.root;<command>rpm</command> -q cloud-regionsrv-client</screen>
          <para>
            If the package is not installed or older than version 9.3.0, install or
-           update it. You will need some additional packages, depending on your cloud
-           framework.
+           update it.
+         </para>
+         <para>
+           For instances created from images with a date stamp prior to <literal>20220103</literal>,
+           you first have to enable the <literal>Public Cloud Module</literal>. For &sle; 15 SP4,
+           run:
+         </para>
+         <screen>&prompt.root;<command>&suseconnect;</command> -p sle-module-public-cloud/15.4/x86_64</screen>
+         <para>
+           For other versions or a complete list of modules and their product
+           identifiers, run <command>&suseconnect; --list-extensions</command>.
+         </para>
+         <para>
+           Install <package>cloud-regionsrv-client</package>. Depending on your cloud framework,
+           you will need some additional packages.
          </para>
          <substeps>
            <step>
@@ -207,19 +220,6 @@
            For instances created from images with a datestamp later than
            <literal>20220103</literal>, it will also set up the repositories for the
            <literal>Public Cloud Module</literal>.
-         </para>
-       </step>
-       <step>
-         <para>
-           For instances created from images with a date stamp prior to
-           <literal>20220103</literal> it is strongly recommended to also add the
-           <literal>Public Cloud Module</literal> repositories. For &sle; 15 SP4,
-           run:
-         </para>
-         <screen>&prompt.root;<command>&suseconnect;</command> -p sle-module-public-cloud/15.4/x86_64</screen>
-         <para>
-           For other versions or a complete list of modules and their product
-           identifiers, run <command>&suseconnect; --list-extensions</command>.
          </para>
        </step>
      </procedure>

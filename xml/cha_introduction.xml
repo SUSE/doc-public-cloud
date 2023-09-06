@@ -314,7 +314,7 @@
     <superscript>2</superscript> LTSS: <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/">Long-Term Service Pack Support</link>
    </member>
   </simplelist>
-  <note xml:id="third-party-images">
+  <note xml:id="note-third-party-images">
    <title>Duplicate listings on market places</title>
    <para>
     You may see two different listings for some PAYG images in the cloud
@@ -398,6 +398,32 @@
       Instances created from this image are <emphasis>not eligible for support</emphasis>.
      </para>
     </important>
+    <tip>
+     <title>Additional &suse; PAYG support</title>
+     <para>
+      &suse; offers additional support for the PAYG versions of following products:
+     </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        &slem; 5
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        &suse; Rancher Priority Support
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        NeuVector Prime
+       </para>
+      </listitem>
+     </itemizedlist>
+     <para>
+      These support options can be purchased through the CSP's market place.  
+     </para>
+    </tip>
    </listitem>
    <listitem>
     <para>
@@ -419,7 +445,6 @@
     xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
     Guide</link>.
   </para>
-
  </sect1>
 
 </chapter>

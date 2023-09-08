@@ -14,23 +14,7 @@
   <para>
     &suse; offers additional support for the PAYG versions of following products:
   </para>
-  <itemizedlist>
-    <listitem>
-      <para>
-        &slem; 5
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        &suse; Rancher Priority Support
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        NeuVector Prime
-      </para>
-    </listitem>
-  </itemizedlist>
+  &additional_support_offerings;
   <para>
     You can transact these support offerings through the &aws; and &azure; marketplaces, where you
     will see two different listings: The <literal>EU and UK only</literal> listing is for customers

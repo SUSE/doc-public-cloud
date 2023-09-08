@@ -87,6 +87,24 @@
 <!ENTITY alibaba   "Alibaba">
 <!ENTITY ac        "&alibaba; Cloud">
 
+<!ENTITY additional_support_offerings "  <itemizedlist xmlns='http://docbook.org/ns/docbook'>
+    <listitem>
+      <para>
+        &slem; 5
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        &suse; Rancher Priority Support
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        NeuVector Prime
+      </para>
+    </listitem>
+  </itemizedlist>">
+
 <!-- Old network entities -->
 <!ENTITY exampledomainip        "192.168.0">
 <!ENTITY exampledomain1ip       "192.168.1">

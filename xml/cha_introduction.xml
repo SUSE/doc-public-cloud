@@ -403,23 +403,7 @@
      <para>
       &suse; offers additional support for the PAYG versions of following products:
      </para>
-     <itemizedlist>
-      <listitem>
-       <para>
-        &slem; 5
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        &suse; Rancher Priority Support
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        NeuVector Prime
-       </para>
-      </listitem>
-     </itemizedlist>
+      &additional_support_offerings;
      <para>
       These support options can be purchased through the CSP's market place.  
      </para>

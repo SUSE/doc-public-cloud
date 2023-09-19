@@ -328,641 +328,688 @@
   </procedure>
  </sect1>
 
- <sect1 xml:id="supportconfig">
-   <title>Collecting system information with <command>supportconfig</command></title>
+ <sect1 xml:id="support">
+   <title>Getting support</title>
    <para>
-     To create a TAR archive with detailed system information that you can
-     hand over to Global Technical Support, use the command
-     <command>supportconfig</command>. The command-line tool is provided by
-     the package <systemitem>supportutils</systemitem> which is installed by
-     default.
+     Regardless of the public cloud you use and the plan you choose, &suse; has
+     you covered with support. Support is dependent on whether you &quot;bring
+     your own subscription&quot; (BYOS) or you use &sle; &quot;on-demand&quot;
+     (PAYG). For more information about BYOS and PAYG, refer to
+     <xref linkend="sec-intro-plans"/>.
    </para>
-   <para>
-     Depending on which packages are installed on your system, some of these
-     packages integrate <command>supportconfig</command> plug-ins. When
-     <command>supportconfig</command> is executed, all plug-ins are executed
-     as well, creating one or more result files for the archive. This has the
-     benefit that the only topics checked are those that contain a specific
-     plug-in for them. <command>supportconfig</command> plug-ins are stored in
-     the directory <filename>/usr/lib/supportconfig/plugins/</filename>.
-   </para>
-   <para>
-     The following procedure shows how to create a Supportconfig archive, but
-     without submitting it to support directly. For uploading it, you need to
-     run the command with certain options as described in
-    <!-- <xref linkend="pro-admsupport-submit-cli"/>. -->
-   </para>
-   <procedure>
-     <step>
+   <itemizedlist>
+     <listitem>
        <para>
-         Run <command>supportconfig</command> as &rootuser;. Usually, it is
-         enough to run this tool without any options. Some options are very
-         common and are displayed in the following list:
+         PAYG instances include support through the cloud service provider which
+         in turn is supported by &suse;. If you have a problem, <emphasis>always contact
+           your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
+         work with &suse; for L3 support as required.
+       </para>
+       <important>
+         <title>&azure; basic images</title>
+         <para>
+           &azure; also offers a basic PAYG image that only includes updates.
+           Instances created from this image are <emphasis>not eligible for support</emphasis>.
+         </para>
+       </important>
+     </listitem>
+     <listitem>
+       <para>
+         BYOS instances are supported by &suse; under the terms of your &suse;
+         subscription. For an overview of &suse;'s support subscriptions, refer to
+         <link xlink:href="https://www.suse.com/support/"/>.
+       </para>
+     </listitem>
+   </itemizedlist>
+   <para>
+     For more information, refer to the <link
+       xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
+       Policy</link> and the support statement for &sle; in <xref
+         linkend="app-public-cloud-support"/>.
+   </para>
+   <para>
+     For information on how to contact the &suse; support team and report
+     problems, refer to the <link
+       xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
+       Guide</link>.
+   </para>
+
+   <sect2>
+     <title>Collecting system information with <command>supportconfig</command></title>
+     <para>
+       To create a TAR archive with detailed system information that you can
+       hand over to Global Technical Support, use the command
+       <command>supportconfig</command>. The command-line tool is provided by
+       the package <systemitem>supportutils</systemitem> which is installed by
+       default.
+     </para>
+     <para>
+       Depending on which packages are installed on your system, some of these
+       packages integrate <command>supportconfig</command> plug-ins. When
+       <command>supportconfig</command> is executed, all plug-ins are executed
+       as well, creating one or more result files for the archive. This has the
+       benefit that the only topics checked are those that contain a specific
+       plug-in for them. <command>supportconfig</command> plug-ins are stored in
+       the directory <filename>/usr/lib/supportconfig/plugins/</filename>.
+     </para>
+     <para>
+       The following procedure shows how to create a Supportconfig archive, but
+       without submitting it to support directly. For uploading it, you need to
+       run the command with certain options as described in
+       <!-- <xref linkend="pro-admsupport-submit-cli"/>. -->
+     </para>
+     <procedure>
+       <step>
+         <para>
+           Run <command>supportconfig</command> as &rootuser;. Usually, it is
+           enough to run this tool without any options. Some options are very
+           common and are displayed in the following list:
+         </para>
+         <variablelist>
+           <varlistentry>
+             <term><option>-E <replaceable>MAIL</replaceable></option></term>
+             <term><option>-N <replaceable>NAME</replaceable></option></term>
+             <term><option>-O <replaceable>COMPANY</replaceable></option></term>
+             <term><option>-P <replaceable>PHONE</replaceable></option></term>
+             <listitem>
+               <para>
+                 Sets your contact data: e-mail address (<option>-E</option>),
+                 company name (<option>-O</option>), your name
+                 (<option>-N</option>), and your phone number
+                 (<option>-P</option>).
+               </para>
+             </listitem>
+           </varlistentry>
+           <varlistentry>
+             <term><option>-i <replaceable>KEYWORDS</replaceable></option></term>
+             <term><option>-F</option></term>
+             <listitem>
+               <para>
+                 Limits the features to check. The placeholder
+                 <replaceable>KEYWORDS</replaceable> is a comma-separated list
+                 of case-sensitive keywords. Get a list of all keywords with
+                 <command>supportconfig -F</command>.
+               </para>
+             </listitem>
+           </varlistentry>
+         </variablelist>
+       </step>
+       <step>
+         <para>
+           Wait for the tool to complete the operation.
+         </para>
+       </step>
+       <step>
+         <para>
+           The default archive location is <filename>/var/log</filename>, with
+           the file name format being
+           <filename>scc_<replaceable>HOST</replaceable>_<replaceable>DATE</replaceable>_<replaceable>TIME</replaceable>.txz</filename>
+         </para>
+       </step>
+     </procedure>
+     <sect3 xml:id="supprtconfig-output">
+       <title>Understanding the output of <command>supportconfig</command></title>
+       <para>
+         If you run <command>supportconfig</command>, the script gives you a
+         summary of what it did.
+       </para>
+       <screen>                     Support Utilities - Supportconfig
+         Script Version: 3.1.11-46.2 <!--<co xml:id="co-admsupport-script-version"/>-->
+         Library Version: 3.1.11-29.6
+         Script Date: 2022 10 18<!-- <xref linkend="co-admsupport-script-version"/>-->
+         [...]
+         Gathering system information
+         Data Directory:    /var/log/scc_d251_180201_1525 <co xml:id="co-admsupport-script-datadir"/>
+         
+         Basic Server Health Check...                 Done <co xml:id="co-admsupport-script-done"/>
+         RPM Database...                              Done <xref linkend="co-admsupport-script-done"/>
+         Basic Environment...                         Done <xref linkend="co-admsupport-script-done"/>
+         System Modules...                            Done <xref linkend="co-admsupport-script-done"/>
+         [...]
+         File System List...                          Skipped <co xml:id="co-admsupport-script-skipped"/>
+         [...]
+         Command History...                           Excluded <co xml:id="co-admsupport-script-excluded"/>
+         [...]
+         Supportconfig Plugins:                       1 <co xml:id="co-admsupport-script-plugin"/>
+         Plugin: pstree...                          Done
+         [...]
+         Creating Tar Ball
+         
+         ==[ DONE ]===================================================================
+         Log file tar ball: /var/log/scc_d251_180201_1525.txz <co xml:id="co-admsupport-script-archive"/>
+         Log file size:     732K
+         Log file md5sum:   bf23e0e15e9382c49f92cbce46000d8b
+         =============================================================================</screen>
+       <calloutlist>
+         <!--<callout arearefs="co-admsupport-script-version">
+           <para>
+           The version and the date of the <command>supportconfig</command> command.
+           Higher versions can support more features.
+           </para>
+           </callout>-->
+         <callout arearefs="co-admsupport-script-datadir">
+           <para>
+             The temporary data directory to store the results. This directory
+             is archived as a tar file, see
+             <xref linkend="co-admsupport-script-archive"/>.
+           </para>
+         </callout>
+         <callout arearefs="co-admsupport-script-done">
+           <para>
+             The feature was enabled (either by default or selected manually)
+             and executed successfully. The result is stored in a file (see
+             <xref
+               linkend="tab-admsupport-features-and-filenames"/>).
+           </para>
+         </callout>
+         <callout arearefs="co-admsupport-script-skipped">
+           <para>
+             The feature was skipped because some files of one or more RPM
+             packages were changed.
+           </para>
+         </callout>
+         <callout arearefs="co-admsupport-script-excluded">
+           <para>
+             The feature was excluded because it was deselected via the
+             <option>-x</option> option.
+           </para>
+         </callout>
+         <callout arearefs="co-admsupport-script-plugin">
+           <para>
+             The script found one plug-in and executes the plug-in
+             <command>pstree</command>. The plug-in was found in the directory
+             <filename class="directory">/usr/lib/supportconfig/plugins/</filename>.
+             See the man page for details.
+           </para>
+         </callout>
+         <callout arearefs="co-admsupport-script-archive">
+           <para>
+             The tar file name of the archive, compressed with
+             <command>xz</command> by default.
+           </para>
+         </callout>
+       </calloutlist>
+     </sect3>
+     <sect3 xml:id="supportconfig-options">
+       <title>Common <command>supportconfig</command> options</title>
+       <para>
+         The <command>supportconfig</command> utility is usually called without
+         any options. Display a list of all options with
+         <command>supportconfig</command> <option>-h</option>. The following
+         list gives a brief overview of some common use cases:
        </para>
        <variablelist>
          <varlistentry>
-           <term><option>-E <replaceable>MAIL</replaceable></option></term>
-           <term><option>-N <replaceable>NAME</replaceable></option></term>
-           <term><option>-O <replaceable>COMPANY</replaceable></option></term>
-           <term><option>-P <replaceable>PHONE</replaceable></option></term>
+           <term>Reducing the amount of the information being gathered</term>
            <listitem>
              <para>
-               Sets your contact data: e-mail address (<option>-E</option>),
-               company name (<option>-O</option>), your name
-               (<option>-N</option>), and your phone number
-               (<option>-P</option>).
+               Use the minimal option (<option>-m</option>):
+             </para>
+             <screen>&prompt.root;supportconfig -m</screen>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term>Limiting the information to a specific topic</term>
+           <listitem>
+             <para>
+               If you have already localized a problem
+               <!--with the default
+                 <command>supportconfig</command> output and have found-->
+               that relates to a specific area or feature set only, you should
+               limit the collected information to the specific area for the next
+               <command>supportconfig</command> run. For example, you have
+               detected problems with LVM and want to test a recent change that
+               you introduced to the LVM configuration. In this case, it makes
+               sense to gather the minimum Supportconfig information around LVM
+               only:
+             </para>
+             <screen>&prompt.root;supportconfig -i LVM</screen>
+             <para>
+               Additional keywords can be separated with commas. For example, an
+               additional disk test:
+             </para>
+             <screen>&prompt.root;supportconfig -i LVM,DISK</screen>
+             <para>
+               For a complete list of feature keywords that you can use for
+               limiting the collected information to a specific area, run:
+             </para>
+             <screen>&prompt.root;supportconfig -F</screen>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term>Including additional contact information in the output:</term>
+           <listitem>
+             <screen>&prompt.root;supportconfig -E tux@example.org -N "Tux Penguin" -O<!--
+             --> "Penguin Inc." ...</screen>
+             <para>
+               (all in one line)
              </para>
            </listitem>
          </varlistentry>
          <varlistentry>
-           <term><option>-i <replaceable>KEYWORDS</replaceable></option></term>
-           <term><option>-F</option></term>
+           <term>Collecting already rotated log files</term>
            <listitem>
+             <screen>&prompt.root;supportconfig -l</screen>
              <para>
-               Limits the features to check. The placeholder
-               <replaceable>KEYWORDS</replaceable> is a comma-separated list
-               of case-sensitive keywords. Get a list of all keywords with
-               <command>supportconfig -F</command>.
+               This is especially useful in high-logging environments or after a
+               kernel crash when syslog rotates the log files after a reboot.
              </para>
            </listitem>
          </varlistentry>
        </variablelist>
-     </step>
-     <step>
+     </sect3>
+     <sect3 xml:id="supportconfig-archive-content">
+       <title>Overview of the archive content</title>
        <para>
-         Wait for the tool to complete the operation.
+         The TAR archive contains all the results from the features. Depending
+         on what you have selected (all or only a small set), the archive can
+         contain more or fewer files. The set of features can be limited using
+         the <option>-i</option> option (see
+         <xref linkend="supportconfig-options"/>).
        </para>
-     </step>
-     <step>
        <para>
-         The default archive location is <filename>/var/log</filename>, with
-         the file name format being
-         <filename>scc_<replaceable>HOST</replaceable>_<replaceable>DATE</replaceable>_<replaceable>TIME</replaceable>.txz</filename>
+         To list the contents of the archive, use the following
+         <command>tar</command> command:
        </para>
-     </step>
-   </procedure>
-   <sect2 xml:id="supprtconfig-output">
-     <title>Understanding the output of <command>supportconfig</command></title>
-     <para>
-       If you run <command>supportconfig</command>, the script gives you a
-       summary of what it did.
-     </para>
-<screen>                     Support Utilities - Supportconfig
-                         Script Version: 3.1.11-46.2 <!--<co xml:id="co-admsupport-script-version"/>-->
-                         Library Version: 3.1.11-29.6
-                         Script Date: 2022 10 18<!-- <xref linkend="co-admsupport-script-version"/>-->
-[...]
-Gathering system information
- Data Directory:    /var/log/scc_d251_180201_1525 <co xml:id="co-admsupport-script-datadir"/>
-
- Basic Server Health Check...                 Done <co xml:id="co-admsupport-script-done"/>
- RPM Database...                              Done <xref linkend="co-admsupport-script-done"/>
- Basic Environment...                         Done <xref linkend="co-admsupport-script-done"/>
- System Modules...                            Done <xref linkend="co-admsupport-script-done"/>
-[...]
- File System List...                          Skipped <co xml:id="co-admsupport-script-skipped"/>
-[...]
- Command History...                           Excluded <co xml:id="co-admsupport-script-excluded"/>
-[...]
- Supportconfig Plugins:                       1 <co xml:id="co-admsupport-script-plugin"/>
-   Plugin: pstree...                          Done
-[...]
-Creating Tar Ball
-
-==[ DONE ]===================================================================
- Log file tar ball: /var/log/scc_d251_180201_1525.txz <co xml:id="co-admsupport-script-archive"/>
- Log file size:     732K
- Log file md5sum:   bf23e0e15e9382c49f92cbce46000d8b
-=============================================================================</screen>
-     <calloutlist>
-       <!--<callout arearefs="co-admsupport-script-version">
-         <para>
-         The version and the date of the <command>supportconfig</command> command.
-         Higher versions can support more features.
-         </para>
-         </callout>-->
-       <callout arearefs="co-admsupport-script-datadir">
-         <para>
-           The temporary data directory to store the results. This directory
-           is archived as a tar file, see
-           <xref linkend="co-admsupport-script-archive"/>.
-         </para>
-       </callout>
-       <callout arearefs="co-admsupport-script-done">
-         <para>
-           The feature was enabled (either by default or selected manually)
-           and executed successfully. The result is stored in a file (see
-           <xref
-      linkend="tab-admsupport-features-and-filenames"/>).
-         </para>
-       </callout>
-       <callout arearefs="co-admsupport-script-skipped">
-         <para>
-           The feature was skipped because some files of one or more RPM
-           packages were changed.
-         </para>
-       </callout>
-       <callout arearefs="co-admsupport-script-excluded">
-         <para>
-           The feature was excluded because it was deselected via the
-           <option>-x</option> option.
-         </para>
-       </callout>
-       <callout arearefs="co-admsupport-script-plugin">
-         <para>
-           The script found one plug-in and executes the plug-in
-           <command>pstree</command>. The plug-in was found in the directory
-           <filename class="directory">/usr/lib/supportconfig/plugins/</filename>.
-           See the man page for details.
-         </para>
-       </callout>
-       <callout arearefs="co-admsupport-script-archive">
-         <para>
-           The tar file name of the archive, compressed with
-           <command>xz</command> by default.
-         </para>
-       </callout>
-     </calloutlist>
-   </sect2>
-   <sect2 xml:id="supportconfig-options">
-     <title>Common <command>supportconfig</command> options</title>
-     <para>
-       The <command>supportconfig</command> utility is usually called without
-       any options. Display a list of all options with
-       <command>supportconfig</command> <option>-h</option>. The following
-       list gives a brief overview of some common use cases:
-     </para>
-     <variablelist>
-       <varlistentry>
-         <term>Reducing the amount of the information being gathered</term>
-         <listitem>
-           <para>
-             Use the minimal option (<option>-m</option>):
-           </para>
-<screen>&prompt.root;supportconfig -m</screen>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term>Limiting the information to a specific topic</term>
-         <listitem>
-           <para>
-             If you have already localized a problem
-             <!--with the default
-               <command>supportconfig</command> output and have found-->
-             that relates to a specific area or feature set only, you should
-             limit the collected information to the specific area for the next
-             <command>supportconfig</command> run. For example, you have
-             detected problems with LVM and want to test a recent change that
-             you introduced to the LVM configuration. In this case, it makes
-             sense to gather the minimum Supportconfig information around LVM
-             only:
-           </para>
-<screen>&prompt.root;supportconfig -i LVM</screen>
-           <para>
-             Additional keywords can be separated with commas. For example, an
-             additional disk test:
-           </para>
-<screen>&prompt.root;supportconfig -i LVM,DISK</screen>
-           <para>
-             For a complete list of feature keywords that you can use for
-             limiting the collected information to a specific area, run:
-           </para>
-<screen>&prompt.root;supportconfig -F</screen>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term>Including additional contact information in the output:</term>
-         <listitem>
-<screen>&prompt.root;supportconfig -E tux@example.org -N "Tux Penguin" -O<!--
-     --> "Penguin Inc." ...</screen>
-           <para>
-             (all in one line)
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term>Collecting already rotated log files</term>
-         <listitem>
-<screen>&prompt.root;supportconfig -l</screen>
-           <para>
-             This is especially useful in high-logging environments or after a
-             kernel crash when syslog rotates the log files after a reboot.
-           </para>
-         </listitem>
-       </varlistentry>
-     </variablelist>
-   </sect2>
-   <sect2 xml:id="supportconfig-archive-content">
-     <title>Overview of the archive content</title>
-     <para>
-       The TAR archive contains all the results from the features. Depending
-       on what you have selected (all or only a small set), the archive can
-       contain more or fewer files. The set of features can be limited using
-       the <option>-i</option> option (see
-       <xref linkend="supportconfig-options"/>).
-     </para>
-     <para>
-       To list the contents of the archive, use the following
-       <command>tar</command> command:
-     </para>
-<screen>&prompt.root;<command>tar</command> xf /var/log/scc_&exampleclient;_180131_1545.txz</screen>
-     <para>
-       The following file names are always available inside the TAR archive:
-     </para>
-     <variablelist>
-       <title>Minimum files in archive</title>
-       <varlistentry>
-         <term><filename>basic-environment.txt</filename></term>
-         <listitem>
-           <para>
-             Contains the date when this script was executed and system
-             information like version of the distribution, hypervisor
-             information, and more.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>basic-health-check.txt</filename></term>
-         <listitem>
-           <para>
-             Contains some basic health checks like uptime, virtual memory
-             statistics, free memory and hard disk, checks for zombie
-             processes, and more.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>hardware.txt</filename></term>
-         <listitem>
-           <para>
-             Contains basic hardware checks like information about the CPU
-             architecture, list of all connected hardware, interrupts, I/O
-             ports, kernel boot messages, and more.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>messages.txt</filename></term>
-         <listitem>
-           <para>
-             Contains log messages from the system journal.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>rpm.txt</filename></term>
-         <listitem>
-           <para>
-             Contains a list of all installed RPM packages, their names and
-             versions and where they come from.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>summary.xml</filename></term>
-         <listitem>
-           <para>
-             Contains information in XML format, such as distribution, version
-             and product-specific fragments.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>supportconfig.txt</filename></term>
-         <listitem>
-           <para>
-             Contains information about the <command>supportconfig</command>
-             script itself.
-           </para>
-         </listitem>
-       </varlistentry>
-       <varlistentry>
-         <term><filename>y2log.txt</filename></term>
-         <listitem>
-           <para>
-             Contains &yast;-specific information like specific packages,
-             configuration files and log files.
-           </para>
-         </listitem>
-       </varlistentry>
-     </variablelist>
-     <para>
-       <xref linkend="tab-admsupport-features-and-filenames"/> lists all
-       available features and their file names.
-     </para>
-     <table xml:id="tab-admsupport-features-and-filenames">
-       <title>Comparison of features and file names in the TAR archive</title>
-       <tgroup cols="2">
-         <thead>
-           <row>
-             <entry>Feature</entry>
-             <entry>File name</entry>
-           </row>
-         </thead>
-         <tbody>
-           <row>
-             <entry><parameter>APPARMOR</parameter>
-             </entry>
-             <entry><filename>security-apparmor.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>AUDIT</parameter>
-             </entry>
-             <entry><filename>security-audit.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>AUTOFS</parameter>
-             </entry>
-             <entry><filename>fs-autofs.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>BOOT</parameter>
-             </entry>
-             <entry><filename>boot.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>BTRFS</parameter>
-             </entry>
-             <entry><filename>fs-btrfs.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DAEMONS</parameter>
-             </entry>
-             <entry><filename>systemd.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>CIMOM</parameter>
-             </entry>
-             <entry><filename>cimom.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>CRASH</parameter>
-             </entry>
-             <entry><filename>crash.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>CRON</parameter>
-             </entry>
-             <entry><filename>cron.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DHCP</parameter>
-             </entry>
-             <entry><filename>dhcp.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DISK</parameter>
-             </entry>
-             <entry><filename>fs-diskio.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DNS</parameter>
-             </entry>
-             <entry><filename>dns.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DOCKER</parameter>
-             </entry>
-             <entry><filename>docker.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>DRBD</parameter>
-             </entry>
-             <entry><filename>drbd.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>ENV</parameter>
-             </entry>
-             <entry><filename>env.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>ETC</parameter>
-             </entry>
-             <entry><filename>etc.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>HISTORY</parameter>
-             </entry>
-             <entry><filename>shell_history.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>ISCSI</parameter>
-             </entry>
-             <entry><filename>fs-iscsi.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>LDAP</parameter>
-             </entry>
-             <entry><filename>ldap.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>LIVEPATCH</parameter>
-             </entry>
-             <entry><filename>kernel-livepatch.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>LVM</parameter>
-             </entry>
-             <entry><filename>lvm.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>MEM</parameter>
-             </entry>
-             <entry><filename>memory.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>MOD</parameter>
-             </entry>
-             <entry><filename>modules.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>MPIO</parameter>
-             </entry>
-             <entry><filename>mpio.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>NET</parameter>
-             </entry>
-             <entry><filename>network-*.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>NFS</parameter>
-             </entry>
-             <entry><filename>nfs.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>NTP</parameter>
-             </entry>
-             <entry><filename>ntp.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>NVME</parameter>
-             </entry>
-             <entry><filename>nvme.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>OCFS2</parameter>
-             </entry>
-             <entry><filename>ocfs2.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>PAM</parameter>
-             </entry>
-             <entry><filename>pam.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>PODMAN</parameter>
-             </entry>
-             <entry><filename>podman.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>PRINT</parameter>
-             </entry>
-             <entry><filename>print.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>PROC</parameter>
-             </entry>
-             <entry><filename>proc.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SAR</parameter>
-             </entry>
-             <entry><filename>sar.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SLERT</parameter>
-             </entry>
-             <entry><filename>slert.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SLP</parameter>
-             </entry>
-             <entry><filename>slp.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SMT</parameter>
-             </entry>
-             <entry><filename>smt.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SMART</parameter>
-             </entry>
-             <entry><filename>fs-smartmon.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SMB</parameter>
-             </entry>
-             <entry><filename>samba.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SRAID</parameter>
-             </entry>
-             <entry><filename>fs-softraid.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SSH</parameter>
-             </entry>
-             <entry><filename>ssh.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SSSD</parameter>
-             </entry>
-             <entry><filename>sssd.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SYSCONFIG</parameter>
-             </entry>
-             <entry><filename>sysconfig.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>SYSFS</parameter>
-             </entry>
-             <entry><filename>sysfs.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>TRANSACTIONAL</parameter>
-             </entry>
-             <entry><filename>transactional-update.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>TUNED</parameter>
-             </entry>
-             <entry><filename>tuned.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>UDEV</parameter>
-             </entry>
-             <entry><filename>udev.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>UFILES</parameter>
-             </entry>
-             <entry><filename>fs-files-additional.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>UP</parameter>
-             </entry>
-             <entry><filename>updates.txt</filename>
-             </entry>
-           </row>
-           <row>
-             <entry><parameter>WEB</parameter>
-             </entry>
-             <entry><filename>web.txt</filename>
-             </entry>
-           </row>
-         </tbody>
-       </tgroup>
-     </table>
+       <screen>&prompt.root;<command>tar</command> xf /var/log/scc_&exampleclient;_180131_1545.txz</screen>
+       <para>
+         The following file names are always available inside the TAR archive:
+       </para>
+       <variablelist>
+         <title>Minimum files in archive</title>
+         <varlistentry>
+           <term><filename>basic-environment.txt</filename></term>
+           <listitem>
+             <para>
+               Contains the date when this script was executed and system
+               information like version of the distribution, hypervisor
+               information, and more.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>basic-health-check.txt</filename></term>
+           <listitem>
+             <para>
+               Contains some basic health checks like uptime, virtual memory
+               statistics, free memory and hard disk, checks for zombie
+               processes, and more.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>hardware.txt</filename></term>
+           <listitem>
+             <para>
+               Contains basic hardware checks like information about the CPU
+               architecture, list of all connected hardware, interrupts, I/O
+               ports, kernel boot messages, and more.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>messages.txt</filename></term>
+           <listitem>
+             <para>
+               Contains log messages from the system journal.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>rpm.txt</filename></term>
+           <listitem>
+             <para>
+               Contains a list of all installed RPM packages, their names and
+               versions and where they come from.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>summary.xml</filename></term>
+           <listitem>
+             <para>
+               Contains information in XML format, such as distribution, version
+               and product-specific fragments.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>supportconfig.txt</filename></term>
+           <listitem>
+             <para>
+               Contains information about the <command>supportconfig</command>
+               script itself.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term><filename>y2log.txt</filename></term>
+           <listitem>
+             <para>
+               Contains &yast;-specific information like specific packages,
+               configuration files and log files.
+             </para>
+           </listitem>
+         </varlistentry>
+       </variablelist>
+       <para>
+         <xref linkend="tab-admsupport-features-and-filenames"/> lists all
+         available features and their file names.
+       </para>
+       <table xml:id="tab-admsupport-features-and-filenames">
+         <title>Comparison of features and file names in the TAR archive</title>
+         <tgroup cols="2">
+           <thead>
+             <row>
+               <entry>Feature</entry>
+               <entry>File name</entry>
+             </row>
+           </thead>
+           <tbody>
+             <row>
+               <entry><parameter>APPARMOR</parameter>
+               </entry>
+               <entry><filename>security-apparmor.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>AUDIT</parameter>
+               </entry>
+               <entry><filename>security-audit.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>AUTOFS</parameter>
+               </entry>
+               <entry><filename>fs-autofs.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>BOOT</parameter>
+               </entry>
+               <entry><filename>boot.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>BTRFS</parameter>
+               </entry>
+               <entry><filename>fs-btrfs.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DAEMONS</parameter>
+               </entry>
+               <entry><filename>systemd.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>CIMOM</parameter>
+               </entry>
+               <entry><filename>cimom.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>CRASH</parameter>
+               </entry>
+               <entry><filename>crash.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>CRON</parameter>
+               </entry>
+               <entry><filename>cron.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DHCP</parameter>
+               </entry>
+               <entry><filename>dhcp.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DISK</parameter>
+               </entry>
+               <entry><filename>fs-diskio.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DNS</parameter>
+               </entry>
+               <entry><filename>dns.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DOCKER</parameter>
+               </entry>
+               <entry><filename>docker.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>DRBD</parameter>
+               </entry>
+               <entry><filename>drbd.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>ENV</parameter>
+               </entry>
+               <entry><filename>env.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>ETC</parameter>
+               </entry>
+               <entry><filename>etc.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>HISTORY</parameter>
+               </entry>
+               <entry><filename>shell_history.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>ISCSI</parameter>
+               </entry>
+               <entry><filename>fs-iscsi.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>LDAP</parameter>
+               </entry>
+               <entry><filename>ldap.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>LIVEPATCH</parameter>
+               </entry>
+               <entry><filename>kernel-livepatch.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>LVM</parameter>
+               </entry>
+               <entry><filename>lvm.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>MEM</parameter>
+               </entry>
+               <entry><filename>memory.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>MOD</parameter>
+               </entry>
+               <entry><filename>modules.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>MPIO</parameter>
+               </entry>
+               <entry><filename>mpio.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>NET</parameter>
+               </entry>
+               <entry><filename>network-*.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>NFS</parameter>
+               </entry>
+               <entry><filename>nfs.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>NTP</parameter>
+               </entry>
+               <entry><filename>ntp.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>NVME</parameter>
+               </entry>
+               <entry><filename>nvme.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>OCFS2</parameter>
+               </entry>
+               <entry><filename>ocfs2.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>PAM</parameter>
+               </entry>
+               <entry><filename>pam.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>PODMAN</parameter>
+               </entry>
+               <entry><filename>podman.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>PRINT</parameter>
+               </entry>
+               <entry><filename>print.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>PROC</parameter>
+               </entry>
+               <entry><filename>proc.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SAR</parameter>
+               </entry>
+               <entry><filename>sar.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SLERT</parameter>
+               </entry>
+               <entry><filename>slert.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SLP</parameter>
+               </entry>
+               <entry><filename>slp.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SMT</parameter>
+               </entry>
+               <entry><filename>smt.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SMART</parameter>
+               </entry>
+               <entry><filename>fs-smartmon.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SMB</parameter>
+               </entry>
+               <entry><filename>samba.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SRAID</parameter>
+               </entry>
+               <entry><filename>fs-softraid.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SSH</parameter>
+               </entry>
+               <entry><filename>ssh.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SSSD</parameter>
+               </entry>
+               <entry><filename>sssd.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SYSCONFIG</parameter>
+               </entry>
+               <entry><filename>sysconfig.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>SYSFS</parameter>
+               </entry>
+               <entry><filename>sysfs.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>TRANSACTIONAL</parameter>
+               </entry>
+               <entry><filename>transactional-update.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>TUNED</parameter>
+               </entry>
+               <entry><filename>tuned.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>UDEV</parameter>
+               </entry>
+               <entry><filename>udev.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>UFILES</parameter>
+               </entry>
+               <entry><filename>fs-files-additional.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>UP</parameter>
+               </entry>
+               <entry><filename>updates.txt</filename>
+               </entry>
+             </row>
+             <row>
+               <entry><parameter>WEB</parameter>
+               </entry>
+               <entry><filename>web.txt</filename>
+               </entry>
+             </row>
+           </tbody>
+         </tgroup>
+       </table>
+     </sect3>
    </sect2>
   </sect1>
 

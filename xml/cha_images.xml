@@ -297,7 +297,7 @@
           The <literal>ltd</literal> images are for customers in the European Union and the
           United Kingdom, the <literal>llc</literal> images are for customers in North America and
           other countries listed in <xref linkend="countrylist"/>. For more information,
-          see <xref linkend="third-party-images"/>
+          see <xref linkend="sec-intro-support"/>
         </para>
       </listitem>
     </varlistentry>
@@ -634,30 +634,6 @@
   </itemizedlist>
  </sect1>
 
- <sect1 xml:id="third-party-images">
-  <title>3rd party images</title>
-  <para>
-   Some images are p
-  </para>
-  <para>
-   For some PAYG images, you may see two different listings in the cloud
-   provider's market places: The EU listing (<literal>EU and UK only</literal>)
-   is for customers in the European Union and the United Kingdom, the Non-EU
-   listing (<literal>non-EU and non-UK only</literal>) is for customers in
-   North America and other countries listed in
-   <!-- FIXME: Adjust this link to the list of LLC countries -->
-   <xref linkend="countrylist"/>.
-   Two listings are needed as there are different
-   regulations to comply with, but the images and the support offering are
-   identical.
-  </para>
-  <para>
-   Select the correct listing depending on your organization's geographical
-   location. For a complete list of countries that are eligible to purchase
-   &suse; PAYG images, refer to the <xref linkend="countrylist"/>.
-  </para>
- </sect1>
- 
  <sect1 xml:id="sec-images-hardened">
   <title>Hardened Images</title>
   <para>

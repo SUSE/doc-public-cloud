@@ -12,11 +12,11 @@
   <title>Geographical availability</title>
   <!-- 2023-09-07 cwickert: the country list is based on https://confluence.suse.com/x/dYK9Rw -->
   <para>
-    &suse; offers additional support for the PAYG versions of following products:
+    &suse; offers Priority Support for the PAYG versions of following products:
   </para>
-  &additional_support_offerings;
+  &priority_support_offerings;
   <para>
-    You can transact these support offerings through the &aws; and &azure; marketplaces, where you
+    You can transact Priority Support through the &aws; and &azure; marketplaces, where you
     will see two different listings: The <literal>EU and UK only</literal> listing is for customers
     in the European Union and the United Kingdom, the <literal>non-EU and non-UK only</literal>
     listing is for customers in North America and other countries listed below.
@@ -30,7 +30,7 @@
     <title>Other countries</title>
     <para>
       If your organization is not located in a country listed below, you currently cannot transact
-      any additional support offering through the CSP's marketplaces.
+      Priority Support through the CSP's marketplaces.
     </para>
     <para>
       &suse; is committed to making the offerings available in more countries. In the meantime, you
@@ -41,7 +41,7 @@
   <sect1 xml:id="availability-aws">
     <title>&aws;</title>
     <itemizedlist>
-      <title>Countries that can transact additional &suse; support offerings through the &awsa; Marketplace</title>
+      <title>Countries that can transact &suse; Priority Support through the &awsa; Marketplace</title>
       <listitem>
         <para>
           Australia (AU): non-EU and non-UK
@@ -284,12 +284,12 @@
     <note>
       <title>EU and UK</title>
       <para>
-        &suse; is currently working on making additional support offerings available in the
+        &suse; is currently working on making Priority Support available in the
         European Union and the United Kingdom.
       </para>
     </note>
     <itemizedlist>
-      <title>Countries that can transact additional &suse; support offerings through the &azure; Marketplace</title>
+      <title>Countries that can transact &suse; Priority Support through the &azure; Marketplace</title>
       <listitem>
         <para>
           Australia (AU): non-EU and non-UK

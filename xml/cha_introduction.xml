@@ -399,13 +399,13 @@
      </para>
     </important>
     <tip>
-     <title>Additional &suse; PAYG support</title>
+     <title>&suse; Priority support</title>
      <para>
-      &suse; offers additional support for the PAYG versions of following products:
+      &suse; offers Priority support for the PAYG versions of following products:
      </para>
-      &additional_support_offerings;
+      &priority_support_offerings;
      <para>
-      These support options can be purchased through the CSP's market place.  
+      &suse; Priority support can be purchased through the CSP's market place.
      </para>
     </tip>
    </listitem>

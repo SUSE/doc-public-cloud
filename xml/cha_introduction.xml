@@ -381,40 +381,48 @@
    (PAYG). For more information about BYOS and PAYG, refer to
    <xref linkend="sec-intro-plans"/>.
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     PAYG instances include support through the cloud service provider which
-     in turn is supported by &suse;. If you have a problem, <emphasis>always contact
-      your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
-     work with &suse; for L3 support as required.
-    </para>
-    <important>
-     <title>&azure; basic images</title>
+  <variablelist>
+   <varlistentry>
+    <term>PAYG</term>
+    <listitem>
      <para>
-      &azure; also offers a basic PAYG image that only includes updates.
-      Instances created from this image are <emphasis>not eligible for support</emphasis>.
+      Regular PAYG instances include support through the cloud service provider which
+      in turn is supported by &suse;. If you have a problem, <emphasis>always contact
+       your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
+      work with &suse; for L3 support as required.
      </para>
-    </important>
-    <tip>
-     <title>&suse; Priority support</title>
+     <important>
+      <title>&azure; basic images</title>
+      <para>
+       &azure; also offers a basic PAYG image that only includes updates.
+       Instances created from this image are <emphasis>not eligible for support</emphasis>.
+      </para>
+     </important>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>PAYG with &suse; Priority Support</term>
+    <listitem>
      <para>
       &suse; offers Priority support for the PAYG versions of following products:
      </para>
-      &priority_support_offerings;
+     &priority_support_offerings;
      <para>
       &suse; Priority support can be purchased through the CSP's market place.
      </para>
-    </tip>
-   </listitem>
-   <listitem>
-    <para>
-     BYOS instances are supported by &suse; under the terms of your &suse;
-     subscription. For an overview of &suse;'s support subscriptions, refer to
-     <link xlink:href="https://www.suse.com/support/"/>.
-    </para>
-   </listitem>
-  </itemizedlist>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>BYOS</term>
+    <listitem>
+     <para>
+      BYOS instances are supported by &suse; under the terms of your &suse;
+      subscription. For an overview of &suse;'s support subscriptions, refer to
+      <link xlink:href="https://www.suse.com/support/"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
   <para>
    For more information, refer to the <link
     xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support

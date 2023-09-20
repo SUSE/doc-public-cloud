@@ -261,7 +261,7 @@
       </entry>
       <entry>
        <para>
-        through cloud service provider; CSP will work with &suse; for L3 support as required.
+        through CSP, they will work with &suse; for L3 support as required.
        </para>
       </entry>
       <entry>
@@ -274,7 +274,7 @@
       <entry>
        <para>
         Extended ESPOS<superscript>1</superscript> or
-        LTSS<superscript>2</superscript> or support
+        LTSS<superscript>2</superscript> support
        </para>
       </entry>
       <entry>
@@ -345,12 +345,10 @@
    </para>
    <!-- FIXME cwickert 2022-02-03: Add link to chapter that describes how to
    change a SUSE instance (once written). -->
-   <!-- Leave this commented out, that page is not technical but marketing only.   
    <para>
     For more information on the &azure; Hybrid Benefit program, refer to
     <link xlink:href="https://azure.microsoft.com/pricing/hybrid-benefit/"/>.
    </para>
-   -->
   </important>
   <!-- same as in sec-admin-register -->
   <important>

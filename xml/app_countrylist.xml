@@ -12,34 +12,35 @@
   <title>Geographical availability</title>
   <!-- 2023-09-07 cwickert: the country list is based on https://confluence.suse.com/x/dYK9Rw -->
   <para>
-    &suse; offers Priority Support for the PAYG versions of following products:
+    &suse; offers 24x7 priority support for the PAYG versions of the following products:
   </para>
   &priority_support_offerings;
   <para>
-    You can transact Priority Support through the &aws; and &azure; marketplaces, where you
-    will see two different listings: The <literal>EU and UK only</literal> listing is for customers
-    in the European Union and the United Kingdom, the <literal>non-EU and non-UK only</literal>
-    listing is for customers in North America and other countries listed below.
-  </para>
-  <para>
-    Two listings are needed as there are different regulations to comply with, but the images and
-    the support offering are identical. Select the correct listing depending on your organization's
-    geographical location.
+    You can transact priority support through the &aws; and &azure; marketplaces, where you
+    will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
+    non-UK only</literal>. Two listings are needed as there are different regulations to comply
+    with, but the images and the support offering are identical. Select the correct listing for
+    your organization's CSP account.
   </para>
   <important>
     <title>Other countries</title>
     <para>
-      If your organization is not located in a country listed below, you currently cannot transact
-      Priority Support through the CSP's marketplaces.
+      If the billing or tax address of your organization's CSP account is located in a country not
+      listed below, you currently cannot transact priority support through the CSP's marketplaces.
     </para>
     <para>
-      &suse; is committed to making the offerings available in more countries. In the meantime, you
-      can still use &suse; PAYG products with regular support from the CSP. If you want support by
-      &suse; directly, use a BYOS version.
+      &suse; is committed to making priority support available in more countries. In the meantime,
+      you can still use &suse; PAYG products with regular support from the CSP. If you want support
+      by &suse;, use a BYOS version.
     </para>
   </important>
   <sect1 xml:id="availability-aws">
     <title>&aws;</title>
+    <para>
+      To select the correct listing, check the <literal>tax address</literal> of your organization's
+      &awsa; account. For more information, refer to <link
+      xlink:href="https://aws.amazon.com/tax-help/location"/>.
+    </para>
     <itemizedlist>
       <title>Countries that can transact &suse; Priority Support through the &awsa; Marketplace</title>
       <listitem>
@@ -281,11 +282,16 @@
   </sect1>
   <sect1 xml:id="availability-azure">
     <title>&azure;</title>
+    <para>
+     To select the correct listing, check the <literal>sold to</literal> address of your
+     organization's &azure; account. For more information, refer to <link
+     xlink:href="https://learn.microsoft.com/azure/cost-management-billing/manage/change-azure-account-profile"/>.
+    </para>
     <note>
       <title>EU and UK</title>
       <para>
-        &suse; is currently working on making Priority Support available in the
-        European Union and the United Kingdom.
+        &suse; is currently working on making priority support available in the European Union and
+        the United Kingdom.
       </para>
     </note>
     <itemizedlist>
@@ -372,4 +378,14 @@
       </listitem>
     </itemizedlist>
   </sect1>
+  <!-- cwickert 2023-09-21: not yet available, commented out for now -->
+  <!--
+  <sect1 xml:id="availability-gc">
+    <title>&gc;</title>
+    <para>
+     To select the correct listing, check the <literal>billing country</literal> of organization's
+     &gc; account. For more information, refer to <link xlink:href="https://support.google.com/cloudidentity/answer/3530790"/>.
+    </para>
+   </sect1>
+  -->
 </appendix>

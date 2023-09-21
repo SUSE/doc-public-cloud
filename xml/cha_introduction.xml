@@ -141,8 +141,9 @@
       the image and framework.
      </para>
      <para>
-      PAYG instances include support through the cloud service provider which in turn is
-      supported by &suse;.
+      PAYG instances include support through the cloud service provider. For some PAYG versions, you
+      can also purchase &suse; Priority Support. For details, refer to
+      <xref linkend="sec-intro-support"/>.
     </para>
     </listitem>
    </varlistentry>
@@ -402,12 +403,53 @@
     <term>PAYG with &suse; Priority Support</term>
     <listitem>
      <para>
-      &suse; offers Priority support for the PAYG versions of following products:
+      &suse; offers 24x7 priority support for the PAYG versions of the following products:
      </para>
      &priority_support_offerings;
      <para>
-      &suse; Priority support can be purchased through the CSP's market place.
+      You can transact priority support through the &aws; and &azure; marketplaces, where you
+      will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
+      non-UK only</literal>. Two listings are needed as there are different regulations to comply
+      with, but the images and the support offering are identical. Select the correct listing for
+      your organization's CSP account:
      </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        For &aws;, it depends on the <literal>tax address</literal> of the account, see
+        <link xlink:href="https://aws.amazon.com/tax-help/location"/>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        For &azure;, it depends on the <literal>sold to</literal> address of the account, see
+        <link xlink:href="https://learn.microsoft.com/azure/cost-management-billing/manage/change-azure-account-profile"/>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        For &gc;, it depends on the <literal>billing country</literal> of the account, see
+        <link xlink:href="https://support.google.com/cloudidentity/answer/3530790"/>.
+       </para>
+      </listitem>
+     </itemizedlist>
+     <para>
+      For a complete list of countries that are eligble to transact priority support through the
+      CSP's marketplaces, and the correct listing for each country, refer to
+      <xref linkend="countrylist"/>.
+     </para>
+     <important>
+      <title>Other countries</title>
+      <para>
+       If the billing or tax address of your organization's CSP account is located in a country not
+       listed below, you currently cannot transact priority support through the CSP's marketplaces.
+      </para>
+      <para>
+       &suse; is committed to making priority support available in more countries. In the meantime,
+       you can still use &suse; PAYG products with regular support from the CSP. If you want support
+       by &suse;, use a BYOS version.
+      </para>
+     </important>
     </listitem>
    </varlistentry>
    <varlistentry>

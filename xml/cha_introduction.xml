@@ -125,30 +125,6 @@
   </para>
   <variablelist>
    <varlistentry>
-    <term>Pay as you go (PAYG)</term>
-    <listitem>
-     <para>
-      <literal>Pay as you go</literal> (PAYG) images are used to create
-      on-demand instances. When an instance is first booted, it automatically
-      registers with a local update server. Once the system finishes booting,
-      it is ready to use.
-     </para>
-     <para>
-      Create an instance when you need it and delete it when you are
-      done. While in use, you have access to updates from &suse; through the
-      automatically configured repositories. You only pay for the resources
-      you use. Upcharges over the basic cloud prices may apply, depending on
-      the image and framework.
-     </para>
-     <para>
-      PAYG instances include support through the cloud service provider which in turn is
-      supported by &suse;. &azure; also offers a basic PAYG image that only
-      includes updates. Instances created from this image are not eligible for
-      support.
-    </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Bring your own subscription (BYOS)</term>
     <listitem>
      <para>
@@ -171,6 +147,29 @@
      </para>
     </listitem>
    </varlistentry>
+   <varlistentry>
+    <term>Pay as you go (PAYG)</term>
+    <listitem>
+     <para>
+      <literal>Pay as you go</literal> (PAYG) images are used to create
+      on-demand instances. When an instance is first booted, it automatically
+      registers with a local update server. Once the system finishes booting,
+      it is ready to use.
+     </para>
+     <para>
+      Create an instance when you need it and delete it when you are
+      done. While in use, you have access to updates from &suse; through the
+      automatically configured repositories. You only pay for the resources
+      you use. Upcharges over the basic cloud prices may apply, depending on
+      the image and framework.
+     </para>
+     <para>
+      PAYG instances include support through the cloud service provider. For some PAYG versions, you
+      can also purchase &suse; Priority Support. For details, refer to
+      <xref linkend="sec-intro-support"/>.
+    </para>
+    </listitem>
+   </varlistentry>
   </variablelist>
   <para>
    In summary, if you already have a direct relationship with &suse; you
@@ -182,8 +181,8 @@
    <title>Feature comparison</title>
    <tgroup cols="3">
     <colspec colwidth="30*" colnum="1" colname="feature"/>
-    <colspec colwidth="40*" colnum="2" colname="payg"/>
-    <colspec colwidth="40*" colnum="3" colname="byos"/>
+    <colspec colwidth="40*" colnum="2" colname="byos"/>
+    <colspec colwidth="40*" colnum="3" colname="payg"/>
     <thead>
      <row>
       <entry>
@@ -193,12 +192,12 @@
       </entry>
       <entry>
        <para>
-        Pay as you go (PAYG)
+        Bring your own subscription (BYOS)
        </para>
       </entry>
       <entry>
        <para>
-        Bring your own subscription (BYOS)
+        Pay as you go (PAYG)
        </para>
       </entry>
      </row>
@@ -212,12 +211,12 @@
       </entry>
       <entry>
        <para>
-        with CSP
+        with CSP and &suse;
        </para>
       </entry>
       <entry>
        <para>
-        with CSP and &suse;
+        with CSP
        </para>
       </entry>
      </row>
@@ -229,12 +228,12 @@
       </entry>
       <entry>
        <para>
-        per use
+        per instance and license
        </para>
       </entry>
       <entry>
        <para>
-        per instance and license
+        per use
        </para>
       </entry>
      </row>
@@ -246,12 +245,12 @@
       </entry>
       <entry>
        <para>
-        with a local update server upon instance creation
+        with your &rmt; or &suma; infrastructure or directly with the &scc;
        </para>
       </entry>
       <entry>
        <para>
-        with your &rmt; or &suma; infrastructure or directly with the &scc;
+        with a local update server upon instance creation
        </para>
       </entry>
      </row>
@@ -261,30 +260,29 @@
       </entry>
       <entry>
        <para>
-        through cloud service provider; CSP will work with &suse; for L3 support as required.
+        full support by &suse;
        </para>
       </entry>
       <entry>
        <para>
-        Full support by &suse; directly
+        through CSP, they will work with &suse; for L3 support as required.
        </para>
       </entry>
      </row>
      <row>
       <entry>
        <para>
-        Extended ESPOS<superscript>1</superscript> or
-        LTSS<superscript>2</superscript> or support
-       </para>
-      </entry>
-      <entry>
-       <para>
-        only if included in image base product
+        Extended ESPOS<superscript>1</superscript> or LTSS<superscript>2</superscript> support
        </para>
       </entry>
       <entry>
        <para>
         available
+       </para>
+      </entry>
+      <entry>
+       <para>
+        only if included in image base product
        </para>
       </entry>
      </row>
@@ -294,12 +292,12 @@
       </entry>
       <entry>
        <para>
-        only with &suma;
+        no limitations
        </para>
       </entry>
       <entry>
        <para>
-        no limitations
+        only with &suma;
        </para>
       </entry>
      </row>
@@ -314,29 +312,10 @@
     <superscript>2</superscript> LTSS: <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/">Long-Term Service Pack Support</link>
    </member>
   </simplelist>
-  <note>
-   <title>Duplicate listings on market places</title>
-   <para>
-    You may see two different listings for some PAYG images in the cloud
-    provider's market places: The EU listing (<literal>EU and UK only</literal>)
-    is for customers in the European Union and the United Kingdom, the Non-EU
-    listing (<literal>non-EU and non-UK only</literal>) is for customers in
-    North America and other countries listed in the <literal>FAQ</literal> of
-    the respective listing. Two listings are needed as there are different
-    regulations to comply with, but the images and the support offering are
-    identical.
-   </para>
-   <para>
-    Select the correct listing depending on your organization's geographical
-    location. For a complete list of countries that are eligible to purchase
-    &suse; PAYG images, refer to the <literal>FAQ</literal> of the respective
-    listing.
-   </para>
-  </note>
   <important>
    <title>Switching plans</title>
    <para>
-    Switching from PAYG to BYOS or vice-versa is only possible on &azure;
+    Switching from BYOS to PAYG or vice-versa is only possible on &azure;
     through the <literal>Hybrid Benefit</literal> program. For all other cloud
     providers, you remain on the plan you initially selected for as long as the
     instance is running. The only way to switch plans is to start with the
@@ -344,12 +323,10 @@
    </para>
    <!-- FIXME cwickert 2022-02-03: Add link to chapter that describes how to
    change a SUSE instance (once written). -->
-   <!-- Leave this commented out, that page is not technical but marketing only.   
    <para>
     For more information on the &azure; Hybrid Benefit program, refer to
     <link xlink:href="https://azure.microsoft.com/pricing/hybrid-benefit/"/>.
    </para>
-   -->
   </important>
   <!-- same as in sec-admin-register -->
   <important>
@@ -362,16 +339,6 @@
    </para>
   </important>
  </sect1>
- <sect1 xml:id="sec-intro-instance-types">
-  <title>Supported instance types</title>
-  <para>
-   To find out what types of instances are supported by each provider, refer to
-   the <link
-    xlink:href="https://www.suse.com/support/public-cloud-support/">&suse;
-    Public Cloud Instance Support Matrix</link>. Select your &sle; product and
-   your cloud provider to see a list of supported instance types.
-  </para>
- </sect1>
 
  <sect1 xml:id="sec-intro-support">
   <title>Support</title>
@@ -382,30 +349,89 @@
    (PAYG). For more information about BYOS and PAYG, refer to
    <xref linkend="sec-intro-plans"/>.
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     PAYG instances include support through the cloud service provider which
-     in turn is supported by &suse;. If you have a problem, <emphasis>always contact
-      your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
-     work with &suse; for L3 support as required.
-    </para>
-    <important>
-     <title>&azure; basic images</title>
+  <variablelist>
+   <varlistentry>
+    <term>BYOS</term>
+    <listitem>
      <para>
-      &azure; also offers a basic PAYG image that only includes updates.
-      Instances created from this image are <emphasis>not eligible for support</emphasis>.
+      BYOS instances are supported by &suse; under the terms of your &suse;
+      subscription. For an overview of &suse;'s support subscriptions, refer to
+      <link xlink:href="https://www.suse.com/support/"/>.
      </para>
-    </important>
-   </listitem>
-   <listitem>
-    <para>
-     BYOS instances are supported by &suse; under the terms of your &suse;
-     subscription. For an overview of &suse;'s support subscriptions, refer to
-     <link xlink:href="https://www.suse.com/support/"/>.
-    </para>
-   </listitem>
-  </itemizedlist>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>PAYG</term>
+    <listitem>
+     <para>
+      Regular PAYG instances include support through the cloud service provider which
+      in turn is supported by &suse;. If you have a problem, <emphasis>always contact
+       your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
+      work with &suse; for L3 support as required.
+     </para>
+     <important>
+      <title>&azure; basic images</title>
+      <para>
+       &azure; also offers a basic PAYG image that only includes updates.
+       Instances created from this image are <emphasis>not eligible for support</emphasis>.
+      </para>
+     </important>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>PAYG with &suse; Priority Support</term>
+    <listitem>
+     <para>
+      &suse; offers 24x7 priority support for the PAYG versions of the following products:
+     </para>
+     &priority_support_offerings;
+     <para>
+      You can transact priority support through the &aws; and &azure; marketplaces, where you
+      will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
+      non-UK only</literal>. Two listings are needed as there are different regulations to comply
+      with, but the images and the support offering are identical. Select the correct listing for
+      your organization's CSP account:
+     </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        For &aws;, it depends on the <literal>tax address</literal> of the account, see
+        <link xlink:href="https://aws.amazon.com/tax-help/location"/>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        For &azure;, it depends on the <literal>sold to</literal> address of the account, see
+        <link xlink:href="https://learn.microsoft.com/azure/cost-management-billing/manage/change-azure-account-profile"/>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        For &gc;, it depends on the <literal>billing country</literal> of the account, see
+        <link xlink:href="https://support.google.com/cloudidentity/answer/3530790"/>.
+       </para>
+      </listitem>
+     </itemizedlist>
+     <para>
+      For a complete list of countries that are eligble to transact priority support through the
+      CSP's marketplaces, and the correct listing for each country, refer to
+      <xref linkend="countrylist"/>.
+     </para>
+     <important>
+      <title>Other countries</title>
+      <para>
+       If the billing or tax address of your organization's CSP account is located in a country not
+       listed below, you currently cannot transact priority support through the CSP's marketplaces.
+      </para>
+      <para>
+       &suse; is committed to making priority support available in more countries. In the meantime,
+       you can still use &suse; PAYG products with regular support from the CSP. If you want support
+       by &suse;, use a BYOS version.
+      </para>
+     </important>
+    </listitem>
+   </varlistentry>
+  </variablelist>
   <para>
    For more information, refer to the <link
     xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
@@ -418,7 +444,17 @@
     xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
     Guide</link>.
   </para>
+ </sect1>
 
+ <sect1 xml:id="sec-intro-instance-types">
+  <title>Supported instance types</title>
+  <para>
+   To find out what types of instances are supported by each provider, refer to
+   the <link
+    xlink:href="https://www.suse.com/support/public-cloud-support/">&suse;
+    Public Cloud Instance Support Matrix</link>. Select your &sle; product and
+   your cloud provider to see a list of supported instance types.
+  </para>
  </sect1>
 
 </chapter>

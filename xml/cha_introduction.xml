@@ -421,7 +421,8 @@
       <title>Other countries</title>
       <para>
        If the billing or tax address of your organization's CSP account is located in a country not
-       listed below, you currently cannot transact priority support through the CSP's marketplaces.
+       listed in <xref linkend="countrylist"/>, you currently cannot transact priority support
+       through the CSP's marketplaces.
       </para>
       <para>
        &suse; is committed to making priority support available in more countries. In the meantime,

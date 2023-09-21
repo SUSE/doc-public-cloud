@@ -125,29 +125,6 @@
   </para>
   <variablelist>
    <varlistentry>
-    <term>Pay as you go (PAYG)</term>
-    <listitem>
-     <para>
-      <literal>Pay as you go</literal> (PAYG) images are used to create
-      on-demand instances. When an instance is first booted, it automatically
-      registers with a local update server. Once the system finishes booting,
-      it is ready to use.
-     </para>
-     <para>
-      Create an instance when you need it and delete it when you are
-      done. While in use, you have access to updates from &suse; through the
-      automatically configured repositories. You only pay for the resources
-      you use. Upcharges over the basic cloud prices may apply, depending on
-      the image and framework.
-     </para>
-     <para>
-      PAYG instances include support through the cloud service provider. For some PAYG versions, you
-      can also purchase &suse; Priority Support. For details, refer to
-      <xref linkend="sec-intro-support"/>.
-    </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Bring your own subscription (BYOS)</term>
     <listitem>
      <para>
@@ -170,6 +147,29 @@
      </para>
     </listitem>
    </varlistentry>
+   <varlistentry>
+    <term>Pay as you go (PAYG)</term>
+    <listitem>
+     <para>
+      <literal>Pay as you go</literal> (PAYG) images are used to create
+      on-demand instances. When an instance is first booted, it automatically
+      registers with a local update server. Once the system finishes booting,
+      it is ready to use.
+     </para>
+     <para>
+      Create an instance when you need it and delete it when you are
+      done. While in use, you have access to updates from &suse; through the
+      automatically configured repositories. You only pay for the resources
+      you use. Upcharges over the basic cloud prices may apply, depending on
+      the image and framework.
+     </para>
+     <para>
+      PAYG instances include support through the cloud service provider. For some PAYG versions, you
+      can also purchase &suse; Priority Support. For details, refer to
+      <xref linkend="sec-intro-support"/>.
+    </para>
+    </listitem>
+   </varlistentry>
   </variablelist>
   <para>
    In summary, if you already have a direct relationship with &suse; you
@@ -181,8 +181,8 @@
    <title>Feature comparison</title>
    <tgroup cols="3">
     <colspec colwidth="30*" colnum="1" colname="feature"/>
-    <colspec colwidth="40*" colnum="2" colname="payg"/>
-    <colspec colwidth="40*" colnum="3" colname="byos"/>
+    <colspec colwidth="40*" colnum="2" colname="byos"/>
+    <colspec colwidth="40*" colnum="3" colname="payg"/>
     <thead>
      <row>
       <entry>
@@ -192,12 +192,12 @@
       </entry>
       <entry>
        <para>
-        Pay as you go (PAYG)
+        Bring your own subscription (BYOS)
        </para>
       </entry>
       <entry>
        <para>
-        Bring your own subscription (BYOS)
+        Pay as you go (PAYG)
        </para>
       </entry>
      </row>
@@ -211,12 +211,12 @@
       </entry>
       <entry>
        <para>
-        with CSP
+        with CSP and &suse;
        </para>
       </entry>
       <entry>
        <para>
-        with CSP and &suse;
+        with CSP
        </para>
       </entry>
      </row>
@@ -228,12 +228,12 @@
       </entry>
       <entry>
        <para>
-        per use
+        per instance and license
        </para>
       </entry>
       <entry>
        <para>
-        per instance and license
+        per use
        </para>
       </entry>
      </row>
@@ -245,12 +245,12 @@
       </entry>
       <entry>
        <para>
-        with a local update server upon instance creation
+        with your &rmt; or &suma; infrastructure or directly with the &scc;
        </para>
       </entry>
       <entry>
        <para>
-        with your &rmt; or &suma; infrastructure or directly with the &scc;
+        with a local update server upon instance creation
        </para>
       </entry>
      </row>
@@ -260,30 +260,29 @@
       </entry>
       <entry>
        <para>
-        through CSP, they will work with &suse; for L3 support as required.
+        full support by &suse;
        </para>
       </entry>
       <entry>
        <para>
-        Full support by &suse; directly
+        through CSP, they will work with &suse; for L3 support as required.
        </para>
       </entry>
      </row>
      <row>
       <entry>
        <para>
-        Extended ESPOS<superscript>1</superscript> or
-        LTSS<superscript>2</superscript> support
-       </para>
-      </entry>
-      <entry>
-       <para>
-        only if included in image base product
+        Extended ESPOS<superscript>1</superscript> or LTSS<superscript>2</superscript> support
        </para>
       </entry>
       <entry>
        <para>
         available
+       </para>
+      </entry>
+      <entry>
+       <para>
+        only if included in image base product
        </para>
       </entry>
      </row>
@@ -293,12 +292,12 @@
       </entry>
       <entry>
        <para>
-        only with &suma;
+        no limitations
        </para>
       </entry>
       <entry>
        <para>
-        no limitations
+        only with &suma;
        </para>
       </entry>
      </row>
@@ -316,7 +315,7 @@
   <important>
    <title>Switching plans</title>
    <para>
-    Switching from PAYG to BYOS or vice-versa is only possible on &azure;
+    Switching from BYOS to PAYG or vice-versa is only possible on &azure;
     through the <literal>Hybrid Benefit</literal> program. For all other cloud
     providers, you remain on the plan you initially selected for as long as the
     instance is running. The only way to switch plans is to start with the
@@ -351,6 +350,16 @@
    <xref linkend="sec-intro-plans"/>.
   </para>
   <variablelist>
+   <varlistentry>
+    <term>BYOS</term>
+    <listitem>
+     <para>
+      BYOS instances are supported by &suse; under the terms of your &suse;
+      subscription. For an overview of &suse;'s support subscriptions, refer to
+      <link xlink:href="https://www.suse.com/support/"/>.
+     </para>
+    </listitem>
+   </varlistentry>
    <varlistentry>
     <term>PAYG</term>
     <listitem>
@@ -420,16 +429,6 @@
        by &suse;, use a BYOS version.
       </para>
      </important>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>BYOS</term>
-    <listitem>
-     <para>
-      BYOS instances are supported by &suse; under the terms of your &suse;
-      subscription. For an overview of &suse;'s support subscriptions, refer to
-      <link xlink:href="https://www.suse.com/support/"/>.
-     </para>
     </listitem>
    </varlistentry>
   </variablelist>

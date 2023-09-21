@@ -147,7 +147,7 @@
    scheme for &suse;'s public cloud images is as follows:
   </para>
   <para>
-    <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>LISTING</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
+    <literal><replaceable>PRODUCT</replaceable></literal>-<literal><replaceable>FLAVOR</replaceable></literal>-<literal>v<replaceable>VERSION</replaceable></literal>-<literal><replaceable>VIRTUALIZATION</replaceable></literal>-<literal><replaceable>STORAGE</replaceable></literal>-<literal><replaceable>ARCHITECTURE</replaceable></literal>-<literal><replaceable>TAXID</replaceable></literal>-<literal><replaceable>GEN</replaceable></literal>
   </para>
   <para>
    Not all components of this naming scheme are used in all frameworks.
@@ -289,15 +289,11 @@
     </listitem>
    </varlistentry>
     <varlistentry>
-      <!-- FIXME cwickert 2023-07-13: TAXID instead of LISTING (as in the internal naming scheme)? -->
-      <term><literal>LISTING</literal></term>
+     <term><literal>TAXID</literal></term>
       <listitem>
         <para>
-          Either <literal>llc</literal> or <literal>ltd</literal>.
-          The <literal>ltd</literal> images are for customers in the European Union and the
-          United Kingdom, the <literal>llc</literal> images are for customers in North America and
-          other countries listed in <xref linkend="countrylist"/>. For more information,
-          see <xref linkend="sec-intro-support"/>
+          Either <literal>llc</literal> or <literal>ltd</literal>. Only for images with &suse;
+          priority support. For more information, refer to <xref linkend="sec-intro-support"/>
         </para>
       </listitem>
     </varlistentry>

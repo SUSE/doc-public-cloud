@@ -174,7 +174,7 @@
            Install <package>cloud-regionsrv-client</package>. Depending on your cloud framework,
            you will need some additional packages.
          </para>
-         <substeps>
+         <stepalternatives>
            <step>
              <para>
                For &ec2a; run:
@@ -194,7 +194,7 @@
 <screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-gce \
  regionServiceClientConfigGCE regionServiceCertsGCE</screen>
            </step>
-         </substeps>
+         </stepalternatives>
        </step>
        <step>
          <para>
@@ -270,7 +270,7 @@
          <para>
            Register the instance with <command>&suseconnect;</command>.
          </para>
-         <substeps>
+         <stepalternatives>
            <step>
              <para>
                To connect the instance to the &scc;, run:
@@ -283,7 +283,7 @@
              </para>
              <screen>&prompt.root;<command>&suseconnect;</command> -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable> --url <replaceable>URL</replaceable></screen>
            </step>
-         </substeps>
+         </stepalternatives>
        </step>
      </procedure>
   </sect2>
@@ -314,7 +314,7 @@
     <para>
      Deregister the system:
     </para>
-    <substeps>
+    <stepalternatives>
      <step>
       <para>
        If a system was registered with <command>registercloudguest</command>,
@@ -333,7 +333,7 @@
        been installed after the system was registered.
       </para>
      </step>
-    </substeps>
+    </stepalternatives>
    </step>
   </procedure>
  </sect1>

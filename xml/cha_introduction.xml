@@ -344,102 +344,96 @@
    (PAYG). For more information about BYOS and PAYG, refer to
    <xref linkend="sec-intro-plans"/>.
   </para>
-  <variablelist>
-   <varlistentry>
-    <term>BYOS</term>
+  <sect2 xml:id="intro-byos-support">
+   <title>BYOS</title>
+   <para>
+    BYOS instances are supported by &suse; under the terms of your &suse;
+    subscription. For an overview of &suse;'s support subscriptions, refer to
+    <link xlink:href="https://www.suse.com/support/"/>.
+   </para>
+  </sect2>
+  <sect2 xml:id="intro-payg-support">
+   <title>PAYG</title>
+   <para>
+    Regular PAYG instances include support through the cloud service provider which
+    in turn is supported by &suse;. If you have a problem, <emphasis>always contact
+     your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
+    work with &suse; for L3 support as required.
+   </para>
+   <important>
+    <title>&azure; basic images</title>
+    <para>
+     &azure; also offers a basic PAYG image that only includes updates.
+     Instances created from this image are <emphasis>not eligible for support</emphasis>.
+    </para>
+   </important>
+  </sect2>
+  <sect2 xml:id="intro-priority-support">
+   <title>PAYG with &suse; Priority Support</title>
+   <para>
+    &suse; offers 24x7 priority support for the PAYG versions of the following products:
+   </para>
+   &priority_support_offerings;
+   <para>
+    You can transact priority support through the &aws; and &azure; marketplaces, where you
+    will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
+     non-UK only</literal>. Two listings are needed as there are different regulations to comply
+    with, but the images and the support offering are identical. Select the correct listing for
+    your organization's CSP account:
+   </para>
+   <itemizedlist>
     <listitem>
      <para>
-      BYOS instances are supported by &suse; under the terms of your &suse;
-      subscription. For an overview of &suse;'s support subscriptions, refer to
-      <link xlink:href="https://www.suse.com/support/"/>.
+      For &aws;, it depends on the <literal>tax address</literal> of the account, see
+      <link xlink:href="https://aws.amazon.com/tax-help/location"/>.
      </para>
     </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>PAYG</term>
     <listitem>
      <para>
-      Regular PAYG instances include support through the cloud service provider which
-      in turn is supported by &suse;. If you have a problem, <emphasis>always contact
-       your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
-      work with &suse; for L3 support as required.
+      For &azure;, it depends on the <literal>sold to</literal> address of the account, see
+      <link xlink:href="https://learn.microsoft.com/azure/cost-management-billing/manage/change-azure-account-profile"/>.
      </para>
-     <important>
-      <title>&azure; basic images</title>
-      <para>
-       &azure; also offers a basic PAYG image that only includes updates.
-       Instances created from this image are <emphasis>not eligible for support</emphasis>.
-      </para>
-     </important>
     </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>PAYG with &suse; Priority Support</term>
     <listitem>
      <para>
-      &suse; offers 24x7 priority support for the PAYG versions of the following products:
+      For &gc;, it depends on the <literal>billing country</literal> of the account, see
+      <link xlink:href="https://support.google.com/cloudidentity/answer/3530790"/>.
      </para>
-     &priority_support_offerings;
-     <para>
-      You can transact priority support through the &aws; and &azure; marketplaces, where you
-      will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
-      non-UK only</literal>. Two listings are needed as there are different regulations to comply
-      with, but the images and the support offering are identical. Select the correct listing for
-      your organization's CSP account:
-     </para>
-     <itemizedlist>
-      <listitem>
-       <para>
-        For &aws;, it depends on the <literal>tax address</literal> of the account, see
-        <link xlink:href="https://aws.amazon.com/tax-help/location"/>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        For &azure;, it depends on the <literal>sold to</literal> address of the account, see
-        <link xlink:href="https://learn.microsoft.com/azure/cost-management-billing/manage/change-azure-account-profile"/>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        For &gc;, it depends on the <literal>billing country</literal> of the account, see
-        <link xlink:href="https://support.google.com/cloudidentity/answer/3530790"/>.
-       </para>
-      </listitem>
-     </itemizedlist>
-     <para>
-      For a complete list of countries that are eligble to transact priority support through the
-      CSP's marketplaces, and the correct listing for each country, refer to
-      <xref linkend="countrylist"/>.
-     </para>
-     <important>
-      <title>Other countries</title>
-      <para>
-       If the billing or tax address of your organization's CSP account is located in a country not
-       listed in <xref linkend="countrylist"/>, you currently cannot transact priority support
-       through the CSP's marketplaces.
-      </para>
-      <para>
-       &suse; is committed to making priority support available in more countries. In the meantime,
-       you can still use &suse; PAYG products with regular support from the CSP. If you want support
-       by &suse;, use a BYOS version.
-      </para>
-     </important>
     </listitem>
-   </varlistentry>
-  </variablelist>
-  <para>
-   For more information, refer to the <link
-    xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
-    Policy</link> and the support statement for &sle; in <xref
-      linkend="pre-public-cloud"/>.
-  </para>
-  <para>
-   For information on how to contact the &suse; support team and report
-   problems, refer to the <link
-    xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
-    Guide</link>.
-  </para>
+   </itemizedlist>
+   <para>
+    For a complete list of countries that are eligble to transact priority support through the
+    CSP's marketplaces, and the correct listing for each country, refer to
+    <xref linkend="countrylist"/>.
+   </para>
+   <important>
+    <title>Other countries</title>
+    <para>
+     If the billing or tax address of your organization's CSP account is located in a country not
+     listed in <xref linkend="countrylist"/>, you currently cannot transact priority support
+     through the CSP's marketplaces.
+    </para>
+    <para>
+     &suse; is committed to making priority support available in more countries. In the meantime,
+     you can still use &suse; PAYG products with regular support from the CSP. If you want support
+     by &suse;, use a BYOS version.
+    </para>
+   </important>
+  </sect2>
+  <sect2 xml:id="intro-support-more">
+    <title>More information</title>
+    <para>
+      For more information, refer to the <link
+       xlink:href="https://www.suse.com/support/policy/">&suse; Technical Support
+       Policy</link> and the support statement for &sle; in <xref linkend="pre-public-cloud"/>.
+     </para>
+     <para>
+      For information on how to contact the &suse; support team and report
+      problems, refer to the <link
+       xlink:href="https://www.suse.com/support/handbook/">&suse; Technical Support
+       Guide</link>.
+     </para>
+  </sect2>
  </sect1>
 
  <sect1 xml:id="sec-intro-instance-types">

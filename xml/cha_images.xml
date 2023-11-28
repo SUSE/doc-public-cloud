@@ -111,11 +111,10 @@
      <para>
       Deprecated images may no longer be supported. The status of support
       depends on the support status of the product in the image. Deprecated
-      images are not made available in regions added after an image has been set
-      to <literal>deprecated</literal> and images do no longer get refreshed. At
-      the end of the six month deprecation period, images are subject to
-      deletion. It is strongly discouraged to use deprecated images to create
-      new instances.
+      images do not get refreshed and are not made available in regions added
+      after an image has been set to <literal>deprecated</literal>. At the end
+      of the six month deprecation period, images are subject to deletion. It
+      is strongly discouraged to use deprecated images to create new instances.
      </para>
     </listitem>
    </varlistentry>

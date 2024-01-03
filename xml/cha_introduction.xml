@@ -164,9 +164,8 @@
       the image and framework.
      </para>
      <para>
-      PAYG instances include support through the cloud service provider. For some PAYG versions, you
-      can also purchase &suse; Priority Support. For details, refer to
-      <xref linkend="sec-intro-support"/>.
+      PAYG instances include support through the cloud service provider or priority support from
+      &suse; For details, refer to <xref linkend="sec-intro-support"/>.
     </para>
     </listitem>
    </varlistentry>

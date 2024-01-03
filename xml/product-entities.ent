@@ -90,7 +90,12 @@
 <!ENTITY priority_support_offerings "  <itemizedlist xmlns='http://docbook.org/ns/docbook'>
     <listitem>
       <para>
-        &slem; 5
+        &slem;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        &suma;
       </para>
     </listitem>
     <listitem>

@@ -460,9 +460,8 @@
      <term>Changelog</term>
      <listitem>
       <para>
-       Link to a detailed changelog that lists image configuration changes, CVE
-       fixes, package version changes, and package changelogs. For more
-       information, refer to <xref linkend="sec-image-changeinfo"/>
+       Link to a detailed changelog and a software bill of materials (SBOM).
+       For more information, refer to <xref linkend="sec-image-changeinfo"/>
       </para>
       <para>
        Image changelogs are only available for images that replace others. For
@@ -568,7 +567,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Changelog information</term>
+    <term>Package change logs</term>
     <listitem>
      <para>
       This category shows a concatenated changelog of all packages that had
@@ -576,6 +575,26 @@
      </para>
     </listitem>
    </varlistentry>
+    <varlistentry>
+      <term>Software bill of materials (SPDX)</term>
+      <listitem>
+        <para>
+          This category shows an SBOM in the <literal>Software Package Data Exchange</literal>
+          format. <literal>SPDX</literal> is an open standard backed by the Linux Foundation.
+          For more information, refer to <link xlink:href="https://spdx.dev/"/>.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Software bill of materials (CycloneDX)</term>
+      <listitem>
+        <para>
+          This category shows an SBOM in the <literal>CycloneDX</literal> format. This format is
+          backed by the Open Worldwide Application Security Project (OWASP) foundation.
+          For more information, refer to <link xlink:href="https://cyclonedx.org/"/>.
+        </para>
+      </listitem>
+    </varlistentry>
   </variablelist>
   <note>
    <title>Change information for new product versions</title>

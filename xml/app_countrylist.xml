@@ -70,6 +70,11 @@
       </listitem>
       <listitem>
         <para>
+          Cameroon (CM): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Canada (CA): non-EU and non-UK
         </para>
       </listitem>
@@ -96,6 +101,11 @@
       <listitem>
         <para>
           Denmark (DK): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Egypt (EG): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -151,6 +161,11 @@
       <listitem>
         <para>
           Italy (IT): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Kenya (KE): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -240,11 +255,6 @@
       </listitem>
       <listitem>
         <para>
-          South Africa (ZA): non-EU and non-UK
-        </para>
-      </listitem>
-      <listitem>
-        <para>
           Spain (ES): EU and UK
         </para>
       </listitem>
@@ -260,12 +270,12 @@
       </listitem>
       <listitem>
         <para>
-          Thailand (TH): non-EU and non-UK
+          Turkey (TR): EU and UK
         </para>
       </listitem>
       <listitem>
         <para>
-          Turkey (TR): non-EU and non-UK
+          United Arab Emirates (AE): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -276,6 +286,11 @@
       <listitem>
         <para>
           United States (US): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Viet Nam (VN): non-EU and non-UK
         </para>
       </listitem>
     </itemizedlist>
@@ -298,7 +313,17 @@
       <title>Countries that can transact &suse; Priority Support through the &azure; Marketplace</title>
       <listitem>
         <para>
+          Armenia (AM): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Australia (AU): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Austria (AT): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -308,7 +333,82 @@
       </listitem>
       <listitem>
         <para>
+          Belarus (BY): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Belgium (BE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Bulgaria (BG): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Chile (CL): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Colombia (CO): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Croatia (HR): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Cyprus (CY): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Czech Republic (CZ): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Denmark (DK): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Estonia (EE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Finland (FI): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          France (FR): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Germany (DE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Greece (GR): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Hungary (HU): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Iceland (IS): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -323,7 +423,42 @@
       </listitem>
       <listitem>
         <para>
+          Ireland (IE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Italy (IT): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Kenya (KE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Korea, Republic of (KR): non-EU and non-UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Latvia (LV): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Liechtenstein (LI): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Lithuania (LT): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Luxembourg (LU): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -333,12 +468,47 @@
       </listitem>
       <listitem>
         <para>
+          Malta (MT): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Monaco (MC): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Netherlands (NL): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           New Zealand (NZ): non-EU and non-UK
         </para>
       </listitem>
       <listitem>
         <para>
-          Russian Federation (RU): non-EU and non-UK
+          Nigeria (NG): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Norway (NO): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Poland (PL): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Portugal (PT): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Puerto Rico (PR): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -348,12 +518,42 @@
       </listitem>
       <listitem>
         <para>
+          Serbia (RS): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Singapore (SG): non-EU and non-UK
         </para>
       </listitem>
       <listitem>
         <para>
-          South Africa (ZA): non-EU and non-UK
+          Slovakia (SK): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Slovenia (SI): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          South Africa (ZA): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Spain (ES): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Sweden (SE): EU and UK
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Switzerland (CH): EU and UK
         </para>
       </listitem>
       <listitem>
@@ -368,7 +568,7 @@
       </listitem>
       <listitem>
         <para>
-          Turkey (TR): non-EU and non-UK
+          Turkey (TR): EU and UK
         </para>
       </listitem>
       <listitem>

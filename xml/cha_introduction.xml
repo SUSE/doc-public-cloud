@@ -35,37 +35,32 @@
   <itemizedlist>
    <listitem>
     <para>
-     &sls;
+     <link xlink:href="https://www.suse.com/products/server/">&sls; (&slea;)</link>
     </para>
    </listitem>
    <listitem>
     <para>
-     &slehpc;
+     <link xlink:href="https://www.suse.com/products/server/hpc/">&slehpc;</link>
     </para>
    </listitem>
    <listitem>
     <para>
-     &slem;
+     <link xlink:href="https://www.suse.com/products/micro/">&slem;</link>
     </para>
    </listitem>
    <listitem>
     <para>
-     &sles4sap;
+     <link xlink:href="https://www.suse.com/products/sles-for-sap/">&sles4sap;</link>
     </para>
    </listitem>
    <listitem>
     <para>
-     &suma; Server
+     <link xlink:href="https://www.suse.com/products/suse-manager/">&suma;</link>
     </para>
    </listitem>
    <listitem>
     <para>
-     &suma; Proxy
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     &opensuse; Leap
+      <link xlink:href="https://get.opensuse.org/leap/">&opensuse; Leap</link>
     </para>
    </listitem>
   </itemizedlist>

@@ -351,6 +351,12 @@
    vulnerability and patch checking, technical control compliance activities,
    and security measurement.
   </para>
+  <para>
+   To harden a system, <phrase role="product">&openscap;</phrase> uses security
+   rules that define certain security measures. Multiple rules can be combined
+   into profiles. For more information, refer to the &openscap; documentation
+   at <link xlink:href="https://www.open-scap.org/resources/documentation/"/>.
+  </para>
 
   <sect2>
    <title>Pre-hardening</title>

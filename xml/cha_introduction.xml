@@ -32,38 +32,48 @@
   <para>
    The following &suse; products are available for public cloud:
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/server/">&sls; (&slea;)</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/server/hpc/">&slehpc;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/micro/">&slem;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/sles-for-sap/">&sles4sap;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/suse-manager/">&suma;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-      <link xlink:href="https://get.opensuse.org/leap/">&opensuse; Leap</link>
-    </para>
-   </listitem>
-  </itemizedlist>
+   <itemizedlist>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/server/">&sls; (&slea;)</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/server/hpc/">&slehpc;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/micro/">&slem;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/sles-for-sap/">&sles4sap;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/suse-manager/">&suma;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.rancher.com/products/rancher-platform">Rancher Prime</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/neuvector/">NeuVector Prime</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://get.opensuse.org/leap/">&opensuse; Leap</link>
+       </para>
+     </listitem>
+   </itemizedlist>
   <note role="compact">
    <para>
     To constantly adjust and improve &suse;'s offerings, availability of

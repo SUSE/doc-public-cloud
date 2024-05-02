@@ -17,10 +17,10 @@
   &priority_support_offerings;
   <para>
     You can transact priority support through the &aws; and &azure; marketplaces, where you
-    will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
-    non-UK only</literal>. Two listings are needed as there are different regulations to comply
+    will see two different listings: A global one and one for <literal>EMEA Orders Only</literal>.
+    Two listings are needed as there are different regulations to comply
     with, but the images and the support offering are identical. Select the correct listing for
-    your organization's CSP account.
+    your organization's CSP account:
   </para>
   <important>
     <title>Other countries</title>

@@ -13,6 +13,7 @@
 
 <book xml:id="public-cloud" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -42,6 +43,23 @@
    <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>
    <author><personname><firstname>Robert</firstname><surname>Schweikert</surname></personname> <contrib>Reviewer</contrib></author>
   </authorgroup>
+  <meta name="title" its:translate="yes">Public Cloud Guide</meta>
+  <meta name="series" its:translate="no">Products &amp; Solutions</meta>
+  <meta name="description" its:translate="yes">How to use &sle; in public clouds</meta>
+  <meta name="social-descr" its:translate="yes">Use &slea; in public clouds</meta>
+  <meta name="task" its:translate="no">
+    <phrase>Cloud</phrase>
+  </meta>
+  <revhistory xml:id="rh-public-cloud">
+    <revision>
+      <date>2022-02-10</date>
+      <revdescription>
+        <para>
+          Initial release of this document.
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
  </info>
 
  <xi:include href="preface_public_cloud.xml"/>

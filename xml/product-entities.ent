@@ -2,9 +2,16 @@
 <!-- This file can be edited downstream. -->
 
 <!-- PRODUCT NAME AND VERSIONS -->
-<!ENTITY productname   "&sle;">
-<!ENTITY productnameshort "SLES&nbsp;CSP">
-<!ENTITY productnumber "0.1">
+<!ENTITY productname            "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&sle;</phrase>">
+<!ENTITY productnamereg         "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&slereg;</phrase>">
+<!ENTITY productnameshort       "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&slsa;&nbsp;CSP</phrase>">
+
+<!ENTITY product-ga             "15">
+<!ENTITY product-sp             "6">
+<!ENTITY product-dsc-url-substring      "&product-ga;-SP&product-sp;">
+<!ENTITY productnumber-regurl   "&product-ga;.&product-sp;">
+<!ENTITY productnumber-leaprepo "&product-ga;.&product-sp;">
+<!ENTITY productnumber          "<phrase xmlns='http://docbook.org/ns/docbook' role='productnumber'><phrase os='osuse'>15.6</phrase><phrase os='sles;sled'>&product-ga; SP&product-sp;</phrase><phrase os='slemicro'>5.5</phrase></phrase>">
 
 
 <!-- PROJECT REPOSITORY URL -->

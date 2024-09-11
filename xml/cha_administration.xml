@@ -584,40 +584,119 @@
    </para>
   </sect2>
  </sect1>
-  <sect1 xml:id="enabling-ltss">
+  <sect1 xml:id="ltss">
     <title>Enabling LTSS support</title>
     <para>
-      <literal>Long Term Service Pack Support</literal> (LTSS) extends the
-      lifecycle of &productname;. It is available as an extension. For more
-      information about LTSS, refer to <link
-        xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/>
+      <literal>Long Term Service Pack Support</literal> (LTSS) extends the lifecycle of
+      &productname;. It is available as an extension. For more information about LTSS, refer to
+      <link xlink:href="https://www.suse.com/products/long-term-service-pack-support/"/>.
     </para>
-    <procedure>
-      <para>To enable the LTSS extension, perform the following steps:</para>
-      <step>
-        <para>For PAYG</para>
-      </step>
-      <step>
+    <note>
+      <title>LTSS subscriptions are version-specific</title>
+      <para>
+        LTSS subscriptions are version-specific. If you have a subscription for
+        &slsa;&nbsp;15&nbsp;SP4, you cannot use that registration code to register LTSS on a
+        15&nbsp;SP3&nbsp;image. Make sure to use the correct registration code for your instance
+        and upgrade it if necessary.
+      </para>
+    </note>
+    <sect2 xml:id="ltss-byos">
+      <title>LTSS on BYOS</title>
+      <para>
+        If you do not have an LTSS subscription for your BYOS instance, contact a &suse;
+        representative or visit <link xlink:href="https://www.suse.com/how-to-buy"/> for purchase
+        options.
+      </para>
+      <procedure>
         <para>
-          Make sure your system is registered with a subscription that is eligible
-          for LTSS. If the system is not yet registered, run:
+          To enable the LTSS extension, perform the following steps:
         </para>
-        <screen>&prompt.sudo;<command>SUSEConnect -r <replaceable>REGISTRATION_CODE</replaceable> -e <replaceable>EMAIL_ADDRESS</replaceable></command></screen>
-      </step>
-      <step>
+        <step>
+          <para>
+            Log in to the <link xlink:href="&sccurl;">&scc;</link> to look up your LTSS registration
+            code.
+          </para>
+        </step>
+        <step>
+          <para>
+            Make sure your system is registered with a subscription that is eligible for LTSS. If
+            the system is not yet registered, register it
+            (see <xref linkend="sec-admin-register"/>).
+          </para>
+        </step>
+        <step>
+          <para>
+            Make sure the LTSS extension is available for your system:
+          </para>
+          <screen>&prompt.sudo;<command>SUSEConnect --list-extensions | grep LTSS</command>
+            SUSE Linux Enterprise Server LTSS &productnumber; x86_64
+            Activate with: SUSEConnect -p SLES-LTSS/&productnumber-regurl;/x86_64 -r ADDITIONAL REGCODE</screen>
+        </step>
+        <step>
+          <para>
+            Activate the module as instructed:
+          </para>
+          <screen>&prompt.sudo;<command>SUSEConnect -p SLES-LTSS/<replaceable>&productnumber-regurl;</replaceable>/<replaceable>x86_64</replaceable> -r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+        </step>
+      </procedure>
+    </sect2>
+    <sect2 xml:id="ltss-payg">
+      <title>LTSS on PAYG</title>
+      <para>
+        LTSS subscriptions for PAYG can be transacted through a private offer on the CSPs market
+        place or via direct transaction with SUSE. Reach out to <link
+        xlink:href="mailto:cloudsales@suse.com">cloudsales@suse.com</link> to work out the
+        commercial details.  You will receive a subscription and access to the <link
+          xlink:href="&sccurl;">&scc;</link>). With your subscription, you can activate a
+        registration code for LTSS.
+      </para>
+      <tip>
+        <title>Existing LTSS subscriptions</title>
         <para>
-          Make sure the LTSS extension is available for your system:
+          If you already have an LTSS subscription that you are using in your data center, it will
+          work in the cloud just fine. You can deregister a system in your data center and move that
+          use of your LTSS subscription to an instance in the cloud.
         </para>
-        <screen>&prompt.sudo;<command>SUSEConnect --list-extensions | grep LTSS</command>
-          SUSE Linux Enterprise Server LTSS &productnumber; x86_64
-          Activate with: SUSEConnect -p SLES-LTSS/&productnumber-regurl;/x86_64 -r ADDITIONAL REGCODE</screen>
-      </step>
-      <step>
+      </tip>
+      <procedure>
         <para>
-          Activate the module as instructed:
+          To enable the LTSS extension, perform the following steps:
         </para>
-        <screen>&prompt.sudo;<command>SUSEConnect -p SLES-LTSS/<replaceable>&productnumber-regurl;</replaceable>/<replaceable>x86_64</replaceable> -r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
-      </step>
-    </procedure>
+        <step>
+          <para>
+            Log in to the <link xlink:href="&sccurl;">&scc;</link> to activate a registration code.
+            Note that LTSS subscriptions are version-specific. If you have a subscription for
+            &slsa;&nbsp;15&nbsp;SP4, you cannot use that registration code to register LTSS on a
+            15&nbsp;SP3&nbsp;image. <emphasis>Make sure to activate the LTSS registration code for
+            the correct version and service pack (SP) of your instance!</emphasis>
+          </para>
+        </step>
+        <step>
+          <para>
+            Log in to your instance and make sure your system is registered with a subscription that
+            is eligible for LTSS. If the system is not yet registered, register it
+            (see <xref linkend="sec-admin-register"/>).
+          </para>
+        </step>
+        <step>
+          <para>
+            Log in to your instance and update <package>cloud-regionsrv-client</package> to the
+            latest version.
+          </para>
+          <screen>&prompt.sudo;zypper up cloud-regionsrv-client</screen>
+          <para>
+            You will need at least version 10.3.4.
+          </para>
+        </step>
+        <step>
+          <para>
+            Register the LTSS extension:
+          </para>
+<screen>&prompt.sudo;registercloudguset -r $REGISTRATION_CODE
+Running LTSS registration...this takes a little longer
+LTSS registration succeeded</screen>
+        </step>
+      </procedure>
+    </sect2>
   </sect1>
 </chapter>

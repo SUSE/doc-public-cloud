@@ -619,8 +619,7 @@
         </step>
         <step>
           <para>
-            Make sure your system is registered with a subscription that is eligible for LTSS. If
-            the system is not yet registered, register it
+            Make sure your system is registered. If the system is not yet registered, register it
             (see <xref linkend="sec-admin-register"/>).
           </para>
         </step>
@@ -629,8 +628,8 @@
             Make sure the LTSS extension is available for your system:
           </para>
           <screen>&prompt.sudo;<command>SUSEConnect --list-extensions | grep LTSS</command>
-            SUSE Linux Enterprise Server LTSS &productnumber; x86_64
-            Activate with: SUSEConnect -p SLES-LTSS/&productnumber-regurl;/x86_64 -r ADDITIONAL REGCODE</screen>
+      SUSE Linux Enterprise Server LTSS &productnumber; x86_64
+      Activate with: SUSEConnect -p SLES-LTSS/&productnumber-regurl;/x86_64 -r ADDITIONAL REGCODE</screen>
         </step>
         <step>
           <para>
@@ -683,7 +682,7 @@
             Log in to your instance and update <package>cloud-regionsrv-client</package> to the
             latest version.
           </para>
-          <screen>&prompt.sudo;zypper up cloud-regionsrv-client</screen>
+          <screen>&prompt.sudo;<command>zypper up cloud-regionsrv-client</command></screen>
           <para>
             You will need at least version 10.3.4.
           </para>
@@ -692,7 +691,7 @@
           <para>
             Register the LTSS extension:
           </para>
-<screen>&prompt.sudo;registercloudguset -r $REGISTRATION_CODE
+<screen>&prompt.sudo;<command>registercloudguset -r <replaceable>$REGISTRATION_CODE</replaceable></command>
 Running LTSS registration...this takes a little longer
 LTSS registration succeeded</screen>
         </step>

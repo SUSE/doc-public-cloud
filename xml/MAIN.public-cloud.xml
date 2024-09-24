@@ -18,7 +18,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Public Cloud Guide</title>
+   <title>&pc_guide;</title>
    <productname>&productname;</productname>
    <productname role="abbrev">&productnameshort;</productname>
    <!-- FIXME: How to version a guide but not a product? -->
@@ -37,8 +37,21 @@
      <dm:product>Documentation</dm:product>
      <dm:assignee>cwickert@suse.com</dm:assignee>
     </dm:bugtracker>
-    <dm:editurl>https://github.com/SUSE/doc-public-cloud/edit/main/xml/</dm:editurl>
+    <dm:editurl>&repo-url;/edit/main/xml/</dm:editurl>
    </dm:docmanager>
+   <meta name="title" its:translate="yes">&pc_guide;</meta>
+   <meta name="series" its:translate="no">Products &amp; Solutions</meta>
+   <meta name="description" its:translate="yes">How to use &productname; in public clouds</meta>
+   <meta name="social-descr" its:translate="yes">Use &productname; in public clouds</meta>
+   <meta name="task" its:translate="yes">
+     <phrase>Administration</phrase>
+     <phrase>Cloud</phrase>
+     <phrase>Deployment</phrase>
+     <!-- FIXME Enable when covered
+     <phrase>Image Building</phrase>
+     <phrase>Upgrade &amp; Update</phrase>
+     -->
+   </meta>
   <authorgroup>
    <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>
    <author><personname><firstname>Robert</firstname><surname>Schweikert</surname></personname> <contrib>Reviewer</contrib></author>

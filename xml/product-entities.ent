@@ -1,6 +1,3 @@
-<!-- This file originates from the project https://github.com/openSUSE/doc-kit -->
-<!-- This file can be edited downstream. -->
-
 <!-- PRODUCT NAME AND VERSIONS -->
 <!ENTITY productname   "&sle;">
 <!ENTITY productnameshort "SLES&nbsp;CSP">
@@ -8,8 +5,9 @@
 
 
 <!-- PROJECT REPOSITORY URL -->
-<!ENTITY repo-url "https://github.com/SUSE/doc-public-cloud">
-<!ENTITY repo-readme "&repo-url;/blob/master/README.adoc">
+<!ENTITY repo-url               "https://github.com/SUSE/doc-public-cloud">
+<!ENTITY github.url             "&repo-url;">
+<!ENTITY repo-readme            "&repo-url;/blob/master/README.adoc">
 
 <!-- DOCUMENTATION.SUSE.COM PRODUCT URL -->
 <!ENTITY doc-url "&dsc;/sle-public-cloud">
@@ -23,7 +21,8 @@
 <!-- COPYRIGHT HOLDER(S) -->
 <!ENTITY copyrightholder "SUSE LLC">
 
-<!-- Book-specifuc entities -->
+<!-- Book-specific entities -->
+<!ENTITY pc_guide "Public Cloud Guide">
 <!ENTITY abstract_pc_guide "This guide explains how to use &productname; in
  public clouds.">
 <!ENTITY abstract_cha_intro "&suse;&mdash;together with the cloud service

@@ -58,7 +58,7 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
-      <date>2024-04-07</date>
+      <date>2024-07-04</date>
       <revdescription>
         <para>
           Include geographical availability for GCE.

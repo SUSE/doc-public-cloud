@@ -58,6 +58,14 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2022-04-07</date>
+      <revdescription>
+        <para>
+          Include geographical availability for GCE.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2022-02-10</date>
       <revdescription>
         <para>

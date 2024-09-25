@@ -43,7 +43,7 @@
    <meta name="series" its:translate="no">Products &amp; Solutions</meta>
    <meta name="description" its:translate="yes">How to use &productname; in public clouds</meta>
    <meta name="social-descr" its:translate="yes">Use &productname; in public clouds</meta>
-   <meta name="task" its:translate="yes">
+   <meta name="task" its:translate="no">
      <phrase>Administration</phrase>
      <phrase>Cloud</phrase>
      <phrase>Deployment</phrase>

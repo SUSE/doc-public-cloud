@@ -339,7 +339,7 @@
  </sect1>
 
   <sect1 xml:id="ltss">
-    <title>Enabling LTSS support</title>
+    <title>Enabling LTSS</title>
     <para>
       <literal>Long Term Service Pack Support</literal> (LTSS) extends the lifecycle of
       &productname;. It is available as an extension. For more information about LTSS, refer to
@@ -373,23 +373,27 @@
         </step>
         <step>
           <para>
-            Make sure your system is registered. If the system is not yet registered, register it
-            (see <xref linkend="sec-admin-register"/>).
+            Log in to your instance and make sure your system is registered:
+          </para>
+<screen>&prompt.sudo;<command>SUSEConnect --status-text</command></screen>
+          <para>
+            If the system is not yet registered, register it (see <xref linkend="sec-admin-register"/>).
           </para>
         </step>
         <step>
           <para>
-            Make sure the LTSS extension is available for your system:
+            Check if the LTSS extension is available for your system. For &sle; 15 SP3, it looks
+            like this:
           </para>
-          <screen>&prompt.sudo;<command>SUSEConnect --list-extensions | grep LTSS</command>
-      SUSE Linux Enterprise Server LTSS &productnumber; x86_64
-      Activate with: SUSEConnect -p SLES-LTSS/&productnumber-regurl;/x86_64 -r ADDITIONAL REGCODE</screen>
+<screen>&prompt.sudo;<command>SUSEConnect --list-extensions | grep LTSS</command>
+      SUSE Linux Enterprise Server LTSS 15 SP3 x86_64
+      Activate with: SUSEConnect -p SLES-LTSS/15.3/x86_64 -r ADDITIONAL REGCODE</screen>
         </step>
         <step>
           <para>
             Activate the module as instructed:
           </para>
-          <screen>&prompt.sudo;<command>SUSEConnect -p SLES-LTSS/<replaceable>&productnumber-regurl;</replaceable>/<replaceable>x86_64</replaceable> -r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+<screen>&prompt.sudo;<command>SUSEConnect -p SLES-LTSS/<replaceable>15.3</replaceable>/<replaceable>x86_64</replaceable> -r <replaceable>LTSS_REGISTRATION_CODE</replaceable></command></screen>
         </step>
       </procedure>
     </sect2>
@@ -433,19 +437,18 @@
         </step>
         <step>
           <para>
-            Log in to your instance and update <package>cloud-regionsrv-client</package> to the
-            latest version.
+            Update <package>cloud-regionsrv-client</package>:
           </para>
           <screen>&prompt.sudo;<command>zypper up cloud-regionsrv-client</command></screen>
           <para>
-            You will need at least version 10.3.4.
+            You need at least version 10.3.4 of the package.
           </para>
         </step>
         <step>
           <para>
-            Register the LTSS extension:
+            Register the LTSS extension with the registration code you activated in the &scc;:
           </para>
-<screen>&prompt.sudo;<command>registercloudguset -r <replaceable>$REGISTRATION_CODE</replaceable></command>
+<screen>&prompt.sudo;<command>registercloudguset -r <replaceable>LTSS_REGISTRATION_CODE</replaceable></command>
 Running LTSS registration...this takes a little longer
 LTSS registration succeeded</screen>
         </step>
@@ -470,7 +473,7 @@ LTSS registration succeeded</screen>
       For more information, refer to the &openscap; documentation at <link
         xlink:href="https://www.open-scap.org/resources/documentation/"/>.
     </para>
-    
+
     <sect2>
       <title>Pre-hardening</title>
       <para>

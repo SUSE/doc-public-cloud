@@ -306,7 +306,7 @@
    <step>
     <para>
      If the system is registered, check if the file
-     <filename>/var/log/guestregister</filename> exists. This usually indicates
+     <filename>/var/log/cloudregister</filename> exists. This usually indicates
      the system was registered with <command>registercloudguest</command>.
     </para>
    </step>

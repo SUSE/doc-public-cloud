@@ -58,6 +58,14 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2024-10-16</date>
+      <revdescription>
+        <para>
+          Add LTSS documentation (first batch)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-07-04</date>
       <revdescription>
         <para>

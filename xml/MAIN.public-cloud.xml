@@ -13,11 +13,12 @@
 
 <book xml:id="public-cloud" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Public Cloud Guide</title>
+   <title>&pc_guide;</title>
    <productname>&productname;</productname>
    <productname role="abbrev">&productnameshort;</productname>
    <!-- FIXME: How to version a guide but not a product? -->
@@ -36,12 +37,51 @@
      <dm:product>Documentation</dm:product>
      <dm:assignee>cwickert@suse.com</dm:assignee>
     </dm:bugtracker>
-    <dm:editurl>https://github.com/SUSE/doc-public-cloud/edit/main/xml/</dm:editurl>
+    <dm:editurl>&repo-url;/edit/main/xml/</dm:editurl>
    </dm:docmanager>
+   <meta name="title" its:translate="yes">&pc_guide;</meta>
+   <meta name="series" its:translate="no">Products &amp; Solutions</meta>
+   <meta name="description" its:translate="yes">How to use &productname; in public clouds</meta>
+   <meta name="social-descr" its:translate="yes">Use &productname; in public clouds</meta>
+   <meta name="task" its:translate="no">
+     <phrase>Administration</phrase>
+     <phrase>Cloud</phrase>
+     <phrase>Deployment</phrase>
+     <!-- FIXME Enable when covered
+     <phrase>Image Building</phrase>
+     <phrase>Upgrade &amp; Update</phrase>
+     -->
+   </meta>
   <authorgroup>
    <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>
    <author><personname><firstname>Robert</firstname><surname>Schweikert</surname></personname> <contrib>Reviewer</contrib></author>
   </authorgroup>
+  <revhistory xml:id="rh-public-cloud">
+    <revision>
+      <date>2024-10-16</date>
+      <revdescription>
+        <para>
+          Add LTSS documentation (first batch)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2024-07-04</date>
+      <revdescription>
+        <para>
+          Include geographical availability for GCE.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2022-02-10</date>
+      <revdescription>
+        <para>
+          Initial release of this document.
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
  </info>
 
  <xi:include href="preface_public_cloud.xml"/>

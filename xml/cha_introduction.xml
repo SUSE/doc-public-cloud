@@ -32,38 +32,48 @@
   <para>
    The following &suse; products are available for public cloud:
   </para>
-  <itemizedlist>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/server/">&sls; (&slea;)</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/server/hpc/">&slehpc;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/micro/">&slem;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/sles-for-sap/">&sles4sap;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     <link xlink:href="https://www.suse.com/products/suse-manager/">&suma;</link>
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-      <link xlink:href="https://get.opensuse.org/leap/">&opensuse; Leap</link>
-    </para>
-   </listitem>
-  </itemizedlist>
+   <itemizedlist>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/server/">&sls; (&slea;)</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/micro/">&slem;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/sles-for-sap/">&sles4sap;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/suse-manager/">&suma;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/suse-liberty-linux/">&sliberty;</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.rancher.com/products/rancher-platform">Rancher Prime</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://www.suse.com/products/neuvector/">NeuVector Prime</link>
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         <link xlink:href="https://get.opensuse.org/leap/">&opensuse; Leap</link>
+       </para>
+     </listitem>
+   </itemizedlist>
   <note role="compact">
    <para>
     To constantly adjust and improve &suse;'s offerings, availability of
@@ -361,7 +371,7 @@
      <para>
       Regular PAYG instances include support through the cloud service provider which
       in turn is supported by &suse;. If you have a problem, <emphasis>always contact
-       your CSP for assistance</emphasis>. They provide 1st and 2nd level support, and will
+       your CSP for assistance</emphasis>. They provide first and second level support, and will
       work with &suse; for L3 support as required.
      </para>
      <important>
@@ -382,8 +392,8 @@
      &priority_support_offerings;
      <para>
       You can transact priority support through the &aws; and &azure; marketplaces, where you
-      will see two different listings: <literal>EU and UK only</literal> and <literal>non-EU and
-      non-UK only</literal>. Two listings are needed as there are different regulations to comply
+      will see two different listings: A global one and one for <literal>EMEA Orders Only</literal>.
+      Two listings are needed as there are different regulations to comply
       with, but the images and the support offering are identical. Select the correct listing for
       your organization's CSP account:
      </para>

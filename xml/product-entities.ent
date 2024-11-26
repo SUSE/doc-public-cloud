@@ -1,15 +1,20 @@
-<!-- This file originates from the project https://github.com/openSUSE/doc-kit -->
-<!-- This file can be edited downstream. -->
-
 <!-- PRODUCT NAME AND VERSIONS -->
-<!ENTITY productname   "&sle;">
-<!ENTITY productnameshort "SLES&nbsp;CSP">
-<!ENTITY productnumber "0.1">
+<!ENTITY productname            "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&sle;</phrase>">
+<!ENTITY productnamereg         "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&slereg;</phrase>">
+<!ENTITY productnameshort       "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'>&slsa;&nbsp;CSP</phrase>">
+
+<!ENTITY product-ga             "15">
+<!ENTITY product-sp             "6">
+<!ENTITY product-dsc-url-substring      "&product-ga;-SP&product-sp;">
+<!ENTITY productnumber-regurl   "&product-ga;.&product-sp;">
+<!ENTITY productnumber-leaprepo "&product-ga;.&product-sp;">
+<!ENTITY productnumber          "<phrase xmlns='http://docbook.org/ns/docbook' role='productnumber'><phrase os='osuse'>15.6</phrase><phrase os='sles;sled'>&product-ga; SP&product-sp;</phrase><phrase os='slemicro'>5.5</phrase></phrase>">
 
 
 <!-- PROJECT REPOSITORY URL -->
-<!ENTITY repo-url "https://github.com/SUSE/doc-public-cloud">
-<!ENTITY repo-readme "&repo-url;/blob/master/README.adoc">
+<!ENTITY repo-url               "https://github.com/SUSE/doc-public-cloud">
+<!ENTITY github.url             "&repo-url;">
+<!ENTITY repo-readme            "&repo-url;/blob/master/README.adoc">
 
 <!-- DOCUMENTATION.SUSE.COM PRODUCT URL -->
 <!ENTITY doc-url "&dsc;/sle-public-cloud">
@@ -23,7 +28,8 @@
 <!-- COPYRIGHT HOLDER(S) -->
 <!ENTITY copyrightholder "SUSE LLC">
 
-<!-- Book-specifuc entities -->
+<!-- Book-specific entities -->
+<!ENTITY pc_guide "Public Cloud Guide">
 <!ENTITY abstract_pc_guide "This guide explains how to use &productname; in
  public clouds.">
 <!ENTITY abstract_cha_intro "&suse;&mdash;together with the cloud service

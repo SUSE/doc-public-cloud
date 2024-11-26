@@ -514,7 +514,7 @@ LTSS registration succeeded</screen>
       </itemizedlist>
     </sect2>
     <sect2>
-      <title>Avialable <phrase role="product">&openscap;</phrase> profiles </title>
+      <title>Available <phrase role="product">&openscap;</phrase> profiles </title>
       <para>
         After instance creation, you can use the installed <package>openscap</package> packages to
         complete the hardening process using any of the following profiles:

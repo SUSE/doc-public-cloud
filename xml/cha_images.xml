@@ -38,9 +38,9 @@
   <itemizedlist>
    <listitem>
     <para>
-     Images in an <literal>active</literal> state are refreshed every three
-     months. Replaced images are moved to the <literal>deprecated</literal>
-     state.
+     Images in <literal>active</literal> and <literal>inactive</literal>
+     states are refreshed every three months. Replaced images are moved to
+     the <literal>deprecated</literal> state.
     </para>
    </listitem>
    <listitem>
@@ -48,8 +48,9 @@
      If a critical security vulnerability occurs, images in
      <literal>active</literal> and <literal>inactive</literal> states are
      updated as soon as possible once the fix for the affected code is
-     available. For images in <literal>active</literal> state the three month
-     timer restarts with this forced replacement.
+     available. For images in <literal>active</literal> and
+     <literal>inactive</literal> states the three month timer restarts with
+     this forced replacement.
     </para>
     <para>
      &suse; is committed to address all security vulnerabilities disclosed
@@ -99,7 +100,7 @@
     <listitem>
      <para>
       Inactive images are supported following the rules of LTSS or ESPOS and
-      will only get refreshed for critical security updates. The duration term
+      will get refreshed at least every three months. The duration term
       is defined by the product. For more information, refer to <link
        xlink:href="https://www.suse.com/de-de/support/policy-products/#cloud"/>
      </para>

@@ -232,8 +232,8 @@
       <title>&azure; flavors</title>
       <listitem>
        <para>
-        <literal>basic</literal>: PAYG image that only includes updates but no
-        support
+        <literal>basic</literal>: PAYG image that only includes updates but is not eligible for
+        support (see <xref linkend="sec-intro-support"/>) or LTSS (see <xref linkend="ltss"/>).
        </para>
       </listitem>
       <listitem>

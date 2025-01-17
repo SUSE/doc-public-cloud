@@ -354,6 +354,13 @@
         and upgrade it if necessary.
       </para>
     </note>
+    <note>
+      <title>&azure; basic images are not eligible for LTSS</title>
+      <para>
+       &azure; also offers a basic PAYG image that only includes updates.
+       Instances created from this image are <emphasis>not eligible for LTSS</emphasis>.
+      </para>
+    </note>
     <sect2 xml:id="ltss-byos">
       <title>LTSS on BYOS</title>
       <para>

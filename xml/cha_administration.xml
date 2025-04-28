@@ -180,19 +180,19 @@
                For &ec2a; run:
              </para>
 <screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-ec2 \
- regionServiceClientConfigEC2 regionServiceCertsEC2</screen>
+ regionServiceClientConfigEC2</screen>
            </step>
            <step>
              <para>
                For &azure; run:
              </para>
 <screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-azure \
- regionServiceClientConfigAzure regionServiceCertsAzure</screen>
+ regionServiceClientConfigAzure</screen>
            </step>
            <step>
              <para>For &gce; run:</para>
 <screen>&prompt.root;<command>zypper</command> in cloud-regionsrv-client cloud-regionsrv-client-plugin-gce \
- regionServiceClientConfigGCE regionServiceCertsGCE</screen>
+ regionServiceClientConfigGCE</screen>
            </step>
          </stepalternatives>
        </step>

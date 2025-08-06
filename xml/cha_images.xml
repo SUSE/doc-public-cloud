@@ -26,6 +26,14 @@
    <dm:bugtracker></dm:bugtracker>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
+  <revhistory xml:id="rh-cha-images">
+   <revision>
+    <date>2025-01-17</date>
+    <revdescription>
+     <para/>
+    </revdescription>
+   </revision>
+  </revhistory>
  </info>
 
  <sect1 xml:id="sec-image-lifecycle">
@@ -79,7 +87,7 @@
     -->
    </listitem>
   </itemizedlist>
-  
+
   <para>
    The life cycle of an image consists of four different states:
   </para>
@@ -317,7 +325,7 @@
    and command-line tool with the <package>python3-susepubliccloudinfo</package>
    package from the <systemitem>Public Cloud Module</systemitem> repository.
   </para>
-  
+
   <figure xml:id="fig-pint-images">
    <title>Overview of &suse; &pint; (&pinta;)</title>
    <mediaobject>
@@ -337,7 +345,7 @@
    region, or image state. You can also search for strings and adjust the columns and the number of
    results per page.
   </para>
-  
+
   <sect2 xml:id="sec-pint-images">
    <title><literal>Images</literal> view</title>
    <para>
@@ -475,7 +483,7 @@
     </varlistentry>
    </variablelist>
   </sect2>
-  
+
   <sect2 xml:id="sec-pint-servers">
    <title><literal>Servers</literal> view</title>
    <para>

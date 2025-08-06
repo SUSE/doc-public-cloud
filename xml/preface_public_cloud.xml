@@ -22,6 +22,14 @@
     This chapter provides information about this guide itself and how to use it.
    </para>
   </abstract>
+  <revhistory xml:id="rh-pre-public-cloud">
+   <revision>
+    <date>2024-01-19</date>
+    <revdescription>
+     <para/>
+    </revdescription>
+   </revision>
+  </revhistory>
  </info>
  <para>
   &abstract_pc_guide;

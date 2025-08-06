@@ -26,6 +26,14 @@
    <dm:bugtracker></dm:bugtracker>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
+  <revhistory xml:id="rh-cha-intro">
+   <revision>
+    <date>2025-05-14</date>
+    <revdescription>
+     <para/>
+    </revdescription>
+   </revision>
+  </revhistory>
  </info>
  <sect1 xml:id="sec-intro-products">
   <title>Products</title>
@@ -127,7 +135,7 @@
       you already have a support contract with &suse; and want to move your
       workloads to the public cloud. An instance launched from a BYOS image is
       equivalent to a physical machine that just received a &sles; installation
-      from the &slsa; installation image. After creation, use 
+      from the &slsa; installation image. After creation, use
       <command>registercloudguest</command> to register the instance with the
       &suse;-operated update infrastructure in the cloud framework or use the
       <command>&suseconnect;</command> to register the system with &scc; using
@@ -260,7 +268,7 @@
       </entry>
       <entry>
        <para>
-        by CSP; by &suse; only for SUSE Marketplace listings, meaning listings where the seller in the listing is &suse; 
+        by CSP; by &suse; only for SUSE Marketplace listings, meaning listings where the seller in the listing is &suse;
        </para>
       </entry>
      </row>

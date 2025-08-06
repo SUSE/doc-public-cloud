@@ -10,6 +10,16 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Geographical availability</title>
+  <info>
+  <revhistory xml:id="rh-countrylist">
+   <revision>
+    <date>2025-05-06</date>
+    <revdescription>
+     <para/>
+    </revdescription>
+   </revision>
+  </revhistory>
+  </info>
   <!-- 2023-09-07 cwickert: the country list is based on https://confluence.suse.com/x/dYK9Rw -->
   <para>
     &suse; offers 24x7 priority support for the PAYG versions of the following products:

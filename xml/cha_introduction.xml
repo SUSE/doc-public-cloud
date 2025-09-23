@@ -329,7 +329,7 @@
    <para>
     For more information on how to switch plans on &azure;, refer to
     <link xlink:href="https://www.suse.com/c/upgrades-for-azure-hybrid-benefit/"/>.
-    For $gce, refer to 
+    For &gce; refer to
     <link xlink:href="https://www.suse.com/c/switching-licensing-models-on-google-cloud-for-sles-and-sles-for-sap-instances-flexible-licenses/"/>.
    </para>
   </important>

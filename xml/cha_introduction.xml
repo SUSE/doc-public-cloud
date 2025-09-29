@@ -319,9 +319,9 @@
    <title>Switching plans</title>
    <para>
     Switching from BYOS to PAYG or vice-versa is possible on &azure; through the
-   <literal>Hybrid Benefit</literal> program and on &gce; through <literal>Flexible
-    Licenses</literal>. For all other cloud providers, you remain on the plan you initially
-    selected for as long as the instance is running. The only way to switch
+    &azure; <literal>Hybrid Benefit</literal> program and on &gce; through <literal>
+    Flexible Licenses</literal>. For all other cloud providers, you remain on the plan you 
+    initially selected for as long as the instance is running. The only way to switch
     plans is to start with the other image and rebuild your system.
    </para>
    <!-- FIXME cwickert 2022-02-03: Add link to chapter that describes how to

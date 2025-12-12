@@ -681,7 +681,7 @@ use &deng;! -->
 
 
 <!-- SUSE Manager -->
-<!ENTITY susemgr                "&suse; Manager">
+<!ENTITY susemgr                "&suse; Multi-Linux Manager">
 <!ENTITY suma                   "&susemgr;">
 <!ENTITY susemgrdb              "&suse; Manager with Database">
 <!ENTITY susemgrproxy           "&susemgr; Proxy">

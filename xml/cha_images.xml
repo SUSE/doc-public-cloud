@@ -672,7 +672,274 @@
    For more information and instructions on how to harden instances with &openscap;, refer to
    <xref linkend="hardening"/>.
   </para>
-
  </sect1>
 
+ <sect1 xml:id="confidential-compute">
+     <title>Confidential Computing on AWS</title>
+     <para>Confidential computing is a security technology that protects sensitive data
+       while it is actively being processed, or in use. It addresses the "data in use"
+       gap in traditional security models, which typically focus on "data at rest"
+       (encryption on disk) and "data in transit" (encryption over the network).
+     </para>
+     <para>
+       In conventional environments, data in use can be exposed to threats
+       from privileged insiders, compromised hypervisors, or advanced malware
+       capable of reading system memory. Confidential computing addressed this
+       attack vector by placing workloads inside a hardware-protected Trusted
+       Execution Environment (TEE). The memory part of the TEE is encrypted
+       and strictly access controled ensuring that neither cloud providers,
+       system administrators, or system-level software can view or modify
+       data in use.
+     </para>
+     <sect2 xml:id="trusted-execution-environment-tee">
+       <title>Trusted Execution Environment (TEE)</title>
+       <para>
+         At the heart of confidential computing is the Trusted Execution Environment (TEE).
+         A TEE is defined by three core technological pillars:
+       </para>
+       <variablelist>
+         <varlistentry>
+           <term>Isolation</term>
+           <listitem>
+             <para>
+               A hardware-based, isolated area within a processor. It ensures that only
+               authorized code can access the data inside, protecting it from other processes,
+               the operating system, and the hypervisor.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term>Invisibility</term>
+           <listitem>
+             <para>
+               Data remains encrypted in memory and is only decrypted inside the
+               CPU's TEE. Even with physical access to the memory, the data is unreadable.
+             </para>
+           </listitem>
+         </varlistentry>
+         <varlistentry>
+           <term>Attestation</term>
+           <listitem>
+             <para>
+               A cryptographic proof that verifies the hardware and software are genuine
+               and correctly configured before any data is released to the environment.
+             </para>
+           </listitem>
+         </varlistentry>
+       </variablelist>
+     </sect2>
+     <sect2 xml:id="key-concepts-on-aws">
+       <title>Key Concepts on AWS</title>
+       <para>
+         AWS implements the TEE concepts through a combination of Nitro
+         Trusted Platform Module (TPM) technology, specialized OS images,
+         and Nitro Enclaves.
+       </para>
+       <sect3 xml:id="isolation-on-aws">
+         <title>Isolation on AWS</title>
+         <para>
+           Isolation is achieved using images that provide an overlay-based read-only system.
+           This system is verified at boot time by <literal>dm-verity</literal>, which checks
+           all rootfs blocks. In production, instances from these images are not expected to be
+           remotely accessible to minimize the attack surface.
+         </para>
+       </sect3>
+       <sect3 xml:id="attestation-on-aws">
+         <title>Attestation on AWS</title>
+         <para>
+           The image boots via a PCR-measured Unified Kernel Image (UKI) containing the kernel,
+           initrd, and bootloader. The Platform Configuration Register (PCR) values
+           can be:
+         </para>
+         <itemizedlist>
+           <listitem>
+             <para>Checked against an attestation document.</para>
+           </listitem>
+           <listitem>
+             <para>
+               Used as an AWS KMS key policy to block operations if there is a key mismatch,
+               ensuring only "known good" software can run.
+             </para>
+           </listitem>
+         </itemizedlist>
+       </sect3>
+       <sect3 xml:id="memory-encryption-and-nitro-enclaves">
+         <title>Memory Encryption and Nitro Enclaves</title>
+         <para>
+           While the base instance runs in overlayfs mode (writing to memory only),
+           this memory area is not encrypted. To ensure true memory cannot be accessed
+           the workload must run as a <emphasis role="strong">Nitro Enclave</emphasis>.
+         </para>
+         <para>
+           Nitro Enclaves protect and encrypt the memory area, making it invisible
+           to the host OS and hypervisor. Communication with the enclave is strictly
+           limited to a local <literal>vsock</literal> connection.
+         </para>
+       </sect3>
+     </sect2>
+     <sect2 xml:id="practical-guide-deploying-attestable-images">
+       <title>Practical Guide: Deploying Attestable Images</title>
+       <sect3 xml:id="fetch-and-register-the-image">
+         <title>1. Fetch and Register the Image</title>
+         <para>
+           To start, you need an attestable image. For example, a SUSE Linux
+           Enterprise Server (SLES) image built by KIWI for AWS with the necessary
+           configurations for Nitro TPM and Enclaves. You can find such an image
+           as follows:
+         </para>
+         <itemizedlist>
+           <listitem>
+             <para>
+               <emphasis role="strong">Image:</emphasis>
+               <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
+             </para>
+           </listitem>
+           <listitem>
+             <para>
+               <emphasis role="strong">Upload:</emphasis> Use tools like
+               <literal>ec2uploadimg</literal> as utilized in
+               <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1">ec2-upload</link> or an alternative custom upload script.
+             </para>
+           </listitem>
+         </itemizedlist>
+         <important>
+           <para>
+             When uploading the AMI, you must enable <emphasis role="strong">TPM support v2.0</emphasis>
+             and set the <emphasis role="strong">EFI boot mode to uefi</emphasis>.
+           </para>
+         </important>
+       </sect3>
+       <sect3 xml:id="pcr-measurements">
+         <title>2. PCR Measurements</title>
+         <para>
+           Before launching, download the precomputed PCR measurements:
+           <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/pcr_measurements.json">pcr_measurements.json</link>
+         </para>
+         <para>
+           These values represent the expected NitroTPM PCR 4, 7, and 12 values based on
+           the UKI. They serve as the baseline for verifying the integrity of your
+           instance.
+         </para>
+       </sect3>
+       <sect3 xml:id="launching-the-instance">
+         <title>3. Launching the Instance</title>
+         <para>
+           Select an instance type that supports Nitro TPM and Enclaves (e.g.,
+           <literal>m5.xlarge</literal>). In the <emphasis role="strong">Advanced Details</emphasis>
+           section of the EC2 launch wizard, ensure that <emphasis role="strong">Enclave support</emphasis>
+           is explicitly enabled.
+         </para>
+       </sect3>
+       <sect3 xml:id="verifying-the-tee">
+         <title>4. Verifying the TEE</title>
+         <para>
+           Once logged into the instance, you can generate an attestation
+           document and check the PCRs:
+         </para>
+         <programlisting language="bash" linenumbering="unnumbered">
+# Generate attestation document
+$ nitro-tpm-attest > /tmp/nitro.attest.cbor
+# Show current PCR values
+$ show-nitrotpm-pcrs
+         </programlisting>
+         <para>
+           If the values match <literal>pcr_measurements.json</literal>,
+           you have verified that:
+         </para>
+         <itemizedlist>
+           <listitem>
+             <para>
+               The TEE matches the expected image uploaded to EC2.
+             </para>
+           </listitem>
+           <listitem>
+             <para>
+               The rootfs is clean, immutable, and verified by <literal>dm-verity</literal>.
+             </para>
+           </listitem>
+         </itemizedlist>
+       </sect3>
+     </sect2>
+     <sect2 xml:id="managing-the-enclave-workload">
+       <title>Managing the Enclave Workload</title>
+       <para>
+         The workload itself is packaged as an AWS Enclave Image (<literal>.eif</literal>)
+         built by KIWI and stored in the TEE's <literal>/data</literal>
+         directory. For details about the example enclave see:
+         <link xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave">test-image-nitro-enclaves</link>.
+       </para>
+       <para>
+         The example workload is designed to return the PCR values from the attestation
+         document when queried via <literal>vsock</literal>. This allows you to verify
+         that the enclave's integrity matches the expected values. This workload in itself
+         is not meant to be a real-world application but serves as a demonstration of how
+         to build and run an enclave that can attest its integrity.
+       </para>
+       <sect3 xml:id="running-the-enclave">
+         <title>Running the Enclave</title>
+         <para>
+           Use the <literal>nitro-cli</literal> tool to launch your workload:
+         </para>
+         <programlisting language="bash" linenumbering="unnumbered">
+$ pushd /data $ nitro-cli run-enclave \
+    --eif-path kiwi-test-image-nitro-enclave.x86_64-1.1.1.eif \
+    --cpu-count 2 \
+    --memory 2048
+$ nitro-cli describe-enclaves
+         </programlisting>
+       </sect3>
+       <sect3 xml:id="enclave-attestation">
+         <title>Enclave Attestation</title>
+         <para>
+           To verify the enclave's integrity, connect to it via <literal>vsock</literal>:
+         </para>
+         <programlisting language="bash" linenumbering="unnumbered">
+# Instruct the enclave to return the PCRs from the enclave's attestation document
+$ vsock_client Enclave-CID
+         </programlisting>
+         <para>
+           Matching the enclave's PCRs with the output of
+           <literal>describe-enclaves</literal> confirms:
+         </para>
+         <itemizedlist>
+           <listitem>
+             <para>The enclave integrity matches the image.</para>
+           </listitem>
+           <listitem>
+             <para>All memory used by the enclave is encrypted and isolated.</para>
+           </listitem>
+         </itemizedlist>
+       </sect3>
+     </sect2>
+     <sect2 xml:id="future-directions-for-suse">
+       <title>Future Directions for SUSE</title>
+       <para>
+         Efforts are underway to deepen SUSE support for AWS
+         Confidential Computing, including:
+       </para>
+       <itemizedlist>
+         <listitem>
+           <para>
+             Integrating the AWS <literal>eif_build</literal> tool directly into SUSE.
+           </para>
+         </listitem>
+         <listitem>
+           <para>
+             Providing native packages for <literal>aws-nitro-enclaves-cli</literal> and
+             <literal>aws-nitro-enclaves-nsm-api</literal>.
+           </para>
+         </listitem>
+         <listitem>
+           <para>
+             Supporting <literal>aws-nitro-tpm-tools</literal>.
+           </para>
+         </listitem>
+         <listitem>
+           <para>
+             Developing standardized build pipelines for TEE images and Enclaves.
+           </para>
+         </listitem>
+       </itemizedlist>
+     </sect2>
+ </sect1>
 </chapter>

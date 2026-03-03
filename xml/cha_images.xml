@@ -911,35 +911,5 @@ $ vsock_client Enclave-CID
          </itemizedlist>
        </sect3>
      </sect2>
-     <sect2 xml:id="future-directions-for-suse">
-       <title>Future Directions for SUSE</title>
-       <para>
-         Efforts are underway to deepen SUSE support for AWS
-         Confidential Computing, including:
-       </para>
-       <itemizedlist>
-         <listitem>
-           <para>
-             Integrating the AWS <literal>eif_build</literal> tool directly into SUSE.
-           </para>
-         </listitem>
-         <listitem>
-           <para>
-             Providing native packages for <literal>aws-nitro-enclaves-cli</literal> and
-             <literal>aws-nitro-enclaves-nsm-api</literal>.
-           </para>
-         </listitem>
-         <listitem>
-           <para>
-             Supporting <literal>aws-nitro-tpm-tools</literal>.
-           </para>
-         </listitem>
-         <listitem>
-           <para>
-             Developing standardized build pipelines for TEE images and Enclaves.
-           </para>
-         </listitem>
-       </itemizedlist>
-     </sect2>
  </sect1>
 </chapter>

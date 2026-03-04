@@ -676,7 +676,7 @@
 
  <sect1 xml:id="confidential-compute">
      <title>Confidential Computing on AWS</title>
-     <para>Confidential computing is a security technology that protects sensitive data
+     <para>Confidential computing is a security technology that protects data
        while it is actively being processed, or in use. It addresses the "data in use"
        gap in traditional security models, which typically focus on "data at rest"
        (encryption on disk) and "data in transit" (encryption over the network).
@@ -767,7 +767,7 @@
          <title>Memory Encryption and Nitro Enclaves</title>
          <para>
            While the base instance runs in overlayfs mode (writing to memory only),
-           this memory area is not encrypted. To ensure true memory cannot be accessed
+           this memory area is not encrypted. To ensure application memory cannot be accessed
            the workload must run as a <emphasis role="strong">Nitro Enclave</emphasis>.
          </para>
          <para>

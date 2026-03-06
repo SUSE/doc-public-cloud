@@ -789,10 +789,12 @@
          </para>
          <itemizedlist>
            <listitem>
-             <para>
-               <emphasis role="strong">Image:</emphasis>
-               <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
-             </para>
+               <formalpara>
+                 <title>Image:</title>
+                 <para>
+                   <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
+                 </para>
+               </formalpara>
            </listitem>
            <listitem>
              <para>

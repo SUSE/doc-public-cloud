@@ -864,7 +864,7 @@
        <title>Managing the Enclave Workload</title>
        <para>
          The workload itself is packaged as an &awsa; Enclave Image (<literal>.eif</literal>)
-         built by KIWI and stored in the TEE's <literal>/data</literal>
+         built by &kiwi; and stored in the TEE's <literal>/data</literal>
          directory. For details about the example enclave see:
          <link xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave">test-image-nitro-enclaves</link>.
        </para>

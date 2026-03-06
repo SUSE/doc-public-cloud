@@ -674,20 +674,21 @@
   </para>
  </sect1>
 
- <sect1 xml:id="confidential-compute">
-     <title>Confidential Computing on AWS</title>
-     <para>Confidential computing is a security technology that protects data
-       while it is actively being processed, or in use. It addresses the "data in use"
-       gap in traditional security models, which typically focus on "data at rest"
-       (encryption on disk) and "data in transit" (encryption over the network).
+ <sect1 xml:id="confidential-computing-aws">
+     <title>Confidential Computing on &awsa;</title>
+     <para>
+       Confidential computing is a security technology that protects data
+       while it is actively being processed, or in use. It addresses the <quote>data in use</quote>
+       gap in traditional security models, which typically focus on <quote>data at rest</quote>
+       (encryption on disk) and <quote>data in transit</quote> (encryption over the network).
      </para>
      <para>
        In conventional environments, data in use can be exposed to threats
        from privileged insiders, compromised hypervisors, or advanced malware
-       capable of reading system memory. Confidential computing addressed this
+       capable of reading system memory. Confidential computing addresses this
        attack vector by placing workloads inside a hardware-protected Trusted
        Execution Environment (TEE). The memory part of the TEE is encrypted
-       and strictly access controled ensuring that neither cloud providers,
+       and strictly access controlled ensuring that neither cloud service providers,
        system administrators, or system-level software can view or modify
        data in use.
      </para>
@@ -729,14 +730,14 @@
        </variablelist>
      </sect2>
      <sect2 xml:id="key-concepts-on-aws">
-       <title>Key Concepts on AWS</title>
+       <title>Key Concepts on &awsa;</title>
        <para>
-         AWS implements the TEE concepts through a combination of Nitro
+         &awsa; implements the TEE concepts through a combination of Nitro
          Trusted Platform Module (TPM) technology, specialized OS images,
          and Nitro Enclaves.
        </para>
        <sect3 xml:id="isolation-on-aws">
-         <title>Isolation on AWS</title>
+         <title>Isolation on &awsa;</title>
          <para>
            Isolation is achieved using images that provide an overlay-based read-only system.
            This system is verified at boot time by <literal>dm-verity</literal>, which checks
@@ -745,7 +746,7 @@
          </para>
        </sect3>
        <sect3 xml:id="attestation-on-aws">
-         <title>Attestation on AWS</title>
+         <title>Attestation on &awsa;</title>
          <para>
            The image boots via a PCR-measured Unified Kernel Image (UKI) containing the kernel,
            initrd, and bootloader. The Platform Configuration Register (PCR) values
@@ -757,8 +758,8 @@
            </listitem>
            <listitem>
              <para>
-               Used as an AWS KMS key policy to block operations if there is a key mismatch,
-               ensuring only "known good" software can run.
+               Used as an &awsa; Key Management Service (KMS) key policy to block operations if
+               there is a key mismatch, ensuring only "known good" software can run.
              </para>
            </listitem>
          </itemizedlist>
@@ -767,7 +768,7 @@
          <title>Memory Encryption and Nitro Enclaves</title>
          <para>
            While the base instance runs in overlayfs mode (writing to memory only),
-           this memory area is not encrypted. To ensure application memory cannot be accessed
+           this memory area is not encrypted. To ensure application memory cannot be accessed,
            the workload must run as a <emphasis role="strong">Nitro Enclave</emphasis>.
          </para>
          <para>
@@ -782,10 +783,9 @@
        <sect3 xml:id="fetch-and-register-the-image">
          <title>1. Fetch and Register the Image</title>
          <para>
-           To start, you need an attestable image. For example, a SUSE Linux
-           Enterprise Server (SLES) image built by KIWI for AWS with the necessary
-           configurations for Nitro TPM and Enclaves. You can find such an image
-           as follows:
+           To start, you need an attestable image. For example, a &sls; (&slsa;) image built by
+           &kiwi; for &awsa; with the necessary configurations for Nitro TPM and Enclaves. You can
+           find such an image as follows:
          </para>
          <itemizedlist>
            <listitem>
@@ -797,15 +797,15 @@
            <listitem>
              <para>
                <emphasis role="strong">Upload:</emphasis> Use tools like
-               <literal>ec2uploadimg</literal> as utilized in
-               <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1">ec2-upload</link> or an alternative custom upload script.
+               <command>ec2uploadimg</command> as utilized in
+               <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1"><filename>ec2-upload</filename></link> or an alternative custom upload script.
              </para>
            </listitem>
          </itemizedlist>
          <important>
            <para>
-             When uploading the AMI, you must enable <emphasis role="strong">TPM support v2.0</emphasis>
-             and set the <emphasis role="strong">EFI boot mode to uefi</emphasis>.
+             When uploading the AMI, you must enable TPM 2.0 support
+             and set the EFI boot mode to UEFI.
            </para>
          </important>
        </sect3>
@@ -863,7 +863,7 @@ $ show-nitrotpm-pcrs
      <sect2 xml:id="managing-the-enclave-workload">
        <title>Managing the Enclave Workload</title>
        <para>
-         The workload itself is packaged as an AWS Enclave Image (<literal>.eif</literal>)
+         The workload itself is packaged as an &awsa; Enclave Image (<literal>.eif</literal>)
          built by KIWI and stored in the TEE's <literal>/data</literal>
          directory. For details about the example enclave see:
          <link xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave">test-image-nitro-enclaves</link>.

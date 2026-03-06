@@ -878,7 +878,7 @@
        <sect3 xml:id="running-the-enclave">
          <title>Running the Enclave</title>
          <para>
-           Use the <literal>nitro-cli</literal> tool to launch your workload:
+           Use the <command>nitro-cli</command> tool to launch your workload:
          </para>
          <programlisting language="bash" linenumbering="unnumbered">
 &prompt.user;pushd /data $ nitro-cli run-enclave \

@@ -789,19 +789,21 @@
          </para>
          <itemizedlist>
            <listitem>
-               <formalpara>
-                 <title>Image:</title>
-                 <para>
-                   <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
-                 </para>
-               </formalpara>
+             <formalpara>
+               <title>Image:</title>
+               <para>
+                 <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
+               </para>
+             </formalpara>
            </listitem>
            <listitem>
-             <para>
-               <emphasis role="strong">Upload:</emphasis> Use tools like
-               <command>ec2uploadimg</command> as utilized in
-               <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1"><filename>ec2-upload</filename></link> or an alternative custom upload script.
-             </para>
+             <formalpara>
+               <title>Upload</title>
+               <para>
+                 Use tools like <command>ec2uploadimg</command> as utilized in
+                 <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1"><filename>ec2-upload</filename></link> or an alternative custom upload script.
+               </para>
+             </formalpara>
            </listitem>
          </itemizedlist>
          <important>

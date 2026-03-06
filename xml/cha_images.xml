@@ -895,7 +895,7 @@
          </para>
          <programlisting language="bash" linenumbering="unnumbered">
 # Instruct the enclave to return the PCRs from the enclave's attestation document
-$ vsock_client Enclave-CID
+&prompt.user;vsock_client Enclave-CID
          </programlisting>
          <para>
            Matching the enclave's PCRs with the output of

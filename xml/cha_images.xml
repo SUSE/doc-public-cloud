@@ -838,9 +838,9 @@
          </para>
          <programlisting language="bash" linenumbering="unnumbered">
 # Generate attestation document
-$ nitro-tpm-attest > /tmp/nitro.attest.cbor
+&prompt.user;nitro-tpm-attest > /tmp/nitro.attest.cbor
 # Show current PCR values
-$ show-nitrotpm-pcrs
+&prompt.user;show-nitrotpm-pcrs
          </programlisting>
          <para>
            If the values match <literal>pcr_measurements.json</literal>,

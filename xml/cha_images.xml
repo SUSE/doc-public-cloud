@@ -881,11 +881,11 @@
            Use the <literal>nitro-cli</literal> tool to launch your workload:
          </para>
          <programlisting language="bash" linenumbering="unnumbered">
-$ pushd /data $ nitro-cli run-enclave \
+&prompt.user;pushd /data $ nitro-cli run-enclave \
     --eif-path kiwi-test-image-nitro-enclave.x86_64-1.1.1.eif \
     --cpu-count 2 \
     --memory 2048
-$ nitro-cli describe-enclaves
+&prompt.user;nitro-cli describe-enclaves
          </programlisting>
        </sect3>
        <sect3 xml:id="enclave-attestation">

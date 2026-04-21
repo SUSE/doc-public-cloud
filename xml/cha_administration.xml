@@ -712,7 +712,7 @@ LTSS registration succeeded</screen>
     </sect2>
   </sect1>
   <sect1 xml:id="confidential-computing-aws">
-     <title>Confidential Computing on &awsa;</title>
+     <title>Confidential computing on &awsa;</title>
      <para>
        Confidential computing is a security technology that protects data
        while it is actively being processed, or in use. It addresses the <quote>data in use</quote>
@@ -732,7 +732,7 @@ LTSS registration succeeded</screen>
      <sect2 xml:id="trusted-execution-environment-tee">
        <title>Trusted Execution Environment (TEE)</title>
        <para>
-         At the heart of confidential computing is the Trusted Execution Environment (TEE).
+         At the heart of confidential computing is the trusted execution environment (TEE).
          A TEE is defined by three core technological pillars:
        </para>
        <variablelist>
@@ -767,10 +767,10 @@ LTSS registration succeeded</screen>
        </variablelist>
      </sect2>
      <sect2 xml:id="key-concepts-on-aws">
-       <title>Key Concepts on &awsa;</title>
+       <title>Key concepts on &awsa;</title>
        <para>
          &awsa; implements the TEE concepts through a combination of Nitro
-         Trusted Platform Module (TPM) technology, specialized OS images,
+         Trusted Platform Module (NitroTPM) technology, specialized OS images,
          and Nitro Enclaves.
        </para>
        <sect3 xml:id="isolation-on-aws">
@@ -802,7 +802,7 @@ LTSS registration succeeded</screen>
          </itemizedlist>
        </sect3>
        <sect3 xml:id="memory-encryption-and-nitro-enclaves">
-         <title>Memory Encryption and Nitro Enclaves</title>
+         <title>Memory encryption and Nitro Enclaves</title>
          <para>
            While the base instance runs in overlayfs mode (writing to memory only),
            this memory area is not encrypted. To ensure application memory cannot be accessed,
@@ -850,10 +850,9 @@ LTSS registration succeeded</screen>
         </step>
         <step>
           <para>
-            Select an instance type that supports Nitro TPM and Enclaves such as
-            <literal>m5.xlarge</literal>. In the <emphasis role="strong">Advanced Details</emphasis>
-            section of the EC2 launch wizard, ensure that <emphasis role="strong">Enclave support</emphasis>
-            is explicitly enabled.
+            In the EC2 launch wizard, select an instance type that supports Nitro TPM and Enclaves
+            such as <literal>m5.xlarge</literal>. In the <literal>Advanced Details</literal>
+            section, ensure that <literal>Enclave support</literal> is explicitly enabled.
          </para>
         </step>
         <step>
@@ -886,9 +885,9 @@ LTSS registration succeeded</screen>
        </procedure>
      </sect2>
      <sect2 xml:id="managing-the-enclave-workload">
-       <title>Managing the Enclave Workload</title>
+       <title>Managing the enclave workload</title>
        <para>
-         The workload itself is packaged as an &awsa; Enclave Image (<literal>.eif</literal>)
+         The workload itself is packaged as an &awsa; enclave image file (<literal>.eif</literal>)
          built by &kiwi; and stored in the TEE's <literal>/data</literal>
          directory. For details about the example enclave see:
          <link xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave">test-image-nitro-enclaves</link>.
@@ -901,7 +900,7 @@ LTSS registration succeeded</screen>
          to build and run an enclave that can attest its integrity.
        </para>
        <sect3 xml:id="running-the-enclave">
-         <title>Running the Enclave</title>
+         <title>Running the enclave</title>
          <para>
            Use the <command>nitro-cli</command> tool to launch your workload:
          </para>
@@ -914,7 +913,7 @@ LTSS registration succeeded</screen>
          </programlisting>
        </sect3>
        <sect3 xml:id="enclave-attestation">
-         <title>Enclave Attestation</title>
+         <title>Enclave attestation</title>
          <para>
            To verify the enclave's integrity, connect to it via <literal>vsock</literal>:
          </para>

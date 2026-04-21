@@ -825,7 +825,14 @@ LTSS registration succeeded</screen>
             You can download the image from the &obs; at
             <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz"/>.
           </para>
-        </step>
+          <para>
+            The image description used to build this image is available at <link
+            xlink:href="https://github.com/OSInside/kiwi/tree/main/build-tests/x86/leap/test-image-aws-isolated-compute"/>.
+            You can use it to build your own attestable images with &kiwi;. For more information,
+            refer to <link
+            xlink:href="https://documentation.suse.com/appliance/kiwi-9/html/kiwi/index.html"><citetitle>Building Linux System Appliances</citetitle></link>.
+          </para>
+       </step>
         <step>
           <para>
             Upload the attestable image to &ec2a; with <command>ec2uploadimg</command> or a custom
@@ -844,8 +851,8 @@ LTSS registration succeeded</screen>
            <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/pcr_measurements.json"/>.
           </para>
           <para>
-            These values represent the expected NitroTPM PCR 4, 7, and 12 values based on the UKI.
-            They serve as the baseline for verifying the integrity of your instance.
+            In this file, you will find the expected NitroTPM PCR 4, 7, and 12 values based on the
+            UKI. They serve as the baseline for verifying the integrity of your instance.
           </para>
         </step>
         <step>
@@ -857,31 +864,34 @@ LTSS registration succeeded</screen>
         </step>
         <step>
           <para>
-            To verify the TEE, log in to the instance and generate an attestation document and check the PCRs:
-         </para>
-         <programlisting language="bash" linenumbering="unnumbered">
-# Generate attestation document
-&prompt.user;nitro-tpm-attest > /tmp/nitro.attest.cbor
-# Show current PCR values
-&prompt.user;show-nitrotpm-pcrs
-         </programlisting>
+            Log in to the instance and generate an attestation document
+          </para>
+<screen>&prompt.user;<command>nitro-tpm-attest</command> > <filename>/tmp/nitro.attest.cbor</filename></screen>
+          <para>
+            View the attestation document with:
+          </para>
+<screen>&prompt.user;<command>show-nitrotpm-pcrs</command></screen>
          <para>
-           If the values match <literal>pcr_measurements.json</literal>,
-           you have verified that:
+            Compare the values match <literal>pcr_measurements.json</literal>.
+          </para>
+        </step>
+        <result>
+          <para>
+            If the values match, you have verified that:
          </para>
          <itemizedlist>
-           <listitem>
-             <para>
-               The TEE matches the expected image uploaded to EC2.
-             </para>
-           </listitem>
-           <listitem>
-             <para>
-               The rootfs is clean, immutable, and verified by <literal>dm-verity</literal>.
-             </para>
-           </listitem>
+            <listitem>
+              <para>
+                The TEE matches the expected image uploaded to EC2.
+              </para>
+            </listitem>
+            <listitem>
+                <para>
+                The rootfs is clean, immutable, and verified by <literal>dm-verity</literal>.
+                </para>
+            </listitem>
          </itemizedlist>
-        </step>
+        </result>
        </procedure>
      </sect2>
      <sect2 xml:id="managing-the-enclave-workload">
@@ -904,26 +914,27 @@ LTSS registration succeeded</screen>
          <para>
            Use the <command>nitro-cli</command> tool to launch your workload:
          </para>
-         <programlisting language="bash" linenumbering="unnumbered">
-&prompt.user;pushd /data $ nitro-cli run-enclave \
-    --eif-path kiwi-test-image-nitro-enclave.x86_64-1.1.1.eif \
-    --cpu-count 2 \
-    --memory 2048
-&prompt.user;nitro-cli describe-enclaves
-         </programlisting>
+         <screen>
+&prompt.user;<command>pushd</command> /data
+&prompt.user;<command>nitro-cli</command> run-enclave \
+  --eif-path <filename>kiwi-test-image-nitro-enclave.x86_64-1.1.1.eif </filename> \
+  --cpu-count 2 \
+  --memory 2048
+&prompt.user;<command>nitro-cli</command> describe-enclaves
+         </screen>
        </sect3>
        <sect3 xml:id="enclave-attestation">
          <title>Enclave attestation</title>
          <para>
-           To verify the enclave's integrity, connect to it via <literal>vsock</literal>:
+           To verify the enclave's integrity, connect to it via <literal>vsock</literal> and
+           instruct it to return the PCRs from the enclave's attestation document:
          </para>
-         <programlisting language="bash" linenumbering="unnumbered">
-# Instruct the enclave to return the PCRs from the enclave's attestation document
+         <screen>
 &prompt.user;vsock_client Enclave-CID
-         </programlisting>
+         </screen>
          <para>
            Matching the enclave's PCRs with the output of
-           <literal>describe-enclaves</literal> confirms:
+           <command>describe-enclaves</command> confirms:
          </para>
          <itemizedlist>
            <listitem>

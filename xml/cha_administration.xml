@@ -817,63 +817,72 @@ LTSS registration succeeded</screen>
      </sect2>
      <sect2 xml:id="practical-guide-deploying-attestable-images">
        <title>Practical Guide: Deploying Attestable Images</title>
-       <sect3 xml:id="fetch-and-register-the-image">
-         <title>1. Fetch and Register the Image</title>
-         <para>
+       <procedure>
+        <step>
+          <para>
+            Fetch and Register the Image
+          </para>
+          <para>
            To start, you need an attestable image. For example, a &sls; (&slsa;) image built by
            &kiwi; for &awsa; with the necessary configurations for Nitro TPM and Enclaves. You can
            find such an image as follows:
          </para>
          <itemizedlist>
-           <listitem>
-             <formalpara>
-               <title>Image:</title>
-               <para>
-                 <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
-               </para>
-             </formalpara>
-           </listitem>
-           <listitem>
-             <formalpara>
-               <title>Upload</title>
-               <para>
-                 Use tools like <command>ec2uploadimg</command> as utilized in
-                 <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1"><filename>ec2-upload</filename></link> or an alternative custom upload script.
-               </para>
-             </formalpara>
-           </listitem>
-         </itemizedlist>
-         <important>
-           <para>
-             When uploading the AMI, you must enable TPM 2.0 support
-             and set the EFI boot mode to UEFI.
-           </para>
-         </important>
-       </sect3>
-       <sect3 xml:id="pcr-measurements">
-         <title>2. PCR Measurements</title>
-         <para>
+            <listitem>
+              <formalpara>
+                <title>Image:</title>
+                <para>
+                  <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz">kiwi-test-image-aws-isolated-compute.x86_64.raw.xz</link>
+                </para>
+              </formalpara>
+            </listitem>
+            <listitem>
+              <formalpara>
+                <title>Upload</title>
+                <para>
+                  Use tools like <command>ec2uploadimg</command> as utilized in
+                  <link xlink:href="https://build.opensuse.org/projects/Virtualization:Appliances:Images:Testing_x86:leap/packages/test-image-aws-isolated-compute/files/ec2-upload?expand=1"><filename>ec2-upload</filename></link> or an alternative custom upload script.
+                </para>
+              </formalpara>
+            </listitem>
+          </itemizedlist>
+          <important>
+            <para>
+              When uploading the AMI, you must enable TPM 2.0 support
+              and set the EFI boot mode to UEFI.
+            </para>
+          </important>
+        </step>
+        <step>
+          <para>
+            PCR Measurements
+          </para>
+          <para>
            Before launching, download the precomputed PCR measurements:
            <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/pcr_measurements.json">pcr_measurements.json</link>
+          </para>
+          <para>
+            These values represent the expected NitroTPM PCR 4, 7, and 12 values based on
+            the UKI. They serve as the baseline for verifying the integrity of your
+            instance.
+          </para>
+        </step>
+        <step>
+          <para>
+            3. Launching the Instance
+          </para>
+          <para>
+            Select an instance type that supports Nitro TPM and Enclaves (e.g.,
+            <literal>m5.xlarge</literal>). In the <emphasis role="strong">Advanced Details</emphasis>
+            section of the EC2 launch wizard, ensure that <emphasis role="strong">Enclave support</emphasis>
+            is explicitly enabled.
          </para>
-         <para>
-           These values represent the expected NitroTPM PCR 4, 7, and 12 values based on
-           the UKI. They serve as the baseline for verifying the integrity of your
-           instance.
-         </para>
-       </sect3>
-       <sect3 xml:id="launching-the-instance">
-         <title>3. Launching the Instance</title>
-         <para>
-           Select an instance type that supports Nitro TPM and Enclaves (e.g.,
-           <literal>m5.xlarge</literal>). In the <emphasis role="strong">Advanced Details</emphasis>
-           section of the EC2 launch wizard, ensure that <emphasis role="strong">Enclave support</emphasis>
-           is explicitly enabled.
-         </para>
-       </sect3>
-       <sect3 xml:id="verifying-the-tee">
-         <title>4. Verifying the TEE</title>
-         <para>
+        </step>
+        <step>
+          <para>
+            4. Verifying the TEE
+          </para>
+          <para>
            Once logged into the instance, you can generate an attestation
            document and check the PCRs:
          </para>
@@ -899,7 +908,8 @@ LTSS registration succeeded</screen>
              </para>
            </listitem>
          </itemizedlist>
-       </sect3>
+        </step>
+       </procedure>
      </sect2>
      <sect2 xml:id="managing-the-enclave-workload">
        <title>Managing the Enclave Workload</title>

@@ -767,53 +767,60 @@ LTSS registration succeeded</screen>
        </variablelist>
      </sect2>
      <sect2 xml:id="key-concepts-on-aws">
-       <title>Key concepts on &awsa;</title>
+       <title>Implementation on &awsa;</title>
        <para>
          &awsa; implements the TEE concepts through a combination of Nitro
          Trusted Platform Module (NitroTPM) technology, specialized OS images,
          and Nitro Enclaves.
        </para>
-       <sect3 xml:id="isolation-on-aws">
-         <title>Isolation on &awsa;</title>
-         <para>
-           Isolation is achieved using images that provide an overlay-based read-only system.
-           This system is verified at boot time by <literal>dm-verity</literal>, which checks
-           all rootfs blocks. In production, instances from these images are not expected to be
-           remotely accessible to minimize the attack surface.
-         </para>
-       </sect3>
-       <sect3 xml:id="attestation-on-aws">
-         <title>Attestation on &awsa;</title>
-         <para>
-           The image boots via a PCR-measured Unified Kernel Image (UKI) containing the kernel,
-           initrd, and bootloader. The Platform Configuration Register (PCR) values
-           can be:
-         </para>
-         <itemizedlist>
-           <listitem>
-             <para>Checked against an attestation document.</para>
-           </listitem>
-           <listitem>
-             <para>
-               Used as an &awsa; Key Management Service (KMS) key policy to block operations if
-               there is a key mismatch, ensuring only "known good" software can run.
-             </para>
-           </listitem>
-         </itemizedlist>
-       </sect3>
-       <sect3 xml:id="memory-encryption-and-nitro-enclaves">
-         <title>Memory encryption and Nitro Enclaves</title>
-         <para>
-           While the base instance runs in overlayfs mode (writing to memory only),
-           this memory area is not encrypted. To ensure application memory cannot be accessed,
-           the workload must run as a <emphasis role="strong">Nitro Enclave</emphasis>.
-         </para>
-         <para>
-           Nitro Enclaves protect and encrypt the memory area, making it invisible
-           to the host OS and hypervisor. Communication with the enclave is strictly
-           limited to a local <literal>vsock</literal> connection.
-         </para>
-       </sect3>
+        <variablelist>
+          <varlistentry>
+            <term>Isolation on &awsa;</term>
+            <listitem>
+              <para>
+                Isolation is achieved using images that provide an overlay-based read-only system.
+                This system is verified at boot time by <literal>dm-verity</literal>, which checks
+                all rootfs blocks. In production, instances from these images are not expected to be
+                remotely accessible to minimize the attack surface.
+              </para>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Invisibility on &awsa;</term>
+          <listitem>
+            <para>
+              While the base instance runs in overlayfs mode (writing to memory only), this memory
+              area is not encrypted. To ensure application memory cannot be accessed, the workload
+              must run as a <emphasis>Nitro Enclave</emphasis>.
+            </para>
+            <para>
+              Nitro Enclaves protect and encrypt the memory area, making it invisible to the host OS
+              and hypervisor. Communication with the enclave is strictly limited to a local
+              <literal>vsock</literal> connection.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Attestation on &awsa;</term>
+          <listitem>
+            <para>
+              The image boots via a PCR-measured Unified Kernel Image (UKI) containing the kernel,
+              initrd, and bootloader. The Platform Configuration Register (PCR) values can be:
+            </para>
+            <itemizedlist>
+              <listitem>
+                <para>Checked against an attestation document.</para>
+              </listitem>
+              <listitem>
+                <para>
+                  Used as an &awsa; Key Management Service (KMS) key policy to block operations if
+                  there is a key mismatch, ensuring only "known good" software can run.
+                </para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+       </variablelist>
      </sect2>
      <sect2 xml:id="deploying-attestable-images">
        <title>Deploying attestable images</title>

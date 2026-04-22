@@ -827,17 +827,16 @@ LTSS registration succeeded</screen>
        <procedure>
         <step>
           <para>
-            To start, you need an attestable image. &suse; provides a &sls; (&slsa;) image built
-            with &kiwi; for &awsa; with the necessary configurations for Nitro TPM and Enclaves.
-            You can download the image from the &obs; at
+            To start, you need an attestable image. &suse; provides a &sls; (&slsa;) image for
+            &awsa; for demonstration purposes. This image contains the necessary configurations for
+            Nitro TPM and an example enclave. You can download the image from the &obs; at
             <link xlink:href="https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/Testing_x86:/leap/images_sles/kiwi-test-image-aws-isolated-compute.x86_64.raw.xz"/>.
           </para>
           <para>
-            The image description used to build this image is available at <link
+            The image is built with &kiwi;. To build your own attestable image, refer to <link
+            xlink:href="https://documentation.suse.com/appliance/kiwi-9/html/kiwi/index.html"><citetitle>Building Linux System Appliances</citetitle></link>
+            and the image description files of the demonstration image at <link
             xlink:href="https://github.com/OSInside/kiwi/tree/main/build-tests/x86/leap/test-image-aws-isolated-compute"/>.
-            You can use it to build your own attestable images with &kiwi;. For more information,
-            refer to <link
-            xlink:href="https://documentation.suse.com/appliance/kiwi-9/html/kiwi/index.html"><citetitle>Building Linux System Appliances</citetitle></link>.
           </para>
        </step>
         <step>
@@ -904,17 +903,20 @@ LTSS registration succeeded</screen>
      <sect2 xml:id="managing-the-enclave-workload">
        <title>Managing the enclave workload</title>
        <para>
-         The workload itself is packaged as an &awsa; enclave image file (<literal>.eif</literal>)
-         built by &kiwi; and stored in the TEE's <literal>/data</literal>
-         directory. For details about the example enclave see:
-         <link xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave">test-image-nitro-enclaves</link>.
-       </para>
-       <para>
-         The example workload is designed to return the PCR values from the attestation
+         Enclaves are packaged as &awsa; enclave image files (<literal>.eif</literal>).
+         The example enclave is stored in the TEE's <filename>/data</filename> directory and is
+         designed to return the PCR values from the attestation
          document when queried via <literal>vsock</literal>. This allows you to verify
          that the enclave's integrity matches the expected values. This workload in itself
          is not meant to be a real-world application but serves as a demonstration of how
          to build and run an enclave that can attest its integrity.
+       </para>
+       <para>
+         Just like attestable images, enclaves can be built with &kiwi;. To build your own enclave,
+         refer to the image description files of the example at <link
+         xlink:href="https://github.com/OSInside/kiwi/tree/main/build-tests/x86/leap/test-image-nitro-enclave"/>
+         and the build configuration in the &obs; at <link
+         xlink:href="https://build.opensuse.org/package/show/Virtualization:Appliances:Images:Testing_x86:leap/test-image-nitro-enclave"/>.
        </para>
        <sect3 xml:id="running-the-enclave">
          <title>Running the enclave</title>

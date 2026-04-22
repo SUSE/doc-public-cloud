@@ -672,7 +672,6 @@
    For more information and instructions on how to harden instances with &openscap;, refer to
    <xref linkend="hardening"/>.
   </para>
-
  </sect1>
 
 </chapter>

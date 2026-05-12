@@ -58,6 +58,15 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2026-05-12</date>
+      <revdescription>
+        <para>
+          Fix availability for Barbados, Japan and Mexico (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1264963">BSC#1264963</link>)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-04-22</date>
       <revdescription>
         <para>

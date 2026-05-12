@@ -13,6 +13,15 @@
   <info>
   <revhistory xml:id="rh-countrylist">
    <revision>
+    <date>2026-05-12</date>
+    <revdescription>
+     <para>
+      Fix availability for Barbados, Japan and Mexico (<link
+       xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1264963">BSC#1264963</link>)
+     </para>
+    </revdescription>
+   </revision>
+   <revision>
     <date>2025-05-06</date>
     <revdescription>
      <para/>
@@ -343,10 +352,10 @@
             <para>Barbados (BB)</para>
           </entry>
           <entry>
-            <para>Global</para>
+            <para>n/a</para>
           </entry>
           <entry>
-            <para>n/a</para>
+            <para>Global</para>
           </entry>
           <entry>
             <para>Global</para>
@@ -1631,7 +1640,7 @@
             <para>Japan (JP)</para>
           </entry>
           <entry>
-            <para>n/a</para>
+            <para>Global</para>
           </entry>
           <entry>
             <para>n/a</para>
@@ -2093,10 +2102,10 @@
             <para>Mexico (MX)</para>
           </entry>
           <entry>
-            <para>Global</para>
+            <para>n/a</para>
           </entry>
           <entry>
-            <para>n/a</para>
+            <para>Global</para>
           </entry>
           <entry>
             <para>Global</para>

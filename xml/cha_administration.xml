@@ -67,7 +67,7 @@
     <para>
      BYOS instances have to be registered manually with your &suse; registration
      key. You can register with the cloud framework's &suse; update servers, the
-     &scc;, or your own &susemgr; or &rmt; infrastructure.
+     &scc;, or your own &smlm; or &rmt; infrastructure.
     </para>
    </listitem>
   </itemizedlist>
@@ -77,7 +77,7 @@
    <orderedlist>
      <listitem>
        <para>
-         Any BYOS instance can be registered with the &scc; or your own &susemgr; or &rmt;
+         Any BYOS instance can be registered with the &scc; or your own &smlm; or &rmt;
          infrastructure using <command>&suseconnect;</command>. Refer to <xref
            linkend="sec-admin-suseconnect"/> for instructions.
        </para>
@@ -123,7 +123,7 @@
            </listitem>
            <listitem>
              <para>
-               &susemgr; (<literal>suse-manager</literal>) can only be registered with
+               &smlm; (<literal>suse-multi-linux-manager</literal>) can only be registered with
                the &scc;.
              </para>
            </listitem>
@@ -135,7 +135,7 @@
      In summary, use <command>registercloudguest</command> to register with the
      local cloud update infrastructure to benefit from faster downloads. Use
      <command>&suseconnect;</command> to register with &scc; or your own
-     &susemgr; or &rmt; infrastructure.
+     &smlm; or &rmt; infrastructure.
    </para>
 
   <sect2 xml:id="sec-admin-registercloudguest">

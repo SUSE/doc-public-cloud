@@ -28,6 +28,15 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-intro">
    <revision>
+    <date>2026-05-15</date>
+    <revdescription>
+     <para>
+      Clarify wording for supported instance types (<link
+       xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259427">BSC#1259427</link>)
+     </para>
+    </revdescription>
+   </revision>
+   <revision>
     <date>2025-05-14</date>
     <revdescription>
      <para/>
@@ -450,7 +459,7 @@
  <sect1 xml:id="sec-intro-instance-types">
   <title>Supported instance types</title>
   <para>
-   To find out what types of instances are supported by each provider, refer to
+   To find out what types of instances are supported on SUSE products for each provider, refer to
    the <link
     xlink:href="https://www.suse.com/support/public-cloud-support/">&suse;
     Public Cloud Instance Support Matrix</link>. Select your &sle; product and

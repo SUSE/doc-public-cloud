@@ -199,52 +199,74 @@
       more information about the different billing models, refer to <xref
        linkend="sec-intro-plans"/>.
      </para>
-     <itemizedlist>
+     <variablelist>
       <title>&sle; flavors</title>
-      <listitem>
-       <para>
-        <literal>basic</literal> (&azurea;-only): PAYG image that only includes updates but is not
-        eligible for support (see <xref linkend="sec-intro-support"/>) or LTSS
-        (see <xref linkend="ltss"/>).
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>byos</literal>: Bring your own subscription (BYOS) image
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>chost</literal>: Minimal container host image
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>ecs</literal> (&awsa;-only): &amazon; Elastic Container Service image
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>hardened</literal>: Pre-hardened images, see <xref
-         linkend="sec-images-hardened"/>
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>hpc</literal>: &slehpc; image
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>sap</literal>: &sles4sap; image
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>sapcal</literal>: &sap; Cloud Application Library image
-       </para>
-      </listitem>
-     </itemizedlist>
+      <varlistentry>
+        <term><literal>basic</literal> (&azurea;-only)</term>
+        <listitem>
+          <para>
+            PAYG image that only includes updates but is not eligible for support (see <xref
+            linkend="sec-intro-support"/>) or LTSS (see <xref linkend="ltss"/>).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>byos</literal></term>
+        <listitem>
+          <para>
+            Bring your own subscription (BYOS) image
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>chost</literal></term>
+        <listitem>
+          <para>
+            Minimal container host image
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>ecs</literal> (&awsa;-only)</term>
+        <listitem>
+          <para>
+            &amazon; Elastic Container Service image
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>hardened</literal></term>
+        <listitem>
+          <para>
+            Pre-hardened images, see <xref linkend="sec-images-hardened"/>
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>hpc</literal></term>
+        <listitem>
+          <para>
+            &slehpc; image
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>sap</literal></term>
+        <listitem>
+          <para>
+            &sles4sap; image
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><literal>sapcal</literal></term>
+        <listitem>
+          <para>
+            &sap; Cloud Application Library image
+          </para>
+        </listitem>
+      </varlistentry>
+     </variablelist>
     </listitem>
    </varlistentry>
    <varlistentry>

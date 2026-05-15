@@ -61,6 +61,15 @@
       <date>2026-05-15</date>
       <revdescription>
         <para>
+          Remove non-existant &azurea; <literal>standard</literal> image flavor (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259429">BSC#1259429</link>)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2026-05-15</date>
+      <revdescription>
+        <para>
           Clarify wording for supported instance types (<link
           xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259427">BSC#1259427</link>)
         </para>

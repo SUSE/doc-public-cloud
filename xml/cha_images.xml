@@ -28,6 +28,15 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
    <revision>
+    <date>2026-05-15</date>
+    <revdescription>
+     <para>
+      Remove non-existant &azurea; <literal>standard</literal> image flavor (<link
+      xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259429">BSC#1259429</link>)
+     </para>
+    </revdescription>
+   </revision>
+   <revision>
     <date>2025-01-17</date>
     <revdescription>
      <para/>
@@ -194,12 +203,24 @@
       <title>&sle; flavors</title>
       <listitem>
        <para>
+        <literal>basic</literal> (&azurea;-only): PAYG image that only includes updates but is not
+        eligible for support (see <xref linkend="sec-intro-support"/>) or LTSS
+        (see <xref linkend="ltss"/>).
+       </para>
+      </listitem>
+      <listitem>
+       <para>
         <literal>byos</literal>: Bring your own subscription (BYOS) image
        </para>
       </listitem>
       <listitem>
        <para>
         <literal>chost</literal>: Minimal container host image
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <literal>ecs</literal> (&awsa;-only): &amazon; Elastic Container Service image
        </para>
       </listitem>
       <listitem>
@@ -221,32 +242,6 @@
       <listitem>
        <para>
         <literal>sapcal</literal>: &sap; Cloud Application Library image
-       </para>
-      </listitem>
-     </itemizedlist>
-     <para>
-      Not all flavors are available for all cloud frameworks; some are
-      provider-specific.
-     </para>
-     <itemizedlist>
-      <title>&aws; flavors</title>
-      <listitem>
-       <para>
-        <literal>ecs</literal>: &amazon; Elastic Container Service image
-       </para>
-      </listitem>
-     </itemizedlist>
-     <itemizedlist>
-      <title>&azure; flavors</title>
-      <listitem>
-       <para>
-        <literal>basic</literal>: PAYG image that only includes updates but is not eligible for
-        support (see <xref linkend="sec-intro-support"/>) or LTSS (see <xref linkend="ltss"/>).
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <literal>standard</literal>: Fully supported PAYG image
        </para>
       </listitem>
      </itemizedlist>

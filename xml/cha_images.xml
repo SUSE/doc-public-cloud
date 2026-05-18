@@ -489,9 +489,9 @@
      <listitem>
       <para>
         Link to a detailed changelog with a software bill of materials (SBOM), CVE list and a
-        detailed vulnerability report. If the image replaces a previous image of the same product
-        version, additional information such as image configuration changes, package version changes
-        and package changelogs are also available. For more information, refer to <xref
+        detailed vulnerability scan report. If the image replaces a previous image of the same
+        product version, additional information such as image configuration changes, package version
+        changes and package changelogs are also available. For more information, refer to <xref
         linkend="sec-image-changeinfo"/>
       </para>
      </listitem>
@@ -568,18 +568,18 @@
      <para>
       This category describes changes in the image setup; for example, if a new
       service was enabled, kernel parameters were changed, or if packages were
-      added or removed.
+      added or removed. This information is only available for images that replace earlier images of
+      the same product and version.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>CVE fixes</term>
+    <term>Vulnerability fixes</term>
     <listitem>
      <para>
       This category lists security fixes in the image. Entries are cross linked
       to the <link xlink:href="https://www.suse.com/security/cve/">&suse; CVE
-      database</link>. For more information, refer to <xref
-       linkend="sec-image-lifecycle"/>.
+      database</link>. For more information, refer to <xref linkend="sec-image-lifecycle"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -588,7 +588,8 @@
     <listitem>
      <para>
       This category lists all packages that had version changes compared to the
-      previous image and the version in that image.
+      previous image and the version in that image. As such, the information is only available
+      for images that replace earlier versions of the same product and version.
      </para>
     </listitem>
    </varlistentry>
@@ -596,8 +597,9 @@
     <term>Package change logs</term>
     <listitem>
      <para>
-      This category shows a concatenated changelog of all packages that had
-      changes.
+      This category shows a concatenated changelog of all packages that had changes compared to the
+      previous image and the version in that image. As such, the information is only available
+      for images that replace earlier versions of the same product and version.
      </para>
     </listitem>
    </varlistentry>
@@ -618,6 +620,16 @@
           This category shows an SBOM in the <literal>CycloneDX</literal> format. This format is
           backed by the Open Worldwide Application Security Project (OWASP) foundation.
           For more information, refer to <link xlink:href="https://cyclonedx.org/"/>.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Vulnerability report</term>
+      <listitem>
+        <para>
+          This category provides a detailed vulnerability scan report performed at image publication
+          time. Fixed CVEs are listed by their CVSS3 scores along with descriptions and the affected
+          packages.
         </para>
       </listitem>
     </varlistentry>

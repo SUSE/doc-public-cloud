@@ -488,13 +488,11 @@
      <term>Changelog</term>
      <listitem>
       <para>
-       Link to a detailed changelog and a software bill of materials (SBOM).
-       For more information, refer to <xref linkend="sec-image-changeinfo"/>
-      </para>
-      <para>
-       Image changelogs are only available for images that replace others. For
-       initial images of new product versions, refer to the product's <link
-        xlink:href="&sc-rn;">release notes</link>.
+        Link to a detailed changelog with a software bill of materials (SBOM), CVE list and a
+        detailed vulnerability report. If the image replaces a previous image of the same product
+        version, additional information such as image configuration changes, package version changes
+        and package changelogs are also available. For more information, refer to <xref
+        linkend="sec-image-changeinfo"/>
       </para>
      </listitem>
     </varlistentry>

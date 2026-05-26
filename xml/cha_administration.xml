@@ -28,7 +28,7 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-admin">
    <revision>
-    <date>2026-04-22</date>
+    <date>2026-05-26</date>
     <revdescription>
      <para/>
     </revdescription>
@@ -115,7 +115,7 @@
                &slem; (<literal>sle-micro</literal>) 5.1 and 5.2 images do not contain
                <command>registercloudguest</command>. To register an instance, use the command
                <command>transactional-update register</command>. Refer to the <link
-                 xlink:href="https://documentation.suse.com/sle-micro/html/SLE-Micro-all/sec-transactional-udate.html#sec-register-command"><citetitle>&slem; Administration Guide</citetitle></link>
+                 xlink:href="&dsc;/sle-micro/html/Micro-transactional-updates/index.html#transactional-update-registering-product"><citetitle>Administering &slem; Using <command<transactional-update</command></citetitle></link>
                for more information. Images of &slema; 5.3 and later versions include
                <command>registercloudguest</command> and can be registered as described in
                <xref linkend="sec-admin-registercloudguest"/>.

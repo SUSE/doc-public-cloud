@@ -58,6 +58,14 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2026-05-26</date>
+      <revdescription>
+        <para>
+          Fix broken link to the &slem; <command>transactional-update</command> reference
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-05-15</date>
       <revdescription>
         <para>

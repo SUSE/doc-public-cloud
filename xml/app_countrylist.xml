@@ -12,6 +12,15 @@
   <title>Geographical availability</title>
   <info>
   <revhistory xml:id="rh-countrylist">
+    <revision>
+      <date>2026-06-15</date>
+      <revdescription>
+        <para>
+          Change "Suse Manager" to "Suse Multi-Linux Manager" (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1268195">BSC#1268195</link>)
+        </para>
+      </revdescription>
+    </revision>
    <revision>
     <date>2026-05-12</date>
     <revdescription>

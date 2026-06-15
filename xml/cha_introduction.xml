@@ -144,13 +144,13 @@
       &suse;-operated update infrastructure in the cloud framework or use the
       <command>&suseconnect;</command> to register the system with &scc; using
       the entitlements you already have. Connect your system to your own
-      running &rmt; or &suma; infrastructure in the same way you connect
+      running &rmt; or &smlm; infrastructure in the same way you connect
       systems in your data center.
      </para>
      <para>
       BYOS instances make it easier to manage extensions such as LTSS or kernel
       live-patching. Extensions for PAYG instances can only be used in
-      conjunction with &suma;.
+      conjunction with &smlm;.
      </para>
     </listitem>
    </varlistentry>
@@ -251,7 +251,7 @@
       </entry>
       <entry>
        <para>
-        with a local update server, your &rmt; or &suma; infrastructure, or
+        with a local update server, your &rmt; or &smlm; infrastructure, or
         directly with the &scc;
        </para>
       </entry>
@@ -304,7 +304,7 @@
       </entry>
       <entry>
        <para>
-        only with &suma;
+        only with &smlm;
        </para>
       </entry>
      </row>

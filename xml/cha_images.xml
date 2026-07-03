@@ -40,11 +40,8 @@
       <date>2026-05-16</date>
       <revdescription>
         <para>
-          Remove <literal>&oracle;</literal> from PINT's <literal>Replacement ID</literal> (<link
-          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1268193">BSC#1268193</link>)
-        </para>
-        <para>
-          Remove <literal>oracle</literal> from PINT <literal>Change information</literal> (<link
+          Remove mentions of Oracle (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1268193">BSC#1268193</link>, <link
           xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1268194">BSC#1268194</link>)
         </para>
       </revdescription>

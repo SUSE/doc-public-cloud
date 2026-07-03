@@ -58,6 +58,15 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2026-06-03</date>
+      <revdescription>
+        <para>
+          Some fixes in the 'Change information' section (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1270220">BSC#1270220</link>)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-05-16</date>
       <revdescription>
         <para>

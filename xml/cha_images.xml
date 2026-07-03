@@ -28,6 +28,15 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
     <revision>
+      <date>2026-06-03</date>
+      <revdescription>
+        <para>
+          Some fixes in the 'Change information' section (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1270220">BSC#1270220</link>)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-05-16</date>
       <revdescription>
         <para>
@@ -473,7 +482,7 @@
      <listitem>
       <para>
        Unique identifier of the image. While the <literal>Name</literal> of an
-       image is the same across different regions, the <guimenu>ID</guimenu> is
+       image is the same across different regions, the <literal>ID</literal> is
        unique.
       </para>
      </listitem>
@@ -482,7 +491,7 @@
      <term>URN</term>
      <listitem>
       <para>
-       Uniform Resource Name of an image. While the <guimenu>Name</guimenu> of
+       Uniform Resource Name of an image. While the <literal>Name</literal> of
        an image is different across the environments, the <literal>URN</literal>
        is the same. Only shown for &azure;.
       </para>
@@ -565,29 +574,22 @@
   <!-- See https://www.suse.com/c/public-cloud-image-change-information/ -->
   <title>Change information</title>
   <para>
-   Whenever a new image gets released, you can review changes compared to the
-   previously released image. Search for an image in <link
-    xlink:href="&pinturl;">&pinta;</link> and click on its entry in the
-   <guimenu>Changelog</guimenu> column.
-  </para>
-  <para>
    Image change information is divided into different categories:
   </para>
   <variablelist>
    <!-- <title>Image change information categories</title> -->
    <varlistentry>
-    <term>Image configuration changes</term>
+    <term><literal>Image Configuration Changes</literal> (only for updated images)</term>
     <listitem>
      <para>
       This category describes changes in the image setup; for example, if a new
       service was enabled, kernel parameters were changed, or if packages were
-      added or removed. This information is only available for images that replace earlier images of
-      the same product and version.
+      added or removed.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Vulnerability fixes</term>
+    <term><literal>Vulnerability fixes</literal> (only for updated images)</term>
     <listitem>
      <para>
       This category lists security fixes in the image. Entries are cross linked
@@ -597,27 +599,33 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Package version changes</term>
+    <term><literal>Package List</literal> (only for initial images)</term>
+    <listitem>
+      <para>
+        This category lists all packages and their versions in the image.
+      </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><literal>Package Version Changes</literal> (only for updated images)</term>
     <listitem>
      <para>
       This category lists all packages that had version changes compared to the
-      previous image and the version in that image. As such, the information is only available
-      for images that replace earlier versions of the same product and version.
+      previous image and the version in that image.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Package change logs</term>
+    <term><literal>Package Change Logs</literal> (only for updated images)</term>
     <listitem>
      <para>
       This category shows a concatenated changelog of all packages that had changes compared to the
-      previous image and the version in that image. As such, the information is only available
-      for images that replace earlier versions of the same product and version.
+      previous image and the version in that image.
      </para>
     </listitem>
    </varlistentry>
     <varlistentry>
-      <term>Software bill of materials (SPDX)</term>
+      <term><literal>Software bill of materials (SPDX)</literal></term>
       <listitem>
         <para>
           This category shows an SBOM in the <literal>Software Package Data Exchange</literal>
@@ -627,7 +635,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Software bill of materials (CycloneDX)</term>
+      <term><literal>Software bill of materials (CycloneDX)</literal></term>
       <listitem>
         <para>
           This category shows an SBOM in the <literal>CycloneDX</literal> format. This format is
@@ -637,7 +645,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Vulnerability report</term>
+      <term><literal>Vulnerability report</literal> (only for updated images)</term>
       <listitem>
         <para>
           This category provides a detailed vulnerability scan report performed at image publication
@@ -648,16 +656,12 @@
     </varlistentry>
   </variablelist>
   <note>
-   <title>Change information for new product versions</title>
-   <para>
-    Please note that that image change information is only available for
-    <emphasis>updated</emphasis> images, meaning for images that replace
-    previous images of the same product version.
-   </para>
-   <para>
-    For initial images of new product versions, refer to the product's release
-    notes at <link xlink:href="&sc-rn;"/>.
-   </para>
+    <title>Change information for new product versions</title>
+    <para>
+      Naturally, the information for the initial image of a specific product version is limited as
+      there is no earlier image for comparison. For more information about the new product version,
+      refer to the product's release notes at <link xlink:href="&sc-rn;"/>.
+    </para>
   </note>
   <para>
    To allow for automatic retrieval of image change information, all URLs follow

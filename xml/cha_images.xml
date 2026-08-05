@@ -135,7 +135,7 @@
     <term>Inactive</term>
     <listitem>
      <para>
-      Inactive images are supported following the rules of LTSS or ESPOS and
+      Inactive images are supported following the rules of LTS(S) or ESPOS and
       will get refreshed at least every three months. The duration term
       is defined by the product. For more information, refer to <link
        xlink:href="https://www.suse.com/de-de/support/policy-products/#cloud"/>
@@ -225,7 +225,7 @@
         <listitem>
           <para>
             PAYG image that only includes updates but is not eligible for support (see <xref
-            linkend="sec-intro-support"/>) or LTSS (see <xref linkend="ltss"/>).
+            linkend="sec-intro-support"/>) or LTS(S) (see <xref linkend="ltss"/>).
           </para>
         </listitem>
       </varlistentry>
@@ -712,6 +712,32 @@
    For more information and instructions on how to harden instances with &openscap;, refer to
    <xref linkend="hardening"/>.
   </para>
+ </sect1>
+
+ <sect1 xml:id="sec-images-content">
+   <title>Image content</title>
+   <para>
+     The content of the &suse; published images may change between image
+     updates. Any changes are captured in the published changelog. In general
+     the content of the images consists of basic utilities and applications
+     considered generally useful or used often. If you have specific package
+     requirements please ensure that the packages required for your purposes
+     get installed or remove packages you may not need.
+   </para>
+   <para>
+     &sles; and &sles;-basic images in <literal>Azure</literal> contain the
+     <literal>kernel-azure</literal> flavor build. This kernel does not receive
+     LTS(S) support and therefore will get replaced by
+     <literal>kernel-default</literal> upon image refresh when the distribution
+     enters the LTS(S) period, i.e. the image changes state to
+     <literal>inactive</literal>. The <literal>kernel-azure</literal> flavor
+     does not have the same kABI (kernel Application Binary Interface)
+     guarantees as the <literal>kernel-default</literal>, meaning the kABI of
+     <literal>kernel-azure</literal> may change within a given Service Pack (SP)
+     or minor release. <literal>kernel-azure</literal> is not supported for
+     SAP applications. If you need a stable kABI in your &sles; or
+     &sles;-basic instance install <literal>kernel-default</literal> instead.
+   </para>
  </sect1>
 
 </chapter>

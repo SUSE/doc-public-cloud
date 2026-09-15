@@ -28,6 +28,14 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
     <revision>
+      <date>2026-09-15</date>
+      <revdescription>
+        <para>
+          New 'Image content' section added
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-06-03</date>
       <revdescription>
         <para>

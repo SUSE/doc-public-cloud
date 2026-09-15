@@ -717,26 +717,26 @@
  <sect1 xml:id="sec-images-content">
    <title>Image content</title>
    <para>
-     The content of the &suse; published images may change between image
-     updates. Any changes are captured in the published changelog. In general
-     the content of the images consists of basic utilities and applications
+     The content of the &suse;-published images may change between image updates. Any changes are
+     captured in the published changelog (<xref linkend="sec-image-changeinfo"/>).
+     The content of the images consists of basic utilities and applications
      considered generally useful or used often. If you have specific package
-     requirements please ensure that the packages required for your purposes
+     requirements, please ensure that the packages required for your purposes
      get installed or remove packages you may not need.
    </para>
    <para>
-     &sles; and &sles;-basic images in <literal>Azure</literal> contain the
-     <literal>kernel-azure</literal> flavor build. This kernel does not receive
+     &sles; and &sles;-basic images in &azure; contain the
+     <package>kernel-azure</package> flavor build. This kernel does not receive
      LTS(S) support and therefore will get replaced by
      <literal>kernel-default</literal> upon image refresh when the distribution
-     enters the LTS(S) period, i.e. the image changes state to
+     enters the LTS(S) period and the image changes state to
      <literal>inactive</literal>. The <literal>kernel-azure</literal> flavor
      does not have the same kABI (kernel Application Binary Interface)
      guarantees as the <literal>kernel-default</literal>, meaning the kABI of
-     <literal>kernel-azure</literal> may change within a given Service Pack (SP)
+     <package>kernel-azure</package> may change within a given Service Pack (SP)
      or minor release. <literal>kernel-azure</literal> is not supported for
-     SAP applications. If you need a stable kABI in your &sles; or
-     &sles;-basic instance install <literal>kernel-default</literal> instead.
+     &sap; applications. If you need a stable kABI in your &sles; or
+     &sles;-basic instance, install <package>kernel-default</package> instead.
    </para>
  </sect1>
 

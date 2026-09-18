@@ -8,12 +8,13 @@
     %entities;
 ]>
 
-<appendix xml:id="app-public-cloud-support" xml:lang="en"
+<appendix xmlns:its="http://www.w3.org/2005/11/its" xml:id="app-public-cloud-support" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Support</title>
  <info>
+    <meta name="description" its:translate="yes">Find support details for SUSE Linux Enterprise, understand support levels, and learn about technology previews and their limitations</meta>
   <revhistory>
    <revision>
     <date>2022-02-02</date>

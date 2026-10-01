@@ -36,29 +36,29 @@
         </para>
       </revdescription>
     </revision>
-   <revision>
+    <revision>
       <date>2026-06-15</date>
       <revdescription>
         <para>
-          Change "Suse Manager" to "Suse Multi-Linux Manager" (<link
+          Change <quote>SUSE Manager</quote> to <quote>SUSE Multi-Linux Manager</quote> (<link
           xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1268196">BSC#1268196</link>)
         </para>
       </revdescription>
     </revision>
-   <revision>
-    <date>2026-05-15</date>
-    <revdescription>
-     <para>
-      Clarify wording for supported instance types (<link
-       xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259427">BSC#1259427</link>)
-     </para>
-    </revdescription>
+    <revision>
+      <date>2026-05-15</date>
+      <revdescription>
+        <para>
+          Clarify wording for supported instance types (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259427">BSC#1259427</link>)
+        </para>
+      </revdescription>
    </revision>
    <revision>
     <date>2025-05-14</date>
-    <revdescription>
-     <para/>
-    </revdescription>
+      <revdescription>
+        <para/>
+      </revdescription>
    </revision>
   </revhistory>
  </info>

@@ -28,6 +28,15 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-intro">
     <revision>
+      <date>2026-10-01</date>
+      <revdescription>
+        <para>
+          Update link for &azure; Hybrid Benefit program with more recent instructions (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1271072">BSC#1271072</link>)
+        </para>
+      </revdescription>
+    </revision>
+   <revision>
       <date>2026-06-15</date>
       <revdescription>
         <para>
@@ -341,7 +350,7 @@
    change a SUSE instance (once written). -->
    <para>
     For more information on how to switch plans on &azure;, refer to
-    <link xlink:href="https://www.suse.com/c/upgrades-for-azure-hybrid-benefit/"/>.
+    <link xlink:href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-hybrid-benefit-linux/"/>.
     For &gce; refer to
     <link xlink:href="https://www.suse.com/c/switching-licensing-models-on-google-cloud-for-sles-and-sles-for-sap-instances-flexible-licenses/"/>.
    </para>

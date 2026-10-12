@@ -26,7 +26,16 @@
    <dm:bugtracker></dm:bugtracker>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
-  <revhistory xml:id="rh-cha-images">
+   <revhistory xml:id="rh-cha-images">
+     <revision>
+       <date>2026-10-10</date>
+       <revdescription>
+         <para>
+           New 'Google Sovereign Images' section added
+         </para>
+       </revdescription>
+     </revision>
+
     <revision>
       <date>2026-09-15</date>
       <revdescription>
@@ -747,5 +756,172 @@
    <xref linkend="hardening"/>.
   </para>
  </sect1>
+
+  <sect1 xml:id="sec-images-google-sovereign">
+    <title>&google; Sovereign Images</title>
+    <para>
+      This section describes how to create instances from a &suse; image file in &gcp;. The
+      procedure creates a storage bucket, uploads the image file, creates a compute image from it
+      and creates an instance.
+    </para>
+    <important>
+      <title>Image creation requires <command>gcloud</command></title>
+      <para>
+        The &gc; Console cannot set the guest operating system features that the image requires.
+      </para>
+      <para>
+        Create the image with the <command>gcloud</command> command. All other steps can also be
+        performed in the &gc; Console. For more information about the guest operating system
+        features, see
+        <link xlink:href="https://docs.cloud.google.com/compute/docs/images/create-custom#guest-os-features"/>.
+      </para>
+    </important>
+    <para>
+      Before you start, make sure that:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The <command>gcloud</command> command-line tool is installed and authenticated.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You have a &gcp; project with the Compute Engine API enabled.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Your account has the permissions to create storage buckets, upload objects, create images
+          and create instances in the project.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      The commands in this section use the following placeholders. Replace them with your values:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term><replaceable>PROJECT_ID</replaceable></term>
+        <listitem>
+          <para>
+            The ID of your &gcp; project. Use the same project ID in all commands.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>LOCATION</replaceable></term>
+        <listitem>
+          <para>
+            The region or multi-region in which to create the bucket and store the image.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <procedure xml:id="pro-images-google-sovereign">
+      <title>Creating instances from a &suse; image file</title>
+      <para>
+        To create instances from an image file, perform the following steps.
+      </para>
+      <step>
+        <para>
+          Create a storage bucket:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage buckets create gs://<replaceable>BUCKET_NAME</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --location=<replaceable>LOCATION</replaceable></screen>
+        <para>
+          Replace <replaceable>BUCKET_NAME</replaceable> with a globally unique bucket name.
+        </para>
+      </step>
+      <step>
+        <para>
+          In a Web browser, open <link xlink:href="https://download.suse.com"/> and search for the
+          &gce; image of the product that you want to use.
+        </para>
+      </step>
+      <step>
+        <para>
+          Download the image file to your local machine. The following steps refer to the image file
+          as <filename><replaceable>IMAGE_FILE</replaceable>.tar.gz</filename>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Upload the image file to the bucket:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage cp <replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ gs://<replaceable>BUCKET_NAME</replaceable>/ \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+      <step>
+        <para>
+          Create a compute image from the uploaded image file and set the guest operating system
+          features. This is the only step that requires <command>gcloud</command>.
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
+ --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,SEV_CAPABLE,\
+SEV_LIVE_MIGRATABLE,SEV_LIVE_MIGRATABLE_V2,SEV_SNP_CAPABLE,TDX_CAPABLE,\
+IDPF,GVNIC \
+ --storage-location=<replaceable>LOCATION</replaceable> \
+ --architecture=X86_64 \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <para>
+          Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image. The archive
+          must contain a file named <filename>disk.raw</filename>, which is the raw disk image, as
+          required by Compute Engine.
+        </para>
+      </step>
+      <step>
+        <para>
+          Create an instance of the image:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances create <replaceable>INSTANCE_NAME</replaceable> \
+ --image=<replaceable>IMAGE_NAME</replaceable> \
+ --image-project=<replaceable>PROJECT_ID</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable> \
+ --machine-type=<replaceable>MACHINE_TYPE</replaceable></screen>
+        <para>
+          Replace <replaceable>INSTANCE_NAME</replaceable> with a name for the instance and
+          <replaceable>ZONE</replaceable> with the zone in which to create it. Replace
+          <replaceable>MACHINE_TYPE</replaceable> with the machine type to use.
+        </para>
+        <para>
+          The <option>--project</option> option sets the project in which the instance is created.
+          The <option>--image-project</option> option sets the project that contains the image. If
+          you share images across projects, the two values can differ.
+        </para>
+      </step>
+      <step>
+        <para>
+          Verify that the instance is running:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances list \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+      <step performance="optional">
+        <para>
+          Log in to the instance:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute ssh <replaceable>INSTANCE_NAME</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable></screen>
+      </step>
+      <step performance="optional">
+        <para>
+          After you create the image, delete the image file from the bucket to avoid storage costs:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage rm \
+ gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+    </procedure>
+    <para>
+      For more information about registering the instance with the &suse; update infrastructure,
+      see <xref linkend="sec-admin-register"/>.
+    </para>
+  </sect1>
 
 </chapter>

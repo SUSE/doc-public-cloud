@@ -28,6 +28,14 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-admin">
    <revision>
+     <date>2026-10-13</date>
+     <revdescription>
+       <para>
+         Updated the link to the <citetitle>Hardening SUSE Linux Enterprise with
+         OpenSCAP</citetitle> guide.
+     </revdescription>
+   </revision>
+   <revision>
     <date>2026-05-26</date>
     <revdescription>
      <para/>
@@ -703,7 +711,7 @@ LTSS registration succeeded</screen>
       <para>
         For more information on how to harden your &sle; system with <phrase
           role="product">&openscap;</phrase>, refer to the article
-        <link xlink:href="https://documentation.suse.com/compliance/all/html/SLES-openscap/article-openscap.html"><citetitle>Hardening
+        <link xlink:href="https://documentation.suse.com/sles/15-SP7/html/SLES-all/article-openscap.html"><citetitle>Hardening
           SUSE Linux Enterprise with OpenSCAP</citetitle></link>. For general
         information on <phrase role="product">&openscap;</phrase>, refer to the <link
           xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"><citetitle>SCAP

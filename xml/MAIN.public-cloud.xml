@@ -93,6 +93,15 @@
      </revision>
 
     <revision>
+      <date>2026-10-13</date>
+      <revdescription>
+        <para>
+          Updated the link to the <citetitle>Hardening SUSE Linux Enterprise with
+          OpenSCAP</citetitle> guide.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-10-01</date>
       <revdescription>
         <para>

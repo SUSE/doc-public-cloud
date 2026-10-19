@@ -17,7 +17,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Providers</title>
  <info>
-    <meta name="description" its:translate="yes">Discover provider-specific instructions for deploying SUSE Linux Enterprise on public clouds including Amazon Web Services, Microsoft Azure, and Google Cloud</meta>
+    <meta name="description" its:translate="yes">Discover provider-specific instructions for deploying SUSE Linux Enterprise on public clouds including AWS, Microsoft Azure and Google Cloud</meta>
   <abstract>
    <para>
     &abstract_cha_providers;

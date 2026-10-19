@@ -17,7 +17,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Public cloud images</title>
  <info>
-    <meta name="description" its:translate="yes">Discover how SUSE provides diverse product images tailored for various use cases within partner cloud provider frameworks to help you select the optimal image</meta>
+    <meta name="description" its:translate="yes">Discover how SUSE provides diverse product images tailored for various use cases within partner cloud provider frameworks</meta>
   <abstract>
    <para>
     &abstract_cha_images;

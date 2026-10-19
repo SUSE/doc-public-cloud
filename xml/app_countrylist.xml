@@ -11,7 +11,7 @@
   xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Geographical availability</title>
   <info>
-    <meta name="description" its:translate="yes">Explore the geographical availability of SUSE products and access priority support through AWS, Azure, and Google Cloud marketplaces based on your location</meta>
+    <meta name="description" its:translate="yes">Explore the geographical availability of SUSE products based on your location</meta>
   <revhistory xml:id="rh-countrylist">
     <revision>
       <date>2026-06-15</date>

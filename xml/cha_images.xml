@@ -762,12 +762,15 @@
     <para>
       This section describes how to create instances from a &suse; image file in &google; Sovereign. The
       procedure creates a storage bucket, uploads the image file, creates a compute image from it
-      and creates an instance.
+      and creates an instance. Except for the image creation step these steps can be performed with
+      the &gc; Console or with <command>gcloud</command>. The steps that follow will cover the
+      relevant <command>gcloud</command> commands only.
     </para>
     <important>
-      <title>Image creation requires <command>gcloud</command></title>
+      <title>Image creation</title>
       <para>
-        The &gc; Console cannot set the guest operating system features that the image requires.
+        Image creation requires <command>gcloud</command>. The &gc; Console cannot set the guest
+        operating system features that the image requires.
       </para>
       <para>
         Create the image with the <command>gcloud</command> command. All other steps can also be
@@ -782,7 +785,11 @@
     <itemizedlist>
       <listitem>
         <para>
-          The <command>gcloud</command> command-line tool is installed and authenticated.
+          The <command>gcloud</command> command-line tool is installed and authenticated. For more
+          information about installing and setting up <command>gcloud</command>, see
+          <link xlink:href="https://docs.cloud.google.com/sdk/docs/install-sdk"/>. Note that
+          authentication to the &google; Sovereign region requires different credentials than
+          the public &gcp; endpoint.
         </para>
       </listitem>
       <listitem>
@@ -868,9 +875,11 @@ IDPF,GVNIC \
  --architecture=X86_64 \
  --project=<replaceable>PROJECT_ID</replaceable></screen>
         <para>
-          Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image. The archive
-          must contain a file named <filename>disk.raw</filename>, which is the raw disk image, as
-          required by Compute Engine.
+          Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image.
+        </para>
+        <para>
+          For more information about the guest operating system features, see
+          <link xlink:href="https://docs.cloud.google.com/compute/docs/images/create-custom#guest-os-features"/>.
         </para>
       </step>
       <step>
@@ -908,10 +917,21 @@ IDPF,GVNIC \
 <screen>&prompt.user;<command>gcloud</command> compute ssh <replaceable>INSTANCE_NAME</replaceable> \
  --project=<replaceable>PROJECT_ID</replaceable> \
  --zone=<replaceable>ZONE</replaceable></screen>
+        <para>
+          To log in, the instance must be on a network that is accessible from your system. The
+          instance needs an external IP address and a firewall rule that allows SSH traffic. If the
+          instance has only an internal IP address, connect from a system within the same network,
+          for example through a virtual private network (VPN) or a bastion host.
+        </para>
+        <para>
+          For more information about setting up the network, see
+          <link xlink:href="https://docs.cloud.google.com/vpc/docs/vpc"/>.
+        </para>
       </step>
       <step performance="optional">
         <para>
-          After you create the image, delete the image file from the bucket to avoid storage costs:
+          After you create the image, you can delete the image file from the bucket
+          to avoid storage costs:
         </para>
 <screen>&prompt.user;<command>gcloud</command> storage rm \
  gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \

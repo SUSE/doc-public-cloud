@@ -760,7 +760,7 @@
   <sect1 xml:id="sec-images-google-sovereign">
     <title>&google; Sovereign Images</title>
     <para>
-      This section describes how to create instances from a &suse; image file in &gcp;. The
+      This section describes how to create instances from a &suse; image file in &google; Sovereign. The
       procedure creates a storage bucket, uploads the image file, creates a compute image from it
       and creates an instance.
     </para>
@@ -787,7 +787,7 @@
       </listitem>
       <listitem>
         <para>
-          You have a &gcp; project with the Compute Engine API enabled.
+          You have a &google; Sovereign project with the Compute Engine API enabled.
         </para>
       </listitem>
       <listitem>
@@ -805,7 +805,7 @@
         <term><replaceable>PROJECT_ID</replaceable></term>
         <listitem>
           <para>
-            The ID of your &gcp; project. Use the same project ID in all commands.
+            The ID of your &google; Sovereign project. Use the same project ID in all commands.
           </para>
         </listitem>
       </varlistentry>

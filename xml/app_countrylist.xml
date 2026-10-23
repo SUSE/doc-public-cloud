@@ -14,6 +14,14 @@
     <meta name="description" its:translate="yes">Explore the geographical availability of &suse; products based on your location</meta>
   <revhistory xml:id="rh-countrylist">
     <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-06-15</date>
       <revdescription>
         <para>

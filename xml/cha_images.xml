@@ -29,6 +29,14 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
     <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-06-03</date>
       <revdescription>
         <para>

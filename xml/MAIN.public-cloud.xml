@@ -56,7 +56,24 @@
    <author><personname><firstname>Christoph</firstname><surname>Wickert</surname></personname> <contrib>Writer</contrib></author>
    <author><personname><firstname>Robert</firstname><surname>Schweikert</surname></personname> <contrib>Reviewer</contrib></author>
   </authorgroup>
-  <revhistory xml:id="rh-public-cloud">
+   <revhistory xml:id="rh-public-cloud">
+     <revision>
+       <date>2026-10-23</date>
+       <revdescription>
+         <para>
+           Added detailed download steps to the 'Google Sovereign Images' section
+         </para>
+       </revdescription>
+     </revision>
+     <revision>
+       <date>2026-10-10</date>
+       <revdescription>
+         <para>
+           New 'Google Sovereign Images' section added
+         </para>
+       </revdescription>
+     </revision>
+
     <revision>
       <date>2026-10-28</date>
       <revdescription>

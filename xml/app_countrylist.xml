@@ -5,13 +5,22 @@
 %entities;
 ]>
 
-<appendix xml:id="countrylist" xml:lang="en"
+<appendix xmlns:its="http://www.w3.org/2005/11/its" xml:id="countrylist" xml:lang="en"
   xmlns="http://docbook.org/ns/docbook" version="5.1"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Geographical availability</title>
   <info>
+    <meta name="description" its:translate="yes">Explore the geographical availability of &suse; products based on your location</meta>
   <revhistory xml:id="rh-countrylist">
+    <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2026-06-15</date>
       <revdescription>

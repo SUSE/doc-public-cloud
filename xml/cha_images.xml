@@ -11,12 +11,13 @@
     %entities;
 ]>
 
-<chapter xml:id="cha-images" xml:lang="en"
+<chapter xmlns:its="http://www.w3.org/2005/11/its" xml:id="cha-images" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Public cloud images</title>
  <info>
+    <meta name="description" its:translate="yes">Discover how &suse; provides diverse product images tailored for various use cases within partner cloud provider frameworks</meta>
   <abstract>
    <para>
     &abstract_cha_images;
@@ -27,6 +28,14 @@
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
+    <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2026-09-15</date>
       <revdescription>

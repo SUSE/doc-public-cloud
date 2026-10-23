@@ -12,11 +12,13 @@
 ]>
 
 <chapter xml:id="cha-admin" xml:lang="en"
+ xmlns:its="http://www.w3.org/2005/11/its"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Managing cloud instances</title>
  <info>
+   <meta name="description" its:translate="yes">Learn how to manage &productname; cloud instances, including registering and deregistering instances, enabling LTSS and hardening systems</meta>
   <abstract>
    <para>
     &abstract_cha_admin;
@@ -27,6 +29,14 @@
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
   <revhistory xml:id="rh-cha-admin">
+   <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+   </revision> 
    <revision>
      <date>2026-10-13</date>
      <revdescription>

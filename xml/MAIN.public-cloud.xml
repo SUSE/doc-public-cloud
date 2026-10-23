@@ -58,6 +58,14 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2026-10-28</date>
+      <revdescription>
+        <para>
+          Add metadata
+        </para>
+      </revdescription>
+     </revision>   
+     <revision>
       <date>2026-10-13</date>
       <revdescription>
         <para>

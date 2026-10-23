@@ -770,7 +770,7 @@
     <para>
       This section describes how to create instances from a &suse; image file in &google; Sovereign. The
       procedure creates a storage bucket, uploads the image file, creates a compute image from it
-      and creates an instance. Except for the image creation step these steps can be performed with
+      and creates an instance. Except for the image creation step, these steps can be performed with
       the &gc; Console or with <command>gcloud</command>. The steps that follow will cover the
       relevant <command>gcloud</command> commands only.
     </para>

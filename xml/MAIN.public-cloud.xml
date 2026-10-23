@@ -64,6 +64,32 @@
           Add metadata
         </para>
       </revdescription>
+     </revision>   
+     <revision>
+      <date>2026-10-13</date>
+      <revdescription>
+        <para>
+          Updated the link to the <citetitle>Hardening SUSE Linux Enterprise with
+          OpenSCAP</citetitle> guide.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2026-10-01</date>
+      <revdescription>
+        <para>
+          Update link for &azure; Hybrid Benefit program with more recent instructions (<link
+          xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1271072">BSC#1271072</link>)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2026-09-15</date>
+      <revdescription>
+        <para>
+          New 'Image content' section added
+        </para>
+      </revdescription>
     </revision>
     <revision>
       <date>2026-06-03</date>

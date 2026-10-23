@@ -58,6 +58,14 @@
   </authorgroup>
    <revhistory xml:id="rh-public-cloud">
      <revision>
+       <date>2026-10-23</date>
+       <revdescription>
+         <para>
+           Added detailed download steps to the 'Google Sovereign Images' section
+         </para>
+       </revdescription>
+     </revision>
+     <revision>
        <date>2026-10-10</date>
        <revdescription>
          <para>

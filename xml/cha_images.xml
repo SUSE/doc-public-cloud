@@ -26,7 +26,15 @@
    <dm:bugtracker></dm:bugtracker>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
-   <revhistory xml:id="rh-cha-images">
+    <revhistory xml:id="rh-cha-images">
+     <revision>
+       <date>2026-10-23</date>
+       <revdescription>
+         <para>
+           Added detailed download steps to the 'Google Sovereign Images' section
+         </para>
+       </revdescription>
+     </revision>
      <revision>
        <date>2026-10-10</date>
        <revdescription>
@@ -843,14 +851,75 @@
       </step>
       <step>
         <para>
-          In a Web browser, open <link xlink:href="https://download.suse.com"/> and search for the
-          &gce; image of the product that you want to use.
+          Download the image file from the &suse; download site:
         </para>
-      </step>
-      <step>
+        <substeps>
+          <step>
+            <para>
+              In a Web browser, open <link xlink:href="https://download.suse.com"/>.
+            </para>
+          </step>
+          <step>
+            <para>
+              In the <guimenu>Linux</guimenu> section, select the product whose image you want
+              to use: &sles; or &sles4sap;.
+            </para>
+          </step>
+          <step>
+            <para>
+              Click <guimenu>Download</guimenu>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Select the release. Supported releases are <guimenu>16.0</guimenu> and
+              <guimenu>15 SP7</guimenu>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Make sure that the architecture is <guimenu>AMD64</guimenu>. This is the default and
+              the only supported architecture.
+            </para>
+          </step>
+          <step>
+            <para>
+              In the list, find the &gce; image that matches the release. The image names are:
+            </para>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  For release 16.0:
+                  <filename>SLES-16.0-Full-x86_64-GCE-SOV-GM.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  For release 15 SP7:
+                  <filename>SLE-15-SP7-Full-x86_64-GCE-SOV-GM.tar.gz</filename>
+                </para>
+              </listitem>
+            </itemizedlist>
+            <para>
+              The image name contains the release. If the release has a space, the name uses a
+              dash instead. Both products use the same naming pattern.
+            </para>
+          </step>
+          <step>
+            <para>
+              Click <guimenu>Download</guimenu> next to the image.
+            </para>
+          </step>
+          <step>
+            <para>
+              Log in with your &suse; account, or create an account if you do not have one. The
+              download starts after you log in.
+            </para>
+          </step>
+        </substeps>
         <para>
-          Download the image file to your local machine. The following steps refer to the image file
-          as <filename><replaceable>IMAGE_FILE</replaceable>.tar.gz</filename>.
+          The following steps refer to the image file as
+          <filename><replaceable>IMAGE_FILE</replaceable>.tar.gz</filename>.
         </para>
       </step>
       <step>

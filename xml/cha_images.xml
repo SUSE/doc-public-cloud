@@ -28,6 +28,15 @@
   </dm:docmanager>
     <revhistory xml:id="rh-cha-images">
      <revision>
+       <date>2026-10-27</date>
+       <revdescription>
+         <para>
+           Updated image names and added hardened and ARM64 images in the 'Google Sovereign
+           Images' section
+         </para>
+       </revdescription>
+     </revision>
+     <revision>
        <date>2026-10-23</date>
        <revdescription>
          <para>
@@ -878,31 +887,92 @@
           </step>
           <step>
             <para>
-              Make sure that the architecture is <guimenu>AMD64</guimenu>. This is the default and
-              the only supported architecture.
+              Click the button for the architecture of your instance: <guimenu>AMD64/Intel
+              64</guimenu> or <guimenu>Arm</guimenu>.
+            </para>
+            <para>
+              The file names of <guimenu>AMD64/Intel 64</guimenu> images contain
+              <literal>x86_64</literal>. The file names of <guimenu>Arm</guimenu> images contain
+              <literal>aarch64</literal>. Images of &sles4sap; are only available for
+              <guimenu>AMD64/Intel 64</guimenu>.
             </para>
           </step>
           <step>
             <para>
-              In the list, find the &gce; image that matches the release. The image names are:
+              In the list, find the &gce; image that matches the release, product and
+              architecture. The image names use the following patterns:
             </para>
             <itemizedlist>
               <listitem>
                 <para>
-                  For release 16.0:
-                  <filename>SLES-16.0-Full-x86_64-GCE-SOV-GM.tar.gz</filename>
+                  &sles; 16.0:
+                  <filename>SLES-16.0-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
                 </para>
               </listitem>
               <listitem>
                 <para>
-                  For release 15 SP7:
-                  <filename>SLE-15-SP7-Full-x86_64-GCE-SOV-GM.tar.gz</filename>
+                  &sles; 16.0, hardened:
+                  <filename>SLES-16.0-Hardened-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 16.0 (hardened by default):
+                  <filename>SLES-SAP-16.0-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles; 15 SP7:
+                  <filename>SLES15-SP7-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles; 15 SP7, hardened:
+                  <filename>SLES15-SP7-Hardened-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 15 SP7:
+                  <filename>SLES15-SP7-SAP-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 15 SP7, hardened:
+                  <filename>SLES15-SP7-SAP-Hardened-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
                 </para>
               </listitem>
             </itemizedlist>
             <para>
-              The image name contains the release. If the release has a space, the name uses a
-              dash instead. Both products use the same naming pattern.
+              In the file names, replace the placeholders as follows:
+            </para>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> or
+                  <literal>aarch64</literal>.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <replaceable>VERSION</replaceable> is the version of the image.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <replaceable>DATE</replaceable> is the build date of the image in the format
+                  <literal>YYYYMMDD</literal>.
+                </para>
+              </listitem>
+            </itemizedlist>
+            <para>
+              Images with <literal>Hardened</literal> in the file name are hardened images. Images
+              of &sles4sap; 16.0 and later are hardened by default, so their file names do not
+              contain <literal>Hardened</literal>. For more information about hardened images, see
+              <xref linkend="sec-images-hardened"/>.
             </para>
           </step>
           <step>
@@ -933,7 +1003,11 @@
       <step>
         <para>
           Create a compute image from the uploaded image file and set the guest operating system
-          features. This is the only step that requires <command>gcloud</command>.
+          features. This is the only step that requires <command>gcloud</command>. The command
+          depends on the architecture of the image.
+        </para>
+        <para>
+          For <literal>x86_64</literal> images, run:
         </para>
 <screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
  --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
@@ -942,6 +1016,15 @@ SEV_LIVE_MIGRATABLE,SEV_LIVE_MIGRATABLE_V2,SEV_SNP_CAPABLE,TDX_CAPABLE,\
 IDPF,GVNIC \
  --storage-location=<replaceable>LOCATION</replaceable> \
  --architecture=X86_64 \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <para>
+          For <literal>aarch64</literal> images, run:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
+ --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
+ --storage-location=<replaceable>LOCATION</replaceable> \
+ --architecture=ARM64 \
  --project=<replaceable>PROJECT_ID</replaceable></screen>
         <para>
           Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image.

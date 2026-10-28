@@ -762,17 +762,14 @@
       This section describes how to create instances from a &suse; image file in &google; Sovereign
       Cloud. The procedure creates a storage bucket, uploads the image file, creates a compute image
       from it and creates an instance. Except for the image creation step, these steps can be
-      performed with the &gc; Console or with <command>gcloud</command>. The steps that follow will
-      cover the relevant <command>gcloud</command> commands only.
+      performed with the &gc; Console or with <command>gcloud</command>. The procedure that follows
+      covers the relevant <command>gcloud</command> commands only.
     </para>
     <important>
       <title>Image creation</title>
       <para>
         Image creation requires <command>gcloud</command>. The &gc; Console cannot set the guest
-        operating system features that the image requires.
-      </para>
-      <para>
-        Create the image with the <command>gcloud</command> command. All other steps can also be
+        operating system features that the image requires. All other steps can also be
         performed in the &gc; Console. For more information about the guest operating system
         features, see
         <link xlink:href="https://docs.cloud.google.com/compute/docs/images/create-custom#guest-os-features"/>.

@@ -37,6 +37,14 @@
       </revdescription>
     </revision>
     <revision>
+      <date>2026-10-27</date>
+      <revdescription>
+        <para>
+          New 'Google Sovereign Cloud Images' section added
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-09-15</date>
       <revdescription>
         <para>
@@ -63,21 +71,21 @@
         </para>
       </revdescription>
     </revision>
-   <revision>
-    <date>2026-05-15</date>
-    <revdescription>
-     <para>
-      Remove non-existant &azurea; <literal>standard</literal> image flavor (<link
-      xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259429">BSC#1259429</link>)
-     </para>
-    </revdescription>
-   </revision>
-   <revision>
-    <date>2025-01-17</date>
-    <revdescription>
-     <para/>
-    </revdescription>
-   </revision>
+    <revision>
+      <date>2026-05-15</date>
+      <revdescription>
+      <para>
+        Remove non-existant &azurea; <literal>standard</literal> image flavor (<link
+        xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1259429">BSC#1259429</link>)
+      </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2025-01-17</date>
+      <revdescription>
+      <para/>
+      </revdescription>
+    </revision>
   </revhistory>
  </info>
 
@@ -756,5 +764,322 @@
    <xref linkend="hardening"/>.
   </para>
  </sect1>
+
+  <sect1 xml:id="sec-images-google-sovereign-cloud">
+    <title>&google; Sovereign Cloud Images</title>
+    <para>
+      This section describes how to create instances from a &suse; image file in &google; Sovereign
+      Cloud. The procedure creates a storage bucket, uploads the image file, creates a compute image
+      from it and creates an instance. Except for the image creation step, these steps can be
+      performed with the &gc; Console or with <command>gcloud</command>. The procedure that follows
+      covers the relevant <command>gcloud</command> commands only.
+    </para>
+    <important>
+      <title>Image creation</title>
+      <para>
+        Image creation requires <command>gcloud</command>. The &gc; Console cannot set the guest
+        operating system features that the image requires. All other steps can also be
+        performed in the &gc; Console. For more information about the guest operating system
+        features, see
+        <link xlink:href="https://docs.cloud.google.com/compute/docs/images/create-custom#guest-os-features"/>.
+      </para>
+    </important>
+    <para>
+      Before you start, make sure that:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The <command>gcloud</command> command-line tool is installed and authenticated. For more
+          information about installing and setting up <command>gcloud</command>, see
+          <link xlink:href="https://docs.cloud.google.com/sdk/docs/install-sdk"/>. Note that
+          authentication to the &google; Sovereign Cloud region requires different credentials
+          than the public &gcp; endpoint.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You have a &google; Sovereign Cloud project with the Compute Engine API enabled.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Your account has the permissions to create storage buckets, upload objects, create images
+          and create instances in the project.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      The commands in this section use the following placeholders. Replace them with your values:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term><replaceable>PROJECT_ID</replaceable></term>
+        <listitem>
+          <para>
+            The ID of your &google; Sovereign Cloud project. Use the same project ID in all
+            commands.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>LOCATION</replaceable></term>
+        <listitem>
+          <para>
+            The region or multi-region in which to create the bucket and store the image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>BUCKET_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of the storage bucket that holds the image file. The bucket name must be
+            globally unique. Use the same bucket name in all commands.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <procedure xml:id="pro-images-google-sovereign-cloud">
+      <title>Creating instances from a &suse; image file</title>
+      <para>
+        To create instances from an image file, perform the following steps.
+      </para>
+      <step>
+        <para>
+          Create a storage bucket:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage buckets create gs://<replaceable>BUCKET_NAME</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --location=<replaceable>LOCATION</replaceable></screen>
+      </step>
+      <step>
+        <para>
+          Download the image file from the &suse; download site:
+        </para>
+        <substeps>
+          <step>
+            <para>
+              In a web browser, open <link xlink:href="https://suse.com/products/"/>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Click <guimenu>Account</guimenu> to log in with your &suse; account, or to create an
+              account if you do not have one.
+            </para>
+          </step>
+          <step>
+            <para>
+              In the <guimenu>Linux</guimenu> section, select the product whose image you want
+              to use: &sles; or &sles4sap; and click <guimenu>Download</guimenu>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Select the release. Supported releases are <guimenu>16.0</guimenu> and
+              <guimenu>15 SP7</guimenu>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Select the architecture of your instance. Supported architectures are
+              <guimenu>AMD64/Intel 64</guimenu> or <guimenu>Arm</guimenu>. Images of &sles4sap; are
+              only available for <guimenu>AMD64/Intel 64</guimenu>.
+            </para>
+          </step>
+          <step>
+            <para>
+              In the list, find the &gce; image that matches the release, product and
+              architecture. The image names use the following patterns:
+            </para>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  &sles; 16.0:
+                  <filename>SLES-16.0-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles; 16.0, hardened:
+                  <filename>SLES-16.0-Hardened-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 16.0 (hardened by default):
+                  <filename>SLES-SAP-16.0-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles; 15 SP7:
+                  <filename>SLES15-SP7-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles; 15 SP7, hardened:
+                  <filename>SLES15-SP7-Hardened-BYOS.<replaceable>ARCHITECTURE</replaceable>-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 15 SP7:
+                  <filename>SLES15-SP7-SAP-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  &sles4sap; 15 SP7, hardened:
+                  <filename>SLES15-SP7-SAP-Hardened-BYOS.x86_64-<replaceable>VERSION</replaceable>-GCE-SOV-Update-<replaceable>DATE</replaceable>.tar.gz</filename>
+                </para>
+              </listitem>
+            </itemizedlist>
+            <para>
+              In the file names, replace the placeholders as follows:
+            </para>
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
+                  <guimenu>AMD64/Intel 64</guimenu> or <literal>aarch64</literal> for
+                  <guimenu>Arm</guimenu>.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <replaceable>VERSION</replaceable> is the version of the image.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <replaceable>DATE</replaceable> is the build date of the image in the format
+                  <literal>YYYYMMDD</literal>.
+                </para>
+              </listitem>
+            </itemizedlist>
+            <para>
+              Images with <literal>Hardened</literal> in the file name are hardened images. Images
+              of &sles4sap; 16.0 and later are hardened by default, so their file names do not
+              contain <literal>Hardened</literal>. For more information about hardened images, see
+              <xref linkend="sec-images-hardened"/>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Click <guimenu>Download</guimenu> next to the image.
+            </para>
+          </step>
+        </substeps>
+        <para>
+          The following steps refer to the image file as
+          <filename><replaceable>IMAGE_FILE</replaceable>.tar.gz</filename>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Upload the image file to the bucket:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage cp <replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ gs://<replaceable>BUCKET_NAME</replaceable>/ \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+      <step>
+        <para>
+          Create a compute image from the uploaded image file and set the guest operating system
+          features. This is the only step that requires <command>gcloud</command>. The command
+          depends on the architecture of the image.
+        </para>
+        <para>
+          For <literal>x86_64</literal> images, run:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
+ --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,SEV_CAPABLE,\
+SEV_LIVE_MIGRATABLE,SEV_LIVE_MIGRATABLE_V2,SEV_SNP_CAPABLE,TDX_CAPABLE,\
+IDPF,GVNIC \
+ --storage-location=<replaceable>LOCATION</replaceable> \
+ --architecture=X86_64 \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <para>
+          For <literal>aarch64</literal> images, run:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
+ --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
+ --storage-location=<replaceable>LOCATION</replaceable> \
+ --architecture=ARM64 \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <para>
+          Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image.
+        </para>
+        <para>
+          For more information about the guest operating system features, see
+          <link xlink:href="https://docs.cloud.google.com/compute/docs/images/create-custom#guest-os-features"/>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Create an instance of the image:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances create <replaceable>INSTANCE_NAME</replaceable> \
+ --image=<replaceable>IMAGE_NAME</replaceable> \
+ --image-project=<replaceable>PROJECT_ID</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable> \
+ --machine-type=<replaceable>MACHINE_TYPE</replaceable></screen>
+        <para>
+          Replace <replaceable>INSTANCE_NAME</replaceable> with a name for the instance and
+          <replaceable>ZONE</replaceable> with the zone in which to create it. Replace
+          <replaceable>MACHINE_TYPE</replaceable> with the machine type to use.
+        </para>
+        <para>
+          The <option>--project</option> option sets the project in which the instance is created.
+          The <option>--image-project</option> option sets the project that contains the image. If
+          you share images across projects, the two values can differ.
+        </para>
+      </step>
+      <step>
+        <para>
+          Verify that the instance is running:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances list \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+      <step performance="optional">
+        <para>
+          Log in to the instance:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute ssh <replaceable>INSTANCE_NAME</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable></screen>
+        <para>
+          To log in, the instance must be on a network that is accessible from your system. The
+          instance needs an external IP address and a firewall rule that allows SSH traffic. If the
+          instance has only an internal IP address, connect from a system within the same network,
+          for example through a virtual private network (VPN) or a bastion host.
+        </para>
+        <para>
+          For more information about setting up the network, see
+          <link xlink:href="https://docs.cloud.google.com/vpc/docs/vpc"/>.
+        </para>
+      </step>
+      <step performance="optional">
+        <para>
+          After you create the image, you can delete the image file from the bucket
+          to avoid storage costs:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> storage rm \
+ gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
+      </step>
+    </procedure>
+    <para>
+      For more information about registering the instance with the &suse; update infrastructure,
+      see <xref linkend="sec-admin-register"/>.
+    </para>
+  </sect1>
 
 </chapter>

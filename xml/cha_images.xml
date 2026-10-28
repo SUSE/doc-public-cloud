@@ -31,8 +31,17 @@
        <date>2026-10-27</date>
        <revdescription>
          <para>
+           Renamed 'Google Sovereign Images' section to 'Google Sovereign Cloud Images' and
+           added the BUCKET_NAME placeholder to the list of placeholders
+         </para>
+       </revdescription>
+     </revision>
+     <revision>
+       <date>2026-10-27</date>
+       <revdescription>
+         <para>
            Updated image names and added hardened and ARM64 images in the 'Google Sovereign
-           Images' section
+           Cloud Images' section
          </para>
        </revdescription>
      </revision>
@@ -40,7 +49,7 @@
        <date>2026-10-23</date>
        <revdescription>
          <para>
-           Added detailed download steps to the 'Google Sovereign Images' section
+           Added detailed download steps to the 'Google Sovereign Cloud Images' section
          </para>
        </revdescription>
      </revision>
@@ -48,7 +57,7 @@
        <date>2026-10-10</date>
        <revdescription>
          <para>
-           New 'Google Sovereign Images' section added
+           New 'Google Sovereign Cloud Images' section added
          </para>
        </revdescription>
      </revision>
@@ -774,14 +783,14 @@
   </para>
  </sect1>
 
-  <sect1 xml:id="sec-images-google-sovereign">
-    <title>&google; Sovereign Images</title>
+  <sect1 xml:id="sec-images-google-sovereign-cloud">
+    <title>&google; Sovereign Cloud Images</title>
     <para>
-      This section describes how to create instances from a &suse; image file in &google; Sovereign. The
-      procedure creates a storage bucket, uploads the image file, creates a compute image from it
-      and creates an instance. Except for the image creation step, these steps can be performed with
-      the &gc; Console or with <command>gcloud</command>. The steps that follow will cover the
-      relevant <command>gcloud</command> commands only.
+      This section describes how to create instances from a &suse; image file in &google; Sovereign
+      Cloud. The procedure creates a storage bucket, uploads the image file, creates a compute image
+      from it and creates an instance. Except for the image creation step, these steps can be
+      performed with the &gc; Console or with <command>gcloud</command>. The steps that follow will
+      cover the relevant <command>gcloud</command> commands only.
     </para>
     <important>
       <title>Image creation</title>
@@ -805,13 +814,13 @@
           The <command>gcloud</command> command-line tool is installed and authenticated. For more
           information about installing and setting up <command>gcloud</command>, see
           <link xlink:href="https://docs.cloud.google.com/sdk/docs/install-sdk"/>. Note that
-          authentication to the &google; Sovereign region requires different credentials than
-          the public &gcp; endpoint.
+          authentication to the &google; Sovereign Cloud region requires different credentials
+          than the public &gcp; endpoint.
         </para>
       </listitem>
       <listitem>
         <para>
-          You have a &google; Sovereign project with the Compute Engine API enabled.
+          You have a &google; Sovereign Cloud project with the Compute Engine API enabled.
         </para>
       </listitem>
       <listitem>
@@ -829,7 +838,8 @@
         <term><replaceable>PROJECT_ID</replaceable></term>
         <listitem>
           <para>
-            The ID of your &google; Sovereign project. Use the same project ID in all commands.
+            The ID of your &google; Sovereign Cloud project. Use the same project ID in all
+            commands.
           </para>
         </listitem>
       </varlistentry>
@@ -841,8 +851,17 @@
           </para>
         </listitem>
       </varlistentry>
+      <varlistentry>
+        <term><replaceable>BUCKET_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of the storage bucket that holds the image file. The bucket name must be
+            globally unique. Use the same bucket name in all commands.
+          </para>
+        </listitem>
+      </varlistentry>
     </variablelist>
-    <procedure xml:id="pro-images-google-sovereign">
+    <procedure xml:id="pro-images-google-sovereign-cloud">
       <title>Creating instances from a &suse; image file</title>
       <para>
         To create instances from an image file, perform the following steps.

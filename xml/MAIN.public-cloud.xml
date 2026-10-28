@@ -61,8 +61,17 @@
        <date>2026-10-27</date>
        <revdescription>
          <para>
+           Renamed 'Google Sovereign Images' section to 'Google Sovereign Cloud Images' and
+           added the BUCKET_NAME placeholder to the list of placeholders
+         </para>
+       </revdescription>
+     </revision>
+     <revision>
+       <date>2026-10-27</date>
+       <revdescription>
+         <para>
            Updated image names and added hardened and ARM64 images in the 'Google Sovereign
-           Images' section
+           Cloud Images' section
          </para>
        </revdescription>
      </revision>
@@ -70,7 +79,7 @@
        <date>2026-10-23</date>
        <revdescription>
          <para>
-           Added detailed download steps to the 'Google Sovereign Images' section
+           Added detailed download steps to the 'Google Sovereign Cloud Images' section
          </para>
        </revdescription>
      </revision>
@@ -78,7 +87,7 @@
        <date>2026-10-10</date>
        <revdescription>
          <para>
-           New 'Google Sovereign Images' section added
+           New 'Google Sovereign Cloud Images' section added
          </para>
        </revdescription>
      </revision>

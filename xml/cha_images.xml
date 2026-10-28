@@ -846,9 +846,6 @@
 <screen>&prompt.user;<command>gcloud</command> storage buckets create gs://<replaceable>BUCKET_NAME</replaceable> \
  --project=<replaceable>PROJECT_ID</replaceable> \
  --location=<replaceable>LOCATION</replaceable></screen>
-        <para>
-          Replace <replaceable>BUCKET_NAME</replaceable> with a globally unique bucket name.
-        </para>
       </step>
       <step>
         <para>

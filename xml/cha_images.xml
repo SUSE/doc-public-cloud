@@ -851,18 +851,19 @@
         <substeps>
           <step>
             <para>
-              In a web browser, open <link xlink:href="https://download.suse.com"/>.
+              In a web browser, open <link xlink:href="https://suse.com/products/"/>.
+            </para>
+          </step>
+          <step>
+            <para>
+              Click <guimenu>Account</guimenu> to log in with your &suse; account, or to create an
+              account if you do not have one.
             </para>
           </step>
           <step>
             <para>
               In the <guimenu>Linux</guimenu> section, select the product whose image you want
-              to use: &sles; or &sles4sap;.
-            </para>
-          </step>
-          <step>
-            <para>
-              Click <guimenu>Download</guimenu>.
+              to use: &sles; or &sles4sap; and click <guimenu>Download</guimenu>.
             </para>
           </step>
           <step>
@@ -873,14 +874,9 @@
           </step>
           <step>
             <para>
-              Click the button for the architecture of your instance: <guimenu>AMD64/Intel
-              64</guimenu> or <guimenu>Arm</guimenu>.
-            </para>
-            <para>
-              The file names of <guimenu>AMD64/Intel 64</guimenu> images contain
-              <literal>x86_64</literal>. The file names of <guimenu>Arm</guimenu> images contain
-              <literal>aarch64</literal>. Images of &sles4sap; are only available for
-              <guimenu>AMD64/Intel 64</guimenu>.
+              Select the architecture of your instance. Supported architectures are
+              <guimenu>AMD64/Intel 64</guimenu> or <guimenu>Arm</guimenu>. Images of &sles4sap; are
+              only available for <guimenu>AMD64/Intel 64</guimenu>.
             </para>
           </step>
           <step>
@@ -938,8 +934,9 @@
             <itemizedlist>
               <listitem>
                 <para>
-                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> or
-                  <literal>aarch64</literal>.
+                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
+                  <guimenu>AMD64/Intel 64</guimenu> or <literal>aarch64</literal> for
+                  <guimenu>Arm</guimenu>.
                 </para>
               </listitem>
               <listitem>
@@ -964,12 +961,6 @@
           <step>
             <para>
               Click <guimenu>Download</guimenu> next to the image.
-            </para>
-          </step>
-          <step>
-            <para>
-              Log in with your &suse; account, or create an account if you do not have one. The
-              download starts after you log in.
             </para>
           </step>
         </substeps>

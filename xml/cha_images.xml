@@ -1067,7 +1067,7 @@ IDPF,GVNIC \
           To log in, the instance must be on a network that is accessible from your system. The
           instance needs an external IP address and a firewall rule that allows SSH traffic. If the
           instance has only an internal IP address, connect from a system within the same network,
-          for example through a virtual private network (VPN) or a bastion host.
+          a bastion host, or the Google Identity-Aware Proxy (IAP) service.
         </para>
         <para>
           For more information about setting up the network, see

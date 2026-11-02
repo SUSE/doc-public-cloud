@@ -29,6 +29,14 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
     <revision>
+      <date>2026-11-02</date>
+      <revdescription>
+        <para>
+          Renamed 'Google Sovereign Cloud Images' section to 'Google Cloud Dedicated Images'
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-10-28</date>
       <revdescription>
         <para>
@@ -765,11 +773,11 @@
   </para>
  </sect1>
 
-  <sect1 xml:id="sec-images-google-sovereign-cloud">
-    <title>&google; Sovereign Cloud Images</title>
+  <sect1 xml:id="sec-images-google-cloud-dedicated">
+    <title>&gc; Dedicated Images</title>
     <para>
-      This section describes how to create instances from a &suse; image file in &google; Sovereign
-      Cloud. The procedure creates a storage bucket, uploads the image file, creates a compute image
+      This section describes how to create instances from a &suse; image file in &gc; Dedicated.
+      The procedure creates a storage bucket, uploads the image file, creates a compute image
       from it and creates an instance. Except for the image creation step, these steps can be
       performed with the &gc; Console or with <command>gcloud</command>. The procedure that follows
       covers the relevant <command>gcloud</command> commands only.
@@ -793,13 +801,13 @@
           The <command>gcloud</command> command-line tool is installed and authenticated. For more
           information about installing and setting up <command>gcloud</command>, see
           <link xlink:href="https://docs.cloud.google.com/sdk/docs/install-sdk"/>. Note that
-          authentication to the &google; Sovereign Cloud region requires different credentials
+          authentication to the &gc; Dedicated region requires different credentials
           than the public &gcp; endpoint.
         </para>
       </listitem>
       <listitem>
         <para>
-          You have a &google; Sovereign Cloud project with the Compute Engine API enabled.
+          You have a &gc; Dedicated project with the Compute Engine API enabled.
         </para>
       </listitem>
       <listitem>
@@ -817,7 +825,7 @@
         <term><replaceable>PROJECT_ID</replaceable></term>
         <listitem>
           <para>
-            The ID of your &google; Sovereign Cloud project. Use the same project ID in all
+            The ID of your &gc; Dedicated project. Use the same project ID in all
             commands.
           </para>
         </listitem>
@@ -840,7 +848,7 @@
         </listitem>
       </varlistentry>
     </variablelist>
-    <procedure xml:id="pro-images-google-sovereign-cloud">
+    <procedure xml:id="pro-images-google-cloud-dedicated">
       <title>Creating instances from a &suse; image file</title>
       <para>
         To create instances from an image file, perform the following steps.

@@ -58,6 +58,14 @@
   </authorgroup>
   <revhistory xml:id="rh-public-cloud">
     <revision>
+      <date>2026-11-02</date>
+      <revdescription>
+        <para>
+          Renamed 'Google Sovereign Cloud Images' section to 'Google Cloud Dedicated Images'
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-10-28</date>
       <revdescription>
         <para>

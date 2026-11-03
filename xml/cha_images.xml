@@ -834,7 +834,7 @@
         <term><replaceable>LOCATION</replaceable></term>
         <listitem>
           <para>
-            The region or multi-region in which to create the bucket and store the image.
+            The region in which to create the bucket and store the image.
           </para>
         </listitem>
       </varlistentry>

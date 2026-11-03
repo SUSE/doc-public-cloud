@@ -847,6 +847,34 @@
           </para>
         </listitem>
       </varlistentry>
+      <varlistentry>
+        <term><replaceable>NETWORK_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of an existing VPC network in the project. Only required if the
+            <literal>default</literal> VPC network is not enabled for the project.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>SUBNET_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of a subnet of the VPC network, in the same region as the zone of the
+            instance. Only required if the <literal>default</literal> VPC network is not
+            enabled for the project.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>SOURCE_RANGE</replaceable></term>
+        <listitem>
+          <para>
+            The IP address range, in CIDR notation, that is allowed to connect to the
+            instance with SSH, for example the public IP address of your workstation.
+          </para>
+        </listitem>
+      </varlistentry>
     </variablelist>
     <procedure xml:id="pro-images-google-cloud-dedicated">
       <title>Creating instances from a &suse; image file</title>
@@ -1046,8 +1074,23 @@ IDPF,GVNIC \
         <para>
           The <option>--project</option> option sets the project in which the instance is created.
           The <option>--image-project</option> option sets the project that contains the image. If
-          you share images across projects, the two values can differ.
+           you share images across projects, the two values can differ.
         </para>
+        <para>
+          By default, the instance is attached to the <literal>default</literal> VPC network. If
+          the <literal>default</literal> VPC network is not enabled for your project, specify the
+          network configuration in the command. Replace <replaceable>NETWORK_NAME</replaceable>
+          with the name of an existing VPC network. Replace <replaceable>SUBNET_NAME</replaceable>
+          with a subnet of this network in the same region as <replaceable>ZONE</replaceable>:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances create <replaceable>INSTANCE_NAME</replaceable> \
+ --image=<replaceable>IMAGE_NAME</replaceable> \
+ --image-project=<replaceable>PROJECT_ID</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable> \
+ --machine-type=<replaceable>MACHINE_TYPE</replaceable> \
+ --network=<replaceable>NETWORK_NAME</replaceable> \
+ --subnet=<replaceable>SUBNET_NAME</replaceable></screen>
       </step>
       <step>
         <para>
@@ -1069,6 +1112,19 @@ IDPF,GVNIC \
           instance has only an internal IP address, connect from a system within the same network,
           a bastion host, or the Google Identity-Aware Proxy (IAP) service.
         </para>
+        <para>
+          The <literal>default</literal> VPC network includes a firewall rule that allows incoming
+          SSH traffic. If you use a different network, create a firewall rule that allows incoming
+          traffic on TCP port 22 from your IP address range. Replace
+          <replaceable>SOURCE_RANGE</replaceable> with the range in CIDR notation, for example
+          <literal>203.0.113.10/32</literal>:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute firewall-rules create allow-ssh-from-source-range \
+ --network=<replaceable>NETWORK_NAME</replaceable> \
+ --direction=INGRESS \
+ --allow=tcp:22 \
+ --source-ranges=<replaceable>SOURCE_RANGE</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
         <para>
           For more information about setting up the network, see
           <link xlink:href="https://docs.cloud.google.com/vpc/docs/vpc"/>.

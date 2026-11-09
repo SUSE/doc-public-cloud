@@ -919,10 +919,16 @@
           </step>
           <step>
             <para>
+              Select the architecture of your instance. The supported architecture is
+              <guimenu>AMD64/Intel 64</guimenu>.
+            </para>
+            <!-- TODO: arm64 images not yet available. Restore when released.
+            <para>
               Select the architecture of your instance. Supported architectures are
               <guimenu>AMD64/Intel 64</guimenu> or <guimenu>Arm</guimenu>. Images of &sles4sap; are
               only available for <guimenu>AMD64/Intel 64</guimenu>.
             </para>
+            -->
           </step>
           <step>
             <para>
@@ -980,9 +986,15 @@
               <listitem>
                 <para>
                   <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
+                  <guimenu>AMD64/Intel 64</guimenu>.
+                </para>
+                <!-- TODO: arm64 images not yet available. Restore when released.
+                <para>
+                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
                   <guimenu>AMD64/Intel 64</guimenu> or <literal>aarch64</literal> for
                   <guimenu>Arm</guimenu>.
                 </para>
+                -->
               </listitem>
               <listitem>
                 <para>
@@ -1025,12 +1037,19 @@
       <step>
         <para>
           Create a compute image from the uploaded image file and set the guest operating system
+          features. This is the only step that requires <command>gcloud</command>:
+        </para>
+        <!-- TODO: arm64 images not yet available. Restore when released.
+        Replace the paragraph above with:
+        <para>
+          Create a compute image from the uploaded image file and set the guest operating system
           features. This is the only step that requires <command>gcloud</command>. The command
           depends on the architecture of the image.
         </para>
         <para>
           For <literal>x86_64</literal> images, run:
         </para>
+        -->
 <screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
  --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
  --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,SEV_CAPABLE,\
@@ -1039,15 +1058,19 @@ IDPF,GVNIC \
  --storage-location=<replaceable>LOCATION</replaceable> \
  --architecture=X86_64 \
  --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <!-- TODO: arm64 images not yet available. Restore when released.
         <para>
           For <literal>aarch64</literal> images, run:
         </para>
 <screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
- --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
- --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
- --storage-location=<replaceable>LOCATION</replaceable> \
- --architecture=ARM64 \
- --project=<replaceable>PROJECT_ID</replaceable></screen>
+ - -source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ - -guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
+ - -storage-location=<replaceable>LOCATION</replaceable> \
+ - -architecture=ARM64 \
+ - -project=<replaceable>PROJECT_ID</replaceable></screen>
+        NOTE: Replace each "- -" above with two hyphens when restoring, because XML comments
+        cannot contain two consecutive hyphens.
+        -->
         <para>
           Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image.
         </para>

@@ -29,6 +29,14 @@
   </dm:docmanager>
   <revhistory xml:id="rh-cha-images">
     <revision>
+      <date>2026-11-02</date>
+      <revdescription>
+        <para>
+          Renamed 'Google Sovereign Cloud Images' section to 'Google Cloud Dedicated Images'
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2026-10-28</date>
       <revdescription>
         <para>
@@ -765,11 +773,11 @@
   </para>
  </sect1>
 
-  <sect1 xml:id="sec-images-google-sovereign-cloud">
-    <title>&google; Sovereign Cloud Images</title>
+  <sect1 xml:id="sec-images-google-cloud-dedicated">
+    <title>&gc; Dedicated Images</title>
     <para>
-      This section describes how to create instances from a &suse; image file in &google; Sovereign
-      Cloud. The procedure creates a storage bucket, uploads the image file, creates a compute image
+      This section describes how to create instances from a &suse; image file in &gc; Dedicated.
+      The procedure creates a storage bucket, uploads the image file, creates a compute image
       from it and creates an instance. Except for the image creation step, these steps can be
       performed with the &gc; Console or with <command>gcloud</command>. The procedure that follows
       covers the relevant <command>gcloud</command> commands only.
@@ -793,13 +801,13 @@
           The <command>gcloud</command> command-line tool is installed and authenticated. For more
           information about installing and setting up <command>gcloud</command>, see
           <link xlink:href="https://docs.cloud.google.com/sdk/docs/install-sdk"/>. Note that
-          authentication to the &google; Sovereign Cloud region requires different credentials
+          authentication to the &gc; Dedicated region requires different credentials
           than the public &gcp; endpoint.
         </para>
       </listitem>
       <listitem>
         <para>
-          You have a &google; Sovereign Cloud project with the Compute Engine API enabled.
+          You have a &gc; Dedicated project with the Compute Engine API enabled.
         </para>
       </listitem>
       <listitem>
@@ -817,7 +825,7 @@
         <term><replaceable>PROJECT_ID</replaceable></term>
         <listitem>
           <para>
-            The ID of your &google; Sovereign Cloud project. Use the same project ID in all
+            The ID of your &gc; Dedicated project. Use the same project ID in all
             commands.
           </para>
         </listitem>
@@ -826,7 +834,7 @@
         <term><replaceable>LOCATION</replaceable></term>
         <listitem>
           <para>
-            The region or multi-region in which to create the bucket and store the image.
+            The region in which to create the bucket and store the image.
           </para>
         </listitem>
       </varlistentry>
@@ -839,8 +847,36 @@
           </para>
         </listitem>
       </varlistentry>
+      <varlistentry>
+        <term><replaceable>NETWORK_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of an existing VPC network in the project. Only required if the
+            <literal>default</literal> VPC network is not enabled for the project.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>SUBNET_NAME</replaceable></term>
+        <listitem>
+          <para>
+            The name of a subnet of the VPC network, in the same region as the zone of the
+            instance. Only required if the <literal>default</literal> VPC network is not
+            enabled for the project.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><replaceable>SOURCE_RANGE</replaceable></term>
+        <listitem>
+          <para>
+            The IP address range, in CIDR notation, that is allowed to connect to the
+            instance with SSH, for example the public IP address of your workstation.
+          </para>
+        </listitem>
+      </varlistentry>
     </variablelist>
-    <procedure xml:id="pro-images-google-sovereign-cloud">
+    <procedure xml:id="pro-images-google-cloud-dedicated">
       <title>Creating instances from a &suse; image file</title>
       <para>
         To create instances from an image file, perform the following steps.
@@ -883,10 +919,16 @@
           </step>
           <step>
             <para>
+              Select the architecture of your instance. The supported architecture is
+              <guimenu>AMD64/Intel 64</guimenu>.
+            </para>
+            <!-- TODO: arm64 images not yet available. Restore when released.
+            <para>
               Select the architecture of your instance. Supported architectures are
               <guimenu>AMD64/Intel 64</guimenu> or <guimenu>Arm</guimenu>. Images of &sles4sap; are
               only available for <guimenu>AMD64/Intel 64</guimenu>.
             </para>
+            -->
           </step>
           <step>
             <para>
@@ -944,9 +986,15 @@
               <listitem>
                 <para>
                   <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
+                  <guimenu>AMD64/Intel 64</guimenu>.
+                </para>
+                <!-- TODO: arm64 images not yet available. Restore when released.
+                <para>
+                  <replaceable>ARCHITECTURE</replaceable> is <literal>x86_64</literal> for
                   <guimenu>AMD64/Intel 64</guimenu> or <literal>aarch64</literal> for
                   <guimenu>Arm</guimenu>.
                 </para>
+                -->
               </listitem>
               <listitem>
                 <para>
@@ -989,12 +1037,19 @@
       <step>
         <para>
           Create a compute image from the uploaded image file and set the guest operating system
+          features. This is the only step that requires <command>gcloud</command>:
+        </para>
+        <!-- TODO: arm64 images not yet available. Restore when released.
+        Replace the paragraph above with:
+        <para>
+          Create a compute image from the uploaded image file and set the guest operating system
           features. This is the only step that requires <command>gcloud</command>. The command
           depends on the architecture of the image.
         </para>
         <para>
           For <literal>x86_64</literal> images, run:
         </para>
+        -->
 <screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
  --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
  --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,SEV_CAPABLE,\
@@ -1003,15 +1058,19 @@ IDPF,GVNIC \
  --storage-location=<replaceable>LOCATION</replaceable> \
  --architecture=X86_64 \
  --project=<replaceable>PROJECT_ID</replaceable></screen>
+        <!-- TODO: arm64 images not yet available. Restore when released.
         <para>
           For <literal>aarch64</literal> images, run:
         </para>
 <screen>&prompt.user;<command>gcloud</command> compute images create <replaceable>IMAGE_NAME</replaceable> \
- --source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
- --guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
- --storage-location=<replaceable>LOCATION</replaceable> \
- --architecture=ARM64 \
- --project=<replaceable>PROJECT_ID</replaceable></screen>
+ - -source-uri=gs://<replaceable>BUCKET_NAME</replaceable>/<replaceable>IMAGE_FILE</replaceable>.tar.gz \
+ - -guest-os-features=UEFI_COMPATIBLE,VIRTIO_SCSI_MULTIQUEUE,GVNIC,IDPF \
+ - -storage-location=<replaceable>LOCATION</replaceable> \
+ - -architecture=ARM64 \
+ - -project=<replaceable>PROJECT_ID</replaceable></screen>
+        NOTE: Replace each "- -" above with two hyphens when restoring, because XML comments
+        cannot contain two consecutive hyphens.
+        -->
         <para>
           Replace <replaceable>IMAGE_NAME</replaceable> with a name for the new image.
         </para>
@@ -1038,8 +1097,23 @@ IDPF,GVNIC \
         <para>
           The <option>--project</option> option sets the project in which the instance is created.
           The <option>--image-project</option> option sets the project that contains the image. If
-          you share images across projects, the two values can differ.
+           you share images across projects, the two values can differ.
         </para>
+        <para>
+          By default, the instance is attached to the <literal>default</literal> VPC network. If
+          the <literal>default</literal> VPC network is not enabled for your project, specify the
+          network configuration in the command. Replace <replaceable>NETWORK_NAME</replaceable>
+          with the name of an existing VPC network. Replace <replaceable>SUBNET_NAME</replaceable>
+          with a subnet of this network in the same region as <replaceable>ZONE</replaceable>:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute instances create <replaceable>INSTANCE_NAME</replaceable> \
+ --image=<replaceable>IMAGE_NAME</replaceable> \
+ --image-project=<replaceable>PROJECT_ID</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable> \
+ --zone=<replaceable>ZONE</replaceable> \
+ --machine-type=<replaceable>MACHINE_TYPE</replaceable> \
+ --network=<replaceable>NETWORK_NAME</replaceable> \
+ --subnet=<replaceable>SUBNET_NAME</replaceable></screen>
       </step>
       <step>
         <para>
@@ -1059,8 +1133,21 @@ IDPF,GVNIC \
           To log in, the instance must be on a network that is accessible from your system. The
           instance needs an external IP address and a firewall rule that allows SSH traffic. If the
           instance has only an internal IP address, connect from a system within the same network,
-          for example through a virtual private network (VPN) or a bastion host.
+          a bastion host, or the Google Identity-Aware Proxy (IAP) service.
         </para>
+        <para>
+          The <literal>default</literal> VPC network includes a firewall rule that allows incoming
+          SSH traffic. If you use a different network, create a firewall rule that allows incoming
+          traffic on TCP port 22 from your IP address range. Replace
+          <replaceable>SOURCE_RANGE</replaceable> with the range in CIDR notation, for example
+          <literal>203.0.113.10/32</literal>:
+        </para>
+<screen>&prompt.user;<command>gcloud</command> compute firewall-rules create allow-ssh-from-source-range \
+ --network=<replaceable>NETWORK_NAME</replaceable> \
+ --direction=INGRESS \
+ --allow=tcp:22 \
+ --source-ranges=<replaceable>SOURCE_RANGE</replaceable> \
+ --project=<replaceable>PROJECT_ID</replaceable></screen>
         <para>
           For more information about setting up the network, see
           <link xlink:href="https://docs.cloud.google.com/vpc/docs/vpc"/>.
